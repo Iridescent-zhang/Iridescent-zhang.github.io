@@ -212,6 +212,7 @@ body {
   font-size: 1em;
   line-height: 2;
   opacity: 0.9;
+  background: #fff;
 }
 @media (max-width: 991px) {
   body {
@@ -1254,7 +1255,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffff9f;
+  background: #137cd2;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
