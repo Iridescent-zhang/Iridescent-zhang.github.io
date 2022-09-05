@@ -203,7 +203,7 @@ body {
   height: 100%;
 }
 body {
-  background: url("https://source.unsplash.com/random");
+  background: url("/images/snowmountain.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -1253,7 +1253,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #fffcfa;
+  background: #11ff91;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
