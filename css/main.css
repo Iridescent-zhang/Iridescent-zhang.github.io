@@ -207,9 +207,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  position: 50% 50%;
-  height: 100%;
-  overflow: auto;
   color: var(--text-color);
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1em;
@@ -310,6 +307,18 @@ kbd {
   font-family: inherit;
   padding: 0.1em 0.3em;
   white-space: nowrap;
+}
+html,
+body {
+  overflow-y: scroll;
+}
+html,
+body {
+  overflow: scroll;
+  min-height: 101%;
+}
+html {
+  overflow: -moz-scrollbars-vertical;
 }
 .table-container {
   overflow: auto;
@@ -1256,7 +1265,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #aa7c00;
+  background: #0ad6b1;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
