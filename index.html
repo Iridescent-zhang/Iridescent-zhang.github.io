@@ -208,7 +208,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-09-06 17:18:48 / Modified: 10:32:24" itemprop="dateCreated datePublished" datetime="2022-09-06T17:18:48Z">2022-09-06</time>
+              <time title="Created: 2022-09-06 17:18:48 / Modified: 10:34:45" itemprop="dateCreated datePublished" datetime="2022-09-06T17:18:48Z">2022-09-06</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -269,36 +269,14 @@
 
       
           <h2 id="How-I-bulid-this-blog"><a href="#How-I-bulid-this-blog" class="headerlink" title="How I bulid this blog"></a>How I bulid this blog</h2><p><strong>hexo</strong>是一个应用非常广泛的，快速且高效的博客框架，我使用的主题是<a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">next</a>，网上配置教程非常多，过程繁琐但不难，需要注意的一点是大多数教程是旧版<em>next</em>（仍作参考），新版<em>next</em>有一些不同的地方，修改除_config.yml以外的文件时做好备份。</p>
-<p>本文不是详细的hexo next配置教程，仅仅记录配置过程遇到的问题，详细配置教程见文末链接。</p>
-<ol>
-<li><strong>hexo d</strong>失败，<em>fatal：Failed to connect to github.com port 443: Timed out</em></li>
-</ol>
-<blockquote>
-<p>Git设置全局代理<br>1080是代理端口，看代理软件可查，根据自己的实际修改。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy 127.0.0.1:1080</span><br><span class="line">git config --global https.proxy 127.0.0.1:1080</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li><p><strong>hexo s</strong>在本地服务器显示正常，<strong>hexo d</strong>发布结果与本地服务器不同</p>
-<blockquote>
-<p>解决方法</p>
-<ul>
-<li>使用hexo clean清除缓存，之后hexo g, hexo d重新部署；</li>
-<li>浏览器按F12，看哪些css, js文件没有加载上，进行调试修改；</li>
-<li>清除浏览器缓存</li>
-</ul>
-</blockquote>
-</li>
-<li><p><strong>hexo archive</strong>(档案)界面滚动条拉到最下方会出现页面不断抖动的情况</p>
-<blockquote>
-<p> CSS 控制Html页面高度导致抖动，这类由高度导致页面抖动的问题，其实究其根本原因是滚动条是否显示导致的。在主题下source\css_common\scaffolding找到base.styl，添加以下代码:</p>
-</blockquote>
-</li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>,<span class="selector-tag">body</span>&#123; <span class="attribute">overflow-y</span>:scroll;&#125;</span><br><span class="line"><span class="selector-tag">html</span>,<span class="selector-tag">body</span>&#123; <span class="attribute">overflow</span>:scroll; <span class="attribute">min-height</span>:<span class="number">101%</span>;&#125;</span><br><span class="line"><span class="selector-tag">html</span>&#123; <span class="attribute">overflow</span>:-moz-scrollbars-vertical;&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="配置hexo-next详细教程"><a href="#配置hexo-next详细教程" class="headerlink" title="配置hexo next详细教程"></a>配置hexo next详细教程</h3><p><a target="_blank" rel="noopener" href="https://minyuchengmin.github.io/2020/02/26/hexo-bo-ke-xin-ban-next-zhu-ti-da-jian/#valine-comments">主要参考</a><br><a target="_blank" rel="noopener" href="https://blog.shijy16.cn/2021/05/13/%E9%85%8D%E7%BD%AE/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">含个人域名重定向和HTTPS</a></p>
-<p><a target="_blank" rel="noopener" href="https://unsplash.com/">unsplash</a><em>里的图片非常清爽，并且提供api服务，从中挑选博客背景图非常合适。</em></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/09/07/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
