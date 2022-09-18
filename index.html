@@ -183,6 +183,361 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/09/Network/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cloud.jpg">
+      <meta itemprop="name" content="lichao Zhang">
+      <meta itemprop="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iridescent-zhang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/09/09/Network/" class="post-title-link" itemprop="url">Network</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-09-08 22:05:39" itemprop="dateCreated datePublished" datetime="2022-09-08T22:05:39Z">2022-09-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-18 08:38:10" itemprop="dateModified" datetime="2022-09-18T08:38:10Z">2022-09-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/09/09/Network/" class="post-meta-item leancloud_visitors" data-flag-title="Network" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/09/09/Network/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/09/09/Network/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Keyword"><a href="#Keyword" class="headerlink" title="Keyword"></a>Keyword</h3><p>路由器（router）：路由器与我们的设备进行连接，路由与路由之间连接构成巨大的“网络”。<br>调制解调器（modem）：电话这种基础设施将你和外部的世界连在一起，我们通过一种叫调制解调器的设备连接到电话这种网络。modem将网络信息和电话设施可以处理的信息进行转换。<br>互联网服务提供商（internet serve provider）：ISP是一家可以管理一些特殊的路由器的公司，这些路由器连接其他 ISP 的路由器。你的网络消息可以被 ISP 捕获并发送到相应的网络。<br>ip<br>域名：每个网络中的设备都有独一无二的ip地址，为方便，给ip地址取了一个“域名”，我们变可以通过域名通过网络连接到这些电脑。</p>
+<p>互联网（internet）和网络（web）的区别：<br>互联网是一种基础的技术，它允许我们将成千上万的设备连在一起。在这些设备中，有一些我们称为网络服务器的设备可以发送文件并在我们设备的浏览器上显示，这便构成了网络。互联网是基础设施，网络是建立在这种基础设施上的服务，除了网络，还有一些服务，比如邮箱和IRC也是运行在互联网之上的。</p>
+<h3 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h3><p>HTTP 代理只能解释和处理 HTTP 和 HTTPS 网页，而 SOCKS5 代理可以处理任何流量。<br>Shadowsocks 和 SSR 都是当作 SOCKS5 代理服务器来突破防火长城 GFW 的限制。<br>代理和 VPN 的主要区别在于：VPN 会对传输流量进行加密，而代理不会加密流量。VPN 提供更稳定的连接，而代理断线的频率较高。</p>
+<p>网页，网站，网络服务器和搜索引擎的区别？</p>
+<blockquote>
+<p>网页是一份显示在网络浏览器上的HTML文档，这种网页文档可以插入各种各样不同类型的资源，例如：</p>
+<ul>
+<li>css样式信息–控制页面观感</li>
+<li>脚本–为页面添加交互性</li>
+<li>多媒体–图像，音频，视频</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>网站，也称作”site”（站点），是共享唯一域名的相互链接的网页的集合。访问网站时，输入域名，浏览器将会显示该网站的<strong>主要网页或主页</strong>。</p>
+</blockquote>
+<blockquote>
+<p>网络服务器：互联网上托管了许多网站的计算机。托管的意思即所有的网页和它们的支持文件在该服务器上都可用，当浏览器发起请求时，服务器将任意网页从托管的网站发送到任意用户的浏览器。</p>
+</blockquote>
+<blockquote>
+<p>搜索引擎是一个用来帮你找其他网页的<strong>网站</strong>。浏览器是一个接收并显示网页的软件！搜索引擎则是一个帮助用户从其他网站寻找网页的网站。搜索引擎（谷歌，必应）的主页面经常是我们使用的浏览器（谷歌浏览器）的默认开始页面，所以容易搞混，需要分清基础设施（浏览器）和服务（搜索引擎）。</p>
+</blockquote>
+<h3 id="MDN"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/What_is_a_web_server#%E9%9D%99%E6%80%81%E5%92%8C%E5%8A%A8%E6%80%81%E5%86%85%E5%AE%B9">什么是网络服务器</a></p>
+<p>HTTPS 经由 HTTP 进行通信，但利用 SSL&#x2F;TLS 来加密数据包。<br>HTTP 的 URL 是由 http:&#x2F;&#x2F; 起始与默认使用端口 80，而 HTTPS 的 URL 则是由 https:&#x2F;&#x2F; 起始与默认使用端口443。<br>浏览器作为 HTTP 客户端通过 URL 向 HTTP 服务端即 WEB 服务器发送所有请求。<br>HTTPS 的主要作用是在不安全的网络上创建一个安全信道，并可在使用适当的加密包和服务器证书可被验证且可被信任时，对窃听和中间人攻击提供合理的防护。<br>HTTPS 的信任基于预先安装在操作系统中的证书颁发机构（CA）</p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/http-vs-https.html">HTTP 与 HTTPS 的区别</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/07/%E5%AD%A6%E4%B9%A0HTTP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cloud.jpg">
+      <meta itemprop="name" content="lichao Zhang">
+      <meta itemprop="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iridescent-zhang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/09/07/%E5%AD%A6%E4%B9%A0HTTP/" class="post-title-link" itemprop="url">学习HTTP</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-09-06 20:24:38 / Modified: 12:51:36" itemprop="dateCreated datePublished" datetime="2022-09-06T20:24:38Z">2022-09-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/09/07/%E5%AD%A6%E4%B9%A0HTTP/" class="post-meta-item leancloud_visitors" data-flag-title="学习HTTP" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/09/07/%E5%AD%A6%E4%B9%A0HTTP/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/09/07/学习HTTP/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>197</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Learning-Record"><a href="#Learning-Record" class="headerlink" title="Learning Record"></a>Learning Record</h2><p>HTTP一般指HTTP协议（超文本传输协议），HTTP is short for “HyperText Transfer Protocol”，是因特网上应用最为广泛的一种网络传输协议，所有WWW（World Wide Web）文件都必须遵守的标准。HTTP用于Web浏览器和Web服务器之间的通信，基于TCP&#x2F;IP通信协议来传输数据（HTML文件、图片文件、查询结果等）。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/09/07/%E5%AD%A6%E4%B9%A0HTTP/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/07/%E5%AD%A6%E4%B9%A0HTML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cloud.jpg">
+      <meta itemprop="name" content="lichao Zhang">
+      <meta itemprop="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iridescent-zhang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/09/07/%E5%AD%A6%E4%B9%A0HTML/" class="post-title-link" itemprop="url">学习HTML</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-09-06 20:24:20" itemprop="dateCreated datePublished" datetime="2022-09-06T20:24:20Z">2022-09-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-13 12:40:04" itemprop="dateModified" datetime="2022-09-13T12:40:04Z">2022-09-13</time>
+              </span>
+
+          
+            <span id="/2022/09/07/%E5%AD%A6%E4%B9%A0HTML/" class="post-meta-item leancloud_visitors" data-flag-title="学习HTML" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/09/07/%E5%AD%A6%E4%B9%A0HTML/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/09/07/学习HTML/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Learning-Record"><a href="#Learning-Record" class="headerlink" title="Learning Record"></a>Learning Record</h2><p>超文本标记语言HTML is short for “HyperText Markup Language”，是一种用于创建网页的标准标记语言，可以使用HTML来建立自己的Web站点，HTML文档运行在浏览器上，由浏览器解析。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/09/07/%E5%AD%A6%E4%B9%A0HTML/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/07/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -206,10 +561,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-09-06 17:18:48 / Modified: 10:34:45" itemprop="dateCreated datePublished" datetime="2022-09-06T17:18:48Z">2022-09-06</time>
+              <time title="Created: 2022-09-06 17:18:48" itemprop="dateCreated datePublished" datetime="2022-09-06T17:18:48Z">2022-09-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-08 14:07:50" itemprop="dateModified" datetime="2022-09-08T14:07:50Z">2022-09-08</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -249,7 +610,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>835</span>
+              <span>860</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -269,6 +630,7 @@
 
       
           <h2 id="How-I-bulid-this-blog"><a href="#How-I-bulid-this-blog" class="headerlink" title="How I bulid this blog"></a>How I bulid this blog</h2><p><strong>hexo</strong>是一个应用非常广泛的，快速且高效的博客框架，我使用的主题是<a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">next</a>，网上配置教程非常多，过程繁琐但不难，需要注意的一点是大多数教程是旧版<em>next</em>（仍作参考），新版<em>next</em>有一些不同的地方，修改除_config.yml以外的文件时做好备份。</p>
+<p>本文不是详细的hexo next配置教程，仅仅记录配置过程遇到的问题，详细配置教程见文末链接。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/09/07/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/#more" rel="contents">
@@ -309,7 +671,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/09/07/Markdown%E8%AF%AD%E6%B3%95/" class="post-title-link" itemprop="url">Markdown语法</a>
+            <a href="/2022/09/07/Markdown%E8%AF%AD%E6%B3%95/" class="post-title-link" itemprop="url">学习Markdown</a>
         </h2>
 
         <div class="post-meta">
@@ -320,7 +682,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-09-06 16:37:25 / Modified: 09:14:51" itemprop="dateCreated datePublished" datetime="2022-09-06T16:37:25Z">2022-09-06</time>
+              <time title="Created: 2022-09-06 16:37:25 / Modified: 12:22:54" itemprop="dateCreated datePublished" datetime="2022-09-06T16:37:25Z">2022-09-06</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -333,7 +695,7 @@
             </span>
 
           
-            <span id="/2022/09/07/Markdown%E8%AF%AD%E6%B3%95/" class="post-meta-item leancloud_visitors" data-flag-title="Markdown语法" title="Views">
+            <span id="/2022/09/07/Markdown%E8%AF%AD%E6%B3%95/" class="post-meta-item leancloud_visitors" data-flag-title="学习Markdown" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -471,20 +833,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -534,7 +896,7 @@
 		<div class="widget-wrap">
 		<div id="myCanvasContainer" class="widget tagcloud">
 		<canvas width="220" height="250" id="resCanvas" style="width=100%">
-			<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a><span class="tag-list-count">1</span></li></ul>
+			<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/internet/" rel="tag">internet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a><span class="tag-list-count">1</span></li></ul>
 		</canvas>
 		</div>
 		</div>
@@ -567,13 +929,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">1k</span>
+    <span title="Symbols count total">5k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">1 mins.</span>
+    <span title="Reading time total">5 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
