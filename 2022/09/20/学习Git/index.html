@@ -20,21 +20,24 @@
     var CONFIG = {"hostname":"iridescent-zhang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"valine","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus","order":-1},"valine":{"text":"Valine","order":-2}},"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="How I bulid this bloghexo是一个应用非常广泛的，快速且高效的博客框架，我使用的主题是next，网上配置教程非常多，过程繁琐但不难，需要注意的一点是大多数教程是旧版next（仍作参考），新版next有一些不同的地方，修改除_config.yml以外的文件时做好备份。 本文不是详细的hexo next配置教程，仅仅记录配置过程遇到的问题，详细配置教程见文末链接。">
+  <meta name="description" content="GitGit 是一个开源的分布式-版本控制系统，用于敏捷高效地处理任何或小或大的项目。Git 与常用的版本控制工具 CVS, Subversion（SVN）等不同，它采用了分布式版本库的方式，不必服务器端软件支持。Git 不仅仅是个版本控制系统，它也是个内容管理系统(CMS)，工作管理系统等。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建hexo博客">
-<meta property="og:url" content="https://iridescent-zhang.github.io/2022/09/07/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="学习Git">
+<meta property="og:url" content="https://iridescent-zhang.github.io/2022/09/20/%E5%AD%A6%E4%B9%A0Git/index.html">
 <meta property="og:site_name" content="Iridescent-zhang">
-<meta property="og:description" content="How I bulid this bloghexo是一个应用非常广泛的，快速且高效的博客框架，我使用的主题是next，网上配置教程非常多，过程繁琐但不难，需要注意的一点是大多数教程是旧版next（仍作参考），新版next有一些不同的地方，修改除_config.yml以外的文件时做好备份。 本文不是详细的hexo next配置教程，仅仅记录配置过程遇到的问题，详细配置教程见文末链接。">
+<meta property="og:description" content="GitGit 是一个开源的分布式-版本控制系统，用于敏捷高效地处理任何或小或大的项目。Git 与常用的版本控制工具 CVS, Subversion（SVN）等不同，它采用了分布式版本库的方式，不必服务器端软件支持。Git 不仅仅是个版本控制系统，它也是个内容管理系统(CMS)，工作管理系统等。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-09-06T17:18:48.000Z">
-<meta property="article:modified_time" content="2022-09-08T14:07:50.241Z">
+<meta property="og:image" content="https://www.runoob.com/manual/git-guide/img/trees.png">
+<meta property="og:image" content="https://www.runoob.com/manual/git-guide/img/branches.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2015/02/git-process.png">
+<meta property="article:published_time" content="2022-09-19T16:47:52.000Z">
+<meta property="article:modified_time" content="2022-09-19T13:43:32.734Z">
 <meta property="article:author" content="lichao Zhang">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="next">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.runoob.com/manual/git-guide/img/trees.png">
 
-<link rel="canonical" href="https://iridescent-zhang.github.io/2022/09/07/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/">
+<link rel="canonical" href="https://iridescent-zhang.github.io/2022/09/20/%E5%AD%A6%E4%B9%A0Git/">
 
 
 <script id="page-configurations">
@@ -47,7 +50,7 @@
   };
 </script>
 
-  <title>搭建hexo博客 | Iridescent-zhang</title>
+  <title>学习Git | Iridescent-zhang</title>
   
 
 
@@ -188,7 +191,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/07/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/">
+    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/20/%E5%AD%A6%E4%B9%A0Git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/cloud.jpg">
@@ -201,7 +204,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          搭建hexo博客
+          学习Git
         </h1>
 
         <div class="post-meta">
@@ -210,28 +213,22 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-09-06 17:18:48" itemprop="dateCreated datePublished" datetime="2022-09-06T17:18:48Z">2022-09-06</time>
+              <time title="Created: 2022-09-19 16:47:52 / Modified: 13:43:32" itemprop="dateCreated datePublished" datetime="2022-09-19T16:47:52Z">2022-09-19</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-08 14:07:50" itemprop="dateModified" datetime="2022-09-08T14:07:50Z">2022-09-08</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
+                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
                 </span>
             </span>
 
           
-            <span id="/2022/09/07/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/" class="post-meta-item leancloud_visitors" data-flag-title="搭建hexo博客" title="Views">
+            <span id="/2022/09/20/%E5%AD%A6%E4%B9%A0Git/" class="post-meta-item leancloud_visitors" data-flag-title="学习Git" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -246,8 +243,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2022/09/07/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/09/07/搭建hexo博客/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/09/20/%E5%AD%A6%E4%B9%A0Git/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/09/20/学习Git/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -260,8 +257,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/09/07/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/09/07/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/09/20/%E5%AD%A6%E4%B9%A0Git/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/09/20/%E5%AD%A6%E4%B9%A0Git/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -271,7 +268,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>860</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -290,38 +287,42 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="How-I-bulid-this-blog"><a href="#How-I-bulid-this-blog" class="headerlink" title="How I bulid this blog"></a>How I bulid this blog</h2><p><strong>hexo</strong>是一个应用非常广泛的，快速且高效的博客框架，我使用的主题是<a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">next</a>，网上配置教程非常多，过程繁琐但不难，需要注意的一点是大多数教程是旧版<em>next</em>（仍作参考），新版<em>next</em>有一些不同的地方，修改除_config.yml以外的文件时做好备份。</p>
-<p>本文不是详细的hexo next配置教程，仅仅记录配置过程遇到的问题，详细配置教程见文末链接。</p>
+        <h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>Git 是一个开源的<strong>分布式-版本控制系统</strong>，用于敏捷高效地处理任何或小或大的项目。<br>Git 与常用的版本控制工具 CVS, Subversion（SVN）等不同，它采用了分布式版本库的方式，不必服务器端软件支持。<br>Git 不仅仅是个版本控制系统，它也是个内容管理系统(CMS)，工作管理系统等。</p>
 <span id="more"></span>
-
-<h3 id="some-problems"><a href="#some-problems" class="headerlink" title="some problems"></a>some problems</h3><ol>
-<li><strong>hexo d</strong>失败，<em>fatal：Failed to connect to github.com port 443: Timed out</em></li>
+<p>你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录（工作目录下含有.git文件夹），它持有实际文件；第二个是 暂存区（Index，stage），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。<br><img src="https://www.runoob.com/manual/git-guide/img/trees.png" alt="本地仓库组成"></p>
+<blockquote>
+<p><strong>git 基本工作流程</strong></p>
+<ol>
+<li><p>提出更改（把它们添加到暂存区），使用如下命令：<br> <code>git add &lt;filename&gt;</code> </p>
+</li>
+<li><p>使用如下命令以实际提交改动：<br> <code>git commit -m &quot;代码提交备注&quot; </code><br> 现在，你的改动已经提交到了本地仓库的 HEAD 中，但是还没到你的远端仓库。</p>
+</li>
+<li><p>执行如下命令以将这些改动推送到远端仓库：<br> <code>git push origin master</code><br> 可以把 master 换成你想要推送的任何分支。</p>
+</li>
+<li><p>如果你想要将你的本地仓库连接到某个远程服务器（github），你可以使用如下命令添加：<br> <code>git remote add origin &lt;server&gt;</code><br> 如此你就能够将你的改动推送到所添加的服务器上去了。</p>
+</li>
+<li><p>在你创建仓库的时候，master 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。<br><img src="https://www.runoob.com/manual/git-guide/img/branches.png" alt="分支"><br>创建一个叫做“feature_x”的分支，并切换过去：<br><code>git checkout -b feature_x</code><br>切换回主分支：<br><code>git checkout master</code><br>再把新建的分支删掉：<br><code>git branch -d feature_x</code><br>除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：<br><code>git push origin &lt;branch&gt;</code></p>
+</li>
+<li><p>更新与合并<br>要更新你的本地仓库至最新改动，执行：<br><code>git pull</code><br>以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动。<br>要合并其他分支到你的当前分支（例如 master），执行：<br><code>git merge &lt;branch&gt;</code><br>这两种情况下，git 都会尝试去自动合并改动。遗憾的是，这可能并非每次都成功，并可能出现冲突（conflicts）。 这时候就需要你修改这些文件来手动合并这些冲突（conflicts）。<br>在合并改动之前，你可以使用如下命令预览差异：<br><code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code></p>
+</li>
+<li><p>标签<br>你可以执行如下命令创建一个叫做 1.0.0 的标签：<br><code>git tag 1.0.0 1b2e1d63ff</code><br>b2e1d63ff 是你想要标记的提交 ID 的前 10 位字符。可以使用下列命令获取提交 ID：<br><code>git log</code></p>
+</li>
+<li><p>替换本地改动<br>假如你操作失误（当然，这最好永远不要发生），你可以使用如下命令替换掉本地改动：<br><code>git checkout -- &lt;filename&gt;</code><br>此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到暂存区的改动以及新文件都不会受到影响。<br>假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：<br><code>git fetch origin</code><br><code>git reset --hard origin/master</code></p>
+</li>
 </ol>
-<blockquote>
-<p>Git设置全局代理<br>1080是代理端口，看代理软件可查，根据自己的实际修改。</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --<span class="keyword">global</span> http.proxy <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">1080</span></span><br><span class="line">git config --<span class="keyword">global</span> https.proxy <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">1080</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li><p><strong>hexo s</strong>在本地服务器显示正常，<strong>hexo d</strong>发布结果与本地服务器不同</p>
-<blockquote>
-<p>解决方法</p>
+<h2 id="Git-工作流程"><a href="#Git-工作流程" class="headerlink" title="Git 工作流程"></a>Git 工作流程</h2><blockquote>
+<p>一般工作流程如下：</p>
 <ul>
-<li>使用hexo clean清除缓存，之后hexo g, hexo d重新部署；</li>
-<li>浏览器按F12，看哪些css, js文件没有加载上，进行调试修改；</li>
-<li>清除浏览器缓存</li>
+<li>克隆 Git 资源作为工作目录(git clone <a target="_blank" rel="noopener" href="https://github.com/Iridescent-zhang/blog.git)%E3%80%82">https://github.com/Iridescent-zhang/blog.git)。</a></li>
+<li>在克隆的资源上添加或修改文件。</li>
+<li>如果其他人修改了，你可以更新资源。</li>
+<li>在提交前查看修改。</li>
+<li>提交修改。</li>
+<li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。<br><img src="https://www.runoob.com/wp-content/uploads/2015/02/git-process.png" alt="Git工作流程"></li>
 </ul>
 </blockquote>
-</li>
-<li><p><strong>hexo archive</strong>(档案)界面滚动条拉到最下方会出现页面不断抖动的情况</p>
-<blockquote>
-<p> CSS 控制Html页面高度导致抖动，这类由高度导致页面抖动的问题，其实究其根本原因是滚动条是否显示导致的。在主题下source\css_common\scaffolding找到base.styl，添加以下代码:</p>
-</blockquote>
-</li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>,<span class="selector-tag">body</span>&#123; <span class="attribute">overflow-y</span>:scroll;&#125;</span><br><span class="line"><span class="selector-tag">html</span>,<span class="selector-tag">body</span>&#123; <span class="attribute">overflow</span>:scroll; <span class="attribute">min-height</span>:<span class="number">101%</span>;&#125;</span><br><span class="line"><span class="selector-tag">html</span>&#123; <span class="attribute">overflow</span>:-moz-scrollbars-vertical;&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="配置hexo-next详细教程"><a href="#配置hexo-next详细教程" class="headerlink" title="配置hexo next详细教程"></a>配置hexo next详细教程</h3><p><a target="_blank" rel="noopener" href="https://minyuchengmin.github.io/2020/02/26/hexo-bo-ke-xin-ban-next-zhu-ti-da-jian/#valine-comments">主要参考</a><br><a target="_blank" rel="noopener" href="https://blog.shijy16.cn/2021/05/13/%E9%85%8D%E7%BD%AE/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">含个人域名重定向和HTTPS</a></p>
-<h3 id="something-else"><a href="#something-else" class="headerlink" title="something else"></a>something else</h3><p><a target="_blank" rel="noopener" href="https://unsplash.com/">unsplash</a><em>里的图片非常清爽，并且提供api服务，从中挑选博客背景图非常合适。</em></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/songzhenhua/p/9312720.html">Windows下如何解决git bash的默认home目录路径问题</a></p>
 
     </div>
 
@@ -337,7 +338,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://iridescent-zhang.github.io/2022/09/07/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/" title="搭建hexo博客">https://iridescent-zhang.github.io/2022/09/07/搭建hexo博客/</a>
+    <a href="https://iridescent-zhang.github.io/2022/09/20/%E5%AD%A6%E4%B9%A0Git/" title="学习Git">https://iridescent-zhang.github.io/2022/09/20/学习Git/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -348,8 +349,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
-              <a href="/tags/next/" rel="tag"><i class="fa fa-tag"></i> next</a>
+              <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
           </div>
 
         
@@ -358,13 +358,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/09/07/Markdown%E8%AF%AD%E6%B3%95/" rel="prev" title="学习Markdown">
-      <i class="fa fa-chevron-left"></i> 学习Markdown
+    <a href="/2022/09/19/%E5%AD%A6%E4%B9%A0JS/" rel="prev" title="学习JS">
+      <i class="fa fa-chevron-left"></i> 学习JS
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/09/07/%E5%AD%A6%E4%B9%A0HTML/" rel="next" title="学习HTML">
-      学习HTML <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -466,7 +463,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-I-bulid-this-blog"><span class="nav-number">1.</span> <span class="nav-text">How I bulid this blog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#some-problems"><span class="nav-number">1.1.</span> <span class="nav-text">some problems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEhexo-next%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">配置hexo next详细教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#something-else"><span class="nav-number">1.3.</span> <span class="nav-text">something else</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">Git 工作流程</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -719,9 +716,9 @@ window.addEventListener('pjax:success', () => {
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://iridescent-zhang.github.io/2022/09/07/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/";
-    this.page.identifier = "2022/09/07/搭建hexo博客/";
-    this.page.title = "搭建hexo博客";
+    this.page.url = "https://iridescent-zhang.github.io/2022/09/20/%E5%AD%A6%E4%B9%A0Git/";
+    this.page.identifier = "2022/09/20/学习Git/";
+    this.page.title = "学习Git";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
