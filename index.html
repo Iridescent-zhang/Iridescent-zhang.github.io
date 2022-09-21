@@ -214,7 +214,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-21 09:20:23" itemprop="dateModified" datetime="2022-09-21T09:20:23Z">2022-09-21</time>
+                <time title="Modified: 2022-09-21 11:04:41" itemprop="dateModified" datetime="2022-09-21T11:04:41Z">2022-09-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,21 +274,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>环境变量是操作系统用来指定运行环境的一些参数。当你运行某些程序时，除了在当前文件夹中寻找外，还会到这些环境变量中去查找，比如“path”就是一个变量，里面存储了一些常用的命令所存放的目录路径。<br>当启动cmd命令行窗口调用某一命令的时候，经常会出现“xxx不是内部或外部命令，也不是可运行的程序或批处理文件”，如果你的拼写没有错误，同时计算机中确实存在这个程序，那么出现这个提示就是你的path变量没有设置正确，因为你的path路径，也就是默认路径里没有你的程序，同时你又没有给出你程序的绝对路径（因为你只是输入了命令或程序的名称而已），这时操作系统不知道去哪儿找你的程序，就会提示这个问题。<br>比如：当你在path中添加<code>C:\Program Files (x86)\Notepad++</code>时，在cmd或powershell终端输入**notepad++**，便会运行该路径下的notepad++.exe程序。</p>
-<p><strong>我做了这样一件事，使我可以在终端输入自定义的命令打开指定的程序。</strong> 首先，我创建了一个文件夹，就我而言：<em>D:\CmdFiles</em>，并且我将该文件夹的路径添加到path环境变量中，Windows 现在会在文件夹<em>D:\CmdFiles</em>中查找命令，您可以轻松地向该文件夹添加新命令或批处理文件！之后，在此文件夹中，我建立了批处理(.bat)文件，（举个栗子）文件np.bat里面有这样的命令：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@echo off</span></span><br><span class="line">start <span class="string">&quot;&quot;</span> <span class="string">&quot;C:\Program Files (x86)\Notepad++\notepad++.exe&quot;</span> %*</span><br></pre></td></tr></table></figure>
-<p>代码注释 [^代码注释]<br>[^代码注释]:  &gt; @echo off阻止命令打印到命令提示符，引号之间的链接可以引用任何可执行文件；**%*** 将确保您在np命令之后键入的任何内容 （例如<code>test.txt</code> ）都将放在引号中的原始命令之后。<code>np test.txt</code>将用notepad++打开test.txt。</p>
-<p>也可以创建clash.cmd文件，文件内容如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@echo off</span></span><br><span class="line"><span class="string">&quot;H:\ClashforWindows\Clash.for.Windows-0.15.2-win\Clash for Windows.exe&quot;</span> %*</span><br></pre></td></tr></table></figure>
-<p>在终端输入clash便可以运行Clash for Windows.exe。<br>在powershell和cmd中运行结果不同。</p>
-<h2 id="cmd命令"><a href="#cmd命令" class="headerlink" title="cmd命令"></a>cmd命令</h2><blockquote>
-<ol>
-<li>查看某个环境变量：输入 “set 变量名”即可，比如想查看path环境变量的值，即输入 set path</li>
-<li>修改环境变量 ：输入 “set 变量名&#x3D;变量内容”即可，比如set path&#x3D;”c”，查看path路径的时候，其值为”c:&quot;，即覆盖以前的内容</li>
-<li>给变量追加内容：输入“set 变量名&#x3D;%变量名%;变量内容”。如，为path添加一个新的路径，输入<code>set PATH=%PATH%;C:\Program Files (x86)\Notepad++</code>即可将<code>C:\Program Files (x86)\Notepad++</code>添加到path中<br><strong>注意所有的在cmd命令行下对环境变量的修改只对当前窗口有效，不是永久性的修改。也就是说当关闭此cmd命令行窗口后，将不再起作用。</strong><br>在高级系统设置中的环境变量里添加了新路径之后，若你之前打开的应用程序没关掉重启（在你没重启电脑的情况下），那你这个应用程序也可能读取不到该系统变量，所以你关掉重启该应用就好了。如果还是不行，打开cmd，输入命令 <code>set PATH=c</code>，这个命令是使你写在path中的变量立即生效，然后重启cmd验证</li>
-</ol>
-</blockquote>
-
+          <h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>环境变量是操作系统用来指定运行环境的一些参数。当你运行某些程序时，除了在当前文件夹中寻找外，还会到这些环境变量中去查找，比如“path”就是一个变量，里面存储了一些常用的命令所存放的目录路径。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/09/20/cmd/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -568,7 +562,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-19 13:45:21" itemprop="dateModified" datetime="2022-09-19T13:45:21Z">2022-09-19</time>
+                <time title="Modified: 2022-09-21 11:04:18" itemprop="dateModified" datetime="2022-09-21T11:04:18Z">2022-09-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -628,8 +622,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Keyword"><a href="#Keyword" class="headerlink" title="Keyword"></a>Keyword</h3><p>路由器（router）：路由器与我们的设备进行连接，路由与路由之间连接构成巨大的“网络”。<br>调制解调器（modem）：电话这种基础设施将你和外部的世界连在一起，我们通过一种叫调制解调器的设备连接到电话这种网络。modem将网络信息和电话设施可以处理的信息进行转换。<br>互联网服务提供商（internet serve provider）：ISP是一家可以管理一些特殊的路由器的公司，这些路由器连接其他 ISP 的路由器。你的网络消息可以被 ISP 捕获并发送到相应的网络。<br>ip<br>域名：每个网络中的设备都有独一无二的ip地址，为方便，给ip地址取了一个“域名”，我们变可以通过域名通过网络连接到这些电脑。</p>
-<p>互联网（internet）和网络（web）的区别：<br>互联网是一种基础的技术，它允许我们将成千上万的设备连在一起。在这些设备中，有一些我们称为网络服务器的设备可以发送文件并在我们设备的浏览器上显示，这便构成了网络。互联网是基础设施，网络是建立在这种基础设施上的服务，除了网络，还有一些服务，比如邮箱和IRC也是运行在互联网之上的。</p>
+          <h3 id="Keyword"><a href="#Keyword" class="headerlink" title="Keyword"></a>Keyword</h3><p>路由器（router）：路由器与我们的设备进行连接，路由与路由之间连接构成巨大的“网络”。<br>调制解调器（modem）：电话这种基础设施将你和外部的世界连在一起，我们通过一种叫调制解调器的设备连接到电话这种网络。modem将网络信息和电话设施可以处理的信息进行转换。<br>互联网服务提供商（internet serve provider）：ISP是一家可以管理一些特殊的路由器的公司，这些路由器连接其他 ISP 的路由器。你的网络消息可以被 ISP 捕获并发送到相应的网络。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/09/09/Network/#more" rel="contents">
