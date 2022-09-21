@@ -183,6 +183,130 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/20/cmd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cloud.jpg">
+      <meta itemprop="name" content="lichao Zhang">
+      <meta itemprop="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iridescent-zhang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/09/20/cmd/" class="post-title-link" itemprop="url">cmd</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-09-20 14:56:32" itemprop="dateCreated datePublished" datetime="2022-09-20T14:56:32Z">2022-09-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-21 09:20:23" itemprop="dateModified" datetime="2022-09-21T09:20:23Z">2022-09-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/windows/" itemprop="url" rel="index"><span itemprop="name">windows</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/09/20/cmd/" class="post-meta-item leancloud_visitors" data-flag-title="cmd" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/09/20/cmd/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/09/20/cmd/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>环境变量是操作系统用来指定运行环境的一些参数。当你运行某些程序时，除了在当前文件夹中寻找外，还会到这些环境变量中去查找，比如“path”就是一个变量，里面存储了一些常用的命令所存放的目录路径。<br>当启动cmd命令行窗口调用某一命令的时候，经常会出现“xxx不是内部或外部命令，也不是可运行的程序或批处理文件”，如果你的拼写没有错误，同时计算机中确实存在这个程序，那么出现这个提示就是你的path变量没有设置正确，因为你的path路径，也就是默认路径里没有你的程序，同时你又没有给出你程序的绝对路径（因为你只是输入了命令或程序的名称而已），这时操作系统不知道去哪儿找你的程序，就会提示这个问题。<br>比如：当你在path中添加<code>C:\Program Files (x86)\Notepad++</code>时，在cmd或powershell终端输入**notepad++**，便会运行该路径下的notepad++.exe程序。</p>
+<p><strong>我做了这样一件事，使我可以在终端输入自定义的命令打开指定的程序。</strong> 首先，我创建了一个文件夹，就我而言：<em>D:\CmdFiles</em>，并且我将该文件夹的路径添加到path环境变量中，Windows 现在会在文件夹<em>D:\CmdFiles</em>中查找命令，您可以轻松地向该文件夹添加新命令或批处理文件！之后，在此文件夹中，我建立了批处理(.bat)文件，（举个栗子）文件np.bat里面有这样的命令：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@echo off</span></span><br><span class="line">start <span class="string">&quot;&quot;</span> <span class="string">&quot;C:\Program Files (x86)\Notepad++\notepad++.exe&quot;</span> %*</span><br></pre></td></tr></table></figure>
+<p>代码注释 [^代码注释]<br>[^代码注释]:  &gt; @echo off阻止命令打印到命令提示符，引号之间的链接可以引用任何可执行文件；**%*** 将确保您在np命令之后键入的任何内容 （例如<code>test.txt</code> ）都将放在引号中的原始命令之后。<code>np test.txt</code>将用notepad++打开test.txt。</p>
+<p>也可以创建clash.cmd文件，文件内容如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@echo off</span></span><br><span class="line"><span class="string">&quot;H:\ClashforWindows\Clash.for.Windows-0.15.2-win\Clash for Windows.exe&quot;</span> %*</span><br></pre></td></tr></table></figure>
+<p>在终端输入clash便可以运行Clash for Windows.exe。<br>在powershell和cmd中运行结果不同。</p>
+<h2 id="cmd命令"><a href="#cmd命令" class="headerlink" title="cmd命令"></a>cmd命令</h2><blockquote>
+<ol>
+<li>查看某个环境变量：输入 “set 变量名”即可，比如想查看path环境变量的值，即输入 set path</li>
+<li>修改环境变量 ：输入 “set 变量名&#x3D;变量内容”即可，比如set path&#x3D;”c”，查看path路径的时候，其值为”c:&quot;，即覆盖以前的内容</li>
+<li>给变量追加内容：输入“set 变量名&#x3D;%变量名%;变量内容”。如，为path添加一个新的路径，输入<code>set PATH=%PATH%;C:\Program Files (x86)\Notepad++</code>即可将<code>C:\Program Files (x86)\Notepad++</code>添加到path中<br><strong>注意所有的在cmd命令行下对环境变量的修改只对当前窗口有效，不是永久性的修改。也就是说当关闭此cmd命令行窗口后，将不再起作用。</strong><br>在高级系统设置中的环境变量里添加了新路径之后，若你之前打开的应用程序没关掉重启（在你没重启电脑的情况下），那你这个应用程序也可能读取不到该系统变量，所以你关掉重启该应用就好了。如果还是不行，打开cmd，输入命令 <code>set PATH=c</code>，这个命令是使你写在path中的变量立即生效，然后重启cmd验证</li>
+</ol>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/20/%E5%AD%A6%E4%B9%A0Git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -206,10 +330,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-09-19 16:47:52 / Modified: 13:43:32" itemprop="dateCreated datePublished" datetime="2022-09-19T16:47:52Z">2022-09-19</time>
+              <time title="Created: 2022-09-19 16:47:52" itemprop="dateCreated datePublished" datetime="2022-09-19T16:47:52Z">2022-09-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-20 13:56:19" itemprop="dateModified" datetime="2022-09-20T13:56:19Z">2022-09-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -249,14 +379,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.5k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -407,124 +537,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/19/blog/%E5%AD%A6%E4%B9%A0JS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cloud.jpg">
-      <meta itemprop="name" content="lichao Zhang">
-      <meta itemprop="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Iridescent-zhang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/09/19/blog/%E5%AD%A6%E4%B9%A0JS/" class="post-title-link" itemprop="url">学习JS</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-09-18 17:03:19" itemprop="dateCreated datePublished" datetime="2022-09-18T17:03:19Z">2022-09-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-19 08:45:38" itemprop="dateModified" datetime="2022-09-19T08:45:38Z">2022-09-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2022/09/19/blog/%E5%AD%A6%E4%B9%A0JS/" class="post-meta-item leancloud_visitors" data-flag-title="学习JS" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/09/19/blog/%E5%AD%A6%E4%B9%A0JS/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/09/19/blog/学习JS/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.2k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>JavaScript 是脚本语言<br>JavaScript 是可插入 HTML 页面的编程代码。<br>JavaScript 插入 HTML 页面后，可由所有的现代浏览器执行。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/09/19/blog/%E5%AD%A6%E4%B9%A0JS/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/09/Network/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -556,7 +568,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-19 13:43:28" itemprop="dateModified" datetime="2022-09-19T13:43:28Z">2022-09-19</time>
+                <time title="Modified: 2022-09-19 13:45:21" itemprop="dateModified" datetime="2022-09-19T13:45:21Z">2022-09-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -616,32 +628,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <span id="more"></span>
-<h3 id="Keyword"><a href="#Keyword" class="headerlink" title="Keyword"></a>Keyword</h3><p>路由器（router）：路由器与我们的设备进行连接，路由与路由之间连接构成巨大的“网络”。<br>调制解调器（modem）：电话这种基础设施将你和外部的世界连在一起，我们通过一种叫调制解调器的设备连接到电话这种网络。modem将网络信息和电话设施可以处理的信息进行转换。<br>互联网服务提供商（internet serve provider）：ISP是一家可以管理一些特殊的路由器的公司，这些路由器连接其他 ISP 的路由器。你的网络消息可以被 ISP 捕获并发送到相应的网络。<br>ip<br>域名：每个网络中的设备都有独一无二的ip地址，为方便，给ip地址取了一个“域名”，我们变可以通过域名通过网络连接到这些电脑。</p>
+          <h3 id="Keyword"><a href="#Keyword" class="headerlink" title="Keyword"></a>Keyword</h3><p>路由器（router）：路由器与我们的设备进行连接，路由与路由之间连接构成巨大的“网络”。<br>调制解调器（modem）：电话这种基础设施将你和外部的世界连在一起，我们通过一种叫调制解调器的设备连接到电话这种网络。modem将网络信息和电话设施可以处理的信息进行转换。<br>互联网服务提供商（internet serve provider）：ISP是一家可以管理一些特殊的路由器的公司，这些路由器连接其他 ISP 的路由器。你的网络消息可以被 ISP 捕获并发送到相应的网络。<br>ip<br>域名：每个网络中的设备都有独一无二的ip地址，为方便，给ip地址取了一个“域名”，我们变可以通过域名通过网络连接到这些电脑。</p>
 <p>互联网（internet）和网络（web）的区别：<br>互联网是一种基础的技术，它允许我们将成千上万的设备连在一起。在这些设备中，有一些我们称为网络服务器的设备可以发送文件并在我们设备的浏览器上显示，这便构成了网络。互联网是基础设施，网络是建立在这种基础设施上的服务，除了网络，还有一些服务，比如邮箱和IRC也是运行在互联网之上的。</p>
-<h3 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h3><p>HTTP 代理只能解释和处理 HTTP 和 HTTPS 网页，而 SOCKS5 代理可以处理任何流量。<br>Shadowsocks 和 SSR 都是当作 SOCKS5 代理服务器来突破防火长城 GFW 的限制。<br>代理和 VPN 的主要区别在于：VPN 会对传输流量进行加密，而代理不会加密流量。VPN 提供更稳定的连接，而代理断线的频率较高。</p>
-<p>网页，网站，网络服务器和搜索引擎的区别？</p>
-<blockquote>
-<p>网页是一份显示在网络浏览器上的HTML文档，这种网页文档可以插入各种各样不同类型的资源，例如：</p>
-<ul>
-<li>css样式信息–控制页面观感</li>
-<li>脚本–为页面添加交互性</li>
-<li>多媒体–图像，音频，视频</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>网站，也称作”site”（站点），是共享唯一域名的相互链接的网页的集合。访问网站时，输入域名，浏览器将会显示该网站的<strong>主要网页或主页</strong>。</p>
-</blockquote>
-<blockquote>
-<p>网络服务器：互联网上托管了许多网站的计算机。托管的意思即所有的网页和它们的支持文件在该服务器上都可用，当浏览器发起请求时，服务器将任意网页从托管的网站发送到任意用户的浏览器。</p>
-</blockquote>
-<blockquote>
-<p>搜索引擎是一个用来帮你找其他网页的<strong>网站</strong>。浏览器是一个接收并显示网页的软件！搜索引擎则是一个帮助用户从其他网站寻找网页的网站。搜索引擎（谷歌，必应）的主页面经常是我们使用的浏览器（谷歌浏览器）的默认开始页面，所以容易搞混，需要分清基础设施（浏览器）和服务（搜索引擎）。</p>
-</blockquote>
-<h3 id="MDN"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/What_is_a_web_server#%E9%9D%99%E6%80%81%E5%92%8C%E5%8A%A8%E6%80%81%E5%86%85%E5%AE%B9">什么是网络服务器</a></p>
-<p>HTTPS 经由 HTTP 进行通信，但利用 SSL&#x2F;TLS 来加密数据包。<br>HTTP 的 URL 是由 http:&#x2F;&#x2F; 起始与默认使用端口 80，而 HTTPS 的 URL 则是由 https:&#x2F;&#x2F; 起始与默认使用端口443。<br>浏览器作为 HTTP 客户端通过 URL 向 HTTP 服务端即 WEB 服务器发送所有请求。<br>HTTPS 的主要作用是在不安全的网络上创建一个安全信道，并可在使用适当的加密包和服务器证书可被验证且可被信任时，对窃听和中间人攻击提供合理的防护。<br>HTTPS 的信任基于预先安装在操作系统中的证书颁发机构（CA）</p>
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/http-vs-https.html">HTTP 与 HTTPS 的区别</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/09/09/Network/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1023,10 +1019,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-09-06 16:37:25 / Modified: 12:22:54" itemprop="dateCreated datePublished" datetime="2022-09-06T16:37:25Z">2022-09-06</time>
+              <time title="Created: 2022-09-06 16:37:25" itemprop="dateCreated datePublished" datetime="2022-09-06T16:37:25Z">2022-09-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-21 09:00:42" itemprop="dateModified" datetime="2022-09-21T09:00:42Z">2022-09-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -1066,7 +1068,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>97</span>
+              <span>121</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1183,13 +1185,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1239,7 +1241,7 @@
 		<div class="widget-wrap">
 		<div id="myCanvasContainer" class="widget tagcloud">
 		<canvas width="220" height="250" id="resCanvas" style="width=100%">
-			<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web%E5%89%8D%E7%AB%AF/" rel="tag">Web前端</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/internet/" rel="tag">internet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a><span class="tag-list-count">1</span></li></ul>
+			<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web%E5%89%8D%E7%AB%AF/" rel="tag">Web前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/" rel="tag">cmd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/internet/" rel="tag">internet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a><span class="tag-list-count">1</span></li></ul>
 		</canvas>
 		</div>
 		</div>
@@ -1272,13 +1274,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">11k</span>
+    <span title="Symbols count total">12k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">10 mins.</span>
+    <span title="Reading time total">11 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>

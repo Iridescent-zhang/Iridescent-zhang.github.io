@@ -30,8 +30,10 @@
 <meta property="og:image" content="https://www.runoob.com/manual/git-guide/img/trees.png">
 <meta property="og:image" content="https://www.runoob.com/manual/git-guide/img/branches.png">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2015/02/git-process.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2015/02/git-command.jpg">
 <meta property="article:published_time" content="2022-09-19T16:47:52.000Z">
-<meta property="article:modified_time" content="2022-09-19T13:43:32.734Z">
+<meta property="article:modified_time" content="2022-09-20T13:56:19.171Z">
 <meta property="article:author" content="lichao Zhang">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -213,10 +215,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-09-19 16:47:52 / Modified: 13:43:32" itemprop="dateCreated datePublished" datetime="2022-09-19T16:47:52Z">2022-09-19</time>
+              <time title="Created: 2022-09-19 16:47:52" itemprop="dateCreated datePublished" datetime="2022-09-19T16:47:52Z">2022-09-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-20 13:56:19" itemprop="dateModified" datetime="2022-09-20T13:56:19Z">2022-09-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -268,14 +276,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.5k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -299,7 +307,7 @@
 </li>
 <li><p>执行如下命令以将这些改动推送到远端仓库：<br> <code>git push origin master</code><br> 可以把 master 换成你想要推送的任何分支。</p>
 </li>
-<li><p>如果你想要将你的本地仓库连接到某个远程服务器（github），你可以使用如下命令添加：<br> <code>git remote add origin &lt;server&gt;</code><br> 如此你就能够将你的改动推送到所添加的服务器上去了。</p>
+<li><p>如果你想要将你的本地仓库连接到某个远程服务器（github），你可以使用如下命令添加：<br> <code>git remote add origin https://github.com/Iridescent-zhang/blog.git</code><br> 如此你就能够将你的改动推送到所添加的服务器上去了。</p>
 </li>
 <li><p>在你创建仓库的时候，master 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。<br><img src="https://www.runoob.com/manual/git-guide/img/branches.png" alt="分支"><br>创建一个叫做“feature_x”的分支，并切换过去：<br><code>git checkout -b feature_x</code><br>切换回主分支：<br><code>git checkout master</code><br>再把新建的分支删掉：<br><code>git branch -d feature_x</code><br>除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：<br><code>git push origin &lt;branch&gt;</code></p>
 </li>
@@ -322,7 +330,97 @@
 <li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。<br><img src="https://www.runoob.com/wp-content/uploads/2015/02/git-process.png" alt="Git工作流程"></li>
 </ul>
 </blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/songzhenhua/p/9312720.html">Windows下如何解决git bash的默认home目录路径问题</a></p>
+<h2 id="Git-工作区、暂存区和版本库"><a href="#Git-工作区、暂存区和版本库" class="headerlink" title="Git 工作区、暂存区和版本库"></a>Git 工作区、暂存区和版本库</h2><ul>
+<li>工作区：就是你在电脑里能看到的目录。</li>
+<li>暂存区：英文叫 stage 或 index。一般存放在 .git 目录下的 index 文件（.git&#x2F;index）中，所以我们把暂存区有时也叫作索引（index）。</li>
+<li>版本库：工作区中有一个隐藏目录 .git，这个不算工作区，而是 Git 的版本库。</li>
+</ul>
+<blockquote>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg" alt="工作区、版本库中的暂存区和版本库之间的关系"></p>
+<ul>
+<li>在版本库中标记为 “index” 的区域是暂存区（stage&#x2F;index），标记为 “master” 的是 master 分支所代表的目录树。</li>
+<li>图中我们可以看出此时 “HEAD” 实际是指向 master 分支的一个”游标”。所以图示的命令中出现 HEAD 的地方可以用 master 来替换。</li>
+<li>图中的 objects 标识的区域为 Git 的对象库，实际位于 “.git&#x2F;objects” 目录下，里面包含了创建的各种对象及内容。</li>
+<li>当对工作区修改（或新增）的文件执行 git add 命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新的对象中，而该对象的ID被记录在暂存区的文件索引中。</li>
+<li>当执行提交操作（git commit）时，暂存区的目录树写到版本库（对象库）中，master 分支会做相应的更新。即 master 指向的目录树就是提交时暂存区的目录树。</li>
+<li>当执行 git reset HEAD 命令时，暂存区的目录树会被重写，被 master 分支指向的目录树所替换，但是工作区不受影响。</li>
+<li>当执行 git rm –cached <file> 命令时，会直接从暂存区删除文件，工作区则不做出改变。</li>
+<li>当执行 git checkout . 或者 git checkout – <file> 命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区中的改动。</li>
+<li>当执行 git checkout HEAD . 或者 git checkout HEAD <file> 命令时，会用 HEAD 指向的 master 分支中的全部或者部分文件替换暂存区和以及工作区中的文件。这个命令也是极具危险性的，因为不但会清除工作区中未添加到暂存区中的改动，也会清除暂存区中未提交的改动。</li>
+</ul>
+</blockquote>
+<h2 id="Git操作"><a href="#Git操作" class="headerlink" title="Git操作"></a>Git操作</h2><p>Git 的工作就是创建和保存你项目的快照及与之后的快照进行对比。<br>本节将对有关创建与提交你的项目快照的命令作介绍。<br>Git 常用的是以下 6 个命令：git clone、git push、git add 、git commit、git checkout、git pull。<br><img src="https://www.runoob.com/wp-content/uploads/2015/02/git-command.jpg" alt="Git常用命令"></p>
+<blockquote>
+<p>workspace：工作区<br>staging area：暂存区&#x2F;缓存区<br>local repository： <strong>版本库或本地仓库</strong><br>remote repository：远程仓库</p>
+</blockquote>
+<blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init //初始化仓库</span><br><span class="line">git clone //拷贝一份远程仓库，也就是下载一个项目。</span><br><span class="line">git remote add origin git@github.com:yourName/yourRepo.git //添加远程地址, 后面的yourName和yourRepo表示你在github的用户名和仓库，加完之后进入.git，打开 config，这里会多出一个remote <span class="string">&quot;origin&quot;</span>内容，这就是刚才添加的远程地址，也可以直接修改config来配置远程地址。</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="Git-github"><a href="#Git-github" class="headerlink" title="Git github"></a>Git github</h2><p>create a new repository on the command line</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">&quot;# git-test&quot;</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin git@github.com:Iridescent-zhang/git-test.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
+<p>push an existing repository from the command line</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:Iridescent-zhang/git-test.git</span><br><span class="line">git branch -M main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/songzhenhua/p/9312720.html">Windows下如何解决git bash的默认home目录路径问题</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/nonfuxinyang/article/details/77206486">合并冲突</a></p>
 
     </div>
 
@@ -361,7 +459,10 @@
     <a href="/2022/09/19/%E5%AD%A6%E4%B9%A0JS/" rel="prev" title="学习JS">
       <i class="fa fa-chevron-left"></i> 学习JS
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/09/20/cmd/" rel="next" title="cmd">
+      cmd <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -463,7 +564,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">Git 工作流程</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">Git 工作流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E5%B7%A5%E4%BD%9C%E5%8C%BA%E3%80%81%E6%9A%82%E5%AD%98%E5%8C%BA%E5%92%8C%E7%89%88%E6%9C%AC%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">Git 工作区、暂存区和版本库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git%E6%93%8D%E4%BD%9C"><span class="nav-number">4.</span> <span class="nav-text">Git操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-github"><span class="nav-number">5.</span> <span class="nav-text">Git github</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -486,13 +587,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -542,7 +643,7 @@
 		<div class="widget-wrap">
 		<div id="myCanvasContainer" class="widget tagcloud">
 		<canvas width="220" height="250" id="resCanvas" style="width=100%">
-			<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web%E5%89%8D%E7%AB%AF/" rel="tag">Web前端</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/internet/" rel="tag">internet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a><span class="tag-list-count">1</span></li></ul>
+			<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web%E5%89%8D%E7%AB%AF/" rel="tag">Web前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/" rel="tag">cmd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/internet/" rel="tag">internet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a><span class="tag-list-count">1</span></li></ul>
 		</canvas>
 		</div>
 		</div>
@@ -575,13 +676,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">11k</span>
+    <span title="Symbols count total">12k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">10 mins.</span>
+    <span title="Reading time total">11 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
