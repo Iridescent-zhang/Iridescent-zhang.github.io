@@ -308,18 +308,6 @@ kbd {
   padding: 0.1em 0.3em;
   white-space: nowrap;
 }
-html,
-body {
-  overflow-y: scroll;
-}
-html,
-body {
-  overflow: scroll;
-  min-height: 101%;
-}
-html {
-  overflow: -moz-scrollbars-vertical;
-}
 .table-container {
   overflow: auto;
 }
@@ -1198,7 +1186,6 @@ pre .javascript .function {
 .sidebar {
   background: #222;
   bottom: 0;
-  box-shadow: inset 0 2px 6px #000;
   position: fixed;
   top: 0;
 }
@@ -1266,7 +1253,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff8eff;
+  background: #ffff42;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1572,6 +1559,25 @@ pre .javascript .function {
   50%, 70% {
     transform: scale(1.1);
   }
+}
+.back-to-top {
+  font-size: 12px;
+  text-align: center;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+.back-to-top {
+  background: transparent;
+  margin: 8px -10px -20px;
+  opacity: 0;
+}
+.back-to-top.back-to-top-on {
+  cursor: pointer;
+  opacity: 0.6;
+}
+.back-to-top.back-to-top-on:hover {
+  opacity: 0.8;
 }
 .reading-progress-bar {
   background: #37c6c0;
@@ -2639,6 +2645,13 @@ ul.breadcrumb li + li:last-child {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.back-to-top {
+  background: var(--body-bg-color);
+  margin: -4px -10px -18px;
+}
+.back-to-top.back-to-top-on {
+  margin-top: 16px;
+}
 .content-wrap {
   background: initial;
   box-shadow: initial;
@@ -2762,4 +2775,65 @@ ul.breadcrumb li + li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+.moon-menu,
+.moon-menu-text {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  z-index: 999;
+}
+.moon-menu-svg,
+.moon-menu-button {
+  width: 4rem;
+  height: 4rem;
+}
+.moon-menu-button {
+  cursor: pointer;
+}
+.moon-menu-cricle {
+  fill: #607d8b;
+  opacity: 0.9;
+}
+.moon-menu-border {
+  stroke: #607d8b;
+  opacity: 0.9;
+  stroke-width: 1px;
+  fill: none;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+.moon-menu-points {
+  transform: translate3d(2rem, 2rem, 0);
+}
+.moon-menu-point {
+  fill: #fff;
+  transition: all 0.15s cubic-bezier(0, 0, 0.382, 1.618);
+}
+.moon-menu-text {
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  line-height: 4rem;
+  font-size: 1.2rem;
+  display: none;
+}
+.moon-menu-item {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #000;
+  opacity: 0;
+  display: block;
+  transition: all 0.3s cubic-bezier(0, 0, 0.382, 1.618);
+  z-index: -1;
+  text-align: center;
+  line-height: 2.5rem;
+  color: #fff;
+  cursor: pointer;
 }
