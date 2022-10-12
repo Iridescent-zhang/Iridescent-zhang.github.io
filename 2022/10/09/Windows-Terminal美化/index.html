@@ -22,14 +22,14 @@
     var CONFIG = {"hostname":"iridescent-zhang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"valine","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus","order":-1},"valine":{"text":"Valine","order":-2}},"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="颜值就是生产力。">
+  <meta name="description" content="颜值就是生产力">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows-Terminal美化">
 <meta property="og:url" content="https://iridescent-zhang.github.io/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/index.html">
 <meta property="og:site_name" content="Iridescent-zhang">
-<meta property="og:description" content="颜值就是生产力。">
+<meta property="og:description" content="颜值就是生产力">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.postimg.cc/13rzZpnj/1.jpg">
+<meta property="og:image" content="https://i.postimg.cc/15QHCpYd/1.jpg">
 <meta property="og:image" content="https://i.postimg.cc/XJfZXTpn/2.jpg">
 <meta property="og:image" content="https://i.postimg.cc/sX7BgQCv/1.jpg">
 <meta property="og:image" content="https://i.postimg.cc/xd1Gv0nT/1.jpg">
@@ -41,11 +41,11 @@
 <meta property="og:image" content="https://i.postimg.cc/gcCfN7wP/7.jpg">
 <meta property="og:image" content="https://i.postimg.cc/sXBNJPsX/8.jpg">
 <meta property="article:published_time" content="2022-10-09T10:43:08.000Z">
-<meta property="article:modified_time" content="2022-10-11T11:57:46.509Z">
+<meta property="article:modified_time" content="2022-10-11T12:51:00.647Z">
 <meta property="article:author" content="lichao Zhang">
 <meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.postimg.cc/13rzZpnj/1.jpg">
+<meta name="twitter:image" content="https://i.postimg.cc/15QHCpYd/1.jpg">
 
 <link rel="canonical" href="https://iridescent-zhang.github.io/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/">
 
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-10-11 11:57:46" itemprop="dateModified" datetime="2022-10-11T11:57:46Z">2022-10-11</time>
+                <time title="Modified: 2022-10-11 12:51:00" itemprop="dateModified" datetime="2022-10-11T12:51:00Z">2022-10-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -289,7 +289,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>颜值就是生产力。</p>
+        <p><strong>颜值就是生产力</strong></p>
 <span id="more"></span>
 <h2 id="美化PowerShell"><a href="#美化PowerShell" class="headerlink" title="美化PowerShell"></a>美化PowerShell</h2><blockquote>
 <ol>
@@ -297,11 +297,11 @@
 </li>
 <li><p>安装powershell最新版<br>到 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.2">Microsoft&#x2F;Powershell</a>寻找下载方法，我用的是：<code>winget</code></p>
 </li>
-<li><p>安装 On My Posh<br>最好以管理员身份运行powershell。</p>
+<li><p>安装 Oh My Posh<br>最好以管理员身份运行powershell。</p>
 <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget install JanDeDobbeleer.OhMyPosh -s winget</span><br></pre></td></tr></table></figure>
 <p>这个下载内容包括两个东西:</p>
 <ul>
-<li>oh-my-posh.exe-Windows executable<br>这个是基于Windows系统的oh-my-posh的可执行文件, 但是点击运行没有用, 必须要在Powershell中执行。在Powershell输入on-my-posh可以运行程序，如果报错，查看path环境变量是否包含<img src="https://i.postimg.cc/13rzZpnj/1.jpg">如果包含的话，说明该环境变量在当前程序不起作用，重启终端即可。<br>查看on-my-posh版本  <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">on-my-posh version</span><br></pre></td></tr></table></figure></li>
+<li>oh-my-posh.exe-Windows executable<br>这个是基于Windows系统的oh-my-posh的可执行文件, 但是点击运行没有用, 必须要在Powershell中执行。在Powershell输入oh-my-posh可以运行程序，如果报错，查看path环境变量是否包含<img src="https://i.postimg.cc/15QHCpYd/1.jpg"><br>如果包含的话，说明该环境变量在当前程序不起作用，重启终端即可。<br>查看oh-my-posh版本  <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oh-my-posh version</span><br></pre></td></tr></table></figure></li>
 <li>theme<br>  oh-my-posh的主题。<br>  查看环境变量是否包含：<br>  <img src="https://i.postimg.cc/XJfZXTpn/2.jpg"></li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/installation/windows">官方文档</a>给出了oh-my-posh的更新命令, 如果是刚刚下载的那么就不需要更新了。</p>
@@ -318,10 +318,10 @@
 <li>打开PROFILE文件<br>  <code>notepad $PROFILE</code></li>
 <li>在PROFILE文件中添加以下内容<br>  <code>oh-my-posh init pwsh | Invoke-Expression</code></li>
 <li>执行PROFILE脚本文件, 通过以下这条命令<br>  <code>. $PROFILE</code> &#x2F;&#x2F;执行脚本文件命令<br>更换主题，修改<code>$profile</code>文件对应主题名即可。<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oh-my-posh init pwsh --config ~\AppData\Local\Programs\oh-my-posh\themes\atomic.omp.json | Invoke-Expression</span><br></pre></td></tr></table></figure>
-<strong>建议</strong>按照这个流程来，之前我在装了win11的新电脑配置on-my-posh的时候，与3、4两步配置流程上有点差异(但是同样的配置方法在我win10的电脑上是有效的)，导致配置完成非常怪，显示的主题无法更改且并非默认主题，并且pwsh启动时间长达5s，之后按照3、4流程走一遍还是达到了预期效果。</li>
+<strong>建议</strong>按照这个流程来，之前我在装了win11的新电脑配置oh-my-posh的时候，与3、4两步配置流程上有点差异(但是同样的配置方法在我win10的电脑上是有效的)，导致配置完成非常怪，显示的主题无法更改且并非默认主题，并且pwsh启动时间长达5s，之后按照3、4流程走一遍还是达到了预期效果。</li>
 </ul>
 </li>
-<li><p>修改字体<br>On My Posh 的部分主题需要相应的字体支持，否则会出现乱码。<br>安装<code>Nerd Font</code>系列字体。<a target="_blank" rel="noopener" href="https://www.nerdfonts.com/font-downloads">字体下载地址</a><br>我安装的是<code>Caskaydia Vove Nerd Font</code>。<br>在shell的配置中选择字体：<br><img src="https://i.postimg.cc/sX7BgQCv/1.jpg"><br><strong>顺便说一下</strong>，这里的配色方案就是Windows Terminal配置文件中的scheme，也是可以自己配置的。</p>
+<li><p>修改字体<br>Oh My Posh 的部分主题需要相应的字体支持，否则会出现乱码。<br>安装<code>Nerd Font</code>系列字体。<a target="_blank" rel="noopener" href="https://www.nerdfonts.com/font-downloads">字体下载地址</a><br>我安装的是<code>Caskaydia Vove Nerd Font</code>。<br>在shell的配置中选择字体：<br><img src="https://i.postimg.cc/sX7BgQCv/1.jpg"><br><strong>顺便说一下</strong>，这里的配色方案就是Windows Terminal配置文件中的scheme，也是可以自己配置的。</p>
 </li>
 </ol>
 <p><strong>安装插件可以参考</strong><a target="_blank" rel="noopener" href="https://www.kwchang0831.dev/dev-env/pwsh/oh-my-posh">安裝新版 Oh My Posh 與插件</a></p>
@@ -371,7 +371,7 @@
 <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. $profile</span><br></pre></td></tr></table></figure>
 </blockquote>
 <blockquote>
-<p>下载的 On My Posh 主题在文件夹<code>~\AppData\Local\Programs\oh-my-posh\themes</code>，里面有包括<code>craver.omp.json 、jandedobbeleer.omp.json</code>在内的许多<code>.omp.json</code>文件，修改<code>$profile</code>对应位置即可修改主题。<br>预览主题在 <a target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/themes">On my posh 官网</a><br>也可以输入命令查看</p>
+<p>下载的 Oh My Posh 主题在文件夹<code>~\AppData\Local\Programs\oh-my-posh\themes</code>，里面有包括<code>craver.omp.json 、jandedobbeleer.omp.json</code>在内的许多<code>.omp.json</code>文件，修改<code>$profile</code>对应位置即可修改主题。<br>预览主题在 <a target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/themes">Oh my posh 官网</a><br>也可以输入命令查看</p>
 <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Get-PoshThemes</span><br></pre></td></tr></table></figure>
 <p><strong>随便推荐几个主题:</strong><br><img src="https://i.postimg.cc/xd1Gv0nT/1.jpg" alt="1"><br><img src="https://i.postimg.cc/8PC1g9pf/2.jpg" alt="2"><br><img src="https://i.postimg.cc/d1JbmZDZ/3.jpg" alt="3"><br><img src="https://i.postimg.cc/TY54bJQH/4.jpg" alt="4"><br><img src="https://i.postimg.cc/fLg8tVdN/5.jpg" alt="5"><br><img src="https://i.postimg.cc/g2Wbk7dK/6.jpg" alt="6"><br><img src="https://i.postimg.cc/gcCfN7wP/7.jpg" alt="7"><br><img src="https://i.postimg.cc/sXBNJPsX/8.jpg" alt="8"></p>
 </blockquote>
@@ -390,7 +390,7 @@
 <p>查看powershell版本</p>
 <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">PSVersionTable</span></span><br></pre></td></tr></table></figure>
 </blockquote>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://sspai.com/post/69911">Oh My Posh：全平台终端提示符个性化工具</a><br><a target="_blank" rel="noopener" href="https://www.kwchang0831.dev/dev-env/pwsh/oh-my-posh">安裝新版 Oh My Posh 與插件</a><br><a target="_blank" rel="noopener" href="https://chaisw.cn/blog/1912.html">有讲到Tabby</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/ahahayaa/article/details/125470204"></a></p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://sspai.com/post/69911">Oh My Posh：全平台终端提示符个性化工具</a><br><a target="_blank" rel="noopener" href="https://www.kwchang0831.dev/dev-env/pwsh/oh-my-posh">安裝新版 Oh My Posh 與插件</a><br><a target="_blank" rel="noopener" href="https://chaisw.cn/blog/1912.html">有讲到Tabby</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/ahahayaa/article/details/125470204">3，4步骤来源</a></p>
 
     </div>
 
@@ -429,7 +429,10 @@
     <a href="/2022/09/24/latexNote/" rel="prev" title="latexNote">
       <i class="fa fa-chevron-left"></i> latexNote
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/10/12/PCB-Design/" rel="next" title="PCB Design">
+      PCB Design <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -505,7 +508,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -597,13 +600,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">74k</span>
+    <span title="Symbols count total">77k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">1:08</span>
+    <span title="Reading time total">1:10</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>

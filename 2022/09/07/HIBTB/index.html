@@ -31,7 +31,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.postimg.cc/JnWZJsj6/2.jpg">
 <meta property="article:published_time" content="2022-09-06T17:18:48.000Z">
-<meta property="article:modified_time" content="2022-10-02T05:08:40.244Z">
+<meta property="article:modified_time" content="2022-10-12T08:28:12.942Z">
 <meta property="article:author" content="lichao Zhang">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="next">
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-10-02 05:08:40" itemprop="dateModified" datetime="2022-10-02T05:08:40Z">2022-10-02</time>
+                <time title="Modified: 2022-10-12 08:28:12" itemprop="dateModified" datetime="2022-10-12T08:28:12Z">2022-10-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,14 +261,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.4k</span>
+              <span>2.9k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -326,6 +326,18 @@
  <strong>CDN</strong>的全称是Content Delivery Network，即内容分发网络。CDN是构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。由于CDN是为加快网络访问速度而被优化的网络覆盖层，因此被形象地称为“网络加速器”。</li>
 </ul>
 </li>
+</ol>
+<h3 id="如何写博客"><a href="#如何写博客" class="headerlink" title="如何写博客"></a>如何写博客</h3><ol>
+<li>创建博客文章 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">&quot;fileName&quot;</span></span><br></pre></td></tr></table></figure>
+ 在目录 <code>博客根目录\source\_posts</code>会出现文件<code>fileName.md</code>，在该文件中写入你想写入的东西。</li>
+<li>产生(generate)博客内容<br>当你对文件<code>fileName.md</code>进行了更改，并且将它更新到你的博客上，执行此命令。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></li>
+<li>在本地查看博客内容 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+ 执行该命令后终端会显示这样的语句 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">INFO  Hexo <span class="keyword">is</span> running at http://localhost:<span class="number">4000</span>/ . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+ 意思是在本地网页<code>http://localhost:4000/</code>可以查看你的博客，你可以看到博客上出现了标题为<code>fileName</code>的文章，你对文件<code>fileName.md</code>的更改也更新到这里了。</li>
+<li>将博客内容部署到远端 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+ 执行此命令后，博客内容便部署到了远端。比如我将博客部署到了github，我在<a href="https://iridescent-zhang.github.io/">iridescent-zhang</a>这里就能看到更新的博客了。</li>
+<li>清除hexo 缓存 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+ <code>hexo g</code>会产生缓存，不清除的话，有时候<code>hexo d</code>达不到预期效果，导致本地和远端显示的博客不一样。另外，<code>hexo d</code>花费较长时间，所以一般先在<code>hexo s</code>查看博客内容，确定没问题之后再部署到远端。</li>
 </ol>
 <h3 id="配置hexo-next详细教程"><a href="#配置hexo-next详细教程" class="headerlink" title="配置hexo next详细教程"></a>配置hexo next详细教程</h3><p><a target="_blank" rel="noopener" href="https://minyuchengmin.github.io/2020/02/26/hexo-bo-ke-xin-ban-next-zhu-ti-da-jian/#valine-comments">主要参考</a><br><a target="_blank" rel="noopener" href="https://blog.shijy16.cn/2021/05/13/%E9%85%8D%E7%BD%AE/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">含个人域名重定向和HTTPS</a></p>
 <h3 id="something-else"><a href="#something-else" class="headerlink" title="something else"></a>something else</h3><p><a target="_blank" rel="noopener" href="https://unsplash.com/">unsplash</a><em>里的图片非常清爽，并且提供api服务，从中挑选博客背景图非常合适。</em></p>
@@ -431,7 +443,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-I-bulid-this-blog"><span class="nav-number">1.</span> <span class="nav-text">How I bulid this blog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#some-problems"><span class="nav-number">1.1.</span> <span class="nav-text">some problems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEhexo-next%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">配置hexo next详细教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#something-else"><span class="nav-number">1.3.</span> <span class="nav-text">something else</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-I-bulid-this-blog"><span class="nav-number">1.</span> <span class="nav-text">How I bulid this blog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#some-problems"><span class="nav-number">1.1.</span> <span class="nav-text">some problems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%86%99%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.2.</span> <span class="nav-text">如何写博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEhexo-next%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">配置hexo next详细教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#something-else"><span class="nav-number">1.4.</span> <span class="nav-text">something else</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -447,7 +459,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -539,13 +551,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">74k</span>
+    <span title="Symbols count total">77k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">1:08</span>
+    <span title="Reading time total">1:10</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
