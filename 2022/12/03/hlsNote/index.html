@@ -22,30 +22,51 @@
     var CONFIG = {"hostname":"iridescent-zhang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"valine","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus","order":-1},"valine":{"text":"Valine","order":-2}},"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Iridescent-zhang">
-<meta property="og:url" content="https://iridescent-zhang.github.io/index.html">
+  <meta name="description" content="参考资料pynq-z2资料下载TUL pynq-z2 毕设题目基于HLS的手势识别系统设计Design of gesture recognition system based on High Level Synthesis实验室建设，硬件，难 手势是人们常用的肢体语言之一，符合人类日常习惯的交互手段，是一种自然直观、有效简洁的沟通方式，在日常生活中人们之间的交流通常会辅以手势来传达一些信息或表达某">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hlsNote">
+<meta property="og:url" content="https://iridescent-zhang.github.io/2022/12/03/hlsNote/index.html">
 <meta property="og:site_name" content="Iridescent-zhang">
-<meta property="og:description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
+<meta property="og:description" content="参考资料pynq-z2资料下载TUL pynq-z2 毕设题目基于HLS的手势识别系统设计Design of gesture recognition system based on High Level Synthesis实验室建设，硬件，难 手势是人们常用的肢体语言之一，符合人类日常习惯的交互手段，是一种自然直观、有效简洁的沟通方式，在日常生活中人们之间的交流通常会辅以手势来传达一些信息或表达某">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/ncxXTjcb/5.jpg">
+<meta property="og:image" content="https://i.postimg.cc/cCyrp6R3/6.jpg">
+<meta property="og:image" content="https://i.postimg.cc/65QyDsRY/7.jpg">
+<meta property="og:image" content="https://i.postimg.cc/tgb4gfvV/1.jpg">
+<meta property="og:image" content="https://i.postimg.cc/FsBQqqQQ/2.jpg">
+<meta property="og:image" content="https://i.postimg.cc/43CR49dL/3.jpg">
+<meta property="og:image" content="https://i.postimg.cc/5tq57q5v/4.jpg">
+<meta property="og:image" content="https://i.postimg.cc/9QnLjBVr/10.jpg">
+<meta property="og:image" content="https://i.postimg.cc/fRvT3b0g/14.jpg">
+<meta property="og:image" content="https://i.postimg.cc/3xQF8tgF/15.jpg">
+<meta property="og:image" content="https://i.postimg.cc/j216VbTR/16.jpg">
+<meta property="og:image" content="https://i.postimg.cc/pdZ7GT0n/11.jpg">
+<meta property="og:image" content="https://i.postimg.cc/28ZJWmZh/12.jpg">
+<meta property="og:image" content="https://i.postimg.cc/sXnCgRNq/13.jpg">
+<meta property="og:image" content="https://i.postimg.cc/hvDbQZ1B/9.jpg">
+<meta property="og:image" content="https://i.postimg.cc/zXN40q0z/8.jpg">
+<meta property="og:image" content="https://i.postimg.cc/ZKxp3r3Z/17.jpg">
+<meta property="og:image" content="https://i.postimg.cc/TPT9pg95/18.jpg">
+<meta property="article:published_time" content="2022-12-02T16:24:20.000Z">
+<meta property="article:modified_time" content="2022-12-02T08:24:47.487Z">
 <meta property="article:author" content="lichao Zhang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/ncxXTjcb/5.jpg">
 
-<link rel="canonical" href="https://iridescent-zhang.github.io/">
+<link rel="canonical" href="https://iridescent-zhang.github.io/2022/12/03/hlsNote/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Iridescent-zhang</title>
+  <title>hlsNote | Iridescent-zhang</title>
   
 
 
@@ -179,9 +200,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -197,10 +219,9 @@
       <meta itemprop="name" content="Iridescent-zhang">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/03/hlsNote/" class="post-title-link" itemprop="url">hlsNote</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          hlsNote
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -221,6 +242,18 @@
               <span class="post-meta-item-text">Views: </span>
               <span class="leancloud-visitors-count"></span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/12/03/hlsNote/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/12/03/hlsNote/" itemprop="commentCount"></span>
+    </a>
+  </span>
   
   <br>
             <span class="post-meta-item" title="Symbols count in article">
@@ -247,7 +280,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="http://e-elements.com/product/show/id/60.shtml">pynq-z2资料下载</a><br><a target="_blank" rel="noopener" href="https://www.tulembedded.com/FPGA/ProductsPYNQ-Z2.html">TUL pynq-z2</a></p>
+        <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="http://e-elements.com/product/show/id/60.shtml">pynq-z2资料下载</a><br><a target="_blank" rel="noopener" href="https://www.tulembedded.com/FPGA/ProductsPYNQ-Z2.html">TUL pynq-z2</a></p>
 <h1 id="毕设题目"><a href="#毕设题目" class="headerlink" title="毕设题目"></a>毕设题目</h1><p><strong>基于HLS的手势识别系统设计</strong><br>Design of gesture recognition system based on High Level Synthesis<br>实验室建设，硬件，难</p>
 <p>手势是人们常用的肢体语言之一，符合人类日常习惯的交互手段，是一种自然直观、有效简洁的沟通方式，在日常生活中人们之间的交流通常会辅以手势来传达一些信息或表达某种特定的意图。随着人工智能和计算机视觉技术的迅猛发展，智能化设备逐渐融入到人们生活的方方面面，因此对各类人机交互的需求也在不断增加，手势识别逐渐成为基于计算机视觉的智能人机交互的重要研究领域。 <strong>本项目希望采用面向FPGA应用的高层逻辑综合（HLS）技术，通过学习比较成熟的手势识别相关算法，通过HLS技术将算法转化为FPGA可综合的硬件描述语言（HDL）知识产权（IP）核模块，在FPGA中采用硬件实现基本的手势识别算法，并对比算法的实现性能；通过优化，进一步提高手势识别算法的实时性。</strong> 设计要求如下：</p>
 <blockquote>
@@ -438,910 +471,54 @@
 
 
 
-      
     </div>
 
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/11/09/AI-Note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cloud.jpg">
-      <meta itemprop="name" content="lichao Zhang">
-      <meta itemprop="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Iridescent-zhang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/09/AI-Note/" class="post-title-link" itemprop="url">AI-Note</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-11-08 19:53:05" itemprop="dateCreated datePublished" datetime="2022-11-08T19:53:05Z">2022-11-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-14 03:00:10" itemprop="dateModified" datetime="2022-11-14T03:00:10Z">2022-11-14</time>
-              </span>
-
-          
-            <span id="/2022/11/09/AI-Note/" class="post-meta-item leancloud_visitors" data-flag-title="AI-Note" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>0</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <!-- flag of hidden posts -->
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/10/25/pynqNote/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cloud.jpg">
-      <meta itemprop="name" content="lichao Zhang">
-      <meta itemprop="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Iridescent-zhang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/10/25/pynqNote/" class="post-title-link" itemprop="url">pynqNote</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-10-25 11:15:10" itemprop="dateCreated datePublished" datetime="2022-10-25T11:15:10Z">2022-10-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-10-29 11:59:44" itemprop="dateModified" datetime="2022-10-29T11:59:44Z">2022-10-29</time>
-              </span>
-
-          
-            <span id="/2022/10/25/pynqNote/" class="post-meta-item leancloud_visitors" data-flag-title="pynqNote" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>17k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>16 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>PYNQ is an open-source project from Xilinx® that makes it easier to use Xilinx platforms.<br>Using the Python language and libraries, designers can exploit the benefits of programmable logic and microprocessors to build more capable and exciting electronic systems.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/10/25/pynqNote/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>lichao Zhang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://iridescent-zhang.github.io/2022/12/03/hlsNote/" title="hlsNote">https://iridescent-zhang.github.io/2022/12/03/hlsNote/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/10/13/lost-Weight/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cloud.jpg">
-      <meta itemprop="name" content="lichao Zhang">
-      <meta itemprop="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Iridescent-zhang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/10/13/lost-Weight/" class="post-title-link" itemprop="url">lost Weight</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-10-12 16:28:45" itemprop="dateCreated datePublished" datetime="2022-10-12T16:28:45Z">2022-10-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-14 02:59:16" itemprop="dateModified" datetime="2022-11-14T02:59:16Z">2022-11-14</time>
-              </span>
-
-          
-            <span id="/2022/10/13/lost-Weight/" class="post-meta-item leancloud_visitors" data-flag-title="lost Weight" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>营养一定要均衡。</p>
-<p>有氧运动+无氧运动+低卡饮食&#x3D;最好的减肥方法没有之一。</p>
-<p>减不下来的原因只有两个：不是猪一样的吃就是猪一样的练。你看看你是哪个？</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/10/13/lost-Weight/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/10/12/PCB-Design/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cloud.jpg">
-      <meta itemprop="name" content="lichao Zhang">
-      <meta itemprop="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Iridescent-zhang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/10/12/PCB-Design/" class="post-title-link" itemprop="url">PCB Design</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-10-11 20:57:16" itemprop="dateCreated datePublished" datetime="2022-10-11T20:57:16Z">2022-10-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-14 03:00:35" itemprop="dateModified" datetime="2022-11-14T03:00:35Z">2022-11-14</time>
-              </span>
-
-          
-            <span id="/2022/10/12/PCB-Design/" class="post-meta-item leancloud_visitors" data-flag-title="PCB Design" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>0</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <!-- flag of hidden posts -->
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cloud.jpg">
-      <meta itemprop="name" content="lichao Zhang">
-      <meta itemprop="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Iridescent-zhang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/" class="post-title-link" itemprop="url">Windows-Terminal美化</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-10-09 10:43:08" itemprop="dateCreated datePublished" datetime="2022-10-09T10:43:08Z">2022-10-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-10-11 12:51:00" itemprop="dateModified" datetime="2022-10-11T12:51:00Z">2022-10-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/shell/" itemprop="url" rel="index"><span itemprop="name">shell</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/" class="post-meta-item leancloud_visitors" data-flag-title="Windows-Terminal美化" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>17k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>16 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>颜值就是生产力</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/09/AI-Note/" rel="prev" title="AI-Note">
+      <i class="fa fa-chevron-left"></i> AI-Note
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/24/latexNote/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cloud.jpg">
-      <meta itemprop="name" content="lichao Zhang">
-      <meta itemprop="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Iridescent-zhang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/09/24/latexNote/" class="post-title-link" itemprop="url">latexNote</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-09-23 18:24:56" itemprop="dateCreated datePublished" datetime="2022-09-23T18:24:56Z">2022-09-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-14 08:51:34" itemprop="dateModified" datetime="2022-11-14T08:51:34Z">2022-11-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2022/09/24/latexNote/" class="post-meta-item leancloud_visitors" data-flag-title="latexNote" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>15k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>13 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="配置vscode-texlive-SumatraPDF环境"><a href="#配置vscode-texlive-SumatraPDF环境" class="headerlink" title="配置vscode texlive SumatraPDF环境"></a>配置vscode texlive SumatraPDF环境</h2><h3 id="关于-TeX-Live"><a href="#关于-TeX-Live" class="headerlink" title="关于 TeX Live"></a>关于 TeX Live</h3><p>所谓 TeX 发行，也叫 TeX 发行版、<strong>TeX 系统</strong>或者 TeX 套装，指的是包括 <strong>TeX 系统的各种可执行程序，以及他们执行时需要的一些辅助程序和宏包文档</strong> 的集合。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/09/24/latexNote/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/20/cmdNote/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cloud.jpg">
-      <meta itemprop="name" content="lichao Zhang">
-      <meta itemprop="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Iridescent-zhang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/09/20/cmdNote/" class="post-title-link" itemprop="url">cmd</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-09-20 14:56:32" itemprop="dateCreated datePublished" datetime="2022-09-20T14:56:32Z">2022-09-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-10-11 12:50:59" itemprop="dateModified" datetime="2022-10-11T12:50:59Z">2022-10-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/windows/" itemprop="url" rel="index"><span itemprop="name">windows</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2022/09/20/cmdNote/" class="post-meta-item leancloud_visitors" data-flag-title="cmd" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>环境变量是操作系统用来指定运行环境的一些参数。当你运行某些程序时，除了在当前文件夹中寻找外，还会到这些环境变量中去查找，比如“path”就是一个变量，里面存储了一些常用的命令所存放的目录路径。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/09/20/cmdNote/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/20/GitNote/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cloud.jpg">
-      <meta itemprop="name" content="lichao Zhang">
-      <meta itemprop="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Iridescent-zhang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/09/20/GitNote/" class="post-title-link" itemprop="url">学习Git</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-09-19 16:47:52" itemprop="dateCreated datePublished" datetime="2022-09-19T16:47:52Z">2022-09-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-10-10 13:49:08" itemprop="dateModified" datetime="2022-10-10T13:49:08Z">2022-10-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2022/09/20/GitNote/" class="post-meta-item leancloud_visitors" data-flag-title="学习Git" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>8.4k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>8 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>Git 是一个开源的<strong>分布式-版本控制系统</strong>，用于敏捷高效地处理任何或小或大的项目。<br>Git 与常用的版本控制工具 CVS, Subversion（SVN）等不同，它采用了分布式版本库的方式，不必服务器端软件支持。<br>Git 不仅仅是个版本控制系统，它也是个内容管理系统(CMS)，工作管理系统等。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/09/20/GitNote/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/19/JsNote/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cloud.jpg">
-      <meta itemprop="name" content="lichao Zhang">
-      <meta itemprop="description" content="这是我的个人博客，主要写一些技术类的文章，记录感兴趣的知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Iridescent-zhang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/09/19/JsNote/" class="post-title-link" itemprop="url">学习JS</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-09-18 17:03:19 / Modified: 14:24:05" itemprop="dateCreated datePublished" datetime="2022-09-18T17:03:19Z">2022-09-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2022/09/19/JsNote/" class="post-meta-item leancloud_visitors" data-flag-title="学习JS" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.2k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>JavaScript 是脚本语言<br>JavaScript 是可插入 HTML 页面的编程代码。<br>JavaScript 插入 HTML 页面后，可由所有的现代浏览器执行。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/09/19/JsNote/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1388,6 +565,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">1.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%95%E8%AE%BE%E9%A2%98%E7%9B%AE"><span class="nav-number">2.</span> <span class="nav-text">毕设题目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HLS%E7%AE%80%E4%BB%8B"><span class="nav-number">3.</span> <span class="nav-text">HLS简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E5%B1%82%E7%BB%BC%E5%90%88%E7%AE%80%E4%BB%8B"><span class="nav-number">3.1.</span> <span class="nav-text">高层综合简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HLS%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B"><span class="nav-number">3.2.</span> <span class="nav-text">HLS设计流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E7%BB%BC%E5%90%88"><span class="nav-number">3.3.</span> <span class="nav-text">接口综合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E7%BB%BC%E5%90%88%EF%BC%9A"><span class="nav-number">3.3.1.</span> <span class="nav-text">接口综合：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%BB%BC%E5%90%88"><span class="nav-number">3.4.</span> <span class="nav-text">算法综合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90%E5%87%BA%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E5%92%8C%E6%8E%A7%E5%88%B6%E7%94%B5%E8%B7%AF"><span class="nav-number">3.4.1.</span> <span class="nav-text">解析出数据通路和控制电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E5%92%8C%E7%BB%91%E5%AE%9A"><span class="nav-number">3.4.2.</span> <span class="nav-text">调度和绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">3.4.3.</span> <span class="nav-text">优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HLS%E5%BA%93"><span class="nav-number">3.5.</span> <span class="nav-text">HLS库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HLS-%E7%BC%96%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">HLS 编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E5%85%A5%E9%97%A8"><span class="nav-number">4.1.</span> <span class="nav-text">循环入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E6%B5%81%E6%B0%B4%E6%89%93%E6%8B%8D"><span class="nav-number">4.1.1.</span> <span class="nav-text">循环流水打拍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%BE%AA%E7%8E%AF%E6%B5%81%E6%B0%B4%E6%89%93%E6%8B%8D"><span class="nav-number">4.1.2.</span> <span class="nav-text">自动循环流水打拍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E7%BB%95%E5%B7%B2%E6%B5%81%E6%B0%B4%E6%89%93%E6%8B%8D%E7%9A%84%E5%BE%AA%E7%8E%AF%E4%BB%A5%E4%BF%9D%E9%9A%9C%E6%80%A7%E8%83%BD"><span class="nav-number">4.1.3.</span> <span class="nav-text">回绕已流水打拍的循环以保障性能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HLS-%E5%BA%93"><span class="nav-number">5.</span> <span class="nav-text">HLS 库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BB%E6%84%8F%E7%B2%BE%E5%BA%A6%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%BA%93-arbitrary-precision"><span class="nav-number">5.1.</span> <span class="nav-text">任意精度数据类型库(arbitrary precision)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E4%BA%8E-C-%E7%9A%84%E4%BB%BB%E6%84%8F%E6%95%B4%E6%95%B0%E7%B2%BE%E5%BA%A6%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.1.1.</span> <span class="nav-text">用于 C++ 的任意整数精度类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E4%BA%8E-C-%E7%9A%84%E4%BB%BB%E6%84%8F%E7%B2%BE%E5%BA%A6%E5%AE%9A%E7%82%B9%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.1.2.</span> <span class="nav-text">用于 C++ 的任意精度定点数据类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vitis-%E4%BD%BF%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">Vitis 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="nav-number">6.1.</span> <span class="nav-text">嵌入式软件开发流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vitis-%E8%BD%AF%E4%BB%B6%E5%B9%B3%E5%8F%B0%E4%B8%AD%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E7%BB%93%E6%9E%84"><span class="nav-number">6.2.</span> <span class="nav-text">Vitis 软件平台中的工作空间结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vitis-%E8%BD%AF%E4%BB%B6%E5%B9%B3%E5%8F%B0%E4%B8%8E-SDK-%E4%B9%8B%E6%AF%94%E8%BE%83"><span class="nav-number">6.3.</span> <span class="nav-text">Vitis 软件平台与 SDK 之比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-pynq-z2-%E5%AE%8C%E6%88%90HLS%E6%B5%81%E7%A8%8B"><span class="nav-number">7.</span> <span class="nav-text">使用 pynq-z2 完成HLS流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PS%E4%B8%8EPL%E7%9A%84%E4%BA%A4%E4%BA%92"><span class="nav-number">7.1.</span> <span class="nav-text">PS与PL的交互</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ZYNQ-PS%E4%B8%8EPL%E7%9A%84%E6%8E%A5%E5%8F%A3"><span class="nav-number">7.1.1.</span> <span class="nav-text">ZYNQ PS与PL的接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux%E5%86%85%E6%A0%B8-%E5%A6%82%E4%BD%95%E4%B8%8E-PL-%E4%BA%A4%E4%BA%92"><span class="nav-number">7.1.2.</span> <span class="nav-text">linux内核 如何与 PL 交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PYNQ-%E6%8E%A5%E5%8F%A3%E7%B1%BB-Python-%E5%A6%82%E4%BD%95%E4%B8%8E-linux%E5%86%85%E6%A0%B8-%E4%BA%A4%E4%BA%92"><span class="nav-number">7.1.3.</span> <span class="nav-text">PYNQ 接口类 (Python 如何与 linux内核 交互)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Overlay-%E8%AE%BE%E8%AE%A1GPIO-%E5%AE%9E%E9%AA%8C"><span class="nav-number">7.2.</span> <span class="nav-text">Overlay 设计GPIO 实验</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E6%88%98"><span class="nav-number">8.</span> <span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%89%E9%94%AE%E6%8E%A7%E5%88%B6LED%E5%AE%9E%E9%AA%8C"><span class="nav-number">8.1.</span> <span class="nav-text">按键控制LED实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BC%E5%90%B8%E7%81%AF"><span class="nav-number">8.2.</span> <span class="nav-text">呼吸灯</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
