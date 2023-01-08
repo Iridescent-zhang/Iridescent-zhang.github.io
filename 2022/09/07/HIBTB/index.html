@@ -31,7 +31,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.postimg.cc/JnWZJsj6/2.jpg">
 <meta property="article:published_time" content="2022-09-06T17:18:48.000Z">
-<meta property="article:modified_time" content="2023-01-01T12:01:42.783Z">
+<meta property="article:modified_time" content="2023-01-01T15:50:41.670Z">
 <meta property="article:author" content="lichao Zhang">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="next">
@@ -105,7 +105,7 @@
       <h1 class="site-title">Iridescent-zhang</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">扬锦帆，劫四方，快意逍遥</p>
+      <p class="site-subtitle" itemprop="description">今天不学习，明天变垃圾</p>
   </div>
 
   <div class="site-nav-right">
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-01-01 12:01:42" itemprop="dateModified" datetime="2023-01-01T12:01:42Z">2023-01-01</time>
+                <time title="Modified: 2023-01-01 15:50:41" itemprop="dateModified" datetime="2023-01-01T15:50:41Z">2023-01-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,7 +261,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>3k</span>
+              <span>3.6k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -341,7 +341,21 @@
 </ol>
 <h3 id="博客移植"><a href="#博客移植" class="headerlink" title="博客移植"></a>博客移植</h3><p>在新设备安装 hexo <code>cnpm install hexo-cli -g</code> ，<code>cnpm install</code> 安装一下依赖项，将原来本地站点的目录复制过来并替换原来文件即可。</p>
 <h3 id="隐藏博客文章"><a href="#隐藏博客文章" class="headerlink" title="隐藏博客文章"></a>隐藏博客文章</h3><p>参考<a target="_blank" rel="noopener" href="https://blog.garryde.com/archives/37712.html">hexo 隐藏博客</a></p>
-<h3 id="Hexo博客搭建之在文章中插入图片"><a href="#Hexo博客搭建之在文章中插入图片" class="headerlink" title="Hexo博客搭建之在文章中插入图片"></a>Hexo博客搭建之在文章中插入图片</h3><p><a target="_blank" rel="noopener" href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/">Hexo博客搭建之在文章中插入图片</a></p>
+<h3 id="在博客文章中插入图片"><a href="#在博客文章中插入图片" class="headerlink" title="在博客文章中插入图片"></a>在博客文章中插入图片</h3><p><a target="_blank" rel="noopener" href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/">Hexo博客搭建之在文章中插入图片</a></p>
+<ol>
+<li><p>CND引用<br>将图片上传到一些免费的CDN服务中，会生成对应的url地址，直接引用即可；</p>
+</li>
+<li><p>本地引用<br>博客站点的<code>_config.yml</code>文件中设置<code>post_asset_folder: true</code>，执行命令<code>hexo n &quot;test&quot;</code>会在source&#x2F;_posts下生成test.md文件和对应的test文件夹，在test文件中可以存放图片img.jpg，在test.md中引用图片只需要使用语句<code>![](test/img.jpg)</code>，请严格按照格式，不要写成<code>![](/test/img.jpg)</code>。对于next的gemini主题我只找到了使用插件的方法，参考文章如下：</p>
+</li>
+</ol>
+<p>为了解决既能在vscode写博客时预览，上传博客时首页和文章内都能显示图片，以及引用图片的语句不太过逆天，同时使用了两个插件，实际上没有必要，一个个安装看效果是否满足即可。</p>
+<blockquote>
+<p>插件1(<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1736563">hexo博客中如何插入图片</a>)：<br><code>npm install hexo-renderer-marked</code>命令直接安装<br>站点_config.yml更改配置如下</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br><span class="line">marked:</span><br><span class="line">  prependRoot: true</span><br><span class="line">  postAsset: true</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>插件2(<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1600295?from=article.detail.1736563">Hexo博客写作与图片处理的经验</a>)<br>这篇文章很厉害，可以好好看看<br><code>npm install hexo-image-link --save</code> 安装插件</p>
+</blockquote>
 <h3 id="配置hexo-next详细教程"><a href="#配置hexo-next详细教程" class="headerlink" title="配置hexo next详细教程"></a>配置hexo next详细教程</h3><p><a target="_blank" rel="noopener" href="https://minyuchengmin.github.io/2020/02/26/hexo-bo-ke-xin-ban-next-zhu-ti-da-jian/#valine-comments">主要参考</a><br><a target="_blank" rel="noopener" href="https://blog.shijy16.cn/2021/05/13/%E9%85%8D%E7%BD%AE/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">含个人域名重定向和HTTPS</a><br><a target="_blank" rel="noopener" href="https://blog.garryde.com/archives/37712.html">hexo 隐藏博客</a></p>
 <h3 id="something-else"><a href="#something-else" class="headerlink" title="something else"></a>something else</h3><p><a target="_blank" rel="noopener" href="https://unsplash.com/">unsplash</a><em>里的图片非常清爽，并且提供api服务，从中挑选博客背景图非常合适。</em></p>
 
@@ -446,7 +460,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-I-bulid-this-blog"><span class="nav-number">1.</span> <span class="nav-text">How I bulid this blog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#some-problems"><span class="nav-number">1.1.</span> <span class="nav-text">some problems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%86%99%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.2.</span> <span class="nav-text">如何写博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E7%A7%BB%E6%A4%8D"><span class="nav-number">1.3.</span> <span class="nav-text">博客移植</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E8%97%8F%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0"><span class="nav-number">1.4.</span> <span class="nav-text">隐藏博客文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E5%9C%A8%E6%96%87%E7%AB%A0%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="nav-number">1.5.</span> <span class="nav-text">Hexo博客搭建之在文章中插入图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEhexo-next%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B"><span class="nav-number">1.6.</span> <span class="nav-text">配置hexo next详细教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#something-else"><span class="nav-number">1.7.</span> <span class="nav-text">something else</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-I-bulid-this-blog"><span class="nav-number">1.</span> <span class="nav-text">How I bulid this blog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#some-problems"><span class="nav-number">1.1.</span> <span class="nav-text">some problems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%86%99%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.2.</span> <span class="nav-text">如何写博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E7%A7%BB%E6%A4%8D"><span class="nav-number">1.3.</span> <span class="nav-text">博客移植</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E8%97%8F%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0"><span class="nav-number">1.4.</span> <span class="nav-text">隐藏博客文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="nav-number">1.5.</span> <span class="nav-text">在博客文章中插入图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEhexo-next%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B"><span class="nav-number">1.6.</span> <span class="nav-text">配置hexo next详细教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#something-else"><span class="nav-number">1.7.</span> <span class="nav-text">something else</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -554,13 +568,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">108k</span>
+    <span title="Symbols count total">115k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">1:39</span>
+    <span title="Reading time total">1:45</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
