@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Witcher.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Witcher.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"iridescent-zhang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"valine","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus","order":-1},"valine":{"text":"Valine","order":-2}},"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="T">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCodeNote">
+<meta property="og:url" content="https://iridescent-zhang.github.io/2024/03/05/LeetCodeNote/index.html">
+<meta property="og:site_name" content="Iridescent-zhang">
+<meta property="og:description" content="T">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-03-05T12:40:07.000Z">
+<meta property="article:modified_time" content="2024-03-05T04:44:25.441Z">
+<meta property="article:author" content="lichao Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://iridescent-zhang.github.io/2024/03/05/LeetCodeNote/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>LeetCodeNote | Iridescent-zhang</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Iridescent-zhang</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">醉后不知天在水，满船清梦压星河</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2024/03/05/LeetCodeNote/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cloud.jpg">
+      <meta itemprop="name" content="lichao Zhang">
+      <meta itemprop="description" content="博观而约取，厚积而薄发">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iridescent-zhang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCodeNote
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-03-05 12:40:07 / Modified: 04:44:25" itemprop="dateCreated datePublished" datetime="2024-03-05T12:40:07Z">2024-03-05</time>
+            </span>
+
+          
+            <span id="/2024/03/05/LeetCodeNote/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCodeNote" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2024/03/05/LeetCodeNote/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2024/03/05/LeetCodeNote/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>12k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>11 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>T</p>
+<span id="more"></span>
+
+<h1 id="leetcode"><a href="#leetcode" class="headerlink" title="leetcode"></a>leetcode</h1><p>原地算法基本就是：双指针加反转。</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p><strong>二维数组</strong>用的时候不能直接push_back()一个元素，要往某一维上push一个元素先要往这个二维数组里push一个一维数组，like this:<br><code>ret.push_back(vector &lt;int&gt; ());</code><br>或者先建立一维数组来存放值，再push进二维数组。<br>或者动态resize二维数组的大小。</p>
+<h3 id="n数之和"><a href="#n数之和" class="headerlink" title="n数之和"></a>n数之和</h3><p>经典题，用哈希表会非常难写，虽然也可以做到O(n^2)的时间复杂度，但是很难去重。</p>
+<p>这题比较好的解法是排序加双指针，<strong>排序后的双指针非常好用</strong>。</p>
+<h3 id="912-排序数组"><a href="#912-排序数组" class="headerlink" title="912 排序数组"></a>912 排序数组</h3><p>经典排序题</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sort-an-array/solutions/179489/fu-xi-ji-chu-pai-xu-suan-fa-java-by-liweiwei1419/">复习基础排序算法</a><br>这篇题解写的非常好，将排序算法讲的很通透。</p>
+<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h3 id="环形链表2"><a href="#环形链表2" class="headerlink" title="环形链表2"></a>环形链表2</h3><p><strong>哈希表</strong><br> unordered_set&lt;ListNode *&gt; visited;<br>  unordered_set可以用 ListNode * 数据类型</p>
+<p><strong>快慢指针</strong>一定在环内相遇，根据数学来找到开始入环的第一个节点。</p>
+<h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2>
+
+
+
+<h3 id="202-快乐数"><a href="#202-快乐数" class="headerlink" title="202  快乐数"></a>202  快乐数</h3><p>对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是 无限循环 但始终变不到 1。如果 可以变为  1，那么这个数就是快乐数。</p>
+<p>要找是否存在环(循环)的题都可以用 快慢指针 这种思想。<br>本题还可以使用哈希表unordered_set。</p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p><strong>C++ 中的 String 类</strong><br>C++ 标准库提供了 string 类类型。</p>
+<p>string类提供了一系列成员函数，比如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="built_in">append</span>() -- 在字符串的末尾添加字符(单字符也可以) <span class="comment">// 也可以使用+和+=运算符对 string 对象执行字符串的连接操作</span></span><br><span class="line"><span class="built_in">append</span>()相比于+和<span class="built_in">push_back</span>()有更强的功能，可以加入一个string对象的子串，如下;</span><br><span class="line"><span class="function">string <span class="title">s1</span><span class="params">(<span class="string">&quot;123&quot;</span>)</span>, <span class="title">s2</span><span class="params">(<span class="string">&quot;abc&quot;</span>)</span></span>;</span><br><span class="line">s1.<span class="built_in">append</span>(s2);  <span class="comment">// s1 = &quot;123abc&quot;</span></span><br><span class="line">s1.<span class="built_in">append</span>(s2, <span class="number">1</span>, <span class="number">2</span>);  <span class="comment">// s1 = &quot;123abcbc&quot;</span></span><br><span class="line">s1.<span class="built_in">append</span>(<span class="number">3</span>, <span class="string">&#x27;K&#x27;</span>);  <span class="comment">// s1 = &quot;123abcbcKKK&quot;</span></span><br><span class="line">s1.<span class="built_in">append</span>(<span class="string">&quot;ABCDE&quot;</span>, <span class="number">2</span>, <span class="number">3</span>);  <span class="comment">// s1 = &quot;123abcbcKKKCDE&quot;，添加 &quot;ABCDE&quot; 的子串(2, 3)</span></span><br><span class="line">这里子串(n, m)是指从原字符串下标 n 开始、长度为 m 的字符串</span><br><span class="line"><span class="number">2.</span> <span class="built_in">find</span>() -- 在字符串中查找字符串</span><br><span class="line"><span class="number">3.</span> <span class="built_in">insert</span>() -- 插入字符</span><br><span class="line"><span class="number">4.</span> <span class="built_in">length</span>() -- 返回字符串的长度 <span class="comment">// 用size()也可以</span></span><br><span class="line"><span class="number">5.</span> <span class="built_in">replace</span>() -- 替换字符串</span><br><span class="line"><span class="number">6.</span> <span class="built_in">substr</span>(pos, n) -- 返回s中从<span class="built_in">pos</span>(索引)开始的n个字符的拷贝，可以只有pos，这时返回从pos开始的剩余的所有字符</span><br><span class="line"><span class="number">7.</span> <span class="built_in">erase</span>() -- 删除<span class="function">zi</span></span><br><span class="line"><span class="function">string <span class="title">s1</span><span class="params">(<span class="string">&quot;Real Steel&quot;</span>)</span></span>;</span><br><span class="line">s1.<span class="built_in">erase</span>(<span class="number">1</span>, <span class="number">3</span>);  <span class="comment">//删除子串(1, 3)，此后 s1 = &quot;R Steel&quot;</span></span><br><span class="line">s1.<span class="built_in">erase</span>(<span class="number">5</span>);  <span class="comment">//删除下标5及其后面的所有字符，此后 s1 = &quot;R Ste&quot;</span></span><br><span class="line"></span><br><span class="line">std::string 类本身就提供了类似「入栈」和「出栈」的接口，因此我们可以直接将字符串作为栈使用。类似的成员函数有：</span><br><span class="line"><span class="number">1.</span> <span class="built_in">empty</span>()</span><br><span class="line"><span class="number">2.</span> <span class="built_in">back</span>()  <span class="comment">// 相当于top()  取出最后一个元素</span></span><br><span class="line"><span class="number">3.</span> <span class="built_in">pop_back</span>() <span class="comment">// 相当于pop()</span></span><br><span class="line"><span class="number">4.</span> <span class="built_in">push_back</span>()</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> <span class="built_in">front</span>()  <span class="comment">// 取出第一个元素</span></span><br><span class="line">string类重载了[]运算符像数组一样直接访问元素</span><br><span class="line"></span><br><span class="line">判断相等直接用==就可以了，但是！要注意string对象不能和<span class="string">&#x27;单字符&#x27;</span>比较，一定要和<span class="string">&quot;字符串&quot;</span>比较。</span><br><span class="line">和单字符比较时也一定要用双引号<span class="string">&quot;&quot;</span>。</span><br><span class="line"></span><br><span class="line">string数字怎么转换为真正的数字，如<span class="string">&quot;-123&quot;</span>-&gt;<span class="number">-123</span></span><br><span class="line">string str;</span><br><span class="line"><span class="type">int</span> num = <span class="built_in">atoi</span>( str.<span class="built_in">c_str</span>() ) <span class="comment">// C风格</span></span><br><span class="line"><span class="type">int</span> num = <span class="built_in">stoi</span>( str )              <span class="comment">// C++风格 直接用就完事</span></span><br><span class="line"></span><br><span class="line">atoi 可以将字符数组转换为数字，并且可以加号和负号一同变为数字。</span><br><span class="line">string str = <span class="string">&quot;-100&quot;</span>;</span><br><span class="line"><span class="type">int</span> num = <span class="built_in">atoi</span>(str); <span class="comment">// 这样是不行的，因为atoi不支持直接把c++的字符串改为数字，只能先变为字符数组才行</span></span><br><span class="line">通过c_str将string变为字符数组，再用atoi来变为数字</span><br><span class="line"><span class="type">int</span> num = <span class="built_in">atoi</span>(str.<span class="built_in">c_str</span>());</span><br><span class="line"></span><br><span class="line">algorithm库中的<span class="built_in">reverse</span>()函数可以直接反转字符串, 对vector也适用</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">reverse</span><span class="params">(s.begin(),s.end())</span></span>;  </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap</span><span class="params">(s[i]m s[j])</span>；swap方法可以交换两个元素</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="151-翻转字符串里的单词"><a href="#151-翻转字符串里的单词" class="headerlink" title="151 翻转字符串里的单词"></a>151 翻转字符串里的单词</h3><p><strong>真的好题，确实难</strong>双指针的极致应用</p>
+<p>想一下，我们将整个字符串都反转过来，那么单词的顺序指定是倒序了，只不过单词本身也倒序了，那么再把单词反转一下，单词不就正过来了。</p>
+<p>O(1)空间复杂度的解法确实想不出来。<br>整个字符串翻转，再翻转各个单词。思路太难想了吧。<br>其实想不出来也应该把删除所有多余空格这一步弄出来，一步步做题。之后没准就想出来了。其实还是字符串不熟，没用过erase()；<br>但是erase()是O(n)的时间复杂度，所以不能用。<br>用前后快慢指针删除vector&#x2F;string的某一种元素，如果是相向指针会改变顺序，所以得用前后快慢指针来删除空格。</p>
+<h3 id="28-实现-strStr"><a href="#28-实现-strStr" class="headerlink" title="28. 实现 strStr()"></a>28. 实现 strStr()</h3><p><strong>KMP算法经典问题， 找字串</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">getNext</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; next, <span class="type">const</span> string&amp; s)</span> </span>&#123;</span><br><span class="line">        next[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="type">int</span> k = next[i<span class="number">-1</span>];</span><br><span class="line">            <span class="comment">// 找到子对称字符串为止</span></span><br><span class="line">            <span class="keyword">while</span>( s[i] != s[k] &amp;&amp; k&gt;<span class="number">0</span> ) &#123;</span><br><span class="line">                k = next[k - <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 下面这段代码有更常见的形式，其实是一模一样的</span></span><br><span class="line">            <span class="comment">// if( s[i]==s[k] )&#123;</span></span><br><span class="line">            <span class="comment">//     next[i] = k + 1;</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line">            <span class="comment">// else</span></span><br><span class="line">            <span class="comment">//     next[i] = 0;</span></span><br><span class="line">            <span class="comment">// 退出循环只有两种情况</span></span><br><span class="line">            <span class="keyword">if</span>( s[i]==s[k] )&#123;</span><br><span class="line">                k++;</span><br><span class="line">            &#125;</span><br><span class="line">            next[i] = k;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yearn520/article/details/6729426">KMP算法的前缀next数组最通俗的解释</a> 这篇文章讲的不错。</p>
+<p>很重要的一点就是，匹配失败的时候要找<strong>已经匹配的字符串内部</strong>对称的子字符串，这也是KMP的内核，当一个字符串的对称程度越高，KMP算法效果越好。这里的对称不是指一次对称，而是像这样的:<br>0123456789<strong>1011</strong><br>abtab <strong>g</strong>abtab<strong>t</strong>3<br>00012012345<br>t无法继承（如果这个字符没有失配，配哪个呢，索引就是前一个字符的next值，那它的next就是前一个字符的next加一）前一个字符的next对应值因为这里失配了，即t&#x3D;s[i]，这时候s[i]不等于s[(k&#x3D;next[i-1]&#x3D;next[b]&#x3D;5)]&#x3D;g。<br>那这时候t的next值怎么看，开始找匹配好的字符串里面的子对称字符串，并且t一定要和那个子对称的下一个字符相同。<br>更新k &#x3D; next[k - 1]&#x3D;next[4]&#x3D;2;这时候的k代表已经匹配好的字符串里的子对称的长度，你看abtab里面的ab。ab就是我们要找的子对称字符串，它的下一个字符是不是t，这时候就匹配了可以退出循环，next[t]&#x3D;k+1；<br>那为什么更新k &#x3D; next[k - 1]呢，这一步挺关键的。<br>原来的k是5，是什么意思？这个5&#x3D;next[t-1]是t前一个字符b的next，表示这个字符和它前四个字符也就是长度为5的后缀与长度为5的前缀相同。<br>那我要找这个匹配好的长为5的字符串的子对称字符串怎么找，那当然是next[4](索引是长度-1)直接查前缀就行。<br>有更复杂的情况<br>abtab<em>abtab</em>  <strong>g</strong> abtab<em>abtab</em><strong>t</strong><br>0001212345<strong>0</strong>123456789<strong>10</strong>3<br><strong>这种才是真正的对称</strong><br>更新k &#x3D; next[k - 1]你要更新两次才能找到，找到什么？<strong>匹配好的字符串里面的子对称字符串，并且t一定要和那个子对称的下一个字符相同</strong>。<br>刚开始：k &#x3D; 10；<br>更新：k&#x3D;next[k-1]&#x3D;next[9]&#x3D;5<br>这不是找到abtababtab长为5的对称子串了吗？但是，这个字串的下一个字符是a，不等于t就，也就是while循环里的判断条件，还得更新。<br>更新：k&#x3D;next[k-1]&#x3D;next[4]&#x3D;2<br>这时候终于找到了，所以next[t]&#x3D;k+1&#x3D;3;<br>k&#x3D;0当然就没意思了，说明没有对称子串了，因为k即next代表相同的前后缀的长度，零的话我直接比较s[i]和s[0](也是s[k])不就好了。</p>
+<p>时间复杂度O(m+n)，空间复杂度O(m)  n是主串长度，m是模式串长度</p>
+<p><a target="_blank" rel="noopener" href="https://quant67.com/post/algorithms/kmp/kmp.html">字符串匹配算法: kmp和bm算法</a></p>
+<h3 id="459-重复的子字符串"><a href="#459-重复的子字符串" class="headerlink" title="459.重复的子字符串"></a>459.重复的子字符串</h3><p><strong>上限很高的简单题</strong></p>
+<p>要理解一个关键原理:<br>长度为 n 的字符串 s 是字符串 t&#x3D;s+s 的子串，并且 s 在 t 中的起始位置不为 0 或 n，当且仅当 s 满足题目的要求(给定一个非空的字符串s，可以通过由它的一个子串重复多次构成。)，即为充要条件。<br>可以用string类自带的find函数查找索引，之所以要求索引不为0或n，是因为第一个删除了s+s的第一个和最后一个”子串”，两个s都不完整，由于子串长度至少大于1，所以删除前后各一个字符。<br>当然也可以用<strong>KMP实现自己的查找函数</strong>。</p>
+<p>这题还能进一步优化。<br>符合要求的字符串，最后一位的next值&#x3D;n-i;<br>其中n为字符串长度，i为重复的子串的长度。<br>所以 i &#x3D; n-next[n-1]<br>又有<code>gcd(n,i) = i </code> <strong>n肯定整除i，并且i为最小的起始位置。</strong><br>所以只要判断n是否能整除i(n-next[n-1])即可，能整除则true。</p>
+<h2 id="队列与栈"><a href="#队列与栈" class="headerlink" title="队列与栈"></a>队列与栈</h2><p><strong>匹配问题都是栈的强项。</strong></p>
+<h3 id="232-用栈实现队列"><a href="#232-用栈实现队列" class="headerlink" title="232 用栈实现队列"></a>232 用栈实现队列</h3><p>就差一点就能更优化，应该再多想想不要急。画个图就能发现，用来输出的第二个栈的元素不用再倒回去。<br>基本就是输入输出栈完全分开了。</p>
+<h3 id="150-逆波兰表达式求值"><a href="#150-逆波兰表达式求值" class="headerlink" title="150. 逆波兰表达式求值"></a>150. 逆波兰表达式求值</h3><p>这不仅仅是一道好题，也展现出计算机的思考方式</p>
+<p>为什么要将看似简单的中缀表达式转换为复杂的逆波兰式？原因就在于这个简单是相对人类的思维结构来说的，对计算机而言中序表达式是非常复杂的结构。相对的，逆波兰式在计算机看来却是比较简单易懂的结构。因为计算机普<strong>遍采用的内存结构是栈式结构</strong>，它执行先进后出的顺序。</p>
+<h3 id="239-滑动窗口最大值"><a href="#239-滑动窗口最大值" class="headerlink" title="239. 滑动窗口最大值"></a>239. 滑动窗口最大值</h3><p>我用的哈希表加剪枝，以临界时间通过，如果题目数据大一点就不容易通过了。</p>
+<p>很难很好的题。<br>学到很多：优先队列(堆)，单调队列(由deque实现，满足单调性的双端队列)，通常并不是单独使用的，还有分块加预处理(很有意思的解法)。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">maxSlidingWindow</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        priority_queue&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt; q;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; k; ++i) &#123;</span><br><span class="line">            q.<span class="built_in">emplace</span>(nums[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; ans = &#123;q.<span class="built_in">top</span>().first&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = k; i &lt; n; ++i) &#123;</span><br><span class="line">            q.<span class="built_in">emplace</span>(nums[i], i);</span><br><span class="line">            <span class="keyword">while</span> (q.<span class="built_in">top</span>().second &lt;= i - k) &#123;</span><br><span class="line">                q.<span class="built_in">pop</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(q.<span class="built_in">top</span>().first);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sliding-window-maximum/solutions/543426/hua-dong-chuang-kou-zui-da-zhi-by-leetco-ki6m/">解法</a></p>
+<h3 id="347-前-K-个高频元素"><a href="#347-前-K-个高频元素" class="headerlink" title="347. 前 K 个高频元素"></a>347. 前 K 个高频元素</h3><p>好题。<br><strong>优先队列</strong> ，要知道堆的操作时间复杂度是和堆总元素数有关的，如果堆大小至多为k，则每次堆操作需要O(logk)的时间，操作N次的话就是O(Nlogk) 的时间。<br>还学到了自定义排序规则：<br>注意定义优先队列的排序时是反过来的，比如&gt;号是小根堆，&lt;号是大根堆。以下的例子都是小根堆，默认创建时为大根堆。<br>并且注意调用时候的用法</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(<span class="type">const</span> pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&amp; a, <span class="type">const</span> pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&amp;b)</span></span>&#123;</span><br><span class="line">    <span class="comment">//自定义的比较函数，按第一个元素从小到大排序，如果第一个元素相同，则按第二个元素从小到大排序</span></span><br><span class="line">    <span class="keyword">if</span>(a.first == b.first)&#123;</span><br><span class="line">        <span class="keyword">return</span> a.second &gt; b.second;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a.first &gt; b.first;</span><br><span class="line">&#125;</span><br><span class="line">priority_queue&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;, vector&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt;, <span class="keyword">decltype</span>(&amp;cmp)&gt; <span class="built_in">pq</span>(cmp);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 优先队列常用成员函数</span></span><br><span class="line">q.<span class="built_in">emplace</span>(a,b); <span class="comment">// pair&lt;int,int&gt;</span></span><br><span class="line">q.<span class="built_in">top</span>();</span><br><span class="line">q.<span class="built_in">pop</span>();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">static</span> <span class="type">bool</span> <span class="title">cmp</span><span class="params">(pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&amp; m, pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&amp; n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> m.second &gt; n.second;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用内置greater函数就是小根堆，默认的less是大根堆；</span></span><br><span class="line">priority_queue&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;, vector&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt;, greater&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt; &gt; q;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>priority_queue 对象的第一个模板参数是 pair&lt;int, int&gt;，表示队列中的元素类型为 pair。第二个模板参数是 vector&lt;pair&lt;int, int&gt;&gt;，表示使用 vector 作为底层容器。第三个模板参数是自定义的比较函数 cmp 的<strong>类型</strong>，使用 <strong>decltype(&amp;cmp)</strong> 来<strong>获取函数指针的类型</strong>。</p>
+<p>读者需要掌握自己实现堆的方法，包括「建堆」、「调整」和「删除」的过程。<br>可以再看看912排序数组，用了堆排序。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 大根堆  堆就是完美二叉树并且存储在数组中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个函数的作用是调整 O(lgn)</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">maxHeapify</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; a, <span class="type">int</span> i, <span class="type">int</span> heapSize)</span> </span>&#123;</span><br><span class="line">         <span class="comment">// 左右子节点</span></span><br><span class="line">        <span class="type">int</span> l = i * <span class="number">2</span> + <span class="number">1</span>；</span><br><span class="line">        <span class="type">int</span> r = i * <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">        <span class="type">int</span> largest = i;</span><br><span class="line">        <span class="comment">// 找到两个子节点的较大值 将其与父节点交换，换完之后要对这个父节点往下递归，也就是下沉，因为有可能这个父节点很小(至少比换位置后新的子节点小)，要一直往下沉</span></span><br><span class="line">        <span class="keyword">if</span> (l &lt; heapSize &amp;&amp; a[l] &gt; a[largest]) &#123;</span><br><span class="line">            largest = l;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">if</span> (r &lt; heapSize &amp;&amp; a[r] &gt; a[largest]) &#123;</span><br><span class="line">            largest = r;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (largest != i) &#123;</span><br><span class="line">            <span class="built_in">swap</span>(a[i], a[largest]);</span><br><span class="line">            <span class="built_in">maxHeapify</span>(a, largest, heapSize);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    其实是调整前半个堆，为什么？因为堆是一个完美二叉树，而且只对所有父节点有要求，要求每个父节点大于其所有子节点，</span></span><br><span class="line"><span class="comment">    而所有树的父节点数(非叶子节点)不会超过树总结点数的一半，而且在maxHeapify里会判断子节点是否存在，所以这样写没有问题。</span></span><br><span class="line"><span class="comment">    也就是说，建堆过程是至多调整前半个堆，也就是前半个数组，循环调用maxHeapify来把nums[i]调整到合适的位置</span></span><br><span class="line"><span class="comment">    O(n*lgn)</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">buildMaxHeap</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; a, <span class="type">int</span> heapSize)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = heapSize / <span class="number">2</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">            <span class="built_in">maxHeapify</span>(a, i, heapSize);</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findKthLargest</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> heapSize = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="built_in">buildMaxHeap</span>(nums, heapSize); <span class="comment">// 建好了整个大根堆 准备pop K-1次，堆顶的值就是第K最大</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">/*删除操作的完成是这样的：</span></span><br><span class="line"><span class="comment">        1. 将堆顶(nums[0])与堆最后一个节点(nums[heap.size()-1])交换，令记录的堆大小减一，实际上并没有改变vector的大小，相当于删除当前的堆尾，也就是刚刚pop的堆首；</span></span><br><span class="line"><span class="comment">        2. 调整当前的堆，也就是对调整新堆首到合适的位置，由于maxHeapify中的递归，能将整个堆调整好。</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = nums.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= nums.<span class="built_in">size</span>() - k + <span class="number">1</span>; --i) &#123;</span><br><span class="line">            <span class="built_in">swap</span>(nums[<span class="number">0</span>], nums[i]);</span><br><span class="line">            --heapSize;</span><br><span class="line">            <span class="built_in">maxHeapify</span>(nums, <span class="number">0</span>, heapSize);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+<p>还有<strong>快速选择</strong>法(基于快速排序的选择方法)，通过每次都只在其中一个分支进行递归，能够将算法的平均复杂度降低到O(N)。<br>快排可以通过在每次递归的开始<em><strong>随机选取中枢元素</strong></em>来降低出现最坏情况的概率。还可以使用双指针的方法，这种方法可以较好的应对各种数据。<br><strong>再做一题K大数</strong>：</p>
+<h3 id="215-数组中的第K个最大元素"><a href="#215-数组中的第K个最大元素" class="headerlink" title="215. 数组中的第K个最大元素"></a>215. 数组中的第K个最大元素</h3><p>只讨论大量相同的数据的情况，如果只是选择随机数的话是无效选择，基本就是快排的最坏情况即冒泡排序。用双指针则还是普通快排因为每次都能跑到最中间。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">quickselect</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums, <span class="type">int</span> l, <span class="type">int</span> r, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l == r)</span><br><span class="line">            <span class="keyword">return</span> nums[k];</span><br><span class="line">        <span class="type">int</span> partition = nums[l], i = l - <span class="number">1</span>, j = r + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">            <span class="keyword">do</span> i++; <span class="keyword">while</span> (nums[i] &lt; partition);</span><br><span class="line">            <span class="keyword">do</span> j--; <span class="keyword">while</span> (nums[j] &gt; partition);</span><br><span class="line">            <span class="keyword">if</span> (i &lt; j)</span><br><span class="line">                <span class="built_in">swap</span>(nums[i], nums[j]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (k &lt;= j)<span class="keyword">return</span> <span class="built_in">quickselect</span>(nums, l, j, k);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">quickselect</span>(nums, j + <span class="number">1</span>, r, k);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><p><strong>好难的二叉树( 迭代 递归 都难 )</strong></p>
+<p><strong>满二叉树</strong></p>
+
+
+<p><strong>完全二叉树</strong></p>
+<p>完全二叉树的定义如下：在完全二叉树中，除了最后一层其它层全部填满，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层（h从1开始），则该层包含 1~ 2^(h-1) 个节点。</p>
+<p>优先级队列其实是一个堆，<strong>堆就是一棵完全二叉树</strong>，同时保证父子节点的顺序关系。</p>
+
+
+<p><strong>二叉搜索树</strong></p>
+<p>前面介绍的树，都没有数值的，而二叉搜索树是有数值的了，<strong>二叉搜索树是一个有序树</strong>。</p>
+<ul>
+<li>若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值；</li>
+<li>若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值；</li>
+<li>它的左、右子树也分别为二叉排序树</li>
+</ul>
+<p>如：</p>
+
+
+<p><strong>平衡二叉搜索树</strong></p>
+<p>平衡二叉搜索树：又被称为<strong>AVL</strong>（Adelson-Velsky and Landis）树，且具有以下性质：它是一棵<strong>空树</strong>或<strong>它的左右两个子树的高度差的绝对值不超过1</strong>，<strong>并且左右两个子树都是一棵平衡二叉树</strong>。</p>
+<p>C++中map、set、multimap，multiset的底层实现都是<strong>平衡二叉搜索树</strong>(红黑树)，所以map、set的<strong>增删操作时间时间复杂度是logn</strong>，注意我这里没有说unordered_map、unordered_set，unordered_map、unordered_set，因为它们的底层实现是哈希表。</p>
+
+
+<hr>
+<p><strong>二叉树的存储方式</strong></p>
+<p><strong>链式存储</strong>与<strong>顺序存储</strong></p>
+<p>链式存储方式就用<strong>指针</strong>， 顺序存储的方式就是用<strong>数组</strong>。</p>
+<p>顾名思义就是顺序存储的元素在内存是连续分布的，而链式存储则是通过指针把分布在各个地址的节点串联一起。</p>
+
+
+
+
+<p>用数组来存储二叉树如何遍历的呢？</p>
+<p>如果<strong>父节点的数组下标是 i，那么它的左孩子就是 i * 2 + 1，右孩子就是 i * 2 + 2</strong>。</p>
+<hr>
+<p><strong>二叉树的遍历</strong></p>
+<p>二叉树主要有两种遍历方式：</p>
+<ol>
+<li>深度优先遍历：先往深走，遇到叶子节点再往回走。</li>
+<li>广度优先遍历：一层一层的去遍历。</li>
+</ol>
+<p><strong>深度优先遍历</strong></p>
+<ul>
+<li>前序遍历（递归法，迭代法）</li>
+<li>中序遍历（递归法，迭代法）</li>
+<li>后序遍历（递归法，迭代法）</li>
+</ul>
+<p><strong>广度优先遍历</strong></p>
+<ul>
+<li>层次遍历（迭代法）</li>
+</ul>
+<p>前中后序遍历的前中后，其实指的就是<strong>中间节点的遍历顺序</strong>，只要记住 前中后序 指的就是中间节点的位置就可以了。</p>
+<p><strong>中间节点的顺序就是所谓的遍历方式（左节点一定在右节点之前）</strong></p>
+<ul>
+<li>前序遍历：中左右</li>
+<li>中序遍历：左中右</li>
+<li>后序遍历：左右中</li>
+</ul>
+
+
+<p>做二叉树相关题目，经常会使用递归的方式来实现深度优先遍历，也就是实现前中后序遍历，使用递归是比较方便的。<br>讲栈与队列的时候，就说过<strong>栈其实就是递归的一种实现结构</strong>，也就说前中后序遍历的逻辑其实都是可以借助栈使用递归的方式来实现的。</p>
+<p>而<strong>广度优先遍历一般使用队列来实现</strong>，这也是队列先进先出的特点所决定的，因为需要先进先出的结构，才能一层一层的来遍历二叉树。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 节点定义</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    TreeNode *left;</span><br><span class="line">    TreeNode *right;</span><br><span class="line">    <span class="built_in">TreeNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">left</span>(<span class="literal">NULL</span>), <span class="built_in">right</span>(<span class="literal">NULL</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 前序遍历 递归</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">traversal</span><span class="params">(TreeNode* cur, vector&lt;<span class="type">int</span>&gt;&amp; vec)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (cur == <span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line">        vec.<span class="built_in">push_back</span>(cur-&gt;val);    <span class="comment">// 中</span></span><br><span class="line">        <span class="built_in">traversal</span>(cur-&gt;left, vec);  <span class="comment">// 左</span></span><br><span class="line">        <span class="built_in">traversal</span>(cur-&gt;right, vec); <span class="comment">// 右</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; result;</span><br><span class="line">        <span class="built_in">traversal</span>(root, result);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 官解的迭代写的真的好</span></span><br><span class="line"><span class="comment">// 中序</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        stack&lt;TreeNode *&gt; stk;</span><br><span class="line">        TreeNode* node = root;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>( !stk.<span class="built_in">empty</span>() || node ) &#123;</span><br><span class="line">            <span class="keyword">while</span>(node) &#123;</span><br><span class="line">                stk.<span class="built_in">push</span>(node);</span><br><span class="line">                node = node-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            node = stk.<span class="built_in">top</span>();</span><br><span class="line">            stk.<span class="built_in">pop</span>();</span><br><span class="line">            res.<span class="built_in">push_back</span>(node-&gt;val);</span><br><span class="line">            node = node-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 前序</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        stack&lt;TreeNode *&gt; stk;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        TreeNode *node = root;</span><br><span class="line">        <span class="keyword">while</span>(!stk.<span class="built_in">empty</span>()||node) &#123;</span><br><span class="line">            <span class="keyword">while</span>(node) &#123;</span><br><span class="line">                res.<span class="built_in">push_back</span>(node-&gt;val);</span><br><span class="line">                stk.<span class="built_in">push</span>(node);</span><br><span class="line">                node = node-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            node = stk.<span class="built_in">top</span>();</span><br><span class="line">            stk.<span class="built_in">pop</span>();</span><br><span class="line">            node = node-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//后序</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>二叉树层序遍历</strong></p>
+<p>需要借用一个辅助数据结构即<strong>队列</strong>来实现，队列先进先出，符合一层一层遍历的逻辑，而用栈先进后出适合模拟深度优先遍历也就是递归的逻辑。</p>
+<p>而这种层序遍历方式就是图论中的广度优先遍历，只不过我们应用在二叉树上。</p>
+<h3 id="236-二叉树的最近公共祖先"><a href="#236-二叉树的最近公共祖先" class="headerlink" title="236. 二叉树的最近公共祖先"></a>236. 二叉树的最近公共祖先</h3><p>体会递归的自顶向下和自底向上<br>本题时间复杂度是自顶向下(n^2)和自底向上(n)。</p>
+<p>自底向上是这样的：要求出当前的值，我先去求子值也即缩小问题规模，不断缩小，再有得出来的一个个小问题的解来构建当前的值并根据题意做出相应的操作。实际上是怎么实现的？那便是二话不说直接往下递归，当然子问题的解你肯定要保留下来，得到了子问题的解边进行你要的操作。放在本题就是：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span>  <span class="title">Verify</span><span class="params">(TreeNode *root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="type">bool</span> flag1 = <span class="built_in">Verify</span>(root-&gt;left, p, q);</span><br><span class="line">        <span class="type">bool</span> flag2 = <span class="built_in">Verify</span>(root-&gt;right, p, q);</span><br><span class="line">        <span class="comment">// if(((root==q||root==p)&amp;&amp;(flag1||flag2))||(flag1&amp;&amp;flag2))</span></span><br><span class="line">        <span class="comment">//     node =  root;</span></span><br><span class="line">        <span class="comment">// if(root==p||root==q)</span></span><br><span class="line">        <span class="comment">//     return true;</span></span><br><span class="line">        <span class="comment">// return flag1||flag2;</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>除了第一句判断root存在否以外，直接就往下递归并保留下子问题的解。</p>
+<p>而自顶向下是我往下递归，如果我需要当前问题的解来进行后序的操作，那我一定要现在立刻马上获得，比如这里为了获得flag1 2，我甚至用了Verify这个递归的函数来求解，那肯定带了许多重复运算。那便是O(n^2)。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">Verify</span><span class="params">(TreeNode *root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(root==p||root==q)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Verify</span>(root-&gt;left, p, q) || <span class="built_in">Verify</span>(root-&gt;right, p, q);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="type">bool</span> flag1 = <span class="built_in">Verify</span>(root-&gt;left, p, q);</span><br><span class="line">        <span class="type">bool</span> flag2 = <span class="built_in">Verify</span>(root-&gt;right, p, q);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// if((root==q||root==p)&amp;&amp;(flag1||flag2))</span></span><br><span class="line">        <span class="comment">//     return root;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// if(flag1&amp;&amp;flag2)</span></span><br><span class="line">        <span class="comment">//     return root;</span></span><br><span class="line">        <span class="comment">// else if(flag1)</span></span><br><span class="line">        <span class="comment">//     return lowestCommonAncestor(root-&gt;left, p, q);</span></span><br><span class="line">        <span class="comment">// else </span></span><br><span class="line">        <span class="comment">//     return lowestCommonAncestor(root-&gt;right, p, q);</span></span><br><span class="line">        <span class="comment">// return nullptr;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>我认为自顶向下和自底向上最核心的区别就是自底向上一定先会递归到底再求解问题。而自顶向下不一定会到底(这里考虑的肯定是递归的主函数，而不是Verify)，通过在每个节点都立刻算出当前的值，只要问题的解存在，那想必在递归的过程中就已经把问题解决了。</p>
+<p>还有一个原因是我没想到可以用全局变量，没必要让递归来返回TreeNode*。</p>
+<h2 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h2><h3 id="654-最大二叉树"><a href="#654-最大二叉树" class="headerlink" title="654. 最大二叉树"></a>654. 最大二叉树</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-binary-tree/solutions/1/zhua-wa-mou-si-by-muse-77-myd7/">图解</a>讲的很清楚</p>
+<p>这题用单调栈<br>边遍历数组边构造树只遍历一次，真的太精妙了。<br>感觉关键就在于：<br>1、有大小的比较<br>2、入栈元素可能是我的右节点，也可能我(栈顶)或者我下面的一些都属于它的左子树。一切都是根据大小的比较。<br>最难的就是想到边形成单调栈边构造，我一直以为单调栈是生成完了才用，和单调队列一样。</p>
+<h2 id="疑难"><a href="#疑难" class="headerlink" title="疑难"></a>疑难</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-increasing-subsequence/">300 动态规划、二分查找解法</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/solutions/255811/cong-qian-xu-yu-zhong-xu-bian-li-xu-lie-gou-zao-9/">105 106从前序与中序遍历序列构造二叉树</a>迭代法很恶心</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://github.com/CyC2018/CS-Notes/tree/master">CS-Notes</a> </p>
+<p><a target="_blank" rel="noopener" href="https://programmercarl.com/">代码随想录</a> </p>
+<p><a target="_blank" rel="noopener" href="https://algo.itcharge.cn/07.Tree/">算法通关手册（LeetCode）</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>lichao Zhang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://iridescent-zhang.github.io/2024/03/05/LeetCodeNote/" title="LeetCodeNote">https://iridescent-zhang.github.io/2024/03/05/LeetCodeNote/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/02/23/javaNote/" rel="prev" title="javaNote">
+      <i class="fa fa-chevron-left"></i> javaNote
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode"><span class="nav-number">1.</span> <span class="nav-text">leetcode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">1.1.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#n%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">1.1.1.</span> <span class="nav-text">n数之和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#912-%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84"><span class="nav-number">1.1.2.</span> <span class="nav-text">912 排序数组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8"><span class="nav-number">1.2.</span> <span class="nav-text">链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A82"><span class="nav-number">1.2.1.</span> <span class="nav-text">环形链表2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%88%E5%B8%8C"><span class="nav-number">1.3.</span> <span class="nav-text">哈希</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#202-%E5%BF%AB%E4%B9%90%E6%95%B0"><span class="nav-number">1.3.1.</span> <span class="nav-text">202  快乐数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.4.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#151-%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E5%8D%95%E8%AF%8D"><span class="nav-number">1.4.1.</span> <span class="nav-text">151 翻转字符串里的单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-%E5%AE%9E%E7%8E%B0-strStr"><span class="nav-number">1.4.2.</span> <span class="nav-text">28. 实现 strStr()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#459-%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.4.3.</span> <span class="nav-text">459.重复的子字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E4%B8%8E%E6%A0%88"><span class="nav-number">1.5.</span> <span class="nav-text">队列与栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#232-%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97"><span class="nav-number">1.5.1.</span> <span class="nav-text">232 用栈实现队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#150-%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC"><span class="nav-number">1.5.2.</span> <span class="nav-text">150. 逆波兰表达式求值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#239-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="nav-number">1.5.3.</span> <span class="nav-text">239. 滑动窗口最大值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#347-%E5%89%8D-K-%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0"><span class="nav-number">1.5.4.</span> <span class="nav-text">347. 前 K 个高频元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#215-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0"><span class="nav-number">1.5.5.</span> <span class="nav-text">215. 数组中的第K个最大元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.6.</span> <span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#236-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88"><span class="nav-number">1.6.1.</span> <span class="nav-text">236. 二叉树的最近公共祖先</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E8%B0%83%E6%A0%88"><span class="nav-number">1.7.</span> <span class="nav-text">单调栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#654-%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.7.1.</span> <span class="nav-text">654. 最大二叉树</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%96%91%E9%9A%BE"><span class="nav-number">1.8.</span> <span class="nav-text">疑难</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lichao Zhang"
+      src="/images/cloud.jpg">
+  <p class="site-author-name" itemprop="name">lichao Zhang</p>
+  <div class="site-description" itemprop="description">博观而约取，厚积而薄发</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Iridescent-zhang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Iridescent-zhang" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lczhang93@gmail.com" title="E-Mail → mailto:lczhang93@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/18558575/wo-ladki" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;18558575&#x2F;wo-ladki" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCv42aVozJF9n4hK8xCacCmg" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCv42aVozJF9n4hK8xCacCmg" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/watch?v=DGa4Xv_tcjE&list=LL&index=6" title="https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;DGa4Xv_tcjE&amp;list&#x3D;LL&amp;index&#x3D;6" rel="noopener" target="_blank">Eiro Nareth INTERSTELLAR</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+	  
+		<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+		<div class="widget-wrap">
+		<div id="myCanvasContainer" class="widget tagcloud">
+		<canvas width="220" height="250" id="resCanvas" style="width=100%">
+			<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cmd/" rel="tag">Cmd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Guitar/" rel="tag">Guitar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HLS/" rel="tag">HLS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/" rel="tag">LaTeX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAT/" rel="tag">NAT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PYNQ/" rel="tag">PYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Powershell/" rel="tag">Powershell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li></ul>
+		</canvas>
+		</div>
+		</div>
+	  
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lichao Zhang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">239k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">3:37</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'zmRLZ8XmVpWBhK4yl2baQmHm-gzGzoHsz',
+      appKey     : 'c5e4Xhc2Ec8iU5BMArSxhhAu',
+      placeholder: "Say something",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : 'https://zmrlz8xm.lc-cn-n1-shared.com'
+    });
+  }, window.Valine);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class='fa fa-chevron-down'></i>    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class='fa fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button" onclick="moonMenuClick()">
+    <svg class="moon-menu-svg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+      <g class="moon-menu-points">
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle>
+        <circle class="moon-menu-point" r=".2rem"></circle>
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle>
+      </g>
+    </svg>
+    <div class="moon-menu-icon">
+    </div>
+    <div class="moon-menu-text">
+    </div>
+  </div>
+</div>
+<script src="/js/injector.js"></script>
+    </div>
+  <!-- 音乐播放器 -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+ <div id="aplayer" class="aplayer" data-id="3470747396" data-server="tencent" data-type="playlist" data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
+ <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+ <!-- 音乐播放器 end -->
+</body>
+</html>
