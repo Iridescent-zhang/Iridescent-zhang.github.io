@@ -27,10 +27,12 @@
 <meta property="og:site_name" content="Iridescent-zhang">
 <meta property="og:description" content="T">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/03/05/LeetCodeNote/1.jpg">
 <meta property="article:published_time" content="2024-03-05T12:40:07.000Z">
-<meta property="article:modified_time" content="2024-03-05T04:44:25.441Z">
+<meta property="article:modified_time" content="2024-03-18T14:29:50.018Z">
 <meta property="article:author" content="lichao Zhang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://iridescent-zhang.github.io/2024/03/05/LeetCodeNote/1.jpg">
 
 <link rel="canonical" href="https://iridescent-zhang.github.io/2024/03/05/LeetCodeNote/">
 
@@ -208,10 +210,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2024-03-05 12:40:07 / Modified: 04:44:25" itemprop="dateCreated datePublished" datetime="2024-03-05T12:40:07Z">2024-03-05</time>
+              <time title="Created: 2024-03-05 12:40:07" itemprop="dateCreated datePublished" datetime="2024-03-05T12:40:07Z">2024-03-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-03-18 14:29:50" itemprop="dateModified" datetime="2024-03-18T14:29:50Z">2024-03-18</time>
+              </span>
 
           
             <span id="/2024/03/05/LeetCodeNote/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCodeNote" title="Views">
@@ -240,14 +248,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>12k</span>
+              <span>19k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>11 mins.</span>
+              <span>17 mins.</span>
             </span>
 
         </div>
@@ -268,8 +276,47 @@
 <p>这题比较好的解法是排序加双指针，<strong>排序后的双指针非常好用</strong>。</p>
 <h3 id="912-排序数组"><a href="#912-排序数组" class="headerlink" title="912 排序数组"></a>912 排序数组</h3><p>经典排序题</p>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sort-an-array/solutions/179489/fu-xi-ji-chu-pai-xu-suan-fa-java-by-liweiwei1419/">复习基础排序算法</a><br>这篇题解写的非常好，将排序算法讲的很通透。</p>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>来一波二分查找的总结吧。</p>
+<p>二分查找有两种题（目前做到的）<br>第一种：你的目标一定存在，你一定能找到唯一一个数符合你的目标，比如<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/guess-number-higher-or-lower/description/">374. 猜数字大小</a> 这种题随便写，可以用我后面重点说的通用解法，也可以用在循环里分(&lt;、&gt;、 &#x3D;&#x3D;)三种情况，都很好些。<br>第二种题：你的目标不一定存在，你可能要找你的理论目标最近的一个数，可能是 小于等于target的最大数 或 大于等于target的最小数。比如<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/search-insert-position/solutions/333632/sou-suo-cha-ru-wei-zhi-by-leetcode-solution/">35. 搜索插入位置</a>、<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/first-bad-version/">278. 第一个错误的版本</a>、<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sqrtx/description/"> 69. x 的平方根</a>、<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-perfect-square/description/">367. 有效的完全平方数</a> 等都是要找离目标最近的数，并且大多数不止要让你返回 true or false，还要你返回索引。</p>
+<p>接下来重点介绍通用二分模板：<br>以<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-perfect-square/description/">367. 有效的完全平方数</a> 为例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">low</span> <span class="operator">=</span> <span class="number">0</span>, high = <span class="number">1</span>&lt;&lt;<span class="number">16</span>, mid = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(low&lt;high) &#123;</span><br><span class="line">    mid = (high-low)/<span class="number">2</span>+low;</span><br><span class="line">    <span class="keyword">if</span>(mid*mid&gt;=num) high = mid;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(mid*mid&lt;num) low = mid+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> high*high==num;</span><br></pre></td></tr></table></figure>
+
+<p>首先，用 <code>mid=(low+high)/2</code> 可以，但是用 <code>(low-high)/2+low</code> 更好（这俩是一模一样的），因为 <code>(low+high)</code> 可能超出 int 的范围。</p>
+<p>其次，用 <code> while(low&lt;high)</code> 更好。根据这里我们可以找<strong>第一个平方大于等于目标数</strong>的数（当然也可以找<strong>最后一个平方小于等于目标数</strong>的数），并且注意到<code>(mid*mid&gt;=num) high = mid</code> 也就是说high始终有可能就是<strong>第一个平方大于等于目标数</strong>的数，而<code>(mid*mid&lt;num)</code>是mid很明显不是我们想要的，所以我们让<code>low = mid+1</code>，能不能让<code>low=mid</code>也不动，绝对不行！因为这里的mid已经确定不符合题意，<strong>一定要有一个逼近的过程</strong>，即使逼近程度只有1，否则等<code>low high</code>很接近的时候一定会死循环。<br>这样有什么好处？我的目标就是，始终让<strong>第一个平方大于等于目标数</strong>的数就在<code>[low,high]</code>中间，这里是<strong>闭区间</strong>，那么当<code>low==high</code>的时候左右两区间重合就可以自动退出循环，并且<code>low or high</code>就是我们想要的，后续所有的判断都可以根据这两个数来。这里又体现一个好处，退出循环的时候一定是<code>low==high</code>（因为两个数加起来一次循环也只会变化1），如果用的是<code> while(low&lt;=high)</code>退出的时候还要去想诶，到底<code>low or high or mid</code>哪个是有价值的数据，很折磨的。</p>
+<p>还有一个<strong>很重要的问题</strong>，如果我找<strong>最后一个平方小于等于目标数</strong>的数，是不是只需要修改以下两个关键语句就可以呢？</p>
+<p><strong>错误</strong>！为什么？<br>细想，当low high 只差1的时候，mid是不是恒等于low，如果此时的low*low&lt;&#x3D;num是不是死循环了，high还没判断呢，万一high才是<strong>最后一个平方小于等于目标数</strong>的数呢。<br>所以关键就是：low可能不动，所以要让mid去等于high（当然是low high 只差1的情况），也就是</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(low&lt;high) &#123;</span><br><span class="line">    mid = (high-low+<span class="number">1</span>)/<span class="number">2</span>+low;</span><br><span class="line">    <span class="keyword">if</span>(mid*mid&gt;num) high = mid-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(mid*mid&lt;=num) low = mid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总结下来：low和high中一个不动，mid的结果一定要等于另一个，不然low high相邻的时候就会死循环。</p>
+<p>目前来看，所有二分查找都可以用这个模板，灵活变通吧。</p>
+<h3 id="多数元素"><a href="#多数元素" class="headerlink" title="多数元素"></a>多数元素</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/majority-element/description/">169. 多数元素</a><br>被简单题薄纱(加进阶是真难)<br>这题有很多解法：随机化（第一次见这种抽象解法）、分治、Boyer-Moore 投票算法</p>
+<p>分治的关键在于：将数组分成两个子数组之后，数组的主要元素一定是两个子数组主要元素之中的一个，因为如果数组的主要元素不是两个子数组主要元素之一，那这个主要元素出现次数一定小于数组一半(反证法)。<br>分治法还要考虑到最小子问题才能成型，也就是长度为1的数组的主要元素就是其中唯一的数。<br>分支法还能解决问题：<strong>数组中出现次数最多的数字</strong>，不会受到题目中的限制（超过半数）。<br>merge过程中都是要再遍历一次数组的，两个子问题加上n，总的时间复杂度就是O(nlgn)。</p>
+<p>Boyer-Moore 投票算法：同归于尽消杀法</p>
+<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><p>位运算很重要，有些题很有技巧性</p>
+<h3 id="只出现一次的数字"><a href="#只出现一次的数字" class="headerlink" title="只出现一次的数字"></a>只出现一次的数字</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/single-number/solutions/242211/zhi-chu-xian-yi-ci-de-shu-zi-by-leetcode-solution/">只出现一次的数字</a></p>
+<p>对于这道题，可使用异或运算 ^。异或运算有以下三个性质。<br>任何数和 0 做异或运算，结果仍然是原来的数。<br>任何数和其自身做异或运算，结果是 0。<br>异或运算满足交换律和结合律。</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/single-number-ii/description/">137. 只出现一次的数字 II</a><br>这题是真难。<br>其实关键就是：数电的方法优化在<strong>利用位运算的并行性</strong>，直接使用32个状态机（每个二进制位都当作一个状态机），而方法二只使用了一个状态机，所以时间复杂度多了一个logC。</p>
+<img src="/2024/03/05/LeetCodeNote/1.jpg" class="">
+
+
+<h3 id="二进制求和"><a href="#二进制求和" class="headerlink" title="二进制求和"></a>二进制求和</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/add-binary/solutions/299667/er-jin-zhi-qiu-he-by-leetcode-solution/">二进制求和</a></p>
+<p>两个二进制数 异或^ 可以视作忽略进位的求和，但之后要补上进位。<br>怎么补呢？用 与&amp; ，&amp;完之后还需要左移一位（能理解吧），之后迭代重复以上步骤知道进位变为0。</p>
+<p>同时注意：java里数字异或不需要转为二进制数，用十进制数来异或是正确的。<br>Integer.parseInt(String 2)将字符串a按二进制解析其内容(解析成10进制数)，Integer.toBinaryString(int n)将十进制数转为<strong>二进制字符串</strong>。</p>
+<h3 id="颠倒二进制位"><a href="#颠倒二进制位" class="headerlink" title="颠倒二进制位"></a>颠倒二进制位</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-bits/solutions/685436/dian-dao-er-jin-zhi-wei-by-leetcode-solu-yhxz/">190. 颠倒二进制位</a><br>这个分治解法太骚了，翻转一个二进制串，可以将其均分成左右两部分，对每部分递归执行翻转操作，然后将左半部分拼在右半部分的后面，即完成了翻转。<br>上面的是正常解法，是自顶向下的。<br>但是，注意到位运算的特殊性，并且左右两边的计算方法相同，<strong>并且</strong>已知是32位的二进制数，所以我们可以直接自底向上（到这里总算开始理解了自底向上，其实自底向上并不总是用在递归中，用在这里或者用在动态规划就像作弊一样，关键点就在你要知道底在哪里，并且向上的过程要很清楚）。<br>这里直接定义4个常数M1234，他们的意思分别就是最后一层(只颠倒奇偶)、倒数第二层(将颠倒奇偶之后的按两位一组分成奇偶组，接着颠倒奇偶组)、倒数第三层、倒数第四层。</p>
+<p>另外注意的是，在某些语言（如Java）中，<strong>没有无符号整数类型</strong>，因此对 n 的右移操作应使用<strong>逻辑右移</strong> <code>&gt;&gt;&gt;</code>。</p>
+<p>同样的分治解法还有数1的个数<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-1-bits/solutions/">191. 位1的个数</a></p>
+<h3 id="4的幂"><a href="#4的幂" class="headerlink" title="4的幂"></a>4的幂</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/power-of-four/solutions/798268/4de-mi-by-leetcode-solution-b3ya/">342. 4的幂</a><br><code>n &amp; (n - 1)==0 </code>判断 n 是否是 2 的幂，&#x3D;&#x3D;0就是2的幂，2 的幂是一个很严格的条件。5*2^6并不是2的幂，2的幂和4的幂真的就差一点，补充条件即可。</p>
+<h3 id="2的幂"><a href="#2的幂" class="headerlink" title="2的幂"></a>2的幂</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/power-of-two/solutions/796201/2de-mi-by-leetcode-solution-rny3/">2的幂</a></p>
+<p>一个数 n 是 2 的幂，当且仅当 n 是正整数，并且 n 的二进制表示中仅包含 1 个 1。</p>
+<p>因此我们可以考虑使用位运算，将 <strong>n 的二进制表示中最低位的那个 1</strong> 提取出来，再判断剩余的数值是否为 0 即可。下面介绍两种常见的与「二进制表示中最低位」相关的位运算技巧。</p>
+<p>关键就是只管最低位的1。</p>
+<p><strong>n &amp; (n - 1)&#x3D;&#x3D;0</strong> </p>
+<p><strong>n &amp; (-n)&#x3D;&#x3D;n</strong> 能够直接提取最低位的1，其他位都变为0。</p>
+<p>那么 n 就是 2 的幂。</p>
+<p>还有剑招：用2的最大幂除n，能整除则true。</p>
 <h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h3 id="环形链表2"><a href="#环形链表2" class="headerlink" title="环形链表2"></a>环形链表2</h3><p><strong>哈希表</strong><br> unordered_set&lt;ListNode *&gt; visited;<br>  unordered_set可以用 ListNode * 数据类型</p>
 <p><strong>快慢指针</strong>一定在环内相遇，根据数学来找到开始入环的第一个节点。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiaoquantouer/article/details/51620657">Floyd 判圈算法</a><br>Floyd判圈算法（Floyd Cycle Detection Algorithm），又称龟兔赛跑算法（Tortoise and Hare Algorithm），是一个可以在有限状态机、迭代函数或者链表上判断是否存在环，以及判断环的起点与长度的算法。</p>
+<h3 id="160-相交链表"><a href="#160-相交链表" class="headerlink" title="160. 相交链表"></a>160. 相交链表</h3><p>被简单题薄纱（没有题感说实话）<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/intersection-of-two-linked-lists/description/">相交链表</a></p>
 <h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2>
 
 
@@ -416,6 +463,58 @@
 <p>还有一个原因是我没想到可以用全局变量，没必要让递归来返回TreeNode*。</p>
 <h2 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h2><h3 id="654-最大二叉树"><a href="#654-最大二叉树" class="headerlink" title="654. 最大二叉树"></a>654. 最大二叉树</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-binary-tree/solutions/1/zhua-wa-mou-si-by-muse-77-myd7/">图解</a>讲的很清楚</p>
 <p>这题用单调栈<br>边遍历数组边构造树只遍历一次，真的太精妙了。<br>感觉关键就在于：<br>1、有大小的比较<br>2、入栈元素可能是我的右节点，也可能我(栈顶)或者我下面的一些都属于它的左子树。一切都是根据大小的比较。<br>最难的就是想到边形成单调栈边构造，我一直以为单调栈是生成完了才用，和单调队列一样。</p>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43294560/article/details/121292475">动态规划思想</a></p>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/BillCYJ/article/details/79250382">深入理解递归</a></p>
+<h2 id="软挑"><a href="#软挑" class="headerlink" title="软挑"></a>软挑</h2><p>最优调度问题、多机器人路径协调规划问题、动态避障算法</p>
+<p>5艘轮船、 10个 机器人 、 10个泊位<br>初赛时间为15,000帧 （最多 5分钟 ）。</p>
+<p>执行计算来模拟真实场景，故选手<br>程序需要在 15ms内做出每一帧的决策，如果超过 15ms未 做出决策，则系统将直<br>接忽略这一帧的控制进入下一帧，并且在选手程序返回控制指令前，不会再发送<br>状态数据给程序。</p>
+<p>往下为X轴正方向，往右为Y轴正方向。地图左上角坐标为原点(0,0)，右下角坐标为(199,199)。</p>
+<p>轮船是一个2*4的矩形，轮船有一定的容积，需要停留在泊位上，可以把泊位上的货物运走。在初赛中，不需要考虑轮船的路径规划问题，只考虑轮船放置在哪个泊位，以及何时运输即可</p>
+<p>泊位是一个4*4的矩形，分为海岸和陆地部分。泊位的陆地部分可以放置货物，泊位的海岸部分可以放轮船。设泊位的左上角坐标为(x,y)，该泊位的右下角坐标为(x+3,y+3)。每个泊位有运送货物到船上的效率和轮船运走货物产生收益的时间，在同一局游戏中，泊位信息不会发生变化。特殊的，在初赛阶段不特别区分泊位的海岸和陆地部分，机器人可以移动到泊位上，无需考虑和船的碰撞。</p>
+<p>机器人是一个占据1*1格子的物体，可携带一个物品。由选手程序进行操控，可以执行上下左右四种移动操作，当机器人位于物品生成处时，可以搬运物品，当机器人位于泊位处时，可以放下物品。</p>
+<p>指轮船从泊位驶出运输货物产生价值。价值会在运输到达虚拟点瞬间立即产生（同一帧），选手也可以在运输到达虚拟点帧的时刻立即命令轮船移动到一个泊位上（同一帧）</p>
+<p>物品将会随机生成在地图的每一个区域，物品有着不同的价值，每个物品会在指定位<br>置停留 20s(1000帧 )的时间，若生成后 1000帧内未被搬运则在地图上消失，选手可以<br>操控机器人将物品从生成位置运送到泊位，由泊位装卸货物到轮船，最后由轮船运输<br>至虚拟点产生价值。获得资金会在轮船运输至虚拟点的帧时刻完成。</p>
+<p>初赛阶段，不考虑海面上的移动路径，为此在海上设置一个虚拟点。轮船需要运输货<br>物到虚拟点，每个泊位会有移动到虚拟点的时间 (虚拟点移动到泊位的时间同 )，当轮船<br>运送货物到虚拟点的瞬间产生价值，同帧轮船可以执行 ship指令到新泊位。</p>
+<p>初赛阶段，选手有<br>5艘轮船可以操控，我们假定轮船可以直接停靠在泊位上，所以不<br>需要选手考虑轮船的路径规划。在初赛阶段，所有的海面上（包括泊位间的移动和运</p>
+<p>轮船和泊位之间有到达、装载、驶离三种动作。每一帧在泊位处<br>将依次执行到达、驶<br>离、装载三种动作。</p>
+<p>由于不考虑轮船路径规划， <strong>我们假定泊位间的移动时间都是<br>500帧 (10s)</strong> ，判题器将告<br>知选手轮船从每个泊位运输产生价值的时间。选手可以随时操控轮船进行运输或移</p>
+<p>位。轮船结束运输产生价值的帧时刻，选手可以执行 ship指令把轮船从虚拟点移动到<br>一个空闲的泊位上。</p>
+<p>格，如果机器人碰撞到了墙壁或海（即机器人的移动目标位置和墙壁重合）或者两个<br>机器人相互碰撞（即两个机器人的目标位置重合 或者互相前往对方当前所在地 ），则<br>会停在原地（未触发该机器人当前帧动作，不进行移动及取货，并有可能产生连锁反<br>应） 20帧 (400ms)的时间。在机器人和物品坐标重合的帧时间可以使用</p>
+<p>的时间。在机器人和物品坐标重合的帧时间可以使用 get命令获取该<br>坐标的物品，当机器人处于泊位范围的帧时间，可以使用</p>
+<p>坐标的物品，当机器人处于泊位范围的帧时间，可以使用 pull命令将机器人身上的物<br>品放置在泊位上。</p>
+<p>机器人每帧的动作可以分为移动前动作，移<br>动，移动后动作三个部分。每个帧时刻将<br>同时结算所有机器人的移动前动作，然后继续同时结算所有机器人移动动作、最后同<br>时结算移动后动作。若移动动作产生碰撞，则机器人的一帧的所有动作均失效。若未</p>
+<p>在一帧中，<br>会按照如下顺序结算以下行为</p>
+<ol>
+<li>机器人恢复。</li>
+<li>船舶到达、进入泊位。</li>
+<li>物品生成。</li>
+<li>生成场面信息，输出给选手。</li>
+<li>读取选手指令。</li>
+<li>执行机器人指令。</li>
+<li>执行船舶指令。</li>
+<li>泊位装卸货物。</li>
+</ol>
+<p>‘.’ ： 空地 ‘<em>’ ： 海洋 ‘#’ ： 障碍 ‘A’ ： 机器人起始位置，总共10个。 ‘B’ ： 大小为4</em>4，表示泊位的位置,泊位标号在后泊位处初始化。</p>
+<p>泊位数据是由<br>10行 5列数字组成。<br>每一行五个整数<br>id, x, y, time, velocity表示一个泊位。 id(0 &lt;&#x3D; id &lt; 10)为该泊位的唯一标<br>号， ，(x,y)表示该泊位的左上角坐标 ,time(1 &lt;&#x3D; time &lt;&#x3D; 1000)表示该泊位轮船运输到虚拟<br>点的时间 (虚拟点移动到泊位的时间同 )，即产生价值的时间，时间用帧数表示。<br>Velocity(1 &lt;&#x3D; Velocity &lt;&#x3D; 5)表示该泊位的装载速度，即每帧可以装载的物品数，单位<br>是：个。保证对于每次提交全部泊位到虚拟点时间和相同。</p>
+<p>一行一个整数<br>capacity(1 &lt;&#x3D; capacity &lt;&#x3D; 1000)，表示船的容积，即最多能装的物品数。</p>
+<p>初始化： 选手程序初始化时，将输入 200行 *200列的字符组成的地图数据、 10行<br>的泊位数据和 1行船的容积，然后紧接着一行 OK。</p>
+<p><strong>每一帧交互：</strong><br>− 第一行输入 2个整数，表示帧序号（从 1开始递增）、当前金钱数。<br>− 第二行输入 1个整数，表示场上新增货物的数量 K 0&lt;&#x3D;K&lt;&#x3D;10）。<br>− 紧接着 K行数据，每一行表示一个新增货物，分别由如下所示的数据构成，<br>共计 3个数字 。<br>坐标<br>2个整数x,y<br>该货物的坐标<br>金额<br>正整数<br>该货物的金额(&lt;&#x3D; 200)</p>
+<p>接下来的 10行数据，每一行表示一个机器人，分别由如下表格中所示的数据<br>构成，每行 4个数字。</p>
+<p>是否携带物品<br>整数<br>⚫ 0表示未携带物品。<br>1表示携带物品。<br>坐标<br>2个整数x,y<br>该机器人的坐标<br>状态<br>整数<br>⚫ 0表示恢复状态<br>1表示正常运行状态</p>
+<p>接下来的 5行数据，每一行表示一艘船，分别由如下表格中所示的数据构<br>成，每行两个数字。<strong>第 i行表示标号为 i-1的轮船</strong>。</p>
+<p>状态<br>整数<br>⚫ 0表示移动(运输)中<br>⚫ 1表示正常运行状态(即装货状态或运输完成状态)<br>2表示泊位外等待状态<br>泊位ID<br>整数<br>表示目标泊位，如果目标泊位是虚拟点，则为-1</p>
+<p>最后，判题器会输出一行<br>OK，表示所有数据已经写入完毕。</p>
+<p><strong>输出格式</strong><br>⚫ 初始化： 读入地图数据并完成初始化后，选手程序应当输出一行 OK，告诉 判题器<br>已就绪 。<br>⚫ 每一帧交互：</p>
+<p>先进行机器人指令的输出 ，每行一个指令，按照 “指令 &lt;机器人 ID&gt; [参数<br>2]”的格式进行输出，机器人 ID的 取值范围 是 [0,9]，对应机器人的输入顺序 。<br>支持的指令如下所示 。<br>move<br>机器人<br>ID<br>取值[0, 9]<br>[0,3]之间的整数<br>⚫ 0表示右移一格<br>⚫ 1表示左移一格<br>⚫ 2表示上移一格<br>3表示下移一格<br>get<br>机器人<br>ID<br>取值[0, 9]<br>无<br>如机器人在货物生成处，并处于未携带物品状态，则取货成功。<br>pull<br>机器人<br>ID<br>取值[0, 9]<br>无<br>如机器人在泊位处，并处于携带物品状态，则放置成功。</p>
+<p>紧接着，每行一个指令，按照 “指令 &lt;船 ID&gt; [参数 2]”的格式进行输出， 船 ID的 取值范围 是 [ 对应 船 的输入顺序 。 支持的指令如下所示 。</p>
+<p>ship<br>船<br>ID<br>取值[0, 4]<br>泊位id<br>取值[0, 9]<br>表示船移动到泊位ID。<br>go<br>船<br>ID<br>取值[0, 4]<br>无<br>表示船从泊位驶出至虚拟点运输货物。</p>
+<p>如果轮船已经移动到虚拟点，可以在同一帧使用<br>ship指令让其从虚拟点移动到泊位，<br><strong>如果该轮船上次指令时间未结束再次收到指令，会以新指令为准重新计算时长</strong>。</p>
+<p>同一个机器人和轮船可以在同一帧内执行多条指令，因此，机器人可以同一帧内移动<br>后立刻取货，同一船只可以到达泊位的同一帧立刻装货。</p>
+<p>当你输出完所有指令后，紧跟一行 OK，表示输 出 结束。例如 一个可能的输<br>出是</p>
+<p>大多数语言会默认对输出数据做缓冲，因此在输出完一帧<br>控制 数据时，你应该主动 flush标准输<br>出以避免 判题器 读不到数据 导致超时 。</p>
+<p>当帧数为<br>1的时候，给出机器人位置为机器人的初始位置，给出的轮船位置是无效<br>的，选手不用考虑轮船的初始位置， 轮船的初始位置 均认为在虚拟 点，即指令为 1 -1, 后续的轮船位置改变需要考虑轮船移动时间。</p>
+<p>控制帧响应超时 ：忽略该帧控制指令<br>选手程序没有在<br>15ms内返回控制指令，则忽略该帧的控制行为（即：跳帧），直<br>到收到控制 指令之前，不会继续给选手程序下发数据。</p>
+<p>跳帧后收到的控制数据会作用在当前最新的一帧，例如第<br>1000帧下发的数据，选手程<br>序直到 1010帧才做出响应，那么该控制指令会作用于 1010帧，此时有可能货物消<br>失，机器人已经不在原来位置，从而导致一些取货、送货指令失败（失败的指令被忽<br>略）。</p>
 <h2 id="疑难"><a href="#疑难" class="headerlink" title="疑难"></a>疑难</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-increasing-subsequence/">300 动态规划、二分查找解法</a></p>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/solutions/255811/cong-qian-xu-yu-zhong-xu-bian-li-xu-lie-gou-zao-9/">105 106从前序与中序遍历序列构造二叉树</a>迭代法很恶心</p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://github.com/CyC2018/CS-Notes/tree/master">CS-Notes</a> </p>
@@ -516,7 +615,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode"><span class="nav-number">1.</span> <span class="nav-text">leetcode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">1.1.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#n%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">1.1.1.</span> <span class="nav-text">n数之和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#912-%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84"><span class="nav-number">1.1.2.</span> <span class="nav-text">912 排序数组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8"><span class="nav-number">1.2.</span> <span class="nav-text">链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A82"><span class="nav-number">1.2.1.</span> <span class="nav-text">环形链表2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%88%E5%B8%8C"><span class="nav-number">1.3.</span> <span class="nav-text">哈希</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#202-%E5%BF%AB%E4%B9%90%E6%95%B0"><span class="nav-number">1.3.1.</span> <span class="nav-text">202  快乐数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.4.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#151-%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E5%8D%95%E8%AF%8D"><span class="nav-number">1.4.1.</span> <span class="nav-text">151 翻转字符串里的单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-%E5%AE%9E%E7%8E%B0-strStr"><span class="nav-number">1.4.2.</span> <span class="nav-text">28. 实现 strStr()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#459-%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.4.3.</span> <span class="nav-text">459.重复的子字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E4%B8%8E%E6%A0%88"><span class="nav-number">1.5.</span> <span class="nav-text">队列与栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#232-%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97"><span class="nav-number">1.5.1.</span> <span class="nav-text">232 用栈实现队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#150-%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC"><span class="nav-number">1.5.2.</span> <span class="nav-text">150. 逆波兰表达式求值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#239-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="nav-number">1.5.3.</span> <span class="nav-text">239. 滑动窗口最大值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#347-%E5%89%8D-K-%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0"><span class="nav-number">1.5.4.</span> <span class="nav-text">347. 前 K 个高频元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#215-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0"><span class="nav-number">1.5.5.</span> <span class="nav-text">215. 数组中的第K个最大元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.6.</span> <span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#236-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88"><span class="nav-number">1.6.1.</span> <span class="nav-text">236. 二叉树的最近公共祖先</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E8%B0%83%E6%A0%88"><span class="nav-number">1.7.</span> <span class="nav-text">单调栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#654-%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.7.1.</span> <span class="nav-text">654. 最大二叉树</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%96%91%E9%9A%BE"><span class="nav-number">1.8.</span> <span class="nav-text">疑难</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode"><span class="nav-number">1.</span> <span class="nav-text">leetcode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">1.1.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#n%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">1.1.1.</span> <span class="nav-text">n数之和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#912-%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84"><span class="nav-number">1.1.2.</span> <span class="nav-text">912 排序数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-number">1.1.3.</span> <span class="nav-text">二分查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%95%B0%E5%85%83%E7%B4%A0"><span class="nav-number">1.1.4.</span> <span class="nav-text">多数元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="nav-number">1.2.</span> <span class="nav-text">位运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97"><span class="nav-number">1.2.1.</span> <span class="nav-text">只出现一次的数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B1%82%E5%92%8C"><span class="nav-number">1.2.2.</span> <span class="nav-text">二进制求和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%A0%E5%80%92%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D"><span class="nav-number">1.2.3.</span> <span class="nav-text">颠倒二进制位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E7%9A%84%E5%B9%82"><span class="nav-number">1.2.4.</span> <span class="nav-text">4的幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E7%9A%84%E5%B9%82"><span class="nav-number">1.2.5.</span> <span class="nav-text">2的幂</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8"><span class="nav-number">1.3.</span> <span class="nav-text">链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A82"><span class="nav-number">1.3.1.</span> <span class="nav-text">环形链表2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8"><span class="nav-number">1.3.2.</span> <span class="nav-text">160. 相交链表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%88%E5%B8%8C"><span class="nav-number">1.4.</span> <span class="nav-text">哈希</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#202-%E5%BF%AB%E4%B9%90%E6%95%B0"><span class="nav-number">1.4.1.</span> <span class="nav-text">202  快乐数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.5.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#151-%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E5%8D%95%E8%AF%8D"><span class="nav-number">1.5.1.</span> <span class="nav-text">151 翻转字符串里的单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-%E5%AE%9E%E7%8E%B0-strStr"><span class="nav-number">1.5.2.</span> <span class="nav-text">28. 实现 strStr()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#459-%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.5.3.</span> <span class="nav-text">459.重复的子字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E4%B8%8E%E6%A0%88"><span class="nav-number">1.6.</span> <span class="nav-text">队列与栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#232-%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97"><span class="nav-number">1.6.1.</span> <span class="nav-text">232 用栈实现队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#150-%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC"><span class="nav-number">1.6.2.</span> <span class="nav-text">150. 逆波兰表达式求值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#239-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="nav-number">1.6.3.</span> <span class="nav-text">239. 滑动窗口最大值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#347-%E5%89%8D-K-%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0"><span class="nav-number">1.6.4.</span> <span class="nav-text">347. 前 K 个高频元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#215-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0"><span class="nav-number">1.6.5.</span> <span class="nav-text">215. 数组中的第K个最大元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.7.</span> <span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#236-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88"><span class="nav-number">1.7.1.</span> <span class="nav-text">236. 二叉树的最近公共祖先</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E8%B0%83%E6%A0%88"><span class="nav-number">1.8.</span> <span class="nav-text">单调栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#654-%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.8.1.</span> <span class="nav-text">654. 最大二叉树</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-number">1.9.</span> <span class="nav-text">动态规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92"><span class="nav-number">1.10.</span> <span class="nav-text">递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E6%8C%91"><span class="nav-number">1.11.</span> <span class="nav-text">软挑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%96%91%E9%9A%BE"><span class="nav-number">1.12.</span> <span class="nav-text">疑难</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -618,13 +717,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">239k</span>
+    <span title="Symbols count total">269k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">3:37</span>
+    <span title="Reading time total">4:05</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
