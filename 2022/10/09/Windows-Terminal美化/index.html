@@ -28,10 +28,9 @@
 <meta property="og:description" content="颜值就是生产力">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.postimg.cc/15QHCpYd/1.jpg">
-<meta property="og:image" content="https://i.postimg.cc/XJfZXTpn/2.jpg">
 <meta property="og:image" content="https://i.postimg.cc/sX7BgQCv/1.jpg">
 <meta property="article:published_time" content="2022-10-09T10:43:08.000Z">
-<meta property="article:modified_time" content="2024-03-17T05:45:31.965Z">
+<meta property="article:modified_time" content="2024-03-18T16:04:12.230Z">
 <meta property="article:author" content="lichao Zhang">
 <meta property="article:tag" content="Powershell">
 <meta name="twitter:card" content="summary">
@@ -221,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-03-17 05:45:31" itemprop="dateModified" datetime="2024-03-17T05:45:31Z">2024-03-17</time>
+                <time title="Modified: 2024-03-18 16:04:12" itemprop="dateModified" datetime="2024-03-18T16:04:12Z">2024-03-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -299,14 +298,14 @@
 <p><img src="https://i.postimg.cc/15QHCpYd/1.jpg"></p>
 <p>如果包含的话，说明该环境变量在当前程序不起作用，重启终端即可。<br>    查看oh-my-posh版本<br>        <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oh-my-posh version</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>theme<br>   oh-my-posh的主题。<br>   查看环境变量是否包含：<br>   <img src="https://i.postimg.cc/XJfZXTpn/2.jpg"></li>
+<li>theme<br>   oh-my-posh的主题。<br>   查看环境变量是否包含：</li>
 </ul>
 <pre><code>[官方文档](https://ohmyposh.dev/docs/installation/windows)给出了oh-my-posh的更新命令, 如果是刚刚下载的那么就不需要更新了。
 <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget upgrade JanDeDobbeleer.OhMyPosh -s winget</span><br></pre></td></tr></table></figure>
 </code></pre>
-<ol start="4">
+<ol>
 <li>配置主题<br> 在对powershell进行个性化配置oh-my-posh的时候，powershell需要运行配置脚本文件$PROFILE，由于win11默认防止执行不信任的脚本文件，导致配置过程无法正常进行。<br> 参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/ahahayaa/article/details/125470163">博客</a><br> 执行命令:<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set-ExecutionPolicy RemoteSigned </span><br></pre></td></tr></table></figure></li>
-<li>使用以下这行命令进行主题的初始化, 其中jandedobbeleer是主题的名字<br> <code>oh-my-posh init pwsh --config &quot;$env:POSH_THEMES_PATH\jandedobbeleer.omp.json&quot;</code><br>2. 主题的更换要依托于一个PROFILE脚本文件来进行<br>基于PROFILE脚本文件涉及到 创建、打开、填充配置语句、执行脚本文件 四条命令<br>- 创建PROFILE文件<br>  <code>New-Item -Path $PROFILE -Type File -Force</code><br>- 打开PROFILE文件<br>  <code>notepad $PROFILE</code><br>- 在PROFILE文件中添加以下内容<br>  <code>oh-my-posh init pwsh | Invoke-Expression</code><br>- 执行PROFILE脚本文件, 通过以下这条命令<br>  <code>. $PROFILE</code> &#x2F;&#x2F;执行脚本文件命令<br> 更换主题，修改<code>$profile</code>文件对应主题名即可。</li>
+<li>使用以下这行命令进行主题的初始化, 其中jandedobbeleer是主题的名字<br> <code>oh-my-posh init pwsh --config &quot;$env:POSH_THEMES_PATH\jandedobbeleer.omp.json&quot;</code><br>1. 主题的更换要依托于一个PROFILE脚本文件来进行<br>基于PROFILE脚本文件涉及到 创建、打开、填充配置语句、执行脚本文件 四条命令<br>- 创建PROFILE文件<br>  <code>New-Item -Path $PROFILE -Type File -Force</code><br>- 打开PROFILE文件<br>  <code>notepad $PROFILE</code><br>- 在PROFILE文件中添加以下内容<br>  <code>oh-my-posh init pwsh | Invoke-Expression</code><br>- 执行PROFILE脚本文件, 通过以下这条命令<br>  <code>. $PROFILE</code> &#x2F;&#x2F;执行脚本文件命令<br> 更换主题，修改<code>$profile</code>文件对应主题名即可。</li>
 </ol>
 <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oh-my-posh init pwsh --config ~\AppData\Local\Programs\oh-my-posh\themes\atomic.omp.json | Invoke-Expression</span><br></pre></td></tr></table></figure>
 
@@ -576,7 +575,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">269k</span>
+    <span title="Symbols count total">270k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

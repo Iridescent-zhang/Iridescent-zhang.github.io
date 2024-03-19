@@ -27,25 +27,8 @@
 <meta property="og:site_name" content="Iridescent-zhang">
 <meta property="og:description" content="北海虽赊，扶摇可接">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.postimg.cc/ncxXTjcb/5.jpg">
-<meta property="og:image" content="https://i.postimg.cc/cCyrp6R3/6.jpg">
-<meta property="og:image" content="https://i.postimg.cc/65QyDsRY/7.jpg">
-<meta property="og:image" content="https://i.postimg.cc/tgb4gfvV/1.jpg">
-<meta property="og:image" content="https://i.postimg.cc/FsBQqqQQ/2.jpg">
-<meta property="og:image" content="https://i.postimg.cc/43CR49dL/3.jpg">
-<meta property="og:image" content="https://i.postimg.cc/5tq57q5v/4.jpg">
 <meta property="og:image" content="https://i.postimg.cc/9QnLjBVr/10.jpg">
-<meta property="og:image" content="https://i.postimg.cc/fRvT3b0g/14.jpg">
-<meta property="og:image" content="https://i.postimg.cc/3xQF8tgF/15.jpg">
-<meta property="og:image" content="https://i.postimg.cc/j216VbTR/16.jpg">
-<meta property="og:image" content="https://i.postimg.cc/pdZ7GT0n/11.jpg">
-<meta property="og:image" content="https://i.postimg.cc/28ZJWmZh/12.jpg">
-<meta property="og:image" content="https://i.postimg.cc/sXnCgRNq/13.jpg">
 <meta property="og:image" content="https://iridescent-zhang.github.io/2022/12/03/hlsNote/121.png">
-<meta property="og:image" content="https://i.postimg.cc/hvDbQZ1B/9.jpg">
-<meta property="og:image" content="https://i.postimg.cc/zXN40q0z/8.jpg">
-<meta property="og:image" content="https://i.postimg.cc/ZKxp3r3Z/17.jpg">
-<meta property="og:image" content="https://i.postimg.cc/TPT9pg95/18.jpg">
 <meta property="og:image" content="https://iridescent-zhang.github.io/2022/12/03/hlsNote/38.png">
 <meta property="og:image" content="https://iridescent-zhang.github.io/2022/12/03/hlsNote/1.jpg">
 <meta property="og:image" content="https://iridescent-zhang.github.io/2022/12/03/hlsNote/1.png">
@@ -139,13 +122,13 @@
 <meta property="og:image" content="https://iridescent-zhang.github.io/2022/12/03/hlsNote/79.png">
 <meta property="og:image" content="https://iridescent-zhang.github.io/2022/12/03/hlsNote/13.png">
 <meta property="article:published_time" content="2022-12-02T16:24:20.000Z">
-<meta property="article:modified_time" content="2023-10-20T15:19:06.129Z">
+<meta property="article:modified_time" content="2024-03-18T16:00:48.740Z">
 <meta property="article:author" content="lichao Zhang">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="HLS">
 <meta property="article:tag" content="CV">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.postimg.cc/ncxXTjcb/5.jpg">
+<meta name="twitter:image" content="https://i.postimg.cc/9QnLjBVr/10.jpg">
 
 <link rel="canonical" href="https://iridescent-zhang.github.io/2022/12/03/hlsNote/">
 
@@ -331,7 +314,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-20 15:19:06" itemprop="dateModified" datetime="2023-10-20T15:19:06Z">2023-10-20</time>
+                <time title="Modified: 2024-03-18 16:00:48" itemprop="dateModified" datetime="2024-03-18T16:00:48Z">2024-03-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -398,33 +381,28 @@
 <blockquote>
 <p>（1）熟悉手势识别处理算法的基本流程，仿真算法的识别效果；<br>（2）利用Xilinx的HLS方法实现算法的优化与性能仿真；<br>（3）搭建FPGA平台，将手势识别算法在FPGA中进行验证，并可以演示；<br>（4）扩展功能：可以进行手势识别与分类显示。</p>
 </blockquote>
-<h1 id="HLS简介"><a href="#HLS简介" class="headerlink" title="HLS简介"></a>HLS简介</h1><h2 id="高层综合简介"><a href="#高层综合简介" class="headerlink" title="高层综合简介"></a>高层综合简介</h2><h2 id="HLS设计流程"><a href="#HLS设计流程" class="headerlink" title="HLS设计流程"></a>HLS设计流程</h2><p>Vivado HLS 的功能简单地来说就是 把 C、 C++ 或 SystemC 的设计转换成 RTL 实现，然后就可以在Xilinx FPGA 或 Zynq 芯片的可编程逻辑中综合并实现了 。需要注意的是，这里我们说的使用 C&#x2F;C++完成的设计与运行在处理器（ ZYNQ中的 ARM处理器或 MicroBlaze软核处理器）中的软件代码是截然不同的。在 HLS中，所有的 C设计都是要在可编程逻辑中实现的，也就是说，我们仍然是在进行硬件设计，只不过使用的不再是硬件描述语言。<br>使用Vivado HLS进行设计的流程如下图所示：</p>
-<p><img src="https://i.postimg.cc/ncxXTjcb/5.jpg"></p>
+<h1 id="HLS简介"><a href="#HLS简介" class="headerlink" title="HLS简介"></a>HLS简介</h1><h2 id="高层综合简介"><a href="#高层综合简介" class="headerlink" title="高层综合简介"></a>高层综合简介</h2><h2 id="HLS设计流程"><a href="#HLS设计流程" class="headerlink" title="HLS设计流程"></a>HLS设计流程</h2><p>Vivado HLS 的功能简单地来说就是 把 C、 C++ 或 SystemC 的设计转换成 RTL 实现，然后就可以在Xilinx FPGA 或 Zynq 芯片的可编程逻辑中综合并实现了 。需要注意的是，这里我们说的使用 C&#x2F;C++完成的设计与运行在处理器（ ZYNQ中的 ARM处理器或 MicroBlaze软核处理器）中的软件代码是截然不同的。在 HLS中，所有的 C设计都是要在可编程逻辑中实现的，也就是说，我们仍然是在进行硬件设计，只不过使用的不再是硬件描述语言。</p>
+<p>使用Vivado HLS进行设计的流程如下图所示：</p>
 <p>HLS设计的主要输入 是一个 C&#x2F;C++&#x2F;SystemC 设计 ，以及一个基于 C 的测试集 TestBench）。我们首先要知道 C语言的本质就是函数，那么 这个测试集 就是用于验证 C设计中的 函数，验证 过程需要一个 “黄金参考” 。这个 “黄金参考 类似于一个标准答案，用来 和 C设计中 函数所产生的输出做比对。</p>
 <p>在对HLS设计进行综合之前，我们要先对其进行“ 功能性验证 ”，也就是 C仿真，其目的是验证 HLS 输入的 C代码的功能是否正确。验证的方式就是在 TestBench中调用 C设计的函数，然后将其输出与“黄金参考”进行比对，如果与黄金参考有差异就需要先对 C设计进行修改调试。</p>
 <p>接下来就是对设计进行高层综合 ，即 HLS过程本身。该过程涉及到分析和处理基于 C 的代码，加上用户所给出的指令和约束，来创建 RTL描述。高层综合结束后会产生一组输出文件，包括以 Verilog或者VHDL语言编写的 RTL设计文件。</p>
 <p>综合过程结束后得到的RTL模型，可以在 Vivado HLS 中进行 C&#x2F;RTL 协同仿真 ，来进一步验证综合得到的RTL设计的正确性。在这个过程中 Vivado HLS会自动产生一个测试集为 RTL设计提供输入，然后拿它的输出与预期的值做比对。 C功能性验证和 C&#x2F;RTL协同仿真 的区别如下图所示：</p>
-<p><img src="https://i.postimg.cc/cCyrp6R3/6.jpg"></p>
 <p>左侧的功能性验证（ C仿真）中，原始测试集是用户输入的测试文件TestBench。而右侧的C&#x2F;RTL协同仿真所需的 RTL测试集是由 Vivado HLS 自动产生的，这样就不再需要人工创建了，所产生的测试集包括了原始测试集和被测 RTL模块之间的数据传递。</p>
 <p>除了对功能进行验证，我们还要评估 RTL设计的实现和性能 。比如，在 FPGA中所需的资源的数量，设计的延迟、所支持的最高时钟频率等是否 满足要求。如果不满足要求，那么就需要设计者通过修改指令和约束，然后再次进行高层综合，一个设计可能要做多次 HLS设计迭代，来找到“最佳 ”的解决方案。如果有必要，设计者也可以返回修改 C设计代码，然后从头开始重新对设计进行验证。</p>
 <p>在设计被验证了之后，而且实现也满足了期望的设计目标，那么就可以集成进更大的系统里了。我们可以直接使用 HLS 过程所产生的 RTL文件（即 VHDL 或 Verilog 代码），更方便的做法是使用 Vivado HLS 的 IP 打包功能。对 Vivado HLS 所产生的输出打包意味着 HLS 设计能够以 IP核的形式引入其他 Xilinx 工具中，比如 Vivado中的 IP 集成器。这两种类型的输出如下图所示：</p>
-<p><img src="https://i.postimg.cc/65QyDsRY/7.jpg"></p>
 <h2 id="接口与算法综合"><a href="#接口与算法综合" class="headerlink" title="接口与算法综合"></a>接口与算法综合</h2><p>设计者需要分析设计的两个主要方面：</p>
 <ul>
 <li>设计的 接口 ，也就是它的顶层连接</li>
 <li>设计的 功能 ，也就是它所实现的算法</li>
 </ul>
 <p>给出一个HLS设计中接口和功能的概念图 </p>
-<p><img src="https://i.postimg.cc/tgb4gfvV/1.jpg"></p>
 <p>在上图中，两端的绿色区域表示设计的输入和输出接口，其中展示了部分接口类型，如RAM接口、 FIFO接口，以及总线类型的接口等。这些接口可以是HLS工具从代码中通过 接口综合（ Interface Synthesis 得到的，也可以由设计者手动指定具体的接口类型。</p>
 <p>图中间黄色的区域表示HLS设计具体能够实现的功能，对于不同的应用，其功能也各不相同。 在 Vivado HLS 设计中，功能是从输入的代码中，经过算法综合（ Algorithm Synthesis）的过程得到的 。</p>
 <h3 id="接口综合："><a href="#接口综合：" class="headerlink" title="接口综合："></a>接口综合：</h3><p>在这里我们先简单介绍一下接口综合。顾名思义，Interface Synthesis指的是 HLS 设计中对接口的综合，综合出来的接口能够与系统中的其他模块通信，还有可能需要与系统中的处理器进行通信。<br>这里接口的概念既包括端口（port），也包含所使用的协议。所有端口的细节（如类型、位宽和方向是从 C&#x2F;C++ 文件中<strong>顶层函数的参数和返回值</strong>里推断出来的；而协议是从端口的表现（行为）推断出来的。比如，最简单的接口可以是一条 1 比特的线（ wire），而更复杂的接口，可能要用总线或 RAM 接口。接口综合能够推断出来的接口类型包括：线、寄存器、单向和双向握手信号 、 FIFO、存储器和总线等。</p>
 <p><strong>举例：</strong> 下面给出一个简单的C设计的顶层函数，函数名为 find_average_of_best_X()</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">find_average_of_best_X</span><span class="params">(<span class="type">int</span> *average, <span class="type">int</span> samples[<span class="number">8</span>], <span class="type">int</span> X)</span> &#123;</span><br><span class="line">    <span class="comment">// 主题函数（生命，子函数调用等）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>函数内部工作的详细情况无关紧要，不过<strong>每个参数的读 &#x2F;写操作</strong>将决定综合出来的端口的方向。这个函数定义包含三个参数，数组“sample”和整数 “X”是函数的输入，而 average作为函数的输出。因此，简单来说，这三个函数参数要被 HLS 转换成两个输入接口和一个输出接口，如下图所示：</p>
-<p><img src="https://i.postimg.cc/FsBQqqQQ/2.jpg"></p>
 <p>需要注意的是，上图只是一个简化了的接口示意图。根据<strong>所用的协议</strong>，这些接口可能包括数据端口以外的控制输入或输出，如下图所示：</p>
-<p><img src="https://i.postimg.cc/43CR49dL/3.jpg"></p>
 <p>上图是 函数 find_average_of_best_X()经 HLS综合出来的完整的 RTL模块的接口图。从图中可以看到由函数的三个参数所综合出来的接口<strong>分别拥有了各自的协议</strong>，如 ap_memory协议、 ap_none协议和 ap_vld协议。同时模块还多出来了一些端口，如 ap_clk和 ap_rst等，它们使用的是 ap_ctrl_hs 协议。这些协议决定了相应的接口是如何与<strong>系统中其他模块</strong>进行交互的， 至于<strong>各协议具体的含义以及如何为接口选择其协议</strong>，将是学习HLS设计的重点。</p>
 <h3 id="算法综合"><a href="#算法综合" class="headerlink" title="算法综合"></a>算法综合</h3><p>算法综合关注的是设计的功能，即设计所期望的行为，它是由输入的C设计所描述的。算法综合从代码中推出各种运算操作，然后转换成一组 RTL语句。<br>算法综合包括三个主要阶段，依次是：</p>
 <ul>
@@ -433,7 +411,7 @@
 <li>优化；</li>
 </ul>
 <h4 id="解析出数据通路和控制电路"><a href="#解析出数据通路和控制电路" class="headerlink" title="解析出数据通路和控制电路"></a>解析出数据通路和控制电路</h4><p>HLS 的第一个阶段是分析 C&#x2F;C++&#x2F;SystemC代码，并且解释所需的功能。 Vivado HLS从以下几个方面分析程序 逻辑和算法的运算、条件语句和分支、 数组运算和循环 等。<br>所产生的实现会具有一个数据通路元件，一般还会有一个控制元件。<del>需要澄清的是，这里的“数据通路”处理指的是在数据样本上作的运算，而“控制”是协同数据流处理所需的电路。</del> 算法的本质定义出数据通路和控制元件，设计者可以在 HLS中采取专门的步骤来最小化控制元件的复杂度。</p>
-<h4 id="调度和绑定"><a href="#调度和绑定" class="headerlink" title="调度和绑定"></a>调度和绑定</h4><p>HLS 是由两个主要过程组成的：调度（ Scheduling）和绑定 Binding）。它们是交替进行的，彼此互相影响，如下图所示：<br><img src="https://i.postimg.cc/5tq57q5v/4.jpg"></p>
+<h4 id="调度和绑定"><a href="#调度和绑定" class="headerlink" title="调度和绑定"></a>调度和绑定</h4><p>HLS 是由两个主要过程组成的：调度（ Scheduling）和绑定 Binding）。它们是交替进行的，彼此互相影响，如下图所示：</p>
 <ul>
 <li>调度 是把由 C 代码解释得到的 RTL 语句翻译成一组运算，每个运算都关联着一定的执行时间，以时钟周期为单位。这个阶段所作的决策，受时钟频率和不确定度、目标芯片的技术和用户所施加的指令所影响。</li>
 <li>绑定 是调度好了的运算和目标芯片上的实际资源联系起来的过程。这些资源的功能和时序特征可能会影响调度，因此绑定信息会反馈给调度过程。</li>
@@ -510,8 +488,7 @@
 <h4 id="用于-C-的任意精度定点数据类型"><a href="#用于-C-的任意精度定点数据类型" class="headerlink" title="用于 C++ 的任意精度定点数据类型"></a>用于 C++ 的任意精度定点数据类型</h4><p>使用定点数据类型执行的C++语言 仿真的行为与综合创建的硬件的行为 相匹配，从而能够使用C语言层次快速仿真来分析位精度、量化和上溢的影响，在Vitis HLS中使用定点数据非常重要。</p>
 <h1 id="Vitis-使用"><a href="#Vitis-使用" class="headerlink" title="Vitis 使用"></a>Vitis 使用</h1><p>Vitis 软件平台支持嵌入式软件开发流程作为SDK的新一代技术，也支持Vitis应用加速开发流程，以满足使用基于Xilinx FPGA的最新软件加速功能的需求。</p>
 <p>下图展示了Vitis 嵌入式软件应用开发工作流程：</p>
-<h2 id="嵌入式软件开发流程"><a href="#嵌入式软件开发流程" class="headerlink" title="嵌入式软件开发流程"></a>嵌入式软件开发流程</h2><p><img src="https://i.postimg.cc/fRvT3b0g/14.jpg"></p>
-<ul>
+<h2 id="嵌入式软件开发流程"><a href="#嵌入式软件开发流程" class="headerlink" title="嵌入式软件开发流程"></a>嵌入式软件开发流程</h2><ul>
 <li>硬件工程师负责设计软件开发（从 Vivado® Design Suite 导出 XSA 存档文件）所需的逻辑和导出信息。</li>
 <li>软件开发者负责通过创建平台来将 XSA（Xilinx Shell Archive） 导入 Vitis 软件平台，平台包含硬件规格和软件环境设置。</li>
 <li>软件环境设置称为域，同样属于平台的一部分。</li>
@@ -521,7 +498,6 @@
 <li>全部就绪后，Vitis IDE 即可帮助创建启动镜像，用于初始化系统和启动应用。</li>
 </ul>
 <h2 id="Vitis-软件平台中的工作空间结构"><a href="#Vitis-软件平台中的工作空间结构" class="headerlink" title="Vitis 软件平台中的工作空间结构"></a>Vitis 软件平台中的工作空间结构</h2><p>在 Vitis 工作空间内有两种类型的工程：</p>
-<p><img src="https://i.postimg.cc/3xQF8tgF/15.jpg"></p>
 <ul>
 <li>工作空间：打开 Vitis 软件平台时，会创建工作空间。工作空间即供 Vitis 软件平台用于存储工程数据和元数据的目录位置。初始工作空间位置必须在启动 Vitis 软件平台时提供。</li>
 <li>XSA：XSA 是从 Vivado Design Suite 导出的。它包含各种硬件规格，例如，处理器配置属性、外设连接信息、地址映射和器件初始化代码等。创建平台工程时，必须提供 XSA。</li>
@@ -531,13 +507,10 @@
 <li>系统工程：系统工程用于将任一器件上同时运行的应用组合在一起。在系统工程中，同一个处理器的两个独立应用不能组合在一起。在系统工程中，2 个 Linux 应用可以组合在一起。每个工作空间均可包含多个系统工程。</li>
 <li>应用（软件工程）：每个应用包含一个或多个源文件以及必要的头文件，以允许编译和生成二进制输出 (ELF)文件。每个系统工程均可包含多个应用工程。每个软件工程都必须包含一个对应的域（应用对域是多对一的关系）。</li>
 </ul>
-<h2 id="Vitis-软件平台与-SDK-之比较"><a href="#Vitis-软件平台与-SDK-之比较" class="headerlink" title="Vitis 软件平台与 SDK 之比较"></a>Vitis 软件平台与 SDK 之比较</h2><p><img src="https://i.postimg.cc/j216VbTR/16.jpg"></p>
-<h1 id="使用-pynq-z2-完成HLS流程"><a href="#使用-pynq-z2-完成HLS流程" class="headerlink" title="使用 pynq-z2 完成HLS流程"></a>使用 pynq-z2 完成HLS流程</h1><p>Overlay由 两个主要部分组成 bitstream文件 和 hwh Hardware Handoff 文件。可以说 <strong>Overlay设计 其实就是一种 PL与PS的交互设计</strong>。<br>PYNQ overlay具有 Python接口 ，从而允许软件程序员像使用其他任何Python软件包一样使用它，程序员可以在运行时将overlay下载到 Zynq PL中，以提供软件应用程序所需的功能。</p>
+<h2 id="Vitis-软件平台与-SDK-之比较"><a href="#Vitis-软件平台与-SDK-之比较" class="headerlink" title="Vitis 软件平台与 SDK 之比较"></a>Vitis 软件平台与 SDK 之比较</h2><h1 id="使用-pynq-z2-完成HLS流程"><a href="#使用-pynq-z2-完成HLS流程" class="headerlink" title="使用 pynq-z2 完成HLS流程"></a>使用 pynq-z2 完成HLS流程</h1><p>Overlay由 两个主要部分组成 bitstream文件 和 hwh Hardware Handoff 文件。可以说 <strong>Overlay设计 其实就是一种 PL与PS的交互设计</strong>。<br>PYNQ overlay具有 Python接口 ，从而允许软件程序员像使用其他任何Python软件包一样使用它，程序员可以在运行时将overlay下载到 Zynq PL中，以提供软件应用程序所需的功能。</p>
 <p>因此，想要设计Overlay，需要先学习PS与PL的交互。</p>
 <h2 id="PS与PL的交互"><a href="#PS与PL的交互" class="headerlink" title="PS与PL的交互"></a>PS与PL的交互</h2><h3 id="ZYNQ-PS与PL的接口"><a href="#ZYNQ-PS与PL的接口" class="headerlink" title="ZYNQ PS与PL的接口"></a>ZYNQ PS与PL的接口</h3><p>ZYNQ PS与PL之间有九路AXI接口。<strong>在PL侧，有4路AXI Master HP(高性能)接口，2路AXI Master GP（通用）接口，2路AXI Slave GP接口和1路AXI Master ACP接口。</strong> PS中还有连接到PL的GPIO控制器，如下图：</p>
-<p><img src="https://i.postimg.cc/pdZ7GT0n/11.jpg"></p>
 <h3 id="linux内核-如何与-PL-交互"><a href="#linux内核-如何与-PL-交互" class="headerlink" title="linux内核 如何与 PL 交互"></a>linux内核 如何与 PL 交互</h3><p>pynq是基于linux的，而linux运行在PS中，那么linux如何与PL进行交互：</p>
-<p><img src="https://i.postimg.cc/28ZJWmZh/12.jpg"></p>
 <p>上图中看到了用于交互的linux驱动程序，linux内核与PL的FPGA之间通过<strong>linux驱动fpga_manager, sysgpio, uio, devmem 和 xlnk</strong> 进行交互，这些 <strong>驱动</strong> 和 <strong>PS与PL之间的接口</strong> 的对应关系是： </p>
 <ul>
 <li>fpga_manager 用于下载bitstream（位流）文件到PL</li>
@@ -546,8 +519,7 @@
 <li>devmem 用于PS侧的AXI <strong>Master</strong> GP接口</li>
 <li>xlnk 用于PS侧的AXI Slave GP接口 和 AXI Slave HP接口</li>
 </ul>
-<h3 id="PYNQ-接口类-Python-如何与-linux内核-交互"><a href="#PYNQ-接口类-Python-如何与-linux内核-交互" class="headerlink" title="PYNQ 接口类 (Python 如何与 linux内核 交互)"></a>PYNQ 接口类 (Python 如何与 linux内核 交互)</h3><p><img src="https://i.postimg.cc/sXnCgRNq/13.jpg"></p>
-<p>在 PYNQ 架构图中可以看到，上面所述 <strong>linux驱动</strong> 已经包装在Python库中。</p>
+<h3 id="PYNQ-接口类-Python-如何与-linux内核-交互"><a href="#PYNQ-接口类-Python-如何与-linux内核-交互" class="headerlink" title="PYNQ 接口类 (Python 如何与 linux内核 交互)"></a>PYNQ 接口类 (Python 如何与 linux内核 交互)</h3><p>在 PYNQ 架构图中可以看到，上面所述 <strong>linux驱动</strong> 已经包装在Python库中。</p>
 <p>在PYNQ中除了 <strong>PL类</strong> 用于通过 fpga_manager驱动下载 bitstream文件到 PL外，还有四个 PYNQ接口类 用于管理 ZYNQ PS（包括 PS DRAM）和 PL接口之间的数据移动。这四个类分别是：</p>
 <ul>
 <li>GPIO (General Purpose Input&#x2F;Output 通用输入输出)：用于控制连接到PL侧的 GPIO外设，也可用作IP的终端或复位信号</li>
@@ -564,14 +536,11 @@
 <h1 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h1><p>Board_File中的PYNQ-Z2文件夹复制到Vitis安装目录下Vivado\2022.2\data\boards\board_files后可以在创建工程时直接选择板子，为Vitis和Vitis HLS添加board_files也按这个步骤来。在创建block design时创建ZYNQ IP核后，运行Run Block Automation时应该勾选Apply Board Preset，这样我们前面复制的board file会自动将ddr,时钟等基本配置给设置好,就不用一个一个要我们去设置了。</p>
 <img src="/2022/12/03/hlsNote/121.png" class="">
 
-<p><img src="https://i.postimg.cc/hvDbQZ1B/9.jpg"></p>
-<p><img src="https://i.postimg.cc/zXN40q0z/8.jpg"></p>
+
 <p>器件的选择参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/Zenor_one/article/details/89453987">Xilinx FPGA 芯片命名规则</a></p>
 <h2 id="按键控制LED实验"><a href="#按键控制LED实验" class="headerlink" title="按键控制LED实验"></a>按键控制LED实验</h2><p>本实验使用 Vivado HLS 生成一个带有输入输出接口（ap_none）的IP核。学习使用C Simulation。</p>
-<p><img src="https://i.postimg.cc/ZKxp3r3Z/17.jpg"></p>
 <p>设计的输入有 C&#x2F;C++设计， Testbench测试集 以及 Constraints（约束）&#x2F;directives（指令）。我们可以使用C Testbench对C程序进行仿真验证程序输出的正确性，也就是C Simulation， 此C Testbench也可以用来对综合后得到的RTL设计进行仿真，也即C&#x2F;RTL协同仿真。</p>
 <p>HLS规定了 <strong>协议、端口类型和方向</strong>之间的相关性，在HLS开发过程中，考虑C&#x2F;C++函数参数的类型是十分重要的。Vitis HLS规定可以 传入&#x2F;传出 C&#x2F;C++ 函数的值有四种不同的数据类型，分别是<strong>变量、指针、数组和引用</strong>。一种特定的参数类型只对应有限的几种协议，如：传入一个数组作为形参，能使用的协议只有：ap_hs, ap_memory, bram, ap_fifo, ap_bus, axis 和 m_axi, 其中 ap_memory是默认的，参数类型对应的接口协议如下：</p>
-<p><img src="https://i.postimg.cc/TPT9pg95/18.jpg"></p>
 <p>D：表示default，表示HLS工具默认综合出来的接口类型；<br>S：表示support，表示HLS工具支持综合出来的接口类型；</p>
 <p>使用ap_none协议且<strong>变量作为形参</strong>时，接口只能被综合成输入（I）接口而不能被综合成输出接口。而指针变量作为形参则可以被综合成输入、输出和双向端口。</p>
 <h2 id="呼吸灯"><a href="#呼吸灯" class="headerlink" title="呼吸灯"></a>呼吸灯</h2><p>本实验使用HLS生成一个带有AXI4-Lite总线接口的IP核。学习使用 C&#x2F;RTL Simulation 协同仿真。在ZYNQ PS端通过AXI4-Lite总线来配置呼吸灯IP核的频率和开关。</p>
@@ -1328,7 +1297,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">269k</span>
+    <span title="Symbols count total">270k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
