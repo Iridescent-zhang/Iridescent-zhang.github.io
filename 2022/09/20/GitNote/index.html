@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/12b959efcc454da5a15b9fdec493d61b.png">
 <meta property="og:image" content="https://i.postimg.cc/nVwtY40H/1.jpg">
 <meta property="article:published_time" content="2022-09-19T16:47:52.000Z">
-<meta property="article:modified_time" content="2024-03-18T15:52:34.469Z">
+<meta property="article:modified_time" content="2024-03-19T03:25:11.504Z">
 <meta property="article:author" content="lichao Zhang">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-03-18 15:52:34" itemprop="dateModified" datetime="2024-03-18T15:52:34Z">2024-03-18</time>
+                <time title="Modified: 2024-03-19 03:25:11" itemprop="dateModified" datetime="2024-03-19T03:25:11Z">2024-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,14 +267,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>11k</span>
+              <span>12k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>10 mins.</span>
+              <span>11 mins.</span>
             </span>
 
         </div>
@@ -423,9 +423,14 @@
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/gggg989898/article/details/108639631">git添加多个远程仓库</a> 进一步描述上一篇文章中 git remote add (想个名字) 你想要pr的库的链接.git <strong>的意义</strong></p>
 <p>添加一个远程库 名字不能是origin（origin是你fork的库在本地的名字了）</p>
 <h1 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h1><p>痛苦的ssh</p>
-<p><a target="_blank" rel="noopener" href="https://gist.github.com/chenshengzhi/07e5177b1d97587d5ca0acc0487ad677?permalink_comment_id=3721523">git ssh 代理设置</a></p>
+<p><code>ssh -T git@github.com</code>命令检查ssh连接是否成功</p>
+<p><code>ssh -T git@github.com</code>命令检查ssh连接是否成功<br>新建ssh连接首先需要删除.ssh文件夹中的<code>known_hosts</code>（本用户曾经ssh连接过的主机的公钥都会保存在这里），<br>流程为：<br>在命令行中使用ssh-keygen.exe工具来生成密钥对：<br>生成过程中会让你指定生成位置，以及给它再设一个密码。我们使用默认位置，不再设定密码。也就是一路Enter就行<br>生成之后多了两个文件，显然第一个是私钥，第二个.pub是公钥。私钥在自己的设备上存着就可以，别人拿到你的公钥就可以验证你的身份。也可以用你的公钥签发一些数字证书。<br>将生成的公钥添加到Github账户中<br>复制一下生成的公钥，登录Github，点右上角自己的头像，选择Settings，然后在新页面中的左侧边栏选择SSH and GPG Key。给这个ssh公钥起一个名字，然后把公钥复制进去。<br><code>ssh -vT git@github.com</code>命令检查ssh连接是否成功</p>
+<p>报错</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/bash: line 0: exec: nc: not found</span><br><span class="line">kex_exchange_identification: Connection closed by remote host</span><br><span class="line">Connection closed by UNKNOWN port 65535</span><br></pre></td></tr></table></figure>
+<p>nc是connect.exe这个软件，找不到了，现在的git bash里面都包含了connect.exe这个软件，位置在jmingw&#x2F;bin下，我是添加了环境变量。<br>后面两个报错需要修改<code>.ssh/config</code>，使用如下配置文件：</p>
 <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">  User git</span><br><span class="line">  Port 443</span><br><span class="line">  Hostname ssh.github.com</span><br><span class="line">  IdentityFile &quot;C:\Users\Iridescent_zlc\.ssh\id_rsa&quot;</span><br><span class="line">  TCPKeepAlive yes</span><br><span class="line"> ProxyCommand connect -S 127.0.0.1:7891 -a none %h %p</span><br><span class="line"></span><br><span class="line">Host ssh.github.com</span><br><span class="line">  User git</span><br><span class="line">  Port 443</span><br><span class="line">  Hostname ssh.github.com</span><br><span class="line">  IdentityFile &quot;C:\Users\Iridescent_zlc\.ssh\id_rsa&quot;</span><br><span class="line">  TCPKeepAlive yes</span><br><span class="line">  ProxyCommand connect -S 127.0.0.1:7891 -a none %h %p</span><br></pre></td></tr></table></figure>
-<p>443端口，唯一真神</p>
+<p>443端口，唯一真神（经测试，22端口是不行的）</p>
+<p>参考自 <a target="_blank" rel="noopener" href="https://gist.github.com/chenshengzhi/07e5177b1d97587d5ca0acc0487ad677?permalink_comment_id=3721523">git ssh 代理设置</a></p>
 <hr>
 <p>出现<code>fatal: refusing to merge unrelated histories</code><br><img src="https://i.postimg.cc/nVwtY40H/1.jpg"></p>
 <p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/55972713/fail-to-use-git-pull-couldnt-find-remote-ref-allow-unrelated-histories">遇到过类似的问题</a><br>当执行git中的“git pull origin master –allow-unrelated-histories”命令时，会出现“ couldn’t find remote ref –allow-unrelated-histories”的错误:</p>
@@ -551,7 +556,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -637,13 +642,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">270k</span>
+    <span title="Symbols count total">290k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">4:05</span>
+    <span title="Reading time total">4:24</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
