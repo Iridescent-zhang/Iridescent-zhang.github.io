@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://iridescent-zhang.github.io/BaGu/2.png">
 <meta property="og:image" content="https://iridescent-zhang.github.io/2024/09/01/BaGu/15.png">
 <meta property="article:published_time" content="2024-08-31T17:07:21.000Z">
-<meta property="article:modified_time" content="2024-11-15T11:42:13.981Z">
+<meta property="article:modified_time" content="2024-12-03T16:51:14.796Z">
 <meta property="article:author" content="lichao Zhang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://iridescent-zhang.github.io/BaGu/2.png">
@@ -219,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-11-15 11:42:13" itemprop="dateModified" datetime="2024-11-15T11:42:13Z">2024-11-15</time>
+                <time title="Modified: 2024-12-03 16:51:14" itemprop="dateModified" datetime="2024-12-03T16:51:14Z">2024-12-03</time>
               </span>
 
           
@@ -249,14 +249,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>29k</span>
+              <span>32k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>26 mins.</span>
+              <span>29 mins.</span>
             </span>
 
         </div>
@@ -546,7 +546,52 @@
 <h2 id="sentinel-进行流控"><a href="#sentinel-进行流控" class="headerlink" title="sentinel 进行流控"></a>sentinel 进行流控</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FriendmallSentinelConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 自定义限流时返回数据（流控相应），比如你请求QPS太高前端返回的数据</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">FriendmallSentinelConfig</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">        WebCallbackManager.setUrlBlockHandler(<span class="keyword">new</span> <span class="title class_">UrlBlockHandler</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">blocked</span><span class="params">(HttpServletRequest request, HttpServletResponse response, BlockException ex)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">                <span class="type">R</span> <span class="variable">error</span> <span class="operator">=</span> R.error(TOO_MANY_REQUEST.getCode(), TOO_MANY_REQUEST.getMsg());</span><br><span class="line">                response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">                response.setContentType(<span class="string">&quot;application/json&quot;</span>);</span><br><span class="line">                response.getWriter().write(JSON.toJSONString(error));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Sleuth+Zipkin 服务链路追踪</p>
-<h2 id="Elasticsearch"><a href="#Elasticsearch" class="headerlink" title="Elasticsearch"></a>Elasticsearch</h2><h2 id="简历信息"><a href="#简历信息" class="headerlink" title="简历信息"></a>简历信息</h2><p><a href="mailto:&#x6c;&#99;&#x7a;&#104;&#x61;&#x6e;&#x67;&#x39;&#51;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#46;&#99;&#111;&#x6d;">&#x6c;&#99;&#x7a;&#104;&#x61;&#x6e;&#x67;&#x39;&#51;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#46;&#99;&#111;&#x6d;</a></p>
+<h2 id="简历信息"><a href="#简历信息" class="headerlink" title="简历信息"></a>简历信息</h2><p>给项目改个名以及修改简介，比如 12306 可以改为智行火车票、飞猪火车票、去哪儿火车票、同程火车票以及买火车票等等。<br>然后是否可以按量购买<strong>云服务器</strong>，模拟真实压测接口的 QPS 和 TPS，把这些指标写入到项目中。<br>是否能够通过存储过程模拟海量数据，看看接口在海量数据下能否高性能新增和插入。<br>最后，如果项目包含完整前后端流程，可以云服务器部署，并使用域名进行访问。</p>
+<p><a href="mailto:&#x6c;&#99;&#x7a;&#x68;&#x61;&#110;&#x67;&#57;&#x33;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x6c;&#99;&#x7a;&#x68;&#x61;&#110;&#x67;&#57;&#x33;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a></p>
+<p>Friendmall<br>技术栈: SpringBoot + SpringCloud+ Mybatis-Plus + MySQL + Redis + RabbitMQ+ Nginx<br>简介:<br>FriendMall 是一个完整的微服务分布式架构电商平台，利用Docker 进行容器化搭建部署，以复杂业务为背景整合SSM，应用Spring CloudAlibaba 微服务组件，分析分布式系统难点，尝试应对高并发场景。<br>亮点：</p>
+<ol>
+<li>全系统实现微服务，以业务解耦，注册Nacos 服务发现，OpenFeign远程调用，Nginx 反向代理并实现动静分离，Gateway 负载均衡地将请求转达各个服务，搭建微服务域名环境和稳定的调用链路。</li>
+<li>OAuth2.0社交登录，SpringSession整合Redis 实现分布式会话共享，ThreadLocal 实现未登录拦截，构造Feign的请求拦截器增强Feign远程调用存入Cookie，全系统内单点登录。</li>
+<li>Redis 实现分布式缓存，整合SpringCache 简化缓存开发，自定义缓存逻辑分区，解决缓存穿透、击穿、雪崩问题，满足缓存最终一致性。分布式锁的实现从Redis 的setnx 演进到Redisson。</li>
+<li>线程池CompletableFuture 组合式异步编排查询任务提高效率。</li>
+<li>分布式事务方案从Seata 演进到由RabbitMQ实现，更适应高并发请求，延时队列实现订单超时关单、自动解锁库存，手动确认消息，不断重发失败的消息保证可靠性，实现分布式事务最终一致性。</li>
+<li>秒杀服务独立，定时任务将库存预热到Redis，以RedissonRSemaphore 控制请求，RabbitMQ流量削峰，消息入队由后台异步执行实现，实现安全高性能高并发方案。</li>
+<li>关注幂等性处理：库存自动解锁时都会查最新状态防止重复解锁；结合分布式锁，通过在Redis 中占位,防止重复保存秒杀信息。</li>
+<li>网关层进行Sentinel 流控(限流、熔断、降级), Zipkin链路追踪可视化资源调用。<br><a target="_blank" rel="noopener" href="https://github.com/Iridescent-zhang/friendmall">https://github.com/Iridescent-zhang/friendmall</a></li>
+</ol>
+<p>微博短链接系统<br>项目上线 <a target="_blank" rel="noopener" href="http://strumcode.com/">http://strumcode.com/</a><br>简介:<br>提供长链接转换为短链接服务。微博发布博文有长度限制，分享链接会占用正文篇幅，为此通过短链系统优化。系统支持高并发短链跳转，并提供了深入的分析和跟踪功能，帮助用户分析分享行为以及转化率。<br>亮点：<br>1.通过布隆过滤器完成判断短链接是否已存在，性能远胜分布式锁搭配查询数据库方案。<br>2.借助RocketMQ 消息队列的削峰特点，实现海量访问短链接场景下的监控信息存储功能，确保系统在高负载情况下仍能正常运行。<br>3.封装缓存不存在读取功能，通过双重判定锁优化更新或失效场景下大量查询数据库问题。<br>4.通过旁路缓存策略，保障短链接缓存与数据库之间的数据一致性功能。<br>5.通过Redis 完成消息队列消费业务下的幂等场景，保障消息在一定时间内消费且仅消费一次。<br>6.使用Sentinel 进行接口访问的QPS 限流，以保障短链接系统的稳定运行, 确保核心功能的可用性。</p>
+<p>项目上线 <a target="_blank" rel="noopener" href="http://strumcode.com/">http://strumcode.com/</a><br><a target="_blank" rel="noopener" href="https://github.com/Iridescent-zhang/shortLinkRocket">https://github.com/Iridescent-zhang/shortLinkRocket</a></p>
+<p>12306铁路购票系统<br>简介:<br>帮助用户完成互联网在线购票，提高居民买票效率以及减少售票人员工作。完成会员注册、车票查询、车票下单以及支付等业务。底层采用缓存、消息队列以及分库分表等技术支持海量用户购票以及数据存储。<br>亮点：<br>1.使用责任链模式重构请求数据准确性检验，比如：查询购票、购买车票下单以及支付结果回调等业务。<br>2.通过RocketMQ 延时消息特性，完成用户购票10 分钟后未支付情况下取消订单功能。<br>3.封装缓存组件库避免注册用户时，用户名全局唯一带来的缓存穿透问题，减轻数据库访问压力。<br>4.使用BinLog 配合RocketMQ 消息队列完成MySQL 数据库与Redis 缓存之间的数据最终一致性。<br>5.通过Redis Lua 脚本原子特性，完成用户购票令牌分配，通过令牌限流以应对海量用户购票请求。<br>6.通过订单号和用户信息复合分片算法完成订单数据分库分表，支持订单号和用户查询维度。<br>7.创建订单明细与乘车人的关联表，分库分表规则同订单，完成乘车人账号登录查询本人车票功能。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Iridescent-zhang/12306">https://github.com/Iridescent-zhang/12306</a></p>
+<p>基于FPGA HLS的手势识别系统设计</p>
+<ol>
+<li><p>负责基于FPGA实现二维手势识别系统的整体设计与开发，利用高层次综合(HLS)技术优化算法性能。</p>
+</li>
+<li><p>采用C++语言，依据HLS设计原则，完成图像处理和手势特征提取等核心算法的开发。</p>
+</li>
+<li><p>通过仿真验证算法功能与性能，确保算法设计满足项目需求。</p>
+</li>
+<li><p>利用HLS工具的优化指令和约束，指导算法的综合过程，实现高效的RTL设计。</p>
+</li>
+<li><p>将综合得到的IP核成功集成至ZYNQ硬件系统中，实现算法的硬件加速，提升系统处理速度。</p>
+</li>
+<li><p>在软件平台上开发调试程序，确保软硬件协同工作，有效控制整个手势识别系统。</p>
+</li>
+<li><p>针对ZynqSoC 7000平台，精心设计软硬件架构，优化系统资源配置和任务调度。</p>
+</li>
+<li><p>独立承担项目从概念设计到最终实现的全过程，保证项目按时交付且满足性能要求。</p>
+</li>
+<li><p>熟练掌握Java 基础，熟悉JUC、集合、多线程，了解JVM 、设计模式。</p>
+</li>
+<li><p>掌握MySQL、Redis 的使用和原理，熟悉ShardingSphere 分库分表中间件。</p>
+</li>
+<li><p>熟悉RabbitMQ、RocketMQ 消息中间件，熟悉延迟队列的应用，解决重复消费问题。</p>
+</li>
+<li><p>熟悉SSM、SpringBoot、MyBatis-Plus 等主流开发框架以及Spring Cloud 常见组件。</p>
+</li>
+<li><p>熟悉常用数据结构、计算机网络、操作系统，掌握Maven、Git、Docker 的基本使用。</p>
+</li>
+</ol>
 <!-- flag of hidden posts -->
     </div>
 
@@ -635,7 +680,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-%E5%88%B7%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">MySQL 刷题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%8B%E6%92%95"><span class="nav-number">2.</span> <span class="nav-text">手撕</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AB%E8%82%A1%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">八股题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%A7%E6%8B%89%E6%8B%89"><span class="nav-number">3.1.</span> <span class="nav-text">货拉拉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BA%A2%E4%B9%A6"><span class="nav-number">3.2.</span> <span class="nav-text">小红书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BB%B4%E6%BB%B4"><span class="nav-number">3.3.</span> <span class="nav-text">滴滴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%9B%A2"><span class="nav-number">3.4.</span> <span class="nav-text">美团</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%94%9A%E6%9D%A5"><span class="nav-number">3.5.</span> <span class="nav-text">蔚来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%BF%E9%87%8C%E4%BA%91"><span class="nav-number">3.6.</span> <span class="nav-text">阿里云</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%89%8B"><span class="nav-number">3.7.</span> <span class="nav-text">快手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%B1%B3"><span class="nav-number">3.8.</span> <span class="nav-text">小米</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%E9%A2%98%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">场景题总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">项目总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8E%86%E6%8A%95%E9%80%92"><span class="nav-number">6.</span> <span class="nav-text">简历投递</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%86%E8%8A%82"><span class="nav-number">7.</span> <span class="nav-text">项目细节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="nav-number">7.1.</span> <span class="nav-text">数据库设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%93%E5%AD%98%E5%BA%93-wms"><span class="nav-number">7.1.1.</span> <span class="nav-text">库存库 wms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A2%E5%8D%95%E5%BA%93-oms"><span class="nav-number">7.1.2.</span> <span class="nav-text">订单库 oms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%95%86%E5%93%81%E5%BA%93-pms"><span class="nav-number">7.1.3.</span> <span class="nav-text">商品库 pms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%9A%E5%91%98%E5%BA%93-ums"><span class="nav-number">7.1.4.</span> <span class="nav-text">会员库 ums</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%92%E6%9D%80%E8%A1%A8-sms"><span class="nav-number">7.1.5.</span> <span class="nav-text">秒杀表 sms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E4%BF%A1%E6%81%AF"><span class="nav-number">7.2.</span> <span class="nav-text">全局异常信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redis"><span class="nav-number">7.3.</span> <span class="nav-text">redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E8%BF%87%E7%9A%84key%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">7.3.1.</span> <span class="nav-text">用过的key、数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%B3%95%EF%BC%88session%EF%BC%8C%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%EF%BC%8C%E5%B9%82%E7%AD%89%E6%80%A7%EF%BC%89"><span class="nav-number">7.3.2.</span> <span class="nav-text">用法（session，分布式锁，幂等性）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redisson"><span class="nav-number">7.3.3.</span> <span class="nav-text">redisson</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%8B%E6%B5%8B"><span class="nav-number">7.4.</span> <span class="nav-text">压测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1-%E7%A7%92%E6%9D%80%E5%95%86%E5%93%81%E4%B8%8A%E6%9E%B6"><span class="nav-number">7.5.</span> <span class="nav-text">定时任务 秒杀商品上架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%92%E6%9D%80"><span class="nav-number">7.6.</span> <span class="nav-text">秒杀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="nav-number">7.7.</span> <span class="nav-text">消息队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="nav-number">7.8.</span> <span class="nav-text">登录拦截器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#session-%E8%B7%A8%E5%9F%9F"><span class="nav-number">7.8.1.</span> <span class="nav-text">session 跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BE%E4%BA%A4%E7%99%BB%E5%BD%95"><span class="nav-number">7.8.2.</span> <span class="nav-text">社交登录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sentinel-%E8%BF%9B%E8%A1%8C%E6%B5%81%E6%8E%A7"><span class="nav-number">7.9.</span> <span class="nav-text">sentinel 进行流控</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Elasticsearch"><span class="nav-number">7.10.</span> <span class="nav-text">Elasticsearch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8E%86%E4%BF%A1%E6%81%AF"><span class="nav-number">7.11.</span> <span class="nav-text">简历信息</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-%E5%88%B7%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">MySQL 刷题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%8B%E6%92%95"><span class="nav-number">2.</span> <span class="nav-text">手撕</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AB%E8%82%A1%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">八股题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%A7%E6%8B%89%E6%8B%89"><span class="nav-number">3.1.</span> <span class="nav-text">货拉拉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BA%A2%E4%B9%A6"><span class="nav-number">3.2.</span> <span class="nav-text">小红书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BB%B4%E6%BB%B4"><span class="nav-number">3.3.</span> <span class="nav-text">滴滴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%9B%A2"><span class="nav-number">3.4.</span> <span class="nav-text">美团</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%94%9A%E6%9D%A5"><span class="nav-number">3.5.</span> <span class="nav-text">蔚来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%BF%E9%87%8C%E4%BA%91"><span class="nav-number">3.6.</span> <span class="nav-text">阿里云</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%89%8B"><span class="nav-number">3.7.</span> <span class="nav-text">快手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%B1%B3"><span class="nav-number">3.8.</span> <span class="nav-text">小米</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%E9%A2%98%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">场景题总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">项目总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8E%86%E6%8A%95%E9%80%92"><span class="nav-number">6.</span> <span class="nav-text">简历投递</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%86%E8%8A%82"><span class="nav-number">7.</span> <span class="nav-text">项目细节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="nav-number">7.1.</span> <span class="nav-text">数据库设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%93%E5%AD%98%E5%BA%93-wms"><span class="nav-number">7.1.1.</span> <span class="nav-text">库存库 wms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A2%E5%8D%95%E5%BA%93-oms"><span class="nav-number">7.1.2.</span> <span class="nav-text">订单库 oms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%95%86%E5%93%81%E5%BA%93-pms"><span class="nav-number">7.1.3.</span> <span class="nav-text">商品库 pms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%9A%E5%91%98%E5%BA%93-ums"><span class="nav-number">7.1.4.</span> <span class="nav-text">会员库 ums</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%92%E6%9D%80%E8%A1%A8-sms"><span class="nav-number">7.1.5.</span> <span class="nav-text">秒杀表 sms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E4%BF%A1%E6%81%AF"><span class="nav-number">7.2.</span> <span class="nav-text">全局异常信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redis"><span class="nav-number">7.3.</span> <span class="nav-text">redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E8%BF%87%E7%9A%84key%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">7.3.1.</span> <span class="nav-text">用过的key、数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%B3%95%EF%BC%88session%EF%BC%8C%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%EF%BC%8C%E5%B9%82%E7%AD%89%E6%80%A7%EF%BC%89"><span class="nav-number">7.3.2.</span> <span class="nav-text">用法（session，分布式锁，幂等性）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redisson"><span class="nav-number">7.3.3.</span> <span class="nav-text">redisson</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%8B%E6%B5%8B"><span class="nav-number">7.4.</span> <span class="nav-text">压测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1-%E7%A7%92%E6%9D%80%E5%95%86%E5%93%81%E4%B8%8A%E6%9E%B6"><span class="nav-number">7.5.</span> <span class="nav-text">定时任务 秒杀商品上架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%92%E6%9D%80"><span class="nav-number">7.6.</span> <span class="nav-text">秒杀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="nav-number">7.7.</span> <span class="nav-text">消息队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="nav-number">7.8.</span> <span class="nav-text">登录拦截器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#session-%E8%B7%A8%E5%9F%9F"><span class="nav-number">7.8.1.</span> <span class="nav-text">session 跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BE%E4%BA%A4%E7%99%BB%E5%BD%95"><span class="nav-number">7.8.2.</span> <span class="nav-text">社交登录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sentinel-%E8%BF%9B%E8%A1%8C%E6%B5%81%E6%8E%A7"><span class="nav-number">7.9.</span> <span class="nav-text">sentinel 进行流控</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8E%86%E4%BF%A1%E6%81%AF"><span class="nav-number">7.10.</span> <span class="nav-text">简历信息</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -737,13 +782,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">373k</span>
+    <span title="Symbols count total">380k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">5:39</span>
+    <span title="Reading time total">5:46</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
