@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://iridescent-zhang.github.io/BaGu/2.png">
 <meta property="og:image" content="https://iridescent-zhang.github.io/2024/09/01/BaGu/15.png">
 <meta property="article:published_time" content="2024-08-31T17:07:21.000Z">
-<meta property="article:modified_time" content="2024-12-03T16:51:14.796Z">
+<meta property="article:modified_time" content="2025-01-10T14:37:06.484Z">
 <meta property="article:author" content="lichao Zhang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://iridescent-zhang.github.io/BaGu/2.png">
@@ -219,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-12-03 16:51:14" itemprop="dateModified" datetime="2024-12-03T16:51:14Z">2024-12-03</time>
+                <time title="Modified: 2025-01-10 14:37:06" itemprop="dateModified" datetime="2025-01-10T14:37:06Z">2025-01-10</time>
               </span>
 
           
@@ -249,14 +249,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>32k</span>
+              <span>40k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>29 mins.</span>
+              <span>36 mins.</span>
             </span>
 
         </div>
@@ -272,162 +272,124 @@
 <span id="more"></span>
 
 <p>在开发者工具的设置里面禁用了JavaScript，这样小林coding就可以复制了，后面最好改回来，否则可能有问题【好像也会自动改回来】。<br><img src="/BaGu/2.png"></p>
-<h1 id="MySQL-刷题"><a href="#MySQL-刷题" class="headerlink" title="MySQL 刷题"></a>MySQL 刷题</h1><p>判断字段空：只有name 为null 的时候 ISNULL(exp) 函数的返回值为1 ，空串和有数据都为0；<br>也可以 name is not null; 或 name is null;</p>
-<p>排序：order by 排序字段 asc（默认，还可选desc）</p>
-<p>去重：根据某些字段的去重查询（不考虑查询其他字段）<br>select <strong>distinct</strong> 字段 from table<br>或者 group by 也可以去重<br>select c_name,c_year,c_month from table<br>group by c_name,c_year,c_month</p>
-<p>别名<br>列别名：SELECT  字段 [AS] 别名（AS关键字是可选的，别名如果有空格最好用单引号括起来）<br>组合字段并使用别名<br>CONCAT_WS(‘, ‘, lastName, firstname) [AS] ‘Full name’<br>ORDER BY，GROUP BY和HAVING子句中<strong>可以引用这些别名</strong>，不能在WHERE子句中使用列别名。<br>SELECT  customerName,<br>COUNT(o.orderNumber) [as] total #列别名，并且用函数作为一个字段<br>FROM customers [as] c INNER JOIN orders [as] o  #表别名，内联INNER JOIN应该是配合ON使用的<br>ON c.customerNumber &#x3D; o.customerNumber<br>GROUP BY customerName  # 去重？是的，而且要在ORDER BY前面<br>HAVING total &gt;&#x3D;5<br>ORDER BY total DESC;</p>
-<p>join（外连接）<br>1.inner join，内连接,显示两个表中有联系的所有数据;简写成join，如果一边缺了会自动重复。<br>2.left join，左链接,以左表为参照,显示所有数据,右表中没有则以null显示<br>3.right join，右链接,以右表为参照显示数据，,左表中没有则以null显示<br>比如这题就要用到left&#x2F;right JOIN<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/replace-employee-id-with-the-unique-identifier/description/?envType=study-plan-v2&envId=sql-free-50">1378. 使用唯一标识码替换员工ID</a>因为要留NULL。<br>关键字 on<br>数据库在通过连接两张或多张表来返回记录时，都会生成一张中间的临时表，然后再将这张临时表返回给用户。<br>在使用 left&#x2F;right jion 时，on 和 where 条件的区别如下：<br>1、 on 条件是在生成临时表时使用的条件，它不管 on 中的条件是否为真，都会返回左边表中的记录。<br>2、where 条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有 left join 的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。<br>使用 inner join 时on和where是一样的<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45906830/article/details/111133181">mysql的left join和inner join的详细用法</a> 这篇讲得好</p>
-<p>交叉联结（corss join）：<br>使用交叉联结会将两个表中所有的数据两两组合<br>写join时默认就是 cross join ，这东西真的很重要，有时候为了获得某几列的所有组合就要用这个东西。<br>比如难题<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/students-and-examinations/solutions/2366340/students-and-examinations-by-leetcode-so-3oup/?envType=study-plan-v2&envId=sql-free-50"></a></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">官解的写法也能学到些东西</span><br><span class="line">SELECT </span><br><span class="line">    s.student_id, s.student_name, sub.subject_name, IFNULL(grouped.attended_exams, <span class="number">0</span>) AS attended_exams</span><br><span class="line">FROM </span><br><span class="line">    Students s</span><br><span class="line">CROSS JOIN </span><br><span class="line">    Subjects sub</span><br><span class="line">LEFT <span class="title function_">JOIN</span> <span class="params">(</span></span><br><span class="line"><span class="params">    SELECT student_id, subject_name, COUNT(*) AS attended_exams</span></span><br><span class="line"><span class="params">    FROM Examinations</span></span><br><span class="line"><span class="params">    GROUP BY student_id, subject_name</span></span><br><span class="line"><span class="params">)</span> grouped </span><br><span class="line">ON s.student_id = grouped.student_id AND sub.subject_name = grouped.subject_name</span><br><span class="line">ORDER BY s.student_id, sub.subject_name;</span><br></pre></td></tr></table></figure>
+<h1 id="谷粒商城"><a href="#谷粒商城" class="headerlink" title="谷粒商城"></a>谷粒商城</h1><h2 id="前端学一点"><a href="#前端学一点" class="headerlink" title="前端学一点"></a>前端学一点</h2><p>shift + ! 回车得到html模板</p>
+<p>shift + alt +f 整理代码Refractor</p>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ol>
+<li><p>java 编译版本高于运行版本，我要用java8，所以首先需要配置项目所用的jdk和java compile 那里，然后查看springboot 和 springcloud版本，注意版本对应，就是没注意到springcloud，所以要好好看报错。</p>
 
-<p>注意 USING (student_id,subject_name)意思是连结的用student_id subject_name这两列，也就是两个表有相同名称的这两列时可以这么用，完全可以用on代替，但是这里代替的写法应该是<br>ON stu.student_id &#x3D; ex.student_id AND sub.subject_name &#x3D; ex.subject_name 注意中间的and。<br>还发现 GROUP BY 、ORDER BY 都可以选一列以上</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT </span><br><span class="line">   stu.student_id, stu.student_name, sub.subject_name, COUNT(ex.subject_name) attended_exams</span><br><span class="line">FROM</span><br><span class="line">    Students stu JOIN Subjects sub LEFT JOIN Examinations ex on stu.student_id = ex.student_id and sub.subject_name = ex.subject_name</span><br><span class="line">GROUP BY </span><br><span class="line">    stu.student_id, sub.subject_name</span><br><span class="line">ORDER BY</span><br><span class="line">    stu.student_id, sub.subject_name</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/managers-with-at-least-5-direct-reports/description/?envType=study-plan-v2&envId=sql-free-50">570. 至少有5名直接下属的经理</a><br>having count(Report.Id) &gt;&#x3D; 5 应该也是返回临时表</p>
-<p>函数合集：<br>计算字符串中字符数的最佳函数是 CHAR_LENGTH(str)<br>另一个常用的函数 LENGTH(str) 返回字符串 str 的字节数，如果包含特殊字符(某些字符包含多于 1 个字节)，结果可能和预期不太一样</p>
-<p>COUNT 想计数某个字段重复次数，先按这个字段group，然后count（另一个字段），这题就用到了，比如：想计算customer_id下有几个visit_id，就GROUP BY customer_id然后 COUNT(visit_id)<br>| visit_id | customer_id |<br>| 4        | 30          |<br>| 6        | 96          |<br>| 7        | 54          |<br>| 8        | 54          |<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/customer-who-visited-but-did-not-make-any-transactions/description/?envType=study-plan-v2&envId=sql-free-50">1581. 进店却未进行过交易的顾客</a><br>count() 是一个聚合函数，函数的参数不仅可以是字段名，也可以是其他任意表达式，该函数作用是统计符合查询条件的记录中，函数指定的参数不为 NULL 的记录有多少个。COUNT(visit_id)是统计表中，visit_id 字段不为 NULL 的记录有多少个</p>
-<p>时间计算的函数：<br>datediff(日期1, 日期2)：很重要<br>得到的结果是日期1与日期2相差的天数。<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/rising-temperature/description/?envType=study-plan-v2&envId=sql-free-50">197. 上升的温度</a></p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT w1.id</span><br><span class="line">FROM Weather w1, Weather w2 --这样写默认就是cross join</span><br><span class="line">WHERE datediff(w1.recordDate, w2.recordDate)=1 AND w1.temperature&gt;w2.temperature</span><br></pre></td></tr></table></figure>
-
-<p>另一个关于时间计算的函数是：<br>timestampdiff(时间类型, 日期1, 日期2)<br>这个函数和上面diffdate的正、负号规则刚好相反。<br>日期1大于日期2，结果为负，日期1小于日期2，结果为正。</p>
-<p>在“时间类型”的参数位置，通过添加“day”, “hour”, “second”等关键词，来规定计算天数差、小时数差、还是分钟数差。</p>
-<h1 id="手撕"><a href="#手撕" class="headerlink" title="手撕"></a>手撕</h1><p>华为：面试官屏幕共享给题目要求，自己<strong>本地IDE共享屏幕写+测试</strong>给他看<br>ACM模式~ 要求处理输入输出 还要自己设计测试用例 每个都要通过</p>
-<p>一般两种：1. 面试系统自带代码考核功能，面试官出题你可以你就可以看到，这种有ACM模式也有核心代码模式；2. 共享屏幕本地ide写，这种要自己构造样例(华为那个就是)</p>
-<p>像美团一般是用牛客面试，手撕也是在上面手撕，核心代码模式。快手有他们自己的青雀平台，也是在上面手撕，也是核心代码模式(可能会写一些其他的代码就是白板了)。然后像阿里一般电话面，他会邮件发个链接过来，你点进去打开的网站是双方共享的。</p>
-<p>小米字节是链接，百度是屏幕共享，中小厂基本都是屏幕共享</p>
-<h1 id="八股题"><a href="#八股题" class="headerlink" title="八股题"></a>八股题</h1><p>待做：图 回溯 堆栈 贪心 动规</p>
-<p><strong>自我介绍</strong></p>
-<h2 id="货拉拉"><a href="#货拉拉" class="headerlink" title="货拉拉"></a>货拉拉</h2><p>G1垃圾回收<br>map和concurenthashmap区别<br>Redis的aof环形缓冲区，怎么数据同步的，怎么重新选主<br>MySQL索引结构，创建索引要遵循什么规则，联合索引规则<br>MVCC是如何联系RR RC<br>Spring的dispatchor什么的，不懂<br>Spring的对象的创建流程<br>Jvm内存结构</p>
-<p>1.AOP日志落库到数据库，为什么不用一些现成的方案？<br>2.邀请链接的id怎么用redis生成的？<br>3.乐观锁保证了奖励的正确发放，请你说说乐观锁的原理。<br>4.奖励的发放的重复消费问题怎么解决，也就是怎么保证幂等性?</p>
-<p>八股：<br>1.hashmap原理，hashmap的应用场景。<br>2.说说二叉树的定义。<br>3.说说二叉树的前序中序和后序遍历。<br>4.什么时候出现FULL GC。</p>
-<p>场景设计题目：<br>1.淘宝的7天自动收货怎么设计？<br>2.java 中自带的数据结构的延时队列的原理（DelayedQueue 的原理）</p>
-<h2 id="小红书"><a href="#小红书" class="headerlink" title="小红书"></a>小红书</h2><p>2.spring boot主要是相比spring的framework有哪些区别？传统的spring framework<br>3.和spring boot启动方式的区别？<br>4.JVM内存结构？程序计数器是线程安全的吗？<br>5.一些垃圾处理器有没有了解过？说下CMS和G1两个垃圾处理器的区别<br>6.MySQL的ACID实现原理，通过什么样的设计去解决可能出现的问题<br>7.MVCC实现原理<br>8.假如说你现在需要连接一个不存在的IP地址，客户端和服务端会做哪些事情？（需要考虑是目标IP地址和客户端IP地址是不是在同一个局域网，不在同一个局域网下会先发到路由器，包括在数据链路层上有什么过程）<br>9.AQS<br>10.synchronized和reentrantLock的区别<br>11.MySQL中的锁机制<br>12.行锁加锁的基本单位是什么？了解Next-Key Lock吗？Next-Key Lock退化为行锁的过程<br>13.算法：无重复字符的最长子串</p>
-<p>1.事务的四个特性是怎么实现的（我太紧张了忘记了，当时脑袋一篇浆糊，面试官说别紧张）<br>2.索引失效的场景（只说了三个最常见的，有些不常见的没想起来）<br>3.主键索引、非主键索引和覆盖索引（这个直接说的很细<br>4.为什么通常主键设置为自增（提到了B+树写入性能高）<br>5.为什么B+写入性能高（从B+树结构出发）<br>6.Java你对哪个特性比较了解，用过哪些类</p>
-<p>1.实习中有没有对数据库表做强管控，听没听说过json schema。<br>2.Reactor响应式编程的基本原理。<br>3.黑名单功能为什么不用es去实现？你是基于怎样的考虑？</p>
-<p>场景八股：<br>1.说说redis集群的原理。<br>2.说说渐进式哈希，redis底层怎么扩容的？<br>3.微博上面的热搜，打在了集群的分片上，分片扛不住怎么办？<br>3.用限流解决，有哪些实现限流的方法？<br>4.限流的话，用户看到的一个页面就是一个空白页面，对用户不够友好，还有什么别的方案？（冗余key缓存，存储在不同的分片上，把key打散）<br>5.现在如果我不知道哪个帖子会成为热搜帖子，这种情况怎么处理？（本质原因是无法水平扩容，采用多级缓存解决）</p>
-<h2 id="滴滴"><a href="#滴滴" class="headerlink" title="滴滴"></a>滴滴</h2><ol start="3">
-<li>你使用的这个对接大模型，怎么使用的</li>
-<li>redis你使用的防刷流程是什么</li>
-<li>redis的槽是什么样的</li>
-<li>你这个使用了lua保证原子性，要是在分布式集群上能保证原子性吗</li>
-<li>不能保证， 那么怎么能保证你这个key在一个槽上</li>
-<li>redis集群你了解多少</li>
-<li>redis的主从节点、哨兵机制，以及怎么选举</li>
-<li>spring里面bean的创建怎么实现的</li>
-<li>es的原理</li>
-<li>es的倒排索引是什么</li>
-<li>索引很多怎么办</li>
-<li>AQS和CAS是什么</li>
-<li>为什么AQS使用双向队列</li>
-<li>CAS的ABA怎么解决</li>
-</ol>
-<h2 id="美团"><a href="#美团" class="headerlink" title="美团"></a>美团</h2><p>1.点评项目的逻辑过期策略解决缓存击穿的实现思路。<br>2.说一下缓存击穿和缓存穿透的区别。<br>3.项目里用到了乐观锁，说说原理。<br>4.项目里用到了线程池，说说线程池的参数。<br>5.日常开发中常用的锁有哪几种，说说它们的区别。<br>6.说说分布式锁有哪几种实现方式。<br>7.zookeeper实现分布式锁相比较与redis实现分布式锁有哪些好处？<br>8.怎么样去定位慢查询，并从哪些角度解决慢查询的问题。<br>9.redo log和unlog的区别。<br>10.什么叫间隙锁？</p>
-<p>以后提升的方向:还是需要更多的结合去实际的生产场景,比如逻辑过期解决缓存击穿是在生产中有问题的，如果热key比较多，更新热key需要单用一个线程，那么这时候会消耗比较多的资源。还有就是，算法手撕不太熟练。</p>
-<p>作者：代码不跑我跑_bug版<br>链接：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/feed/main/detail/09dd23061288485c929287749482ae51?sourceSSR=users">https://www.nowcoder.com/feed/main/detail/09dd23061288485c929287749482ae51?sourceSSR=users</a><br>来源：牛客网</p>
-<h2 id="蔚来"><a href="#蔚来" class="headerlink" title="蔚来"></a>蔚来</h2><p>自我介绍<br>JMM了解嘛<br>如何理解内存可见性<br>java类加载机制<br>字节码内部有了解过嘛<br>springboot的自动装配的原理<br>spring的注解是如何实现的<br>如何实现AOP<br>springboot内如何配置一个类<br>mysql的事务如何实现<br>mysql如何实现事务的隔离性<br>为什么要用ShardingJDBC分表<br>你觉得一个表有多少的数据量，才需要分表<br>是把一个表分成一百张表存储在一个库好，还是分成十个库，每个库都存储十张表<br>ShardingJDBC可以水平分表还是垂直分表<br>分库和分表有什么不同<br>redis有哪些分布式的结构（主从、哨兵、集群）<br>讲一下redis的主从模式<br>手撕：单例模式</p>
-<h2 id="阿里云"><a href="#阿里云" class="headerlink" title="阿里云"></a>阿里云</h2><p>Java<br>Java 集合接口的区别<br>ArrayList 和 LinkedList 的区别<br>有哪些 Map 数据结构<br>ConcurrentHashMap 为什么是线程安全的<br>HashMap 有可能做到线程安全吗？原理是什么，如何实现？（利用 Collections 的包装类转换成线程安全的类，同步方法）<br>synchronized 的修饰成员方法和静态方法的区别<br>&#x3D;&#x3D; 和 equals 的区别<br>一个类没有重写 equals 方法，调用 equals 会发生什么<br>线程池有哪些参数，具体有什么用<br>ThreadLocal 的使用场景？为什么可以确保线程私有？<br>JVM<br>有哪些回收算法，优缺点<br>用过哪些垃圾收集器，有什么区别<br>如何判断一个对象实例是否可回收<br>数据库<br>mysql 有哪些索引<br>索引的底层数据结构<br>为什么是 B+树，而不是平衡树、红黑树或其他的<br>一个表存了十几亿行数据会有什么问题？如何优化<br>水平分表和垂直分表的策略，如何决定？<br>计网<br>网络模型有几层<br>TCP&#x2F;IP四层和OSI七层的区别<br>HTTP 和 UDP 属于哪一层<br>Linux<br>了解哪些命令<br>如何在日志文件中搜索符合某个规则的日志<br>如何读取一个日志文件的前几行<br>项目<br>如何收集日志<br>直接使用slf4j是否达到要求？具体使用了哪种日志实现？<br>手撕 1：判断两个链表是否有交集</p>
-<p>手撕 2：实现一个生产者消费者模型</p>
-<h2 id="快手"><a href="#快手" class="headerlink" title="快手"></a>快手</h2><p>1.mysql索引为什么要使用b+树，而不使用b树、AVL<br>2.为什么千万级别的数据b+树只需要三到四层？（具体的计算过程忘记了，这个问题是上个问题自己引出来的，长记性：不要给自己挖坑）<br>3.最左匹配原则：联合索引（a，b，c，d），判断各个条件下走索引的情况：<br>a&#x3D;1 and b &#x3D; 2 and d &#x3D; 3 and c &#x3D;4<br>a&#x3D;1 and b &#x3D; 2 and c &gt; 1（这里说太快了，想都没想就说了，说成c不会走索引，实际应该是c会走，但d不走，这里都会犯错不该）<br>4.mysql事务特性以及怎么实现的？<br>5.MVCC能保证哪个事务隔离级别（读已提交和可重复读，这里自己提了两种隔离级别read view生成时机的不同，好！）<br>6.MVCC有哪些好处（我觉得最重要的是并发读无需加锁和隔离性吧，还有解决脏读和不可重复读这些）<br>7.java基础数据类型（平时没怎么用过byte忘记还有这个了，说应该是七种，实际是八种，我真是癫了）<br>8.int占几个字节（4个字节，算是猜对了）<br>9.讲讲ConcurrentHashMap（jdk1.7和jdk1.8的都说了，对比不同和提升）<br>10.什么情况下链表会转成红黑树，红黑树什么情况下会转为链表（8和6，这里提了一下为什么是8和6，前面看过）<br>11.concurrentHashMap的get方法是否加锁？（没有加锁，提了一下底层用来volatile来修饰value和size，保证可见性）<br>12.那你解释一下volatile这个关键字（讲了讲可见性怎么实现的，说了一下总线嗅探，以及MESI协议）<br>13.那你了解ArrayList和hashMap的扩容机制吗？（ArrayList很久没看了，就记得是扩为1.5倍，HashMap讲的比较详细）<br>14.redis的多路复用有了解过吗？（不会，有了解过但忘记了，半年前看的早忘了）<br>15.redis的分布式锁你的理解（因为我是项目中对redisson分布式锁进行封装，我觉得这种问题问你理解就是想看看你为什么要选择这种分布式锁实现方式，应该要对比redis本身的setnx的缺点，还有为什么选择redisson分布式锁，比redis原生的好在哪，我觉得问理解还可以说分布式锁的意义，总之这种题比较开放）</p>
-<p>http状态码有哪些</p>
-<p>cookie和session的区别</p>
-<p>session怎么在集群下使用</p>
-<p>Java类加载器有哪些</p>
-<p>双亲委派模型的作用</p>
-<p>Java原子类有哪些</p>
-<p>序列化协议有哪些</p>
-<p>八股：<br>redis性能高的原因</p>
-<p>select * from log where level &#x3D; 1, 我已经在level上面建立的索引，为什么还是走的全表查询。<br>说说rabbitmq有延时消息的能力嘛？</p>
-<p>说说select,poll ,epoll的数据结构。</p>
-<p>了解过基于时间轮这种数据结构实现延时消息嘛，分时间片执行延时任务？<br>说说redis锁的底层实现。<br>具体说说看门狗机制。</p>
-<p>valatile 有用过嘛？</p>
-<p>在spring中，有两个方法，public void a(){ b(); }, @Transaction public void b(),为什么最后a方法调用b，transaction没有生效？</p>
-<p>你有了解过分布式嘛？<br>说说Nacos是用来干嘛的？</p>
-<h2 id="小米"><a href="#小米" class="headerlink" title="小米"></a>小米</h2><h1 id="场景题总结"><a href="#场景题总结" class="headerlink" title="场景题总结"></a>场景题总结</h1><p>说说项目设计cache_data表提升性能的？<br>为什么不用redis呢？<br>项目中用户数据的过期怎么判定的？</p>
-<p>1.项目穿插八股 ，给一个用户加redission锁，如果这个时候出现异常，用户是不是永远被锁住了？怎么解决？<br>2.AOP进行日志记录，怎么区分外部接口和内部接口，只记录外部接口（自定义注解)</p>
-<h1 id="项目总结"><a href="#项目总结" class="headerlink" title="项目总结"></a>项目总结</h1><p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E5%9F%BA%E7%A1%80.md#14-%E9%80%92%E5%BD%92%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE">网关配置跨域</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E5%9F%BA%E7%A1%80.md#2%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E6%B5%81">文件上传oss</a><br>服务端签名后直传</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E5%9F%BA%E7%A1%80.md#18-jsr303%E6%A0%A1%E9%AA%8C">JSR303校验 异常 统一错误码</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#%E6%90%AD%E5%BB%BA%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E7%8E%AF%E5%A2%83">nginx 反向代理负载均衡 搭建域名环境</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#%E6%80%A7%E8%83%BD%E5%8E%8B%E6%B5%8B%E4%B8%8E%E4%BC%98%E5%8C%96">性能压测与优化</a> 在刚做出来一个小业务时进行过压测（1.渲染商城首页，2.获取某个分类下的数据）</p>
-<ol>
-<li>优化代码减少db查询</li>
-<li>加索引</li>
-<li>nginx动静分离：将js、css、img等静态资源放置在Nginx端<br>在nginx的html文件夹创建staic文件夹，并将index&#x2F;css等静态资源全部上传到该文件夹中，修改所有静态资源路径，使其全部带有static前缀src&#x3D;”&#x2F;static&#x2F;index&#x2F;img&#x2F;img_09.png”</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location /<span class="type">static</span> &#123;</span><br><span class="line">       root   /usr/share/nginx/html;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li><p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#%E7%BC%93%E5%AD%98">缓存</a><br>使用springboot自动配置的stringRedisTemplate优化菜单获取业务<br>当进行压力测试时后期后出现堆外内存溢出OutOfDirectMemoryError（直接内存溢出，很多javaNIO(像netty)的框架….Lettuce：基于Netty框架，springboot2.0以后默认使用lettuce操作redis的客户端，lettuce的bug导致netty堆外内存溢出）切换使用jedis或升级lettuce客户端。<br>lettuce 和 jedis 都是操作 redis 的最底层客户端，spring 对其封装为 RedisTemplate<br>高并发下缓存失效问题<br>缓存穿透(全穿透缓存，因为不存在所以每次都还要再去查数据库，加null)雪崩(大面积同时失效，加随机时间，但可能好心办坏事，因为缓存存活时间可能不太一样，不一样的失效时间可能导致它们反而同时过期)击穿(热点, 加锁。大量并发只让一个去查，查完并放入缓存)</p>
 </li>
-<li><p>锁时序问题<br>如果查数据库和放入缓存这两个构成的事件没加一个大锁，尽管查数据库加锁了，在存缓存时可能其他线程发现缓存还是没有又去查数据库，所以要整个过程加个锁才能锁住。具体代码点链接看</p>
+<li><p>lombok版本，出现很奇怪的报错的话就是lombok版本的原因，尽量选择最高版本的30，但是有一次选择了也没用，当时尝试勾选了</p>
+ use compiler from module target.. 解决了问题，但是后面再取消勾选也还是可以，所以很奇怪，这个选项可能与（使用指定的jdk或上次使用的jdk）有关。
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#2-%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%93%E5%AD%98">分布式缓存</a><br>本地缓存面临问题<br>多个微服务部署在多台机器上，缓存仅能够为该机器上的服务使用，缓存失效时每个服务都要查询一次数据库(数据库压力大)，并且当数据更新时只会更新单个服务的缓存数据，就会造成数据不一致的问题，既然数据库是一致的，自然缓存也要一致，所以要分布式缓存。<br>所有的服务都到同一个redis进行获取数据。<br>分布式缓存<br>分布式锁（这里先用redis的setnx，后面改用redisson，注意区别。redis既作为缓存，又可以作为分布式锁）<br>分布式事务<br>前面说的缓存很明显只能锁住本机的服务(synchronized是本地锁)<br>分布式锁的演进</p>
+<li><p>nacos本地启动然后注册服务，一直注册失败，地址什么的配置都没问题，重启nacos就行了。<br>另外看了一篇文章就在地址配置那里翻车了，因为配置name那里没注意前缀，所以编码无小事。</p>
 </li>
-<li><p>占坑 “占坑”可以去redis，等待就自旋<br>redis的 setnx(“lock”, 1111);<br>问题： 1、setnx占好了位，业务代码异常或者程序宕机。没有删除锁，这就造成了死锁。(设置锁的自动过期时间)加锁【占位+过期时间】要原子，setnx就可以设置时间。<br>2、如果自己业务超时导致锁过期（然后别人拿到了锁），删锁的时候删了别人正在持有的锁，所以使用随机 UUID匹配是自己的锁才删除；<br>3、还有问题！先从redis获取lock的值然后匹配然后删除，这是两个操作，网络情况极端下可能还是删了别人的锁，所以需要：获取值+对比成功删除&#x3D;原子操作  -》 通过redis+lua脚本完成<br>更难的事情，锁的自动续期&#x3D;&#x3D;》大佬redisson，就是为分布式而生的，促进使用者对Redis的关注分离。<br>redisson强大：</p>
-<ul>
-<li>锁的自动续期，如果业务超长，运行期间看门狗自动给锁加上新的30s，不用担心业务时间长，锁自动过期被删除</li>
-<li>加锁的业务运行完成或者宕机结束了，看门狗不再给当前锁续期，一段时间后自然就解锁了，不用手动解锁也不会死锁</li>
-</ul>
+<li><p>nacos不再使用ribbon，改用<strong>spring-cloud-loadbalancer依赖</strong>，所以需要导入该依赖，否则远程调用feign无法启动。</p>
+</li>
+<li><p>nacos配置中心<br>需要用 bootstrap.properties 或 bootstrap.yml 配置文件才行，这个文件优先级比 application.yml 更高，通过这个配置文件建立应用与nacos上的配置之间的联系。</p>
 </li>
 </ol>
-<p>包括：（本质其实都还是往redis里面存键值对，像setnx那样，不过封装了，更高级）<br>RReadWriteLock 读写锁<br>RReadWriteLock lock &#x3D; redisson.getReadWriteLock(“rw-lock”);<br>RLock writeLock &#x3D; lock.writeLock();<br>闭锁 RCountDownLatch（当它是计数的，相当于上锁时上了好几个门闩，都解锁了才释放锁）<br>信号量 RSemaphore（停车位，总共这么多，增增减减）可以用来实现分布式限流操作: 比如我的服务可承受的高并发流量就是10000,那10000相当于车位，在流量进来前先去拿一个信号量,能拿到说明我的服务还有空余,这时候才让流量进来<br>缓存数据的一致性（都能满足最终一致性）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RLock</span> <span class="variable">lock</span> <span class="operator">=</span> redissonClient.getLock(<span class="string">&quot;CatalogJson-Lock&quot;</span>);</span><br><span class="line">lock.lock();</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    Thread.sleep(<span class="number">30000</span>);</span><br><span class="line">    categoryMap = getCategoryMap();</span><br><span class="line">&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">    lock.unlock();</span><br><span class="line">    <span class="keyword">return</span> categoryMap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>所以Redisson内部提供了一个监控锁的看门狗，它的作用是在<strong>Redisson实例</strong>(这里就是lock)被关闭前，不断的延长锁的有效期。默认情况下，看门狗的检查锁的超时时间是30秒钟。如果持有锁的客户端宕机或者崩溃，看门狗线程检测到在指定时间内客户端挂掉，看门狗线程则不会进行续期操作，锁在设定的 TTL 到期后会被自动释放，这样其他客户端就可以重新获取该锁。</p>
-<ol>
-<li>双写模式 写完数据库就去更新缓存<br>会有脏读问题（两个线程并发写，一个线程两个操作夹在另一个线程中间了）通过两操作整体加锁，作为原子行为。</li>
-<li>失效模式（我们系统的一致性解决方案：使用 失效模式）（也叫旁路缓存模式）<br>数据库更新时将缓存删除<br>同样会有脏数据问题（并发读写导致的），通过读写锁解决并发读写。大不了自己过期，一样最终一致。</li>
+<p>注意<strong>在nacos上的配置文件</strong>的data id是有讲究的，就是前缀prefix加我们激活的application配置文件(之前学过的，可以指定active哪个文件，不指定就没有)加文件的扩展名(默认properties，用yaml要指定，注意只能是yaml不能是yml)。<br><code>$&#123;prefix&#125;-$&#123;spring.profiles.active&#125;.$&#123;file-extension&#125;</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">friendmall-coupon</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">nacos:</span></span><br><span class="line">      <span class="attr">config:</span></span><br><span class="line">        <span class="attr">server-addr:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:8848</span></span><br><span class="line">        <span class="comment"># 默认前缀本就是$&#123;spring.application.name&#125;</span></span><br><span class="line">        <span class="attr">prefix:</span> <span class="string">$&#123;spring.application.name&#125;</span></span><br><span class="line">        <span class="comment"># 默认配置文件扩展名为properties</span></span><br><span class="line">        <span class="attr">file-extension:</span> <span class="string">yaml</span></span><br><span class="line">        <span class="comment"># 默认名空间为public</span></span><br><span class="line">        <span class="attr">namespace:</span> <span class="string">public</span>  <span class="comment"># 用其他的要写id才行</span></span><br><span class="line">        <span class="comment"># 默认组为DEFAULT_GROUP</span></span><br><span class="line">        <span class="attr">group:</span> <span class="string">DEFAULT_GROUP</span></span><br></pre></td></tr></table></figure>
+
+<p>首先需要导入 <strong>spring-cloud-starter-bootstrap 依赖</strong>，因为我无法解析bootstrap.yml 这个配置文件，控制台输出没有显示 located 到某一个配置文件。<br>之后定位到了 <code>[BootstrapPropertySource &#123;name=&#39;bootstrapProperties-friendmall-coupon.yaml,DEFAULT_GROUP&#39;&#125;</code> ，注意这个是可以的。<br>但是依然没法动态刷新数据，搞了半天都不行，结果又是nacos的原因，重启nacos就可以了。</p>
+<p>连续在nacos上翻两次车，如果都配置都正确了请重启nacos。</p>
+<ol start="6">
+<li><p>将项目的版本更新的和教程的一样<br>不然老会遇到新问题，比如网关解决跨域问题时对预检请求处理不成功就是因为springboot2.4之后进行了修改，将addAllowedOrigin函数改为addAllowedOriginPattern，为了之后遇到更多问题，把版本改了吧。之后添加module的时候也要注意jdk版本，java版本都要设置，以及有时候依赖的版本也要设置。</p>
+
+<p>关于lombok的依赖，lombok在jdk21之后要设为1.18.30，common下的都是1.18.8。由于IDEA的原因，新建spring module的时候不能建jdk8的module，所以有时候只改了其他时，上图的依赖会对应于jdk21，此时就会出现lombok的那个经典报错。添加lombok的时候版本随便设也没关系，maven会调成真正需要的。</p>
+</li>
+<li><p>nacos登录不上<br>原先用nacos1.42，上面换版本后也换成nacos1.14结果nacos&#x2F;nacos登录不上，原因是nacos的缓存造成的。<br>解决：浏览器f12网络面板，勾选禁用缓存，然后刷新<br><a target="_blank" rel="noopener" href="https://github.com/alibaba/nacos/issues/2394">nacos账号密码错误</a></p>
+</li>
+<li><p>NoClassDefFoundError: org&#x2F;springframework&#x2F;boot&#x2F;context&#x2F;properties&#x2F;ConfigurationBeanFactoryMetadata<br>nacos版本和springboot版本不兼容，在spring boot 2.4之后删掉了ConfigurationBeanFactoryMetadata，renrenfast里面是2.66的springboot，我给降了。</p>
+</li>
+<li><p>降版本带来的问题<br>不知道是不是因为springboot版本降低，mybatis的数据库连接池连不上了，原因在于ssl认证那块，在 application.yml 的url里面加上 <code>?useSSL=false</code> ，比如 <code>url: jdbc:mysql://192.168.56.10:3306/friendmall_pms?useSSL=false</code>，在数据库连接里面不用设置也行。<br>参考这篇文章，虽然没讲为什么。<a target="_blank" rel="noopener" href="https://blog.csdn.net/ayunnuo/article/details/120269377">idea连接mysql报错： No appropriate protocol (protocol is disabled or cipher suites are inappropriate</a></p>
+</li>
+<li><p>p79里面销售属性里里面不显示快速展示按钮，应该没什么影响，弹幕4:50有人提解决方案 我没改 这俩文件在&#x2F;modules&#x2F;product里</p>
+
+
+</li>
+<li><p>p83 由于前端缺少pubsub-js出现的问题<br>前端的问题多看看评论区</p>
+</li>
 </ol>
-<p>无论是双写模式还是失效模式，都会导致缓存的不一致问题。即多个实例同时更新会出事。<br>真追求强一致：去使用canal订阅binlog的方式。canal订阅mysql的binlog，转头取更新redis。总之，不要过度设计，增加系统的复杂性，不应该对缓存的数据追求强一致。</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#4-springcache">SpringCache</a><br>整合 SpringCache 简化缓存开发，使用注解即可完成缓存开发。【确实方便多了】<br>写配置文件RedisCacheManager。可以直接指定缓存序列化方式为json，否则之前需要fastjson一直转换来转换去。统一设置配置文件中的各项配置，如过期时间，自定义缓存key前缀名(与缓存分区有关，可以按逻辑分区(比如业务类型分)管理、删除缓存，很方便注意这个只是spring这么分，方便管理)，应对缓存穿透的空值，后期修改配置就可以更新。<br>@Cacheable() 代表当前方法的结果需要进行缓存：如果缓存中有结果，直接缓存中拿；如果缓存中没有，则调用方法，并且最后将结果放入缓存<br>@CacheEvict: 触发将数据从缓存中删除，用于 失效模式<br>@CachePut: 不影响方法执行更新缓存，将返回值（注意要有返回值）也放到Cache，这个就是双写模式<br>@Caching:组合以上多个操作<br>Spring-Cache的不足<br>@Cacheable sync &#x3D; true 加锁解决击穿，这里是本地锁<br> 常规数据（读多写少，即时性、一致性要求不高的数据）完全可以使用Spring-Cache解决<br>Spring-Cache解决了读模式三种缓存问题，最终SpringCache没有考虑写模式，毕竟普通数据只要有过期时间，写缓存也完全没问题</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#%E5%BC%82%E6%AD%A5">异步</a></p>
-<p>创建线程池带有coreSize，当当前线程数小于coreSize时，创建线程执行任务，随着任务增多线程数达到coreSize之后，任务入队，大于coreSize时先进队，<strong>队列满了</strong>入队失败才开始增加线程数到max</p>
-<p>拒绝策略<br>CompletableFuture组合式异步编程<br>runAsync方法不支持返回值。<br>supplyAsync可以支持返回值。<br>线程串行化<br>thenRun：不能获取上一步的执行结果<br>thenAcceptAsync：能接受上一步结果，但是无返回值<br>thenApplyAsync：能接受上一步结果，有返回值<br> 计算结果完成时的回调方法<br>whenComplete<br>handle 方法和 thenApply 方法处理方式基本一样。不同的是 handle 是在任务完成后再执行，还可以处理异常的任务。thenApply 只可以执行正常的任务<br>(5) 组合任务有好多种<br>thenCombine 合并任务<br>thenCombine 会把 两个 CompletionStage 的任务都执行完成后，把两个任务的结果一块交给 thenCombine 来处理。<br>为了使我们的任务进行的更快，我们可以让查询的各个子任务多线程执行，但是由于各个任务之间可能有相互依赖的关系，因此就涉及到了异步编排。</p>
-<p>工作流程：<br>         *1、线程池创建，准备好core 数量的核心线程，准备接受任务<br>         *  2、新的任务进来，用 core 准备好的空闲线程执行。<br>         *(1) 、core 满了，就将再进来的任务放入阻塞队列中。空闲的core 就会自己去阻塞队列获取任务执行<br>         *      (2) 、阻塞队列满了，就直接开新线程执行，最大只能开到max 指定的数量<br>         *(3) 、max 都执行好了。Max-core 数量空闲的线程会在 keepAliveTime 指定的时间后自动销毁。最终保持到 core 大小<br>         *      (4) 、如果线程数开到了 max 的数量，队列也满了，还有新任务进来，就会使用 reject 指定的拒绝策略进行处理<br>         *3、所有的线程创建都是由指定的factory 创建的<br>newScheduledThreadPool提交任务时可指定多长时间后执行，专门用于做定时任务的线程池<br>newCachedThreadPool<br>         *       core&#x3D;0，max&#x3D;Integer.MAX_VALUE 所有线程都可回收，灵活创建</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#%E8%AE%A4%E8%AF%81%E6%9C%8D%E5%8A%A1">认证服务</a><br>注册防刷验证码<br>电话号码key  当前时间和验证码value 存redis<br>如果调用时以当前phone取出的v不为空且当前时间在存储时间的60s以内，说明60s内该号码已发过短信，返回错误信息。<br>注册相当于令牌机制，验证码存在redis，真正提交注册请求的时候我会进行比对验证码是否对。<br>RedirectAttributes 模拟重定向时携带数据<br>重定向相当于模拟 HttpSession session也是在<strong>同服务器内跨页面时用来共享数据</strong>的<br>TODO 重定向携带数据利用的是session原理，将数据放在session中，只要跳到下一个<br>页面取出数据后session里面的数据就会删掉，所以只是一次性的，比如错误校验再刷新一次就没了<br>TODO 分布式下session的问题</p>
-<p>社交登录oauth2.0<br>第三方应用<strong>向用户请求认证</strong>（发一个请求跳到认证页面），认证通过后Gitee认证服务器发给应用一个访问令牌，此后应用带着这个令牌去gitee资源服务器获取<strong>开放保护信息</strong><br>第一次使用session，会命令浏览器保存带有<strong>JSESSIONID</strong>的cookie（相当于银行卡号，<strong>JSESSIONID就是用来从服务器里找对应的session的</strong>）以后浏览器访问哪个网站就会带上这个网站的cookie，即便是子域系统发的卡，也要能让整个父域都使用。所以要指定域名为父域名<br>cookie：每次访问网站时，浏览器在发请求时都会将可使用的cookie带上(就放在请求头里)<br>TODO：1.默认发的令牌的session作用域是当前域，我们要改为父域<br>TODO：2.使用JSON的序列化方式来序列化session的对象数据到redis中<br>SpringSession都整合了以上两个问题(不同服务共享session，同服务分布式下共享session(因为session就是内存，是存在特定机器上的，考虑到负载均衡…))</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#5-springsession">SpringSession</a></p>
-<p>jsessionid相当于银行卡，存在服务器的session相当于存储的现金，每次通过jsessionid取出保存的数据<br>问题：正常情况下session不可跨域名，它有自己的作用范围（cookie里可以看到的domain），且浏览器关闭后清除cookie。分布式session不同步。</p>
-<p>登陆成功后用户保存到session中，然后浏览器在cookie里面存一个jsessionId，下次访问这个域名带上cookie，然后用jsessionid查到对应的session发现用户存在，免登录。<br>hash一致性不错    redis统一存储更好，让webServer统一去redis拿session</p>
-<p>SpringSession整合redis<br>通过SpringSession修改session的作用域<br>原始的request、response都被包装为：SessionRepositoryRequestWrapper、SessionRepositoryResponseWrapper<br>原先获取session是request.getSession(),现在变成了SessionRepositoryRequestWrapper.getSession()【装饰者模式】<br>后者是从SessionRepository去获取session的，而联系1)、1.知它正是在redis中找<br>【装饰者模式】，所有请求过来，将原生请求一包装，以后获取session都是调用的我的wrapper里规定的方法(重写了getSession()方法)，我偷偷替它去从redis存取session<br>完全模拟了以前的session的功能，比如不关浏览器会自动延期、关浏览器一段时间后自动过期</p>
-<ol start="2">
-<li>自定义配置<br>由于默认使用jdk进行序列化，通过导入RedisSerializer修改为json序列化</li>
+<p>npm install –save pubsub-js又失败了，因为node版本的问题，尝试了<br><code>npm install pubsub-js --legacy-peer-deps</code>  成功了</p>
+<ol start="12">
+<li>端口占用<br>查看被占用端口对应的 PID<br><code>netstat -aon|findstr &quot;8000&quot;</code></li>
 </ol>
-<p>并且通过修改CookieSerializer扩大session的作用域至**.gulimall.com</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#2-threadlocal%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E9%89%B4%E5%88%AB">ThreadLocal用户身份鉴别 登录拦截器</a><br>Tomcat对从拦截器-&gt;Controller-&gt;Service-&gt;Dao从始至终都是同一个线程，所以用 ThreadLocal 可以很方便的传递数据</p>
-<p>&#x2F;&#x2F; 配置拦截器 CartInterceptor“&#x2F;**”表示拦截cart这个服务下所有路径的请求<br>preHandler：在执行目标方法之前拦截下并执行。<br>HTTP request： 由SpringSession装饰者模式包装过的，所以读取到的session都是从redis中读的<br>true放行，false不放行<br>实现登录拦截<br>postHandle<br>业务执行之后让浏览器保存 user-key 这个 cookie</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97">消息队列</a></p>
-<p>本地事务，在分布式系统下，只能控住自己的回滚，控制不了其他服务(远程调用的服务)的回滚<br>使用分布式事务：最大适用场景：解决网络问题+分布式机器下的事务回滚<br>事务隔离级别@Transactional(isolation &#x3D; Isolation.REPEATABLE_READ)<br>库存锁成功了，但是网络原因返回结果超时抛出异常导致订单回滚了<br>高并发下使用分布式事务。两步(两方式)<br>1、让库存服务自己回滚，具体就是订单回滚了然后努力一直发消息去让库存自己回滚，这样就没什么性能损耗了<br>2、库存服务自解锁，使用自动解锁模式，参与消息队列<br>事务传播行为<br>所谓传播行为就是一个事务a调用了其他事务，a事务的所有设置(timeout)传播到了和它共用一个事务的方法<br>propagation &#x3D; Propagation.REQUIRED : 如果当前没有事务(调用方是否存在事务)，就创建一个新事务，如果当前存在事务，就加入该事务，该设置是最常用的设置。<br>propagation &#x3D; Propagation.REQUIRES_NEW : 创建新事务，无论当前存不存在事务，都创建新事务。<br>Feign在远程调用之前要构造新的请求【区别于我们这个函数被调用是由于浏览器发过来的&#x2F;toTrade请求】，会调用很多的拦截器 : for (RequestInterceptor interceptor : requestInterceptors)<br>用新的请求模板创建远程服务请求 ： Request request &#x3D; targetRequest(template) ，结果这个模板 template 丢失了我们的请求头数据【cookie里的session】<br>这样创建出来的 request 自然是有问题滴，没有任何请求头，没有session，所以购物车认为没有登录<br>因此我们来构造这些Feign的请求拦截器来为我们最终发送的请求做“增强”<br>FriendmallFeignConfig&#x3D;》public RequestInterceptor requestInterceptor()</p>
-<p>同样CompletableFuture进行异步编排<br>在redis中生成一个随机的令牌，过期时间为30min，提交的订单会携带这个令牌，我们将会在订单提交的处理页面核验此令牌，防止重复提交。获取令牌、对比值和删除令牌之间发生错误导入令牌校验出错，我们必须使用脚本保证原子性操作。<br>Feign远程调用丢失请求头问题<br>feign远程调用的请求头中没有含有JSESSIONID的cookie，所以也就不能得到cart服务端的session数据，cart认为没登录，获取不了用户信息<br>RequestContextHolder为SpingMVC中共享request数据的上下文，底层由ThreadLocal实现（线程间存在副本，线程间隔离）所以在开启异步的时候将老请求的RequestContextHolder的数据设置进去。</p>
-<p>（3） 分布式事务<br>分布式情况下，可能出现一些服务事务不一致的情况</p>
-<p>@GlobalTransactional<br>这里就很适合 Seata 的AT模式，因为这个模式不能适应高并发请求的分布式事务，在这个场景下就很适用</p>
-<p>本地事务失效问题：在同一个service(对象)里互相调事务方法相当于代码拷贝意味着没有走代理(绕过了代理对象)，而事务实际上是使用代理来控制的，这样的话事务传播行为设置就无法生效，所以本地事务失效。</p>
-<p>订单服务调用锁库存和查积分两个小事务<br>利用消息队列实现最终一致性<br>库存锁成功后给队列发消息（库存工作单），超时后尝试要不要解锁(解锁前确定订单支付状态)</p>
-<p>订单失败(其他逻辑失败或者小服务返回结果超时或订单假失败)之后回滚，要求小服务也回滚<br>库存失败，导致订单回滚。</p>
-<p>(1) 延迟队列的定义与实现<br>定义：<br>延迟队列<strong>存储的对象肯定是对应的延时消息</strong>，所谓”延时消息”是指当消息被发送以后，并不想让消费者立即拿到消息，而是等待指定时间后，消费者才拿到这个消息进行消费。<br>rabbitmq可以通过设置队列的TTL（来控制消息的生存时间）和死信路由(其实就是普通交换机)实现延迟队列<br>消息超时变为dead letter(死信)<br>RabbitMQ的Queue可以配置x-dead-letter-exchange 和x-dead-letter-routing-key（可选）两个参数，如果队列内出现了dead letter，则按照这两个参数重新路由转发到指定的交换机。<br>经过TTL的时间后消息会变成死信以order.release.order的路由键<strong>经交换机转发至队列</strong>order.release.order.queue，再通过监听该队列的消息来实现过期订单的处理（我们只监听这个队列）</p>
-<p>两个延时队列：订单延时队列，30min后检查订单状态，决定是否关单<br>库存延时队列，40min后检查订单状态，没付钱解锁库存。</p>
-<p>定时关单与库存解锁主体逻辑<br>创建订单时消息会被发送至队列order.delay.queue，经过TTL的时间后消息会变成死信以order.release.order的路由键经交换机转发至队列order.release.order.queue，再通过监听该队列的消息来实现过期订单的处理<br>修改该订单的状态并通过路由键order.release.other发送消息至队列stock.release.stock.queue进行库存解锁<br>在库存锁定后通过路由键stock.locked发送至延迟队列stock.delay.queue，延迟时间到，死信通过路由键stock.release转发至stock.release.stock.queue,通过监听该队列进行判断当前订单状态，来确定库存是否需要解锁<br><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#2-%E5%BB%B6%E8%BF%9F%E9%98%9F%E5%88%97%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">这里看图</a></p>
-<p>为保证消息的可靠到达，我们使用手动确认消息的模式，在解锁成功后确认消息，若出现异常则重新归队<br>为保证<strong>幂等性</strong>，我们分别对<strong>订单的状态和库存工作单的状态</strong>都进行了判断，只有<strong>当订单过期且工作单显示当前库存处于锁定的状态时</strong>，才进行库存的解锁，每次都要查最新的状态，防止重复解锁<br>还有：保证消息一定会发送出去。每个消息做好日志记录(给数据库保存每个消息的详细信息)，之后定期扫描数据库将失败的消息再发送一遍。<br>将没发送成功的消息不断进行重试发送</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#6-%E6%94%AF%E4%BB%98">支付</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#%E7%A7%92%E6%9D%80%E6%9C%8D%E5%8A%A1">秒杀服务</a></p>
-<p>秒杀（高并发）系统关注的问题：读多写少<br>nginx动静分离<br>后面调整到网关层直接进行流控<br>前端：将流量分布到更宽时间上，比如验证码，得先加购物车<br>后台：秒杀服务独立<br>使用定时任务每天三点上架最新秒杀商品，削减高峰期压力，库存预热到redis，信号量控制请求@Scheduled(cron &#x3D; “<em>&#x2F;3</em> ** * ?”)<br>秒杀链接加密(redis为秒杀商品添加唯一商品随机码)，防止恶意攻击<br>队列削峰，秒杀成功后立即返回，然后发送消息进入队列，后台慢慢创建订单慢慢扣库存<br>整体调控：限流：限制次数、总量    快速失败降级运行    熔断隔离防止雪崩</p>
-<p>开启对定时任务的支持，由于在分布式情况下该方法可能同时被调用多次，因此加入分布式锁，同时只有一个服务可以调用该方法</p>
-<p>幂等性处理：去redis占位<br>不要重复保存秒杀信息，包括场次，商品库存信息等。<br>秒杀时验证这个人是否购买过了。</p>
-<p>TODO 幂等性处理，保证不会反复上架已经上架的商品<br>包含两步：1、多台机器要上分布式锁【注意，就算代码里已经有幂等性判断了，这个分布式锁也一定要有，比如两台机器同时进来，同时到redis判断键是否存在那里(前一个还没把键设置进去，另一个看诶还没有这键也跟着执行了)，二者同时执行了代码相当于幂等失败了，所以这锁很重要】<br>所以要保证同一时刻只有一台机器执行这段代码，业务完成后更新状态并把状态持久化住，这样别人就无法获得我的中间状态，结合下面的2、才能达到幂等；<br>2、判断那个关键 key 是否已经存在于redis了，key要根据业务决策出一个合理值，保证体现特殊性，和业务的强绑定性；</p>
-<p>控制台设置QPS，流控效果等流控规则<br>FriendmallSentinelConfig自定义限流时返回数据</p>
-<p>feign的降级<br>feign.sentinel.enabled&#x3D;true使用Sentinel来保护Feign的远程调用<br>在@FeignClient设置fallback属性<br>@FeignClient(value &#x3D; “gulimall-seckill”,fallback &#x3D; SeckillFallbackService.class)远程调用失败执行的方法</p>
-<h1 id="简历投递"><a href="#简历投递" class="headerlink" title="简历投递"></a>简历投递</h1><p>对核心接口进行压测，把指标内容写进去</p>
-<p>谷粒商城很多都可以直接丢了，比如前端vue部分，商品服务的crud，购物车服务全丢，es如果不面搜索方向也丢（es其实很重要但商品服务如果丢了它没法单独拿出来），支付宝回调，微信短信验证码这些也别写，都没技术含量，和高并发无关，jwt认证可以小提，直接写注册中心配置中心网关链路RPC这些，加上秒杀服务的分布式锁幂等性，订单的消息队列，集群部署</p>
-<p>项目里介绍就说仿xxx或者说电商项目。介绍下架构和功能</p>
-<p>采用微服务架构设计，在分布式环境下利用Spring Cloud框架，通过业务划分，设计独立的微服务，拆分订单服务、购物车服务、支付服务、商品服务，结合了当前流行的互联网电商模式为用户提供商品贸易平台。</p>
-<p>项目时间</p>
-<p>项目名称</p>
-<p>项目地址</p>
-<p>项目简介</p>
-<p>技术栈</p>
-<p>项目亮点</p>
-<p>项目成果</p>
-<p>HR老师您好，我是东南大学信息与通信工程2026届硕士生，本科是西安电子科技大学，本科保持成绩专业第一，我对您所在的公司以及这个实习岗位非常感兴趣。我本身热爱编程和学习技术，熟练使用Java、C++。具有良好的Java基础，掌握MySQL、Redis的使用和原理，熟悉SSM、SpringBoot、MyBatis-Plus等主流开发框架，以及Spring Cloud 常用组件，熟悉消息队列RabbitMQ。<br>项目上做了一个完整的微服务分布式架构电商(Mall)，将电商业务拆分为登录、商品、库存、订单、会员、购物车、网关、秒杀等多个微服务，对分布式系统(分布式锁、事务)有一定的认识，并对秒杀等高并发场景提出解决方案。<br>具有一定的算法和数据结构基础和良好的编程习惯，具备独立解决问题的能力，有很强的责任心以及较好的沟通能力。很希望能获得这个实习机会。</p>
-<h1 id="项目细节"><a href="#项目细节" class="headerlink" title="项目细节"></a>项目细节</h1><h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><p>每张表都有undo_log seata回滚要用的表。</p>
+<p>查看指定 PID 对应的进程<br><code>tasklist|findstr &quot;9088&quot;</code></p>
+<p>结束进程<br>强制（&#x2F;F参数）杀死 pid 为 9088 的所有进程包括子进程（&#x2F;T参数）：<br><code>taskkill /T /F /PID 9088 </code></p>
+<p>酷狗音乐老是占8000端口号</p>
+<ol start="13">
+<li>openfeign调用时出现问题<br>如果是超时引起，加：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 配置 feign 默认请求时间仅几秒钟，配置请求时间长一些(毫秒)</span><br><span class="line">ribbon:</span><br><span class="line">  ReadTimeout: <span class="number">60000</span></span><br><span class="line">  ConnectTimeout: <span class="number">60000</span></span><br></pre></td></tr></table></figure>
+后面遇到了其他原因，业务是product调用coupon，再调用方看到了<code>feign.FeignException: status 500 reading</code>，方法中的异常比如除零异常等,都会通过feign.FeignException: status 500 reading…的方式给予你提示。如果检查feign的注册信息有没有写错,比如少一个斜杠什么之类的等之类发现没问题，可以去被调用方那里看看报错，我发现数据库又连接不上了，果然又是如9.所言<code>?useSSL=false</code> 的问题，因为coupon查自己的数据库又不行，加上就可以了</li>
+</ol>
+<p>用的renrenfastvue是D&#x2F;programfile下面的</p>
+<ol start="14">
+<li>easyvpn占用10000端口且无法关闭<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46709007/article/details/125140872">端口占用问题，10000端口</a></li>
+</ol>
+<p>进服务进程 services.msc 手动关</p>
+
+
+<ol start="15">
+<li>理解分页<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">IPage&lt;SpuInfoEntity&gt; page = <span class="built_in">this</span>.page(</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">Query</span>&lt;SpuInfoEntity&gt;().getPage(params),</span><br><span class="line">                wrapper</span><br><span class="line">        );</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">PageUtils</span>(page) </span><br><span class="line"><span class="keyword">return</span> R.ok().put(<span class="string">&quot;page&quot;</span>, page)</span><br></pre></td></tr></table></figure>
+这些都是分页插件带来的方法，this.page有两个参数，第一个是IPage对象，是分页参数如page、limit等 前端传来的参数，第二个为Querywrapper对象，是查询条件，泛型是查询的实体类。最终返回实体类的分页查询结果IPage&lt;实体类&gt; page。</li>
+</ol>
+<p>return new PageUtils(page)  PageUtils(IPage&lt;实体类&gt; page)用PageUtils封装上一步的page生成标准的分页查询结果集PageUtils对象 page。</p>
+<p>return R.ok().put(“page”, page) 在返回结果中将这个PageUtils对象 page 放到结果集中R.ok()中</p>
+<ol start="16">
+<li>docker yum配置源</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhouho/p/13410306.html">&#x2F;etc&#x2F;yum.repos.d是什么？</a></p>
+<p>教程里的163的yum源没法使用，会报错，改用aliyun的源</p>
+<p>vagrant用无界面启动就好，用vagrant up启动有可能用默认的网络设置覆盖我们之前的设置。<br><code>curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo</code></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/CSDN2497242041/article/details/130106331?spm=1001.2014.3001.5506">[Centos7 yum源报错] repodata&#x2F;repomd.xml: [Errno 14] HTTP Error 404 - Not Found 解决方案</a></p>
+<ol start="17">
+<li>使用Vagrant 后发现虚拟机磁盘空间爆满，无法更新yum源</li>
+</ol>
+<p>df -h 查看磁盘空间状态</p>
+<p>这不是docker的问题，而是虚拟机的问题，虚拟机将vagrantfile所在文件夹的内容拷贝到虚拟机里面到了，导致空间爆满，血泪填坑。刚开始以为是docker的问题，网上一直说是日志什么的，清理来清理去都没用，仔细发现是虚拟机爆满了，是可以在虚拟机里看到一些windows里的文件夹，所以就是东西被拷贝进去了。<br><a target="_blank" rel="noopener" href="https://bbs.sangfor.com.cn/forum.php?mod=viewthread&tid=122659">使用Vagrant 后发现虚拟机磁盘空间爆满的血泪填坑记</a> 这篇文章讲的很好，基本就是我的心路历程。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010398484/article/details/118736617">解决Vagrant 创建的虚拟机磁盘爆满问题</a> 有分析磁盘爆满原因</p>
+<p>我们通过启动vagrant up命令，可以看到有这么一句：Rsyncing folder: &#x2F;cygdrive&#x2F;d&#x2F;MyData&#x2F;用户&#x2F; &#x3D;&gt; &#x2F;vagrant<br>这是要将vagrantfile所在的目录下的数据都复制到vagrant下，这就是虚拟机磁盘爆满的根本原因。<br>现在需要将这个目录转换成一个空目录，以后每次启动就不会同步数据到虚拟机了。</p>
+<ol start="18">
+<li>docker常用命令</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">docker images 当前安装了哪些镜像（由镜像生成对应的一个个的容器就可以使用了）</span><br><span class="line"></span><br><span class="line">docker ps -a 查看所有的容器（可能没启动）</span><br><span class="line"></span><br><span class="line">docker ps 查看正在运行的容器</span><br><span class="line"></span><br><span class="line">docker update redis --restart=always 设置容器开机自启动</span><br><span class="line"></span><br><span class="line">docker restart mysql 重启容器 （这里的mysql都可以用容器Id来代替）</span><br><span class="line"></span><br><span class="line">docker stop mysql 停掉容器</span><br><span class="line"></span><br><span class="line">docker rm mysql 移除容器</span><br><span class="line"></span><br><span class="line">docker logs nginx 看容器启动日志</span><br></pre></td></tr></table></figure>
+
+<p>以mysql容器为例，mysql容器其实就是一个完整的 mysql 的运行环境，也就是说可以进入容器内部，里面是一个装了mysql的linux环境。<br>比如进入mysql容器内部：（-it表示以交互模式 &#x2F;bin&#x2F;bash表示进入linux的bash控制台）<br>docker exec -it mysql &#x2F;bin&#x2F;bash<br>docker exec -it redis redis-cli  &#x2F;&#x2F; 进 redis client<br>这样就进入到了容器内部，不是在虚拟机vagrant里面了。<br>所以我们也就需要将端口进行映射以及一些文件挂载。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -p <span class="number">3306</span>:<span class="number">3306</span> --name mysql \</span><br><span class="line">-v /mydata/mysql/log:/<span class="keyword">var</span>/log/mysql \</span><br><span class="line">-v /mydata/mysql/data:/<span class="keyword">var</span>/lib/mysql \</span><br><span class="line">-v /mydata/mysql/conf:/etc/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=root \</span><br><span class="line">-d mysql:<span class="number">5.7</span></span><br></pre></td></tr></table></figure>
+<p>端口映射：比如容器的3306端口映射出来到虚拟机linux的3306端口，方便访问。<br>文件夹挂载：在mysql容器里面有一些文件夹里面放的是mysql的配置文件，我们把这些文件夹挂载到外部虚拟机的一些文件夹，这样以后直接改这些文件夹就能配置mysql，而不用每次都跑容器里面去配置。</p>
+<p>exit  退出容器内部</p>
+<p>free -m  看虚拟机内存</p>
+<ol start="19">
+<li><p>有时候前端数据没有响应数据库的更改</p>
+<p>ctrl+F5 更新浏览器缓存 联想再加Fn</p>
+</li>
+</ol>
+<p>这个缓存真恶心啊，有时候会怀疑自己是否哪里弄错了。<br>直接禁用：开发者工具  Disable cache ，有时候最好再确认下，可能失效</p>
+<ol start="20">
+<li><p>ctrl+H 相当于hierarchy，可以看接口的实现</p>
+</li>
+<li><p>p187 188 189 直接抄前端了</p>
+</li>
+<li><p>k8s配置太难了<br>10.0.2.5 k8s-node1<br>10.0.2.15 k8s-node2<br>10.0.2.4 k8s-node3</p>
+</li>
+<li><p>更新yum的下载源<br>其实yum换源就是把&#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo备份之后删除(mv)，然后下载新的源curl -o &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/repo/Centos-7.repo%E3%80%82%E6%9C%80%E5%90%8Eyum">http://mirrors.aliyun.com/repo/Centos-7.repo。最后yum</a> clean all yum makecache。<br>docker镜像换源是另外的，这样做：<br>指定Docker镜像源下载地址为阿里云镜像仓库：<br>yum-config-manager –add-repo <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo">http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</a></p>
+</li>
+<li><p>docker拉镜像太容易拉不下来了<br>docker的镜像源一定一定要用这个，不然每次都要被气的吐血</p>
+</li>
+</ol>
+<p>vi &#x2F;etc&#x2F;docker&#x2F;daemon.json<br>{<br>  “registry-mirrors”: [“<a target="_blank" rel="noopener" href="https://sysxm1uh.mirror.aliyuncs.com&quot;/">https://sysxm1uh.mirror.aliyuncs.com&quot;</a>,<br>    “<a target="_blank" rel="noopener" href="https://docker.m.daocloud.io&quot;/">https://docker.m.daocloud.io&quot;</a>,<br>        “<a target="_blank" rel="noopener" href="https://dockerproxy.com&quot;/">https://dockerproxy.com&quot;</a>,<br>        “<a target="_blank" rel="noopener" href="https://docker.mirrors.ustc.edu.cn&quot;/">https://docker.mirrors.ustc.edu.cn&quot;</a>,<br>        “<a target="_blank" rel="noopener" href="https://docker.nju.edu.cn&quot;/">https://docker.nju.edu.cn&quot;</a><br>    ]<br>}<br>systemctl daemon-reload<br>systemctl restart docker</p>
+<ol start="25">
+<li><p>k8s flannel网络配置不行<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Harry_mumu/article/details/132099876">https://blog.csdn.net/Harry_mumu/article/details/132099876</a> 这篇文章讲的很好</p>
+</li>
+<li><p>大部分镜像都能拉下来，但是有的镜像偏偏不行<br>比如 siriuszg&#x2F;nginx-ingress-controller:0.20.0 一直拉不下来，最后换了一个镜像可以用，在<a target="_blank" rel="noopener" href="https://quay.io/repository/kubernetes-ingress-controller/nginx-ingress-controller?tab=tags&tag=latest">quay.io</a>。<br>k8s.gcr.io，gcr.io 是谷歌的镜像仓库，国内访问不了， quay.io 是 RedHat 的镜像仓库</p>
+</li>
+</ol>
+<p>备用方案：实在不行就尝试建一个自己的私人库，把镜像下载进来放进去，也就是自建镜像加速服务。（自 2024-06-06 开始，国内的 Docker Hub 镜像加速器相继停止服务，可选择为 Docker daemon 配置代理或自建镜像加速服务。）</p>
+<p>备注：kubectl apply -f xxx.yaml失败时可以用 kubectl delete -f xxx.yaml回滚。</p>
+<p>感谢这篇文章，看了这个我才换到了能用的镜像源 (<a target="_blank" rel="noopener" href="https://www.cnblogs.com/hailun1987/p/14162278.html">https://www.cnblogs.com/hailun1987/p/14162278.html</a>)</p>
+<p>k8s拉取镜像失败ImagePullBackOff 先看docker能不能拉下来，不能就是docker的原因，如果能再去排查k8s。<br>可以看看这篇(<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45439217/article/details/123477846">https://blog.csdn.net/qq_45439217/article/details/123477846</a>)</p>
+<p>kubectl delete -f kubesphere-mini.yaml</p>
+<h1 id="商城细节"><a href="#商城细节" class="headerlink" title="商城细节"></a>商城细节</h1><h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><p>每张表都有undo_log seata回滚要用的表。</p>
 <p>会设计一些冗余字段减少查表次数（也可能前端还需要回显sku信息）。</p>
 <h3 id="库存库-wms"><a href="#库存库-wms" class="headerlink" title="库存库 wms"></a>库存库 wms</h3><p><strong>对应后台管理系统的库存系统。</strong></p>
 <p><strong>wms_purchase</strong> 采购单：采购人员，时间，采购量和采购结果，放到哪个仓库（仓库号）</p>
@@ -501,31 +463,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyRabbitConfig</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    @Autowired</span></span><br><span class="line">    RabbitTemplate rabbitTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> RabbitTemplate <span class="title function_">rabbitTemplate</span><span class="params">(ConnectionFactory connectionFactory)</span>&#123;</span><br><span class="line">        <span class="type">RabbitTemplate</span> <span class="variable">rabbitTemplate</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RabbitTemplate</span>(connectionFactory);</span><br><span class="line">        rabbitTemplate.setMessageConverter(jsonMessageConverter());</span><br><span class="line">        <span class="built_in">this</span>.rabbitTemplate = rabbitTemplate;</span><br><span class="line">        <span class="keyword">return</span> rabbitTemplate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 使用JSON序列化机制进行消息序列化</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> MessageConverter <span class="title function_">jsonMessageConverter</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Jackson2JsonMessageConverter</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h2 id="登录拦截器"><a href="#登录拦截器" class="headerlink" title="登录拦截器"></a>登录拦截器</h2><p>session里面有个属性Attribute叫AuthServerConstant.LOGIN_USER(“login_user”)，它的值就是登录用户的信息(实体)，所谓的拦截器就是拦截请求，然后去看session有没有这个用户实体，有的话拿过来设置到ThreadLocal(因为每个请求从拦截器到controller到service到dao都是一个线程，每个请求都拦截下来然后在这个线程的threadlocal里设置用户信息，所以每个方法都能在threadlocal里拿到属于自己线程的登录用户)里面，没有的话说明没登录，重定向到登录页。很明显session里面的这个属性是登录的时候放进去的。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 整个订单都要求在登录环境下进行，所以要一个拦截器拦截未登录用户，拦截器都要实现 HandlerInterceptor</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LoginUserInterceptor</span> <span class="keyword">implements</span> <span class="title class_">HandlerInterceptor</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ThreadLocal&lt;MemberRespVo&gt; loginUser = <span class="keyword">new</span> <span class="title class_">ThreadLocal</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//  远程调用这个路径/order/order/status/&#123;orderSn&#125;的服务就不拦截了</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">uri</span> <span class="operator">=</span> request.getRequestURI();  <span class="comment">// url还会加上整个服务器的地址名，URI就是请求后面的那串路径这里就是/order/order/status/&#123;orderSn&#125;</span></span><br><span class="line">        <span class="type">AntPathMatcher</span> <span class="variable">antPathMatcher</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AntPathMatcher</span>();</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">match</span> <span class="operator">=</span> antPathMatcher.match(<span class="string">&quot;/kill&quot;</span>, uri);  <span class="comment">// 只对kill这种路径进行登录拦截，其他放行，因为有的会远程调用秒杀服务查东西</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (match) &#123;</span><br><span class="line">            <span class="type">MemberRespVo</span> <span class="variable">attribute</span> <span class="operator">=</span> (MemberRespVo) request.getSession().getAttribute(AuthServerConstant.LOGIN_USER);</span><br><span class="line">            <span class="keyword">if</span> (attribute != <span class="literal">null</span>) &#123;</span><br><span class="line">                loginUser.set(attribute);</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 没登录，重定向到登录页面去登录</span></span><br><span class="line">                <span class="comment">// 在 session 里面放一个消息提示一下</span></span><br><span class="line">                request.getSession().setAttribute(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;请先进行登录&quot;</span>);</span><br><span class="line">                response.sendRedirect(<span class="string">&quot;http://auth.friendmall.com/login.html&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>  <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -544,11 +481,180 @@
 <p>应用回调地址是授权成功后重定向的地址。<br>应用主页是授权失败重定向的地址。</p>
 <p>流程：<br>1、引导用户到如下地址<br>2、用户同意授权，页面跳转至<br>3、使用返回的code，换取access token<br>4、使用AccessToken 调用开发API 获取用户信息</p>
 <h2 id="sentinel-进行流控"><a href="#sentinel-进行流控" class="headerlink" title="sentinel 进行流控"></a>sentinel 进行流控</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FriendmallSentinelConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 自定义限流时返回数据（流控相应），比如你请求QPS太高前端返回的数据</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">FriendmallSentinelConfig</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">        WebCallbackManager.setUrlBlockHandler(<span class="keyword">new</span> <span class="title class_">UrlBlockHandler</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">blocked</span><span class="params">(HttpServletRequest request, HttpServletResponse response, BlockException ex)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">                <span class="type">R</span> <span class="variable">error</span> <span class="operator">=</span> R.error(TOO_MANY_REQUEST.getCode(), TOO_MANY_REQUEST.getMsg());</span><br><span class="line">                response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">                response.setContentType(<span class="string">&quot;application/json&quot;</span>);</span><br><span class="line">                response.getWriter().write(JSON.toJSONString(error));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>Sleuth+Zipkin 服务链路追踪</p>
-<h2 id="简历信息"><a href="#简历信息" class="headerlink" title="简历信息"></a>简历信息</h2><p>给项目改个名以及修改简介，比如 12306 可以改为智行火车票、飞猪火车票、去哪儿火车票、同程火车票以及买火车票等等。<br>然后是否可以按量购买<strong>云服务器</strong>，模拟真实压测接口的 QPS 和 TPS，把这些指标写入到项目中。<br>是否能够通过存储过程模拟海量数据，看看接口在海量数据下能否高性能新增和插入。<br>最后，如果项目包含完整前后端流程，可以云服务器部署，并使用域名进行访问。</p>
-<p><a href="mailto:&#x6c;&#99;&#x7a;&#x68;&#x61;&#110;&#x67;&#57;&#x33;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x6c;&#99;&#x7a;&#x68;&#x61;&#110;&#x67;&#57;&#x33;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a></p>
-<p>Friendmall<br>技术栈: SpringBoot + SpringCloud+ Mybatis-Plus + MySQL + Redis + RabbitMQ+ Nginx<br>简介:<br>FriendMall 是一个完整的微服务分布式架构电商平台，利用Docker 进行容器化搭建部署，以复杂业务为背景整合SSM，应用Spring CloudAlibaba 微服务组件，分析分布式系统难点，尝试应对高并发场景。<br>亮点：</p>
+<h2 id="项目总结"><a href="#项目总结" class="headerlink" title="项目总结"></a>项目总结</h2><p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E5%9F%BA%E7%A1%80.md#14-%E9%80%92%E5%BD%92%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE">网关配置跨域</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E5%9F%BA%E7%A1%80.md#2%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E6%B5%81">文件上传oss</a><br>服务端签名后直传</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E5%9F%BA%E7%A1%80.md#18-jsr303%E6%A0%A1%E9%AA%8C">JSR303校验 异常 统一错误码</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#%E6%90%AD%E5%BB%BA%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E7%8E%AF%E5%A2%83">nginx 反向代理负载均衡 搭建域名环境</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#%E6%80%A7%E8%83%BD%E5%8E%8B%E6%B5%8B%E4%B8%8E%E4%BC%98%E5%8C%96">性能压测与优化</a> 在刚做出来一个小业务时进行过压测（1.渲染商城首页，2.获取某个分类下的数据）</p>
+<ol>
+<li>优化代码减少db查询</li>
+<li>加索引</li>
+<li>nginx动静分离：将js、css、img等静态资源放置在Nginx端<br>在nginx的html文件夹创建staic文件夹，并将index&#x2F;css等静态资源全部上传到该文件夹中，修改所有静态资源路径，使其全部带有static前缀src&#x3D;”&#x2F;static&#x2F;index&#x2F;img&#x2F;img_09.png”</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location /<span class="type">static</span> &#123;</span><br><span class="line">       root   /usr/share/nginx/html;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#%E7%BC%93%E5%AD%98">缓存</a><br>使用springboot自动配置的stringRedisTemplate优化菜单获取业务<br>当进行压力测试时后期后出现堆外内存溢出OutOfDirectMemoryError（直接内存溢出，很多javaNIO(像netty)的框架….Lettuce：基于Netty框架，springboot2.0以后默认使用lettuce操作redis的客户端，lettuce的bug导致netty堆外内存溢出）切换使用jedis或升级lettuce客户端。<br>lettuce 和 jedis 都是操作 redis 的最底层客户端，spring 对其封装为 RedisTemplate<br>高并发下缓存失效问题<br>缓存穿透(全穿透缓存，因为不存在所以每次都还要再去查数据库，加null)雪崩(大面积同时失效，加随机时间，但可能好心办坏事，因为缓存存活时间可能不太一样，不一样的失效时间可能导致它们反而同时过期)击穿(热点, 加锁。大量并发只让一个去查，查完并放入缓存)</p>
+</li>
+<li><p>锁时序问题<br>如果查数据库和放入缓存这两个构成的事件没加一个大锁，尽管查数据库加锁了，在存缓存时可能其他线程发现缓存还是没有又去查数据库，所以要整个过程加个锁才能锁住。具体代码点链接看</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#2-%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%93%E5%AD%98">分布式缓存</a><br>本地缓存面临问题<br>多个微服务部署在多台机器上，缓存仅能够为该机器上的服务使用，缓存失效时每个服务都要查询一次数据库(数据库压力大)，并且当数据更新时只会更新单个服务的缓存数据，就会造成数据不一致的问题，既然数据库是一致的，自然缓存也要一致，所以要分布式缓存。<br>所有的服务都到同一个redis进行获取数据。<br>分布式缓存<br>分布式锁（这里先用redis的setnx，后面改用redisson，注意区别。redis既作为缓存，又可以作为分布式锁）<br>分布式事务<br>前面说的缓存很明显只能锁住本机的服务(synchronized是本地锁)<br>分布式锁的演进</p>
+</li>
+<li><p>占坑 “占坑”可以去redis，等待就自旋<br>redis的 setnx(“lock”, 1111);<br>问题： 1、setnx占好了位，业务代码异常或者程序宕机。没有删除锁，这就造成了死锁。(设置锁的自动过期时间)加锁【占位+过期时间】要原子，setnx就可以设置时间。<br>2、如果自己业务超时导致锁过期（然后别人拿到了锁），删锁的时候删了别人正在持有的锁，所以使用随机 UUID匹配是自己的锁才删除；<br>3、还有问题！先从redis获取lock的值然后匹配然后删除，这是两个操作，网络情况极端下可能还是删了别人的锁，所以需要：获取值+对比成功删除&#x3D;原子操作  -》 通过redis+lua脚本完成<br>更难的事情，锁的自动续期&#x3D;&#x3D;》大佬redisson，就是为分布式而生的，促进使用者对Redis的关注分离。<br>redisson强大：</p>
+<ul>
+<li>锁的自动续期，如果业务超长，运行期间看门狗自动给锁加上新的30s，不用担心业务时间长，锁自动过期被删除</li>
+<li>加锁的业务运行完成或者宕机结束了，看门狗不再给当前锁续期，一段时间后自然就解锁了，不用手动解锁也不会死锁</li>
+</ul>
+</li>
+</ol>
+<p>包括：（本质其实都还是往redis里面存键值对，像setnx那样，不过封装了，更高级）<br>RReadWriteLock 读写锁<br>RReadWriteLock lock &#x3D; redisson.getReadWriteLock(“rw-lock”);<br>RLock writeLock &#x3D; lock.writeLock();<br>闭锁 RCountDownLatch（当它是计数的，相当于上锁时上了好几个门闩，都解锁了才释放锁）<br>信号量 RSemaphore（停车位，总共这么多，增增减减）可以用来实现分布式限流操作: 比如我的服务可承受的高并发流量就是10000,那10000相当于车位，在流量进来前先去拿一个信号量,能拿到说明我的服务还有空余,这时候才让流量进来<br>缓存数据的一致性（都能满足最终一致性）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RLock</span> <span class="variable">lock</span> <span class="operator">=</span> redissonClient.getLock(<span class="string">&quot;CatalogJson-Lock&quot;</span>);</span><br><span class="line">lock.lock();</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    Thread.sleep(<span class="number">30000</span>);</span><br><span class="line">    categoryMap = getCategoryMap();</span><br><span class="line">&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">    lock.unlock();</span><br><span class="line">    <span class="keyword">return</span> categoryMap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以Redisson内部提供了一个监控锁的看门狗，它的作用是在<strong>Redisson实例</strong>(这里就是lock)被关闭前，不断的延长锁的有效期。默认情况下，看门狗的检查锁的超时时间是30秒钟。如果持有锁的客户端宕机或者崩溃，看门狗线程检测到在指定时间内客户端挂掉，看门狗线程则不会进行续期操作，锁在设定的 TTL 到期后会被自动释放，这样其他客户端就可以重新获取该锁。</p>
+<ol>
+<li>双写模式 写完数据库就去更新缓存<br>会有脏读问题（两个线程并发写，一个线程两个操作夹在另一个线程中间了）通过两操作整体加锁，作为原子行为。</li>
+<li>失效模式（我们系统的一致性解决方案：使用 失效模式）（也叫旁路缓存模式）<br>数据库更新时将缓存删除<br>同样会有脏数据问题（并发读写导致的），通过读写锁解决并发读写。大不了自己过期，一样最终一致。</li>
+</ol>
+<p>无论是双写模式还是失效模式，都会导致缓存的不一致问题。即多个实例同时更新会出事。<br>真追求强一致：去使用canal订阅binlog的方式。canal订阅mysql的binlog，转头取更新redis。总之，不要过度设计，增加系统的复杂性，不应该对缓存的数据追求强一致。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#4-springcache">SpringCache</a><br>整合 SpringCache 简化缓存开发，使用注解即可完成缓存开发。【确实方便多了】<br>写配置文件RedisCacheManager。可以直接指定缓存序列化方式为json，否则之前需要fastjson一直转换来转换去。统一设置配置文件中的各项配置，如过期时间，自定义缓存key前缀名(与缓存分区有关，可以按逻辑分区(比如业务类型分)管理、删除缓存，很方便注意这个只是spring这么分，方便管理)，应对缓存穿透的空值，后期修改配置就可以更新。<br>@Cacheable() 代表当前方法的结果需要进行缓存：如果缓存中有结果，直接缓存中拿；如果缓存中没有，则调用方法，并且最后将结果放入缓存<br>@CacheEvict: 触发将数据从缓存中删除，用于 失效模式<br>@CachePut: 不影响方法执行更新缓存，将返回值（注意要有返回值）也放到Cache，这个就是双写模式<br>@Caching:组合以上多个操作<br>Spring-Cache的不足<br>@Cacheable sync &#x3D; true 加锁解决击穿，这里是本地锁<br> 常规数据（读多写少，即时性、一致性要求不高的数据）完全可以使用Spring-Cache解决<br>Spring-Cache解决了读模式三种缓存问题，最终SpringCache没有考虑写模式，毕竟普通数据只要有过期时间，写缓存也完全没问题</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#%E5%BC%82%E6%AD%A5">异步</a></p>
+<p>创建线程池带有coreSize，当当前线程数小于coreSize时，创建线程执行任务，随着任务增多线程数达到coreSize之后，任务入队，大于coreSize时先进队，<strong>队列满了</strong>入队失败才开始增加线程数到max</p>
+<p>拒绝策略<br>CompletableFuture组合式异步编程<br>runAsync方法不支持返回值。<br>supplyAsync可以支持返回值。<br>线程串行化<br>thenRun：不能获取上一步的执行结果<br>thenAcceptAsync：能接受上一步结果，但是无返回值<br>thenApplyAsync：能接受上一步结果，有返回值<br> 计算结果完成时的回调方法<br>whenComplete<br>handle 方法和 thenApply 方法处理方式基本一样。不同的是 handle 是在任务完成后再执行，还可以处理异常的任务。thenApply 只可以执行正常的任务<br>(5) 组合任务有好多种<br>thenCombine 合并任务<br>thenCombine 会把 两个 CompletionStage 的任务都执行完成后，把两个任务的结果一块交给 thenCombine 来处理。<br>为了使我们的任务进行的更快，我们可以让查询的各个子任务多线程执行，但是由于各个任务之间可能有相互依赖的关系，因此就涉及到了异步编排。</p>
+<p>工作流程：<br>         *1、线程池创建，准备好core 数量的核心线程，准备接受任务<br>         *  2、新的任务进来，用 core 准备好的空闲线程执行。<br>         *(1) 、core 满了，就将再进来的任务放入阻塞队列中。空闲的core 就会自己去阻塞队列获取任务执行<br>         *      (2) 、阻塞队列满了，就直接开新线程执行，最大只能开到max 指定的数量<br>         *(3) 、max 都执行好了。Max-core 数量空闲的线程会在 keepAliveTime 指定的时间后自动销毁。最终保持到 core 大小<br>         *      (4) 、如果线程数开到了 max 的数量，队列也满了，还有新任务进来，就会使用 reject 指定的拒绝策略进行处理<br>         *3、所有的线程创建都是由指定的factory 创建的<br>newScheduledThreadPool提交任务时可指定多长时间后执行，专门用于做定时任务的线程池<br>newCachedThreadPool<br>         *       core&#x3D;0，max&#x3D;Integer.MAX_VALUE 所有线程都可回收，灵活创建</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#%E8%AE%A4%E8%AF%81%E6%9C%8D%E5%8A%A1">认证服务</a><br>注册防刷验证码<br>电话号码key  当前时间和验证码value 存redis<br>如果调用时以当前phone取出的v不为空且当前时间在存储时间的60s以内，说明60s内该号码已发过短信，返回错误信息。<br>注册相当于令牌机制，验证码存在redis，真正提交注册请求的时候我会进行比对验证码是否对。<br>RedirectAttributes 模拟重定向时携带数据<br>重定向相当于模拟 HttpSession session也是在<strong>同服务器内跨页面时用来共享数据</strong>的<br>TODO 重定向携带数据利用的是session原理，将数据放在session中，只要跳到下一个<br>页面取出数据后session里面的数据就会删掉，所以只是一次性的，比如错误校验再刷新一次就没了<br>TODO 分布式下session的问题</p>
+<p>社交登录oauth2.0<br>第三方应用<strong>向用户请求认证</strong>（发一个请求跳到认证页面），认证通过后Gitee认证服务器发给应用一个访问令牌，此后应用带着这个令牌去gitee资源服务器获取<strong>开放保护信息</strong><br>第一次使用session，会命令浏览器保存带有<strong>JSESSIONID</strong>的cookie（相当于银行卡号，<strong>JSESSIONID就是用来从服务器里找对应的session的</strong>）以后浏览器访问哪个网站就会带上这个网站的cookie，即便是子域系统发的卡，也要能让整个父域都使用。所以要指定域名为父域名<br>cookie：每次访问网站时，浏览器在发请求时都会将可使用的cookie带上(就放在请求头里)<br>TODO：1.默认发的令牌的session作用域是当前域，我们要改为父域<br>TODO：2.使用JSON的序列化方式来序列化session的对象数据到redis中<br>SpringSession都整合了以上两个问题(不同服务共享session，同服务分布式下共享session(因为session就是内存，是存在特定机器上的，考虑到负载均衡…))</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#5-springsession">SpringSession</a></p>
+<p>jsessionid相当于银行卡，存在服务器的session相当于存储的现金，每次通过jsessionid取出保存的数据<br>问题：正常情况下session不可跨域名，它有自己的作用范围（cookie里可以看到的domain），且浏览器关闭后清除cookie。分布式session不同步。</p>
+<p>登陆成功后用户保存到session中，然后浏览器在cookie里面存一个jsessionId，下次访问这个域名带上cookie，然后用jsessionid查到对应的session发现用户存在，免登录。<br>hash一致性不错    redis统一存储更好，让webServer统一去redis拿session</p>
+<p>SpringSession整合redis<br>通过SpringSession修改session的作用域<br>原始的request、response都被包装为：SessionRepositoryRequestWrapper、SessionRepositoryResponseWrapper<br>原先获取session是request.getSession(),现在变成了SessionRepositoryRequestWrapper.getSession()【装饰者模式】<br>后者是从SessionRepository去获取session的，而联系1)、1.知它正是在redis中找<br>【装饰者模式】，所有请求过来，将原生请求一包装，以后获取session都是调用的我的wrapper里规定的方法(重写了getSession()方法)，我偷偷替它去从redis存取session<br>完全模拟了以前的session的功能，比如不关浏览器会自动延期、关浏览器一段时间后自动过期</p>
+<ol start="2">
+<li>自定义配置<br>由于默认使用jdk进行序列化，通过导入RedisSerializer修改为json序列化</li>
+</ol>
+<p>并且通过修改CookieSerializer扩大session的作用域至**.gulimall.com</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#2-threadlocal%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E9%89%B4%E5%88%AB">ThreadLocal用户身份鉴别 登录拦截器</a><br>Tomcat对从拦截器-&gt;Controller-&gt;Service-&gt;Dao从始至终都是同一个线程，所以用 ThreadLocal 可以很方便的传递数据</p>
+<p>&#x2F;&#x2F; 配置拦截器 CartInterceptor“&#x2F;**”表示拦截cart这个服务下所有路径的请求<br>preHandler：在执行目标方法之前拦截下并执行。<br>HTTP request： 由SpringSession装饰者模式包装过的，所以读取到的session都是从redis中读的<br>true放行，false不放行<br>实现登录拦截<br>postHandle<br>业务执行之后让浏览器保存 user-key 这个 cookie</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97">消息队列</a></p>
+<p>本地事务，在分布式系统下，只能控住自己的回滚，控制不了其他服务(远程调用的服务)的回滚<br>使用分布式事务：最大适用场景：解决网络问题+分布式机器下的事务回滚<br>事务隔离级别@Transactional(isolation &#x3D; Isolation.REPEATABLE_READ)<br>库存锁成功了，但是网络原因返回结果超时抛出异常导致订单回滚了<br>高并发下使用分布式事务。两步(两方式)<br>1、让库存服务自己回滚，具体就是订单回滚了然后努力一直发消息去让库存自己回滚，这样就没什么性能损耗了<br>2、库存服务自解锁，使用自动解锁模式，参与消息队列<br>事务传播行为<br>所谓传播行为就是一个事务a调用了其他事务，a事务的所有设置(timeout)传播到了和它共用一个事务的方法<br>propagation &#x3D; Propagation.REQUIRED : 如果当前没有事务(调用方是否存在事务)，就创建一个新事务，如果当前存在事务，就加入该事务，该设置是最常用的设置。<br>propagation &#x3D; Propagation.REQUIRES_NEW : 创建新事务，无论当前存不存在事务，都创建新事务。<br>Feign在远程调用之前要构造新的请求【区别于我们这个函数被调用是由于浏览器发过来的&#x2F;toTrade请求】，会调用很多的拦截器 : for (RequestInterceptor interceptor : requestInterceptors)<br>用新的请求模板创建远程服务请求 ： Request request &#x3D; targetRequest(template) ，结果这个模板 template 丢失了我们的请求头数据【cookie里的session】<br>这样创建出来的 request 自然是有问题滴，没有任何请求头，没有session，所以购物车认为没有登录<br>因此我们来构造这些Feign的请求拦截器来为我们最终发送的请求做“增强”<br>FriendmallFeignConfig&#x3D;》public RequestInterceptor requestInterceptor()</p>
+<p>同样CompletableFuture进行异步编排<br>在redis中生成一个随机的令牌，过期时间为30min，提交的订单会携带这个令牌，我们将会在订单提交的处理页面核验此令牌，防止重复提交。获取令牌、对比值和删除令牌之间发生错误导入令牌校验出错，我们必须使用脚本保证原子性操作。<br>Feign远程调用丢失请求头问题<br>feign远程调用的请求头中没有含有JSESSIONID的cookie，所以也就不能得到cart服务端的session数据，cart认为没登录，获取不了用户信息<br>RequestContextHolder为SpingMVC中共享request数据的上下文，底层由ThreadLocal实现（线程间存在副本，线程间隔离）所以在开启异步的时候将老请求的RequestContextHolder的数据设置进去。</p>
+<p>（3） 分布式事务<br>分布式情况下，可能出现一些服务事务不一致的情况</p>
+<p>@GlobalTransactional<br>这里就很适合 Seata 的AT模式，因为这个模式不能适应高并发请求的分布式事务，在这个场景下就很适用</p>
+<p>本地事务失效问题：在同一个service(对象)里互相调事务方法相当于代码拷贝意味着没有走代理(绕过了代理对象)，而事务实际上是使用代理来控制的，这样的话事务传播行为设置就无法生效，所以本地事务失效。</p>
+<p>订单服务调用锁库存和查积分两个小事务<br>利用消息队列实现最终一致性<br>库存锁成功后给队列发消息（库存工作单），超时后尝试要不要解锁(解锁前确定订单支付状态)</p>
+<p>订单失败(其他逻辑失败或者小服务返回结果超时或订单假失败)之后回滚，要求小服务也回滚<br>库存失败，导致订单回滚。</p>
+<p>(1) 延迟队列的定义与实现<br>定义：<br>延迟队列<strong>存储的对象肯定是对应的延时消息</strong>，所谓”延时消息”是指当消息被发送以后，并不想让消费者立即拿到消息，而是等待指定时间后，消费者才拿到这个消息进行消费。<br>rabbitmq可以通过设置队列的TTL（来控制消息的生存时间）和死信路由(其实就是普通交换机)实现延迟队列<br>消息超时变为dead letter(死信)<br>RabbitMQ的Queue可以配置x-dead-letter-exchange 和x-dead-letter-routing-key（可选）两个参数，如果队列内出现了dead letter，则按照这两个参数重新路由转发到指定的交换机。<br>经过TTL的时间后消息会变成死信以order.release.order的路由键<strong>经交换机转发至队列</strong>order.release.order.queue，再通过监听该队列的消息来实现过期订单的处理（我们只监听这个队列）</p>
+<p>两个延时队列：订单延时队列，30min后检查订单状态，决定是否关单<br>库存延时队列，40min后检查订单状态，没付钱解锁库存。</p>
+<p>定时关单与库存解锁主体逻辑<br>创建订单时消息会被发送至队列order.delay.queue，经过TTL的时间后消息会变成死信以order.release.order的路由键经交换机转发至队列order.release.order.queue，再通过监听该队列的消息来实现过期订单的处理<br>修改该订单的状态并通过路由键order.release.other发送消息至队列stock.release.stock.queue进行库存解锁<br>在库存锁定后通过路由键stock.locked发送至延迟队列stock.delay.queue，延迟时间到，死信通过路由键stock.release转发至stock.release.stock.queue,通过监听该队列进行判断当前订单状态，来确定库存是否需要解锁<br><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#2-%E5%BB%B6%E8%BF%9F%E9%98%9F%E5%88%97%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">这里看图</a></p>
+<p>为保证消息的可靠到达，我们使用手动确认消息的模式，在解锁成功后确认消息，若出现异常则重新归队<br>为保证<strong>幂等性</strong>，我们分别对<strong>订单的状态和库存工作单的状态</strong>都进行了判断，只有<strong>当订单过期且工作单显示当前库存处于锁定的状态时</strong>，才进行库存的解锁，每次都要查最新的状态，防止重复解锁<br>还有：保证消息一定会发送出去。每个消息做好日志记录(给数据库保存每个消息的详细信息)，之后定期扫描数据库将失败的消息再发送一遍。<br>将没发送成功的消息不断进行重试发送</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#6-%E6%94%AF%E4%BB%98">支付</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#%E7%A7%92%E6%9D%80%E6%9C%8D%E5%8A%A1">秒杀服务</a></p>
+<p>秒杀（高并发）系统关注的问题：读多写少<br>nginx动静分离<br>后面调整到网关层直接进行流控<br>前端：将流量分布到更宽时间上，比如验证码，得先加购物车<br>后台：秒杀服务独立<br>使用定时任务每天三点上架最新秒杀商品，削减高峰期压力，库存预热到redis，信号量控制请求@Scheduled(cron &#x3D; “<em>&#x2F;3</em> ** * ?”)<br>秒杀链接加密(redis为秒杀商品添加唯一商品随机码)，防止恶意攻击<br>队列削峰，秒杀成功后立即返回，然后发送消息进入队列，后台慢慢创建订单慢慢扣库存<br>整体调控：限流：限制次数、总量    快速失败降级运行    熔断隔离防止雪崩</p>
+<p>开启对定时任务的支持，由于在分布式情况下该方法可能同时被调用多次，因此加入分布式锁，同时只有一个服务可以调用该方法</p>
+<p>幂等性处理：去redis占位<br>不要重复保存秒杀信息，包括场次，商品库存信息等。<br>秒杀时验证这个人是否购买过了。</p>
+<p>TODO 幂等性处理，保证不会反复上架已经上架的商品<br>包含两步：1、多台机器要上分布式锁【注意，就算代码里已经有幂等性判断了，这个分布式锁也一定要有，比如两台机器同时进来，同时到redis判断键是否存在那里(前一个还没把键设置进去，另一个看诶还没有这键也跟着执行了)，二者同时执行了代码相当于幂等失败了，所以这锁很重要】<br>所以要保证同一时刻只有一台机器执行这段代码，业务完成后更新状态并把状态持久化住，这样别人就无法获得我的中间状态，结合下面的2、才能达到幂等；<br>2、判断那个关键 key 是否已经存在于redis了，key要根据业务决策出一个合理值，保证体现特殊性，和业务的强绑定性；</p>
+<p>控制台设置QPS，流控效果等流控规则<br>FriendmallSentinelConfig自定义限流时返回数据</p>
+<p>feign的降级<br>feign.sentinel.enabled&#x3D;true使用Sentinel来保护Feign的远程调用<br>在@FeignClient设置fallback属性<br>@FeignClient(value &#x3D; “gulimall-seckill”,fallback &#x3D; SeckillFallbackService.class)远程调用失败执行的方法</p>
+<h1 id="短链接"><a href="#短链接" class="headerlink" title="短链接"></a>短链接</h1><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>ps -aux</p>
+<p>ps -ef|grep &lt;进程名&gt;</p>
+<p>kill -9 pid</p>
+<p>nohup &#x2F;usr&#x2F;local&#x2F;java&#x2F;jdk-17.0.13&#x2F;bin&#x2F;java <br>-Xms1536m -Xmx1536m <br>-Dshort-link.domain.default&#x3D;101.132.124.188:8003 <br>-jar &#x2F;home&#x2F;shortlink&#x2F;shortlink-aggregation.jar &gt;  &#x2F;home&#x2F;shortlink&#x2F;logs&#x2F;shortlink-aggregation.file 2&gt;&amp;1 &amp;</p>
+<p>nohup &#x2F;usr&#x2F;local&#x2F;java&#x2F;jdk-17.0.13&#x2F;bin&#x2F;java <br>-Xms512m -Xmx1024m <br>-jar &#x2F;home&#x2F;shortlink&#x2F;shortlink-gateway.jar &gt; &#x2F;home&#x2F;shortlink&#x2F;logs&#x2F;shortlink-gateway.file 2&gt;&amp;1 &amp;</p>
+<p>tail -f &#x2F;home&#x2F;shortlink&#x2F;logs&#x2F;shortlink-aggregation.file<br>tail -f &#x2F;home&#x2F;shortlink&#x2F;logs&#x2F;shortlink-gateway.file</p>
+<p>docker run <br>-d -p 8848:8848 <br>-p 9848:9848 <br>–name nacos2 <br>-e JVM_XMS&#x3D;256m -e JVM_XMX&#x3D;256m <br>-e MODE&#x3D;standalone <br>-e TIME_ZONE&#x3D;’Asia&#x2F;Shanghai’ <br>nacos&#x2F;nacos-server:v2.1.2</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name s.strumcode.com;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass http://127.0.0.1:8003;</span><br><span class="line">            proxy_set_header Host $host;</span><br><span class="line">            proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">            proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>上线修改为<br>nohup &#x2F;usr&#x2F;local&#x2F;java&#x2F;jdk-17.0.13&#x2F;bin&#x2F;java <br>-Xms1536m -Xmx1536m <br>-Dshort-link.domain.default&#x3D;s.strumcode.com <br>-jar &#x2F;home&#x2F;shortlink&#x2F;shortlink-aggregation.jar &gt;  &#x2F;home&#x2F;shortlink&#x2F;logs&#x2F;shortlink-aggregation.file 2&gt;&amp;1 &amp;</p>
+<p>nohup &#x2F;usr&#x2F;local&#x2F;java&#x2F;jdk-17.0.13&#x2F;bin&#x2F;java <br>-Xms2048m -Xmx2048m <br>-Dshort-link.domain.default&#x3D;s.strumcode.com <br>-jar &#x2F;home&#x2F;shortlink&#x2F;shortlink-aggregation.jar &gt;  &#x2F;home&#x2F;shortlink&#x2F;logs&#x2F;shortlink-aggregation.file 2&gt;&amp;1 &amp;</p>
+<p>nohup &#x2F;usr&#x2F;local&#x2F;java&#x2F;jdk-17.0.13&#x2F;bin&#x2F;java <br>-Xms1024m -Xmx1024m <br>-jar &#x2F;home&#x2F;shortlink&#x2F;shortlink-gateway.jar &gt; logs&#x2F;shortlink-gateway.file 2&gt;&amp;1 &amp;</p>
+<p>先在根目录进行 du -sh *，然后<br>cd &#x2F;下一个占用大的目录<br>du -sh *<br>逐级排查哪个文件或目录较大。</p>
+<h2 id="分库分表-以及-表结构"><a href="#分库分表-以及-表结构" class="headerlink" title="分库分表 以及 表结构"></a>分库分表 以及 表结构</h2><p>分片算法都是哈希16分片。</p>
+<p>t_link  【0-16】<br>    shardingColumn: <strong>gid</strong><br><code>full_short_url</code> <strong>唯一索引</strong><br><code>domain</code>域名  <code>short_uri</code>短链接uri <code>full_short_url</code>完整短链接 <code>origin_url</code>原始链接 <code>gid</code>分组标识 <code>valid_date</code>有效期<br>还有一堆统计信息</p>
+<p>t_link_goto  【0-16】<br>    shardingColumn: <strong>full_short_url</strong><br><code>full_short_url</code> <strong>唯一索引</strong><br><code>full_short_url</code>完整短链接  <code>gid</code>分组标识</p>
+<p>t_group  【0-16】<br>    shardingColumn: <strong>username</strong><br><code>username</code> 是<strong>普通索引</strong><br><code>gid</code>分组标识  <code>name</code>分组名称  <code>username</code>创建分组的用户名</p>
+<p>t_group_unique<br><code>gid</code>分组标识<br><code>gid</code> 唯一索引</p>
+<p>一个用户创建多个短链分组group，所以t_group按用户名分片，因为前端要根据用户名查分组。所以自然也是<code>username</code>普通索引。（因为用户注册的时候用户名已经是唯一索引了）</p>
+<p>一个分组下有多个短链接link，所以link按groupid即gid分片。因为前端要按分组查询短链接，如果一个分组的短链接在不同的link表下那不就爆炸了。短链接跳转时自然要根据<code>full_short_url</code>来查，又为了去重，所以用唯一索引。</p>
+<p>短链接跳转表link_goto_${0..15}，它根据full_short_url分片<br>可以说的短链接的全局去重表，<code>full_short_url</code>的分片算法加表自身的唯一索引。之所以有个gid字段是为了缓存失效查数据库时先找组再找短链接？存疑</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="短链重复的问题"><a href="#短链重复的问题" class="headerlink" title="短链重复的问题"></a>短链重复的问题</h3><p>关于短链接重复：不同原链接一定不能在短链上重复。再者，用户反复用相同原链接是允许生成新的短连接的，当然这个短链也不重复。所以不管原链接相同否，短链接都不能重复。我们用link表和link_goto表一起来保证。在某个gid分片算法路由下对应的link表下，link是唯一的，但全局不一定唯一，所以用link_goto表兜底。</p>
+<p>两个用户可能创建出两个group，他们在这个分组下创建短链接，在某个gid分片算法路由到同一个link表下，因为<code>full_short_url</code> 唯一索引，所以这个表下的短链接不会重复。但是<strong>不同gid分组下创建出相同的短链并存到不同的link表中该如何保证不重复</strong>？使用t_link_goto，每个短链接根据自己的<code>full_short_url</code>分片定位到对应的link_goto表，在这个表<code>full_short_url</code>同样是唯一索引，所以保证了短链接的全局唯一。</p>
+<p>短链不能重复。首先我们布隆过滤器（它说存在不一定真存在，他说不在就真不在）判断是否重复，重复就重新生成。<br>但是如果并发对同一原始链接(或哈希冲突)生成短链并同时判断不存在，就会同时操作数据库，那么不管这个短链接的gid是否相同，最终都会由t_link_goto进行兜底判断重复，所以会出现数据库异常（DuplicateKeyException）， 我们通过使用UUID替换当前时间戳，减少这种报错。</p>
+<h3 id="访问短链"><a href="#访问短链" class="headerlink" title="访问短链"></a>访问短链</h3><p>访问短链如果没在缓存要查数据库，那么会先查link_goto，其中有gid，然后再用gid去查link表防止读扩散。<br> t_link_goto是短链接和 Gid的路由表。</p>
+<p>也许会有问为什么不在goto表的设计那一块，设计成直接短链接到长链接的路由，省的还要拿gid再去link表查原始链接，这样不是更快吗？<br>实际上gid是一定要的，没有这个gid，之后访问短链，要统计原始信息，那你是不是一定要去link表里面找整条link记录进行修改了(today今日访问量以及这条短链自身的访问量信息)，或者查询组的监控信息时，是不是也要去查整条link记录再去和监控表内联然后查询。既然这样，那link表的分片键gid就一定要在路由表link_goto里面了。link表的分片键gid太重要了。</p>
+<h3 id="分组的问题"><a href="#分组的问题" class="headerlink" title="分组的问题"></a>分组的问题</h3><p><strong>每个用户创建的所有分组，生成的gid也是唯一的</strong>。</p>
+<p>之所以短链接按照gid分片到link表中存放，应该是为了方便前端按组查询短链接。那如果<strong>两个用户创建相同的gid组怎么办</strong>？不行的，我有t_group_unique不允许创建相同gid标识的组。</p>
+<p>访问日志有两种，还有一种是link表中某条短链接有记录自身的total_pv、uv、uip，一种是那八张表（短链访问日志、每条短链接各自的按小时和日期访问统计(pvuvuip)、浏览器统计、设备统计、地区统计、网络方式电脑或手机统计、操作系统统计、每条短链接各自的今日访问统计(pvuvuip)）。<br>第一种是每个链接独立的数据。增加访问统计时就要加读锁，而修改短链接的分组时要修改这条link的gid，要加写锁，通过加读写锁防止冲突，比如link表正在按gid查短链(分表，防止读扩散)，此时另一个线程修改了其中一些短链接的gid，那这些短链接增加统计就失败了。<br>第二种七张表是按照分组查的，比如查整个分组的访问情况就要用这七张表。重构之后他们都不带gid，查询的时候通过link表和这些表内联再根据gid分组得到统计信息。</p>
+<h1 id="12306"><a href="#12306" class="headerlink" title="12306"></a>12306</h1><p>-Dspring.data.redis.password&#x3D;Sm9sVXBOYJjI030b5tz0trjpzvZzRhtZmEbv0uOImcD1wEDOPfeaqNU4PxHob&#x2F;Wp<br>-Dspring.data.redis.port&#x3D;19389<br>-Dunique-name&#x3D;strumcode<br>-Dframework.cache.redis.prefix&#x3D;strumcode:<br>-Dspring.data.redis.host&#x3D;common-redis-dev.magestack.cn<br>-Drocketmq.name-server&#x3D;common-rocketmq-dev.magestack.cn:9876<br>-Dspring.cloud.nacos.discovery.server-addr&#x3D;common-nacos-dev.magestack.cn:8848</p>
+<p>-Dunique-name&#x3D;strumcode<br>-Dframework.cache.redis.prefix&#x3D;strumcode:<br>-Drocketmq.name-server&#x3D;common-rocketmq-dev.magestack.cn:9876</p>
+<p>OrderStatusEnum </p>
+<pre><code>0  待支付：用户选好车票下单，但还未付款的状态
+
+10  已支付：用户支付订单费用
+
+11  部分退款：用户支付订单费用后部分车票退款
+
+12 全部退款：用户支付订单费用后全部车票退款
+
+20 已完成：用户车票已过上站时间，订单完成
+
+30 已取消：用户选好车票下单，未支付状态下取消订单
+</code></pre>
+<hr>
+<p>TradeStatusEnum </p>
+<pre><code>0  交易创建，等待买家付款
+
+10  未付款交易超时关闭，或支付完成后全额退款/部分退款
+
+20  交易支付成功
+
+30  交易结束，不可退款
+</code></pre>
+<p>index12306_pay-service_topicstrumcode<br>index12306_pay-service_pay-result-callback_tagstrumcode</p>
+<p>index12306_pay-service_topicstrumcode:index12306_pay-service_pay-result-callback_tagstrumcode</p>
+<p>index12306-order:pay_result_callback:503450116503808568576_1747558636</p>
+<p>（能否创建订单要先去余量令牌桶里面获得到令牌才行）<br>创建订单之后就去数据库（减库存即锁库存）然后canal去更新余量桶，而不是支付后才进行。<br>所以订单超时或取消(数据库订单状态变为30)会再次用canal去redis更新库存。<br>这个数据库更新是通过另一个消息队列完成的。</p>
+<h2 id="分片规则"><a href="#分片规则" class="headerlink" title="分片规则"></a>分片规则</h2><h3 id="订单表（t-order、t-order-item、t-order-item-passenger）"><a href="#订单表（t-order、t-order-item、t-order-item-passenger）" class="headerlink" title="订单表（t_order、t_order_item、t_order_item_passenger）"></a>订单表（t_order、t_order_item、t_order_item_passenger）</h3><p>t_order<br>shardingColumns: <strong>user_id</strong>,<strong>order_sn</strong></p>
+<p>t_order_item<br>shardingColumns: <strong>user_id</strong>,<strong>order_sn</strong></p>
+<p>t_order_item_passenger<br>shardingColumn: <strong>id_card</strong>  理解，因为乘车人要找票</p>
+<h3 id="支付表（t-pay）"><a href="#支付表（t-pay）" class="headerlink" title="支付表（t_pay）"></a>支付表（t_pay）</h3><p>t_pay<br>shardingColumns: <strong>pay_sn</strong>,<strong>order_sn</strong></p>
+<h3 id="用户表"><a href="#用户表" class="headerlink" title="用户表"></a>用户表</h3><p>t_user<br>shardingColumn: username</p>
+<p>t_passenger<br>shardingColumn: username</p>
+<p>t_user_mail<br>shardingColumn: mail</p>
+<p>t_user_phone<br>shardingColumn: phone</p>
+<h2 id="车票服务"><a href="#车票服务" class="headerlink" title="车票服务"></a>车票服务</h2><p>同一个列车编号的车可以跑好几趟从而形成车次train_id ?<br><code>train_type</code>  列车类型 0：高铁 1：动车 2：普通车<br><code>train_tag</code> 列车标签 0：复兴号 1：智能动车组 2：静音车厢 3：支持选铺  （不太重要）<br><code>train_brand</code> 列车品牌 0：GC-高铁&#x2F;城际 1：D-动车 2：Z-直达 3：T-特快 4：K-快速 5：其他 6：复兴号 7：智能动车组</p>
+<p>t_train：列车表。   <code>train_number</code>列车编号(G35、G39、D717、Z284)  <code>sale_status</code>0可售1不可售.. <code>start_station</code> <code>end_station</code> 起始终点站</p>
+<p>t_train_station：列车车次的路线被中间站点分割而成的段落。 <code>train_id</code>车次id，<code>station_id</code>这一小段的起始车站id，<code>sequence</code>此车站在整个路线中的顺序， <code>departure``arrival</code>这一段的起始和终点站  </p>
+<p>t_train_station_relation：根据t_train_station中的段落能产生的所有路线，<code>train_id</code>列车车次id，<code>departure``arrival</code>这个段落组合的起始和终点站，<code>departure_flag``arrival_flag</code>始发或终点标识（对此车次的完整线路来说是否是起始终点站）</p>
+<p>t_region：城市地区表。 <code>name</code>城市名  <code>code</code>城市编号  <code>popular_flag</code>热门标识</p>
+<p>t_station：车站表(一个城市可能两三个车站)。  <code>id</code>，应该就是station_id，<code>name</code>车站名  <code>code</code>车站的编号  <code>region</code>车站所在的城市的编号</p>
+<p>t_carriage：车厢表。 <code>train_id</code>列车车次id（可能是是t_train表的自增id，1、2、3、4），<code>carriage_number</code>车厢号（每趟车01-16个车厢） <code>seat_count</code>每个车厢座位数  <code>carriage_type</code>车厢类型（其实就是座位类型）</p>
+<hr>
+<p>t_train_station_price：所有段落组合和各自的座位等级笛卡尔积形成的票价（比如2车次有三种段落组合，三种座位，那就有九张票价）。<code>train_id</code>车次id，<code>seat_type</code>座位类型，<code>departure``arrival</code>这张票代表的段落组合的起始和终点， <code>price</code>票价，所有数据t_seat都有。</p>
+<p>t_seat：座位表。<code>train_id</code>列车车次id，<code>carriage_number</code>车厢号，<code>seat_number</code>座位号（01A、02C、05F数字是第几排，字母是该排哪个位置，商务座3座，一等座4座，二等座5座），<code>seat_type</code>座位类型（0：商务 1：一等 2： 二等，…13、14等几种类型）， <code>departure``arrival</code>这张票代表的段落组合的起始和终点， <code>price</code>票价，<code>seat_status</code>座位状态（0：可售 1：锁定 2： 已售）</p>
+<p><strong>t_train_station_price</strong>是为了得出票价，而<strong>t_seat</strong>不仅有票价，还把票在车厢中的位置编排好了，并且对所有座位进行了枚举，而每个车厢的座位数在<strong>t_carriage</strong>。我们买票都是在<strong>t_seat</strong>上面进行操作（在对应的路线段以及对应座位号上对座位类型进行修改）。</p>
+<hr>
+<p>t_ticket：用户买的票。<code>username</code>用户名，<code>train_id</code>列车车次id，<code>carriage_number</code>车厢号，<code>seat_number</code>座位号（应该是用车次和车厢号和座位号去座位表查）。<code>passenger_id</code>真正乘客的id，<code>ticket_status</code>车票状态（0：未支付 1：支付 4： 退票…5）。</p>
+<hr>
+<p><strong>购票逻辑</strong>：一趟车次可以组合出好几种路线段，每个路线段都可以选这么多座位，在买个某个路线段某个座位的票后，那些和这个路线段有交集的路线段的此座位的票就得锁定，比如abcde，买了b-d某个座位，那么这个座位只有ab，de路线段的票能买了。</p>
+<p>（假设此车次总共有1000个座位，实际上一个座位的唯一标识应该有车次号待定、车厢号、座位号共同确定，可能还有座位类型?应该没有）<br>余票缓存和token令牌桶的数据理论上是一致的。<br>余票是通过t_seat里面count出来的。<br>再确认下t_seat：一个车次的所有段落都能和这1000个座位进行组合，我买了这个座位在这个路线段的使用权。所以余票缓存和token令牌桶在每个路线段都是有1000个座位即1000张票，所以redis中的key应该包含路线段的起始和终点可能还有车次（对的）？然后value为1000表示有这么多票可以买（实际上是一个map，key是座位类型）。当一个交易完成时，与此路线段交集的所有路线段的value的都要减一，表示这些段的余票数减一(因为座位被占了当然减一)。然后交易段在db中t_seat里找到对应座位seat_status标为已售，其他段可能标为锁定？<br>这个逻辑可能挺好，但代码中实现是否这样有待确定。<br>买到票之后进行座位分配。</p>
+<p>String keySuffix &#x3D; StrUtil.join(“_”, each.getTrainId(), item.getDeparture(), item.getArrival());<br>                Object quantityObj &#x3D; stringRedisTemplate.opsForHash().get(TRAIN_STATION_REMAINING_TICKET + keySuffix, seatType);</p>
+<p>查询票V1：用户输入出发地目的地（是车站的code）日期，先责任链检查，然后出发地目的地找到各自对应的region城市，然后用两个城市找所有可能的车次（比如	2_北京南_杭州东、1_北京南_杭州东），每个车次（比如	2_北京南_杭州东）都要去查票价（比如查到三个座位等级的票价实体数组），然后每个座位等级结合车次出发地目的地(即2_北京南_杭州东)去seat表count座位余量，最后生成关键的“List&lt;TicketListDTO&gt;”车次集合数据，每个TicketListDTO都是一张票的信息（车次出发站点目的站点），然后里面还有余票信息“List&lt;SeatClassDTO&gt; seatClassList”，一个SeatClassDTO明示了座位等级和余量。</p>
+<p>查询票V2：逻辑和V1一样，但是在查询redis上使用了executePipelined进行并行查询优化提升了性能。具体两处是：<br>（1）、比如四个车次都要去查票价，每个都查到的是三个座位等级的票价实体组成的数组的json string<br>（2）、这四个车次，每个都有三、四中票价实体（三、四种座位），于是这么多个并行去redis查座位余量。<br>当然V1有考虑redis缓存失效的情况，V2没考虑。以及使用executePipelined要注意并行查询时相互之间不要有依赖。</p>
+<p>如果redis中没有余量数据，那么加载余量会传入两个站点，方法处理流程是：计算此车次这两站之间能得到的所有路线，然后每个路线都去seat中count座位余量。这方法和token是一样的。</p>
+<p>看看余量和token的数据区别，2车次是有3种座位类型0、1、2，token相当于把余量中的数据展开了。</p>
+
+
+
+
+<p>购票V2：责任链，去拿token（计算各个座位等级各需要几张票，在计算相关的所有路线，然后lua脚本扣减所有路线各个等级座位的购票数，并且拿不到token是进行相应的兜底策略），上一堆本地锁和分布式锁然后开始执行购票逻辑。购票逻辑具体有：选座，组构远程调用订单服务创建订单的请求参数。</p>
+<p>选座逻辑有：根据车类型和座位类型使用策略模式选座（为每个乘客分配好了座位包括车厢和座位号），根据乘客id去用户服务远程查询乘客具体信息，查座位价格，一起封装为结果返回，还要去数据库把那些座位锁定了。具体选座是根据座位类型分类得到各自购买的票数，然后每种座位类型是一个future去并行执行，选座逻辑复杂，分为：总共几张票？比如对商务座来说按2来分割（2人以下简单选座selectSeats，2人以上复杂选座selectComplexSeats）对一等来说4人，原因是这些座位一排有几个座位，方便实现邻座算法；是否有指定座位（用findMatchSeats）？</p>
+<p>订单服务创建订单：通过基因法将用户 ID 融入到订单号，生成订单、订单项、乘客项各自插入到数据库中。</p>
+<h1 id="简历信息"><a href="#简历信息" class="headerlink" title="简历信息"></a>简历信息</h1><p>给项目改个名以及修改简介，比如 12306 可以改为智行火车票、飞猪火车票、去哪儿火车票、同程火车票以及买火车票等等。<br>然后是否可以按量购买<strong>云服务器</strong>，模拟真实压测接口的 QPS 和 TPS，把这些指标写入到项目中。<br>是否能够通过存储过程模拟海量数据，看看接口在海量数据下能否高性能新增和插入。<br>最后，如果项目包含完整前后端流程，可以云服务器部署，并使用域名进行访问。</p>
+<p><a href="mailto:&#x6c;&#99;&#122;&#x68;&#97;&#x6e;&#103;&#x39;&#x33;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#x6c;&#99;&#122;&#x68;&#97;&#x6e;&#103;&#x39;&#x33;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a></p>
+<p>主要完成者<br>12306铁路购票系统<br>简介:<br>帮助用户完成互联网在线购票，提高居民买票效率以及减少售票人员工作。完成会员注册、车票查询、车票下单以及支付等业务。底层采用缓存、消息队列以及分库分表等技术支持海量用户购票以及数据存储。<br>亮点：<br>1.使用责任链模式重构请求数据准确性检验，比如：查询购票、购买车票下单以及支付结果回调等业务。<br>2.通过RocketMQ 延时消息特性，完成用户购票10 分钟后未支付情况下取消订单功能。<br>3.封装缓存组件库避免注册用户时，用户名全局唯一带来的缓存穿透问题，减轻数据库访问压力。<br>4.使用BinLog 配合RocketMQ 消息队列完成MySQL 数据库与Redis 缓存之间的数据最终一致性。<br>5.通过Redis Lua 脚本原子特性，完成用户购票令牌分配，通过令牌限流以应对海量用户购票请求。<br>6.通过订单号和用户信息复合分片算法完成订单数据分库分表，支持订单号和用户查询维度。<br>7.创建订单明细与乘车人的关联表，分库分表规则同订单，完成乘车人账号登录查询本人车票功能。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Iridescent-zhang/12306">https://github.com/Iridescent-zhang/12306</a></p>
+<p>微博短链接系统<br>项目上线 <a target="_blank" rel="noopener" href="http://strumcode.com/">http://strumcode.com/</a><br>简介:<br>提供长链接转换为短链接服务。微博发布博文有长度限制，分享链接会占用正文篇幅，为此通过短链系统优化。系统支持高并发短链跳转，并提供了深入的分析和跟踪功能，帮助用户分析分享行为以及转化率。<br>亮点：<br>1.通过布隆过滤器完成判断短链接是否已存在，性能远胜分布式锁搭配查询数据库方案。<br>2.借助RocketMQ 消息队列的削峰特点，实现海量访问短链接场景下的监控信息存储功能，确保系统在高负载情况下仍能正常运行。<br>3.封装缓存不存在读取功能，通过双重判定锁优化更新或失效场景下大量查询数据库问题。<br>4.通过旁路缓存策略，保障短链接缓存与数据库之间的数据一致性功能。<br>5.通过Redis 完成消息队列消费业务下的幂等场景，保障消息在一定时间内消费且仅消费一次。<br>6.使用Sentinel 进行接口访问的QPS 限流，以保障短链接系统的稳定运行, 确保核心功能的可用性。</p>
+<p>项目上线 <a target="_blank" rel="noopener" href="http://strumcode.com/">http://strumcode.com/</a><br><a target="_blank" rel="noopener" href="https://github.com/Iridescent-zhang/shortLinkRocket">https://github.com/Iridescent-zhang/shortLinkRocket</a></p>
+<p>Friendmall 仿商城项目<br>技术栈: SpringBoot + SpringCloud+ Mybatis-Plus + MySQL + Redis + RabbitMQ+ Nginx<br>简介:<br>FriendMall 是一个完整的微服务分布式架构电商平台，利用Docker 进行容器化搭建部署，以复杂业务为背景整合SSM，应用Spring CloudAlibaba 微服务组件，分析分布式系统难点，尝试应对高并发场景。<br>亮点：</p>
 <ol>
 <li>全系统实现微服务，以业务解耦，注册Nacos 服务发现，OpenFeign远程调用，Nginx 反向代理并实现动静分离，Gateway 负载均衡地将请求转达各个服务，搭建微服务域名环境和稳定的调用链路。</li>
 <li>OAuth2.0社交登录，SpringSession整合Redis 实现分布式会话共享，ThreadLocal 实现未登录拦截，构造Feign的请求拦截器增强Feign远程调用存入Cookie，全系统内单点登录。</li>
@@ -559,38 +665,30 @@
 <li>关注幂等性处理：库存自动解锁时都会查最新状态防止重复解锁；结合分布式锁，通过在Redis 中占位,防止重复保存秒杀信息。</li>
 <li>网关层进行Sentinel 流控(限流、熔断、降级), Zipkin链路追踪可视化资源调用。<br><a target="_blank" rel="noopener" href="https://github.com/Iridescent-zhang/friendmall">https://github.com/Iridescent-zhang/friendmall</a></li>
 </ol>
-<p>微博短链接系统<br>项目上线 <a target="_blank" rel="noopener" href="http://strumcode.com/">http://strumcode.com/</a><br>简介:<br>提供长链接转换为短链接服务。微博发布博文有长度限制，分享链接会占用正文篇幅，为此通过短链系统优化。系统支持高并发短链跳转，并提供了深入的分析和跟踪功能，帮助用户分析分享行为以及转化率。<br>亮点：<br>1.通过布隆过滤器完成判断短链接是否已存在，性能远胜分布式锁搭配查询数据库方案。<br>2.借助RocketMQ 消息队列的削峰特点，实现海量访问短链接场景下的监控信息存储功能，确保系统在高负载情况下仍能正常运行。<br>3.封装缓存不存在读取功能，通过双重判定锁优化更新或失效场景下大量查询数据库问题。<br>4.通过旁路缓存策略，保障短链接缓存与数据库之间的数据一致性功能。<br>5.通过Redis 完成消息队列消费业务下的幂等场景，保障消息在一定时间内消费且仅消费一次。<br>6.使用Sentinel 进行接口访问的QPS 限流，以保障短链接系统的稳定运行, 确保核心功能的可用性。</p>
-<p>项目上线 <a target="_blank" rel="noopener" href="http://strumcode.com/">http://strumcode.com/</a><br><a target="_blank" rel="noopener" href="https://github.com/Iridescent-zhang/shortLinkRocket">https://github.com/Iridescent-zhang/shortLinkRocket</a></p>
-<p>12306铁路购票系统<br>简介:<br>帮助用户完成互联网在线购票，提高居民买票效率以及减少售票人员工作。完成会员注册、车票查询、车票下单以及支付等业务。底层采用缓存、消息队列以及分库分表等技术支持海量用户购票以及数据存储。<br>亮点：<br>1.使用责任链模式重构请求数据准确性检验，比如：查询购票、购买车票下单以及支付结果回调等业务。<br>2.通过RocketMQ 延时消息特性，完成用户购票10 分钟后未支付情况下取消订单功能。<br>3.封装缓存组件库避免注册用户时，用户名全局唯一带来的缓存穿透问题，减轻数据库访问压力。<br>4.使用BinLog 配合RocketMQ 消息队列完成MySQL 数据库与Redis 缓存之间的数据最终一致性。<br>5.通过Redis Lua 脚本原子特性，完成用户购票令牌分配，通过令牌限流以应对海量用户购票请求。<br>6.通过订单号和用户信息复合分片算法完成订单数据分库分表，支持订单号和用户查询维度。<br>7.创建订单明细与乘车人的关联表，分库分表规则同订单，完成乘车人账号登录查询本人车票功能。</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/Iridescent-zhang/12306">https://github.com/Iridescent-zhang/12306</a></p>
 <p>基于FPGA HLS的手势识别系统设计</p>
 <ol>
-<li><p>负责基于FPGA实现二维手势识别系统的整体设计与开发，利用高层次综合(HLS)技术优化算法性能。</p>
-</li>
-<li><p>采用C++语言，依据HLS设计原则，完成图像处理和手势特征提取等核心算法的开发。</p>
-</li>
-<li><p>通过仿真验证算法功能与性能，确保算法设计满足项目需求。</p>
-</li>
-<li><p>利用HLS工具的优化指令和约束，指导算法的综合过程，实现高效的RTL设计。</p>
-</li>
-<li><p>将综合得到的IP核成功集成至ZYNQ硬件系统中，实现算法的硬件加速，提升系统处理速度。</p>
-</li>
-<li><p>在软件平台上开发调试程序，确保软硬件协同工作，有效控制整个手势识别系统。</p>
-</li>
-<li><p>针对ZynqSoC 7000平台，精心设计软硬件架构，优化系统资源配置和任务调度。</p>
-</li>
-<li><p>独立承担项目从概念设计到最终实现的全过程，保证项目按时交付且满足性能要求。</p>
-</li>
-<li><p>熟练掌握Java 基础，熟悉JUC、集合、多线程，了解JVM 、设计模式。</p>
-</li>
-<li><p>掌握MySQL、Redis 的使用和原理，熟悉ShardingSphere 分库分表中间件。</p>
-</li>
-<li><p>熟悉RabbitMQ、RocketMQ 消息中间件，熟悉延迟队列的应用，解决重复消费问题。</p>
-</li>
-<li><p>熟悉SSM、SpringBoot、MyBatis-Plus 等主流开发框架以及Spring Cloud 常见组件。</p>
-</li>
-<li><p>熟悉常用数据结构、计算机网络、操作系统，掌握Maven、Git、Docker 的基本使用。</p>
-</li>
+<li>负责基于FPGA实现二维手势识别系统的整体设计与开发，利用高层次综合(HLS)技术优化算法性能。</li>
+<li>采用C++语言，依据HLS设计原则，完成图像处理和手势特征提取等核心算法的开发。</li>
+<li>通过仿真验证算法功能与性能，确保算法设计满足项目需求。</li>
+<li>利用HLS工具的优化指令和约束，指导算法的综合过程，实现高效的RTL设计。</li>
+<li>将综合得到的IP核成功集成至ZYNQ硬件系统中，实现算法的硬件加速，提升系统处理速度。</li>
+<li>在软件平台上开发调试程序，确保软硬件协同工作，有效控制整个手势识别系统。</li>
+<li>针对ZynqSoC 7000平台，精心设计软硬件架构，优化系统资源配置和任务调度。</li>
+<li>独立承担项目从概念设计到最终实现的全过程，保证项目按时交付且满足性能要求。</li>
+</ol>
+<p><strong>课题组《铁路货车故障轨边图像异常检测》项目</strong></p>
+<p>浙江九霄智能科技有限公司<br>C++开发实习生<br>使用QT、C++进行仿真软件客户端开发</p>
+<p>2023 年中国研究生数学建模竞赛，国家二等奖<br>全国大学生电子设计大赛陕西省二等奖<br>西安电子科技大学2781班学长奖学金<br>西安电子科技大学电子工程学院2781班学长奖学金<br>350628200110084010</p>
+<p>遥感科学与技术  信息科学与工程学院<br>HR您好，我是东南大学信息与通信工程2026届硕士生，本科是西安电子科技大学，成绩专业第一。熟练使用Java、C++，具有良好的计算机和互联网项目基础。 完成过12306铁路购票系统、微博短链接系统（已上线）、Friendmall仿商城项目。热爱编程技术，有较好的学习能力（本科专业第一），具有一定的抗压能力。</p>
+<p>移动通信国家重点实验室</p>
+<p>自我评价：热爱编程技术，具有较高的学习效率和较强的学习驱动力，本科成绩保持专业第一的同时积极学习嵌入式编程，熟悉C&#x2F;C++进行单片机&#x2F;FPGA开发。热爱互联网技术，熟练使用Java，完成12306铁路购票系统、微博短链接系统（已上线）、Friendmall仿商城项目。学习和工作上具有韧性、较好的抗压能力。</p>
+<p>爱好特长：自学吉他两年有较好的成果（社交媒体上发布视频），热爱运动（长跑），参加过校园马拉松。</p>
+<ol>
+<li>熟练掌握Java 基础，熟悉JUC、集合、多线程，了解JVM 、设计模式。</li>
+<li>掌握MySQL、Redis 的使用和原理，熟悉ShardingSphere 分库分表中间件。</li>
+<li>熟悉RabbitMQ、RocketMQ 消息中间件，熟悉延迟队列的应用，解决重复消费问题。</li>
+<li>熟悉SSM、SpringBoot、MyBatis-Plus 等主流开发框架以及Spring Cloud 常见组件。</li>
+<li>熟悉常用数据结构、计算机网络、操作系统，掌握Maven、Git、Docker 的基本使用。</li>
 </ol>
 <!-- flag of hidden posts -->
     </div>
@@ -680,7 +778,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-%E5%88%B7%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">MySQL 刷题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%8B%E6%92%95"><span class="nav-number">2.</span> <span class="nav-text">手撕</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AB%E8%82%A1%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">八股题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%A7%E6%8B%89%E6%8B%89"><span class="nav-number">3.1.</span> <span class="nav-text">货拉拉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BA%A2%E4%B9%A6"><span class="nav-number">3.2.</span> <span class="nav-text">小红书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BB%B4%E6%BB%B4"><span class="nav-number">3.3.</span> <span class="nav-text">滴滴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%9B%A2"><span class="nav-number">3.4.</span> <span class="nav-text">美团</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%94%9A%E6%9D%A5"><span class="nav-number">3.5.</span> <span class="nav-text">蔚来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%BF%E9%87%8C%E4%BA%91"><span class="nav-number">3.6.</span> <span class="nav-text">阿里云</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%89%8B"><span class="nav-number">3.7.</span> <span class="nav-text">快手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%B1%B3"><span class="nav-number">3.8.</span> <span class="nav-text">小米</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%E9%A2%98%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">场景题总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">项目总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8E%86%E6%8A%95%E9%80%92"><span class="nav-number">6.</span> <span class="nav-text">简历投递</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%86%E8%8A%82"><span class="nav-number">7.</span> <span class="nav-text">项目细节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="nav-number">7.1.</span> <span class="nav-text">数据库设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%93%E5%AD%98%E5%BA%93-wms"><span class="nav-number">7.1.1.</span> <span class="nav-text">库存库 wms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A2%E5%8D%95%E5%BA%93-oms"><span class="nav-number">7.1.2.</span> <span class="nav-text">订单库 oms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%95%86%E5%93%81%E5%BA%93-pms"><span class="nav-number">7.1.3.</span> <span class="nav-text">商品库 pms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%9A%E5%91%98%E5%BA%93-ums"><span class="nav-number">7.1.4.</span> <span class="nav-text">会员库 ums</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%92%E6%9D%80%E8%A1%A8-sms"><span class="nav-number">7.1.5.</span> <span class="nav-text">秒杀表 sms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E4%BF%A1%E6%81%AF"><span class="nav-number">7.2.</span> <span class="nav-text">全局异常信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redis"><span class="nav-number">7.3.</span> <span class="nav-text">redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E8%BF%87%E7%9A%84key%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">7.3.1.</span> <span class="nav-text">用过的key、数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%B3%95%EF%BC%88session%EF%BC%8C%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%EF%BC%8C%E5%B9%82%E7%AD%89%E6%80%A7%EF%BC%89"><span class="nav-number">7.3.2.</span> <span class="nav-text">用法（session，分布式锁，幂等性）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redisson"><span class="nav-number">7.3.3.</span> <span class="nav-text">redisson</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%8B%E6%B5%8B"><span class="nav-number">7.4.</span> <span class="nav-text">压测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1-%E7%A7%92%E6%9D%80%E5%95%86%E5%93%81%E4%B8%8A%E6%9E%B6"><span class="nav-number">7.5.</span> <span class="nav-text">定时任务 秒杀商品上架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%92%E6%9D%80"><span class="nav-number">7.6.</span> <span class="nav-text">秒杀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="nav-number">7.7.</span> <span class="nav-text">消息队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="nav-number">7.8.</span> <span class="nav-text">登录拦截器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#session-%E8%B7%A8%E5%9F%9F"><span class="nav-number">7.8.1.</span> <span class="nav-text">session 跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BE%E4%BA%A4%E7%99%BB%E5%BD%95"><span class="nav-number">7.8.2.</span> <span class="nav-text">社交登录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sentinel-%E8%BF%9B%E8%A1%8C%E6%B5%81%E6%8E%A7"><span class="nav-number">7.9.</span> <span class="nav-text">sentinel 进行流控</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8E%86%E4%BF%A1%E6%81%AF"><span class="nav-number">7.10.</span> <span class="nav-text">简历信息</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E"><span class="nav-number">1.</span> <span class="nav-text">谷粒商城</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B8%80%E7%82%B9"><span class="nav-number">1.1.</span> <span class="nav-text">前端学一点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">遇到的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%95%86%E5%9F%8E%E7%BB%86%E8%8A%82"><span class="nav-number">2.</span> <span class="nav-text">商城细节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.1.</span> <span class="nav-text">数据库设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%93%E5%AD%98%E5%BA%93-wms"><span class="nav-number">2.1.1.</span> <span class="nav-text">库存库 wms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A2%E5%8D%95%E5%BA%93-oms"><span class="nav-number">2.1.2.</span> <span class="nav-text">订单库 oms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%95%86%E5%93%81%E5%BA%93-pms"><span class="nav-number">2.1.3.</span> <span class="nav-text">商品库 pms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%9A%E5%91%98%E5%BA%93-ums"><span class="nav-number">2.1.4.</span> <span class="nav-text">会员库 ums</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%92%E6%9D%80%E8%A1%A8-sms"><span class="nav-number">2.1.5.</span> <span class="nav-text">秒杀表 sms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E4%BF%A1%E6%81%AF"><span class="nav-number">2.2.</span> <span class="nav-text">全局异常信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redis"><span class="nav-number">2.3.</span> <span class="nav-text">redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E8%BF%87%E7%9A%84key%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.3.1.</span> <span class="nav-text">用过的key、数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%B3%95%EF%BC%88session%EF%BC%8C%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%EF%BC%8C%E5%B9%82%E7%AD%89%E6%80%A7%EF%BC%89"><span class="nav-number">2.3.2.</span> <span class="nav-text">用法（session，分布式锁，幂等性）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redisson"><span class="nav-number">2.3.3.</span> <span class="nav-text">redisson</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%8B%E6%B5%8B"><span class="nav-number">2.4.</span> <span class="nav-text">压测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1-%E7%A7%92%E6%9D%80%E5%95%86%E5%93%81%E4%B8%8A%E6%9E%B6"><span class="nav-number">2.5.</span> <span class="nav-text">定时任务 秒杀商品上架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%92%E6%9D%80"><span class="nav-number">2.6.</span> <span class="nav-text">秒杀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="nav-number">2.7.</span> <span class="nav-text">消息队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="nav-number">2.8.</span> <span class="nav-text">登录拦截器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#session-%E8%B7%A8%E5%9F%9F"><span class="nav-number">2.8.1.</span> <span class="nav-text">session 跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BE%E4%BA%A4%E7%99%BB%E5%BD%95"><span class="nav-number">2.8.2.</span> <span class="nav-text">社交登录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sentinel-%E8%BF%9B%E8%A1%8C%E6%B5%81%E6%8E%A7"><span class="nav-number">2.9.</span> <span class="nav-text">sentinel 进行流控</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="nav-number">2.10.</span> <span class="nav-text">项目总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%AD%E9%93%BE%E6%8E%A5"><span class="nav-number">3.</span> <span class="nav-text">短链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-number">3.1.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8-%E4%BB%A5%E5%8F%8A-%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="nav-number">3.2.</span> <span class="nav-text">分库分表 以及 表结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">3.3.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%AD%E9%93%BE%E9%87%8D%E5%A4%8D%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.3.1.</span> <span class="nav-text">短链重复的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E7%9F%AD%E9%93%BE"><span class="nav-number">3.3.2.</span> <span class="nav-text">访问短链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.3.3.</span> <span class="nav-text">分组的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12306"><span class="nav-number">4.</span> <span class="nav-text">12306</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%89%87%E8%A7%84%E5%88%99"><span class="nav-number">4.1.</span> <span class="nav-text">分片规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A2%E5%8D%95%E8%A1%A8%EF%BC%88t-order%E3%80%81t-order-item%E3%80%81t-order-item-passenger%EF%BC%89"><span class="nav-number">4.1.1.</span> <span class="nav-text">订单表（t_order、t_order_item、t_order_item_passenger）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%AF%E4%BB%98%E8%A1%A8%EF%BC%88t-pay%EF%BC%89"><span class="nav-number">4.1.2.</span> <span class="nav-text">支付表（t_pay）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E8%A1%A8"><span class="nav-number">4.1.3.</span> <span class="nav-text">用户表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%A6%E7%A5%A8%E6%9C%8D%E5%8A%A1"><span class="nav-number">4.2.</span> <span class="nav-text">车票服务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8E%86%E4%BF%A1%E6%81%AF"><span class="nav-number">5.</span> <span class="nav-text">简历信息</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -696,7 +794,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -772,7 +870,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2024</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -782,13 +880,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">380k</span>
+    <span title="Symbols count total">377k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">5:46</span>
+    <span title="Reading time total">5:42</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
