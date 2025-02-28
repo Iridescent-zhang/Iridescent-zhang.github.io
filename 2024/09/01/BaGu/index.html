@@ -655,7 +655,7 @@
 <p>选座逻辑有：根据车类型和座位类型使用策略模式选座（为每个乘客分配好了座位包括车厢和座位号），根据乘客id去用户服务远程查询乘客具体信息，查座位价格，一起封装为结果返回，还要去数据库把那些座位锁定了。具体选座是根据座位类型分类得到各自购买的票数，然后每种座位类型是一个future去并行执行，选座逻辑复杂，分为：总共几张票？比如对商务座来说按2来分割（2人以下简单选座selectSeats，2人以上复杂选座selectComplexSeats）对一等来说4人，原因是这些座位一排有几个座位，方便实现邻座算法；是否有指定座位（用findMatchSeats）？</p>
 <p>订单服务创建订单：通过基因法将用户 ID 融入到订单号，生成订单、订单项、乘客项各自插入到数据库中。</p>
 <h1 id="简历信息"><a href="#简历信息" class="headerlink" title="简历信息"></a>简历信息</h1><p>给项目改个名以及修改简介，比如 12306 可以改为智行火车票、飞猪火车票、去哪儿火车票、同程火车票以及买火车票等等。<br>然后是否可以按量购买<strong>云服务器</strong>，模拟真实压测接口的 QPS 和 TPS，把这些指标写入到项目中。<br>是否能够通过存储过程模拟海量数据，看看接口在海量数据下能否高性能新增和插入。<br>最后，如果项目包含完整前后端流程，可以云服务器部署，并使用域名进行访问。</p>
-<p><a href="mailto:&#x6c;&#99;&#122;&#x68;&#97;&#x6e;&#103;&#57;&#51;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#x6c;&#99;&#122;&#x68;&#97;&#x6e;&#103;&#57;&#51;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+<p><a href="mailto:&#x6c;&#x63;&#122;&#x68;&#97;&#x6e;&#x67;&#57;&#51;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#x6c;&#x63;&#122;&#x68;&#97;&#x6e;&#x67;&#57;&#51;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a></p>
 <p>简介: 用Java 实现的数据库，五个主要模块分层设计清晰。数据库设计为C&#x2F;S 结构，支持启动一个服务器，多个客户端通过socket 连接，执行SQL 返回结果。<br>Transaction Manager(TM): 通过维护XID 文件来管理事务，并提供查询事务状态的接口。<br>Data Manager(DM): 与文件系统交互直接管理数据库文件(DB) 和日志文件(LOG)，包括：(1) 管理LOG, 保证ENDB 的可恢复性；(2) 分页管理DB 并抽象出DataItem 进行缓存供上层模块使用。<br>Version Manager(VM): 实现了MVCC 以消除读写阻塞，并实现RR、RC 两种隔离级别，基于2PL 保证了事务的可串行性。<br>Index Manager(IM): 维护基于B+ 树的索引结构。<br>Table Manager(TBM): 实现对字段和表结构的管理，解析类SQL 语句，并根据语句操作表。</p>
 <p>主要完成者<br>12306铁路购票系统<br>简介:<br>帮助用户完成互联网在线购票，提高居民买票效率以及减少售票人员工作。完成会员注册、车票查询、车票下单以及支付等业务。底层采用缓存、消息队列以及分库分表等技术支持海量用户购票以及数据存储。<br>亮点：<br>1.使用责任链模式重构请求数据准确性检验，比如：查询购票、购买车票下单以及支付结果回调等业务。<br>2.通过RocketMQ 延时消息特性，完成用户购票10 分钟后未支付情况下取消订单功能。<br>3.封装缓存组件库避免注册用户时，用户名全局唯一带来的缓存穿透问题，减轻数据库访问压力。<br>4.使用BinLog 配合RocketMQ 消息队列完成MySQL 数据库与Redis 缓存之间的数据最终一致性。<br>5.通过Redis Lua 脚本原子特性，完成用户购票令牌分配，通过令牌限流以应对海量用户购票请求。<br>6.通过订单号和用户信息复合分片算法完成订单数据分库分表，支持订单号和用户查询维度。<br>7.创建订单明细与乘车人的关联表，分库分表规则同订单，完成乘车人账号登录查询本人车票功能。</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/Iridescent-zhang/12306">https://github.com/Iridescent-zhang/12306</a></p>
@@ -884,7 +884,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -970,13 +970,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">385k</span>
+    <span title="Symbols count total">384k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">5:50</span>
+    <span title="Reading time total">5:49</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
