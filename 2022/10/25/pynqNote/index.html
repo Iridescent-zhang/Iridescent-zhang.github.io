@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Witcher.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Witcher.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"iridescent-zhang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"valine","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus","order":-1},"valine":{"text":"Valine","order":-2}},"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="PYNQ is an open-source project from Xilinx® that makes it easier to use Xilinx platforms.Using the Python language and libraries, designers can exploit the benefits of programmable logic and microproc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pynqNote">
+<meta property="og:url" content="https://iridescent-zhang.github.io/2022/10/25/pynqNote/index.html">
+<meta property="og:site_name" content="Iridescent-zhang">
+<meta property="og:description" content="PYNQ is an open-source project from Xilinx® that makes it easier to use Xilinx platforms.Using the Python language and libraries, designers can exploit the benefits of programmable logic and microproc">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/1t92ZjMm/5.jpg">
+<meta property="og:image" content="https://i.postimg.cc/7Z0WJkWP/dfs.jpg">
+<meta property="og:image" content="https://i.postimg.cc/MTHF3jdt/3.jpg">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk4J6DptOU7hJqfmFm%2FFramework.png?generation=1574912214909447&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45oYcmYScZaIkqVF%2F16.png?generation=1574912160835169&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45o_00CI6NFq0CO8%2F17.png?generation=1574912160926567&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45k0Rmf1MxjzmVqs%2F01.png?generation=1574912184317900&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45k2w-Kfk__l6Lk7%2F02.png?generation=1574912184236329&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45jVUe_Ugw9vd5Jg%2F53.png?generation=1574912159895092&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45jXG0ULRUQ7jW4o%2F54.png?generation=1574912159738464&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk4C5en0SfvtAreqaR%2F01.png?generation=1574912187256632&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk4C5jp2rnhULxrG04%2F03.png?generation=1574912187122306&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk4C5na0bSI_8GlGdE%2F05.png?generation=1574912187117149&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk4C6A3nRKlhiPBgEI%2F17.png?generation=1574912187140929&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45Tm2OOYZ-C5fpav%2F38.png?generation=1574912159325564&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45To804LALQA5LIM%2F39.png?generation=1574912159104658&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45U9Z-38B3Iv8Vwl%2F50.png?generation=1574912159389267&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45UBlbtSd7VpQGoz%2F51.png?generation=1574912159169195&alt=media">
+<meta property="og:image" content="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45lutSSL0eZk-Bfp%2F52.png?generation=1574912162153238&alt=media">
+<meta property="article:published_time" content="2022-10-25T11:15:10.000Z">
+<meta property="article:modified_time" content="2024-03-18T16:04:47.322Z">
+<meta property="article:author" content="lichao Zhang">
+<meta property="article:tag" content="PYNQ">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/1t92ZjMm/5.jpg">
+
+<link rel="canonical" href="https://iridescent-zhang.github.io/2022/10/25/pynqNote/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>pynqNote | Iridescent-zhang</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Iridescent-zhang</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">醉后不知天在水，满船清梦压星河</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/10/25/pynqNote/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cloud.jpg">
+      <meta itemprop="name" content="lichao Zhang">
+      <meta itemprop="description" content="博观而约取，厚积而薄发">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iridescent-zhang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          pynqNote
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-10-25 11:15:10" itemprop="dateCreated datePublished" datetime="2022-10-25T11:15:10Z">2022-10-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-03-18 16:04:47" itemprop="dateModified" datetime="2024-03-18T16:04:47Z">2024-03-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/FPGA/" itemprop="url" rel="index"><span itemprop="name">FPGA</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/10/25/pynqNote/" class="post-meta-item leancloud_visitors" data-flag-title="pynqNote" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/10/25/pynqNote/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/10/25/pynqNote/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>17k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>16 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>PYNQ is an open-source project from Xilinx® that makes it easier to use Xilinx platforms.<br>Using the Python language and libraries, designers can exploit the benefits of programmable logic and microprocessors to build more capable and exciting electronic systems.</strong></p>
+<span id="more"></span>
+
+<h1 id="启动-PYNQ"><a href="#启动-PYNQ" class="headerlink" title="启动 PYNQ"></a>启动 PYNQ</h1><ol>
+<li>在 MicroSD 卡中烧录 pynq 的镜像文件；<br> 在 <a target="_blank" rel="noopener" href="http://www.pynq.io/board.html">http://www.pynq.io/board.html</a> 下载镜像文件，用 WIN32 Disk Imager 将镜像刻录到 SD 卡中。</li>
+<li>设置电路板<br> 根据你的选择（板子供电方式，启动方式）来设置电路板，将跳线放置到相应的位置，连接 microUSB 电缆 和 以太网 电缆。板子上电一段时间后，正常情况下会看到这样的现象，DONE LED 应打开，随后 2 个蓝色 LED 和 4 个黄色用户 LED 闪烁。蓝色 LED 将闪烁一段时间，然后将关闭，而黄色 LED 将保持点亮状态，这表明该板已准备好使用。</li>
+<li>以太网连接<ul>
+<li>有联网的路由器：如果你的身边有路由器，则可以将 pynq 的以太网接口和路由器的LAN口相连，板子的IP地址将由DHCP服务器自动配置，pynq能从internet下载数据包。电脑浏览器地址栏中输入 <a target="_blank" rel="noopener" href="http://pynq:9090/">http://pynq:9090/</a> 将能够访问板载Linux上运行的 Jupyter Notebook Web服务器的主页。想要获得板子的IP地址以便和板子进行通信可以通过PuTTY串口通讯软件，也可以使用名为“Angry IP Scanner”的软件，可以从 <a target="_blank" rel="noopener" href="https://angryip.org/download">https://angryip.org/download</a> 获得。它通常会自动检你的网络配置并配置 IP 范围，只需要按开始按钮即可。例如我的主机在无线局域网中的IP地址为<code>192.168.31.29</code>，运行Angry IP Scanner如下：<br> <img src="https://i.postimg.cc/1t92ZjMm/5.jpg"><br> <img src="https://i.postimg.cc/7Z0WJkWP/dfs.jpg"><br> 于是我在地址栏中输入 pynq 的IP地址<code>192.168.31.166</code>，能看到和输入 <a target="_blank" rel="noopener" href="http://pynq:9090/">http://pynq:9090/</a> 一样的效果，输入密码 <code>xilinx</code> 就能进入jupyter的网页。</li>
+<li>无联网的路由器：你可以将 pynq 的以太网接口和 PC 的以太网接口相连，这种情况下，你需要设置 PC 的以太网静态 IP 地址，开发板的默认静态 IP 地址为 192.168.2.99，你需要将 PC 的 IP 地址配置在相同的网段内，这样二者就可以进行通信了，例如：IP地址配置为 192.168.2.1，子网掩码配置为 255.255.255.0。（打开网络与共享中心–&gt;更改适配器设置–&gt;选择以太网右击属性–&gt;选中Internet协议版本4–&gt;选中属性–&gt;选中‘使用下面的IP地址’选项–&gt;输入对应数），你可以使用命令<code>ping 192.168.2.99</code>查看是否连接成功。连接成功后在浏览器地址栏输入 <a target="_blank" rel="noopener" href="http://192.168.2.99:9090/">http://192.168.2.99:9090/</a> 就可以打开嵌入式Web服务器Jupyter Notebook的页面。这里 pynq 是无法从internet进行下载更新的，但是，如果你的电脑是通过 WIFI 连接互联网的，可以将网络共享给PYNQ-Z2板卡，可以参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43588553/article/details/113699594">这篇文章</a>。</li>
+</ul>
+</li>
+<li>通过samba传输文件<br> 在开发过程中，如果需要在PC机与板卡之间传输一些较大的文件，可以通过PYNQ支持的samba协议将PYNQ的文件系统当作一个网络硬盘直接读取。在Windows中只需要打开资源管理器，输入<code>\\pynq\xilinx</code>即可成功连接。<br> <img src="https://i.postimg.cc/MTHF3jdt/3.jpg"><br> 其中文件夹<code>jupyter_notebooks</code>内容与 Jupyter Notebook 服务器主页显示的一致。</li>
+</ol>
+<h2 id="PYNQ-Z2-接口"><a href="#PYNQ-Z2-接口" class="headerlink" title="PYNQ-Z2 接口"></a>PYNQ-Z2 接口</h2><h2 id="关于-Jupyter-Notebook"><a href="#关于-Jupyter-Notebook" class="headerlink" title="关于 Jupyter-Notebook"></a>关于 Jupyter-Notebook</h2><p>从SD中启动实际上是运行了一个利用 ARM 处理器功能的操作系统 (Linux)，Jupyter-Notebook 是在 Linux 中运行的服务器。通过使用PC访问 Jupyter-Notebook 服务器连接到设备，现在可以在浏览器网页上编写代码，代码将在 FPGA Arm Cortex 处理器内部执行，所以基本上你可以在处理器上远程运行命令。</p>
+<h2 id="本节参考："><a href="#本节参考：" class="headerlink" title="本节参考："></a>本节参考：</h2><p><a target="_blank" rel="noopener" href="https://blog.umer-farooq.com/a-pynq-z2-guide-for-absolute-dummies-part-i-fun-with-leds-and-switches-47dd76abf9a9">Umer Farooq : A PYNQ-Z2 Guide for Absolute Dummies </a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34341423/article/details/102507665">csdn PYNQ-Z2快速上手</a><br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=RiFbRf6gaK4&t=6s">video </a></p>
+<h1 id="学习-PYNQ"><a href="#学习-PYNQ" class="headerlink" title="学习 PYNQ"></a>学习 PYNQ</h1><p><strong>写在前面：</strong> 最好的老师就是 <code>/home/xilinx/jupyter_notebooks</code> 里的<strong>官方例程</strong></p>
+<h2 id="什么是PYNQ"><a href="#什么是PYNQ" class="headerlink" title="什么是PYNQ"></a>什么是PYNQ</h2><p>PYNQ是Python On Zynq的缩写，它是一个软件开发框架，指导硬件层、驱动层和应用层之间的接口设计，不是ISE、Vivado、SDSoC这样的IDE工具，更不是Zynq芯片的下一代芯片产品。</p>
+<p><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk4J6DptOU7hJqfmFm%2FFramework.png?generation=1574912214909447&alt=media"></p>
+<p>PYNQ框架的设计初衷是通过高层次的封装，将底层硬件FPGA实现细节与上层应用层的使用脱耦，<strong>对软件开发者来说，PYNQ框架已经提供了完整的访问FPGA资源的library，让上层应用开发者通过Python编程就可以调用FPGA模块</strong>，不需要懂Verilog&#x2F;VHDL硬件编程就可以享受FPGA可并行计算、接口可方便扩展和可灵活配置带来的诸多好处。</p>
+<p>在PYNQ框架下，ARM A9 CPU上运行的软件包括：</p>
+<ul>
+<li>载有Jupyter Notebooks设计环境的网络服务器</li>
+<li>IPython内核和程序包</li>
+<li>Linux</li>
+<li>FPGA的基本硬件库和API</li>
+</ul>
+<p><strong>PYNQ框架是为软件开发者提供了访问FPGA资源的python接口，Python开发者可以忽略这些实现细节</strong>，通过python即可轻松访问FPGA，动态加载各种预编译好的FPGA应用，像调用函数一样去调用各种通过FPGA加速的应用或者访问连接到FPFA的外设。让软件工程师能轻松享受FPGA并行计算和可灵活配置的诸多好处，并不是说用Python对FPGA进行编程来取代传统的RTL编程方式，注意区别。总而言之，PYNQ只是一个工具而已，一个让软件工程师不需要学习太多硬件知识就能发挥FPGA功能的工具。</p>
+<h2 id="Jupyter-Notebook必知必会"><a href="#Jupyter-Notebook必知必会" class="headerlink" title="Jupyter Notebook必知必会"></a>Jupyter Notebook必知必会</h2><p><strong>Jupyter是基于网页的用于交互计算的应用程序</strong>，可被应用于全过程计算：开发、文档编写、运行代码和展示结果。Jupyter可以很方便地部署在嵌入式Linux中，作为嵌入式Linux的Web IDE。</p>
+<p>Notebook主要由两部分组成，<strong>网页应用和文档部分</strong>。网页应用即基于网页形式的、结合了编写说明文档、数学公式、交互计算和其他富媒体形式的工具。简言之，网页应用是可以实现各种功能的工具。 至于文档，Notebook中所有交互计算、编写说明文档、数学公式、图片以及其他富媒体形式的输入和输出，都是以文档的形式体现的。这些文档是保存为后缀名为.ipynb的JSON格式文件，不仅便于版本控制，也方便与他人共享。此外，文档还可以导出为：HTML、LaTeX、PDF等格式。</p>
+<p>Notebook具有下列特点：</p>
+<ul>
+<li>编程时具有语法高亮、缩进、tab补全的功能。</li>
+<li>可直接通过浏览器运行代码，同时在代码块下方展示运行结果。</li>
+<li>以富媒体格式展示计算结果。富媒体格式包括：HTML，LaTeX，PNG，SVG等。</li>
+<li>对代码编写说明文档或语句时，支持Markdown语法。</li>
+<li>支持使用LaTeX编写数学性说明。</li>
+</ul>
+<p>具体关于 Jupyter Notebook 用户UI界面的介绍可以看<a target="_blank" rel="noopener" href="https://pynqdocs.gitbook.io/pynq-tutorial/pynq-zhong-wen-zi-liao/03jupyter-notebook-bi-zhi-bi-hui">这里</a>。</p>
+<p>base文件夹和logictools文件夹与具体的Overlay应用相关（Overlay的概念后面会介绍），common文件夹中的是与具体Overlay不绑定的较为通用的例子。对新手来说，getting_started文件夹提供了了解PYNQ必知必会的几个例子，建议先从这里入手。</p>
+<h2 id="PYNQ-Overlay介绍"><a href="#PYNQ-Overlay介绍" class="headerlink" title="PYNQ Overlay介绍"></a>PYNQ Overlay介绍</h2><p>Overlays，或者硬件库，都是可编程FPGA的设计理念。<br>通过它们，用户可以把Zynq处理系统（Processing System of the Zynq）上的应用扩展到可编程逻辑层面上。Overlays可以用来加速软件应用或者为特定的应用自定义其硬件平台。</p>
+<p>PYNQ提供了一个Python交互界面，允许我们通过处理系统上的Python来控制可编程逻辑里的overlays。FPGA设计是一个非常专业化的任务，这需要专业的硬件工程知识。PYNQ的overlays就是由硬件设计师创建，并且包装成了PYNQ PYTHON API。软件开发者就可以无需重新自己设计overlay，而是直接使用这些写好的overlay来操作特定的硬件模块。这其实和专业软件工程师设计软件库并把它们包装成用户可用的API的道理一样。</p>
+<p>一般来讲，我们把那些比较基层的、更像是用来<strong>做参考设计</strong>的overlay称为<strong>base overlay</strong>。它们是已经烧写在SD卡上的。当然了，我们也可以自己安装新的Overlay并在运行中使用他们。</p>
+<p>每一个Overlay都会有其对应的.bit文件，比如base_overlay对应的就是base.bit。我们可以用下面的方法加载Overlay。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pynq <span class="keyword">import</span> overlay</span><br><span class="line">overlay = Overlay(<span class="string">&quot;base.bit&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>对于我们提到的已有的base overlay，PYNQ很贴心的为我们准备了专门的类，方便我们使用它们。调用代码如下所示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pynq.overlays.base <span class="keyword">import</span> BaseOverlay</span><br><span class="line">base_overlay = BaseOverlay(<span class="string">&quot;base.bit&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>base_overlay</strong>就是把bit文件转化后的python类。</p>
+<p>对于一个python类，我们自然可以使用辅助函数help来查看这个类的具体介绍</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(base_overlay)</span><br></pre></td></tr></table></figure>
+<p>部分介绍如下：</p>
+<h2 id="BaseOverlay介绍"><a href="#BaseOverlay介绍" class="headerlink" title="BaseOverlay介绍"></a>BaseOverlay介绍</h2><ul>
+<li>PYNQ-Z2上的base overlay所涉及的硬件如下：</li>
+<li>HDMI接口（输入输出）</li>
+<li>Audio codec</li>
+<li>4个绿色LED，2个彩色LED，两个开关，四个按钮</li>
+<li>两个Pmod PYNQ Microblaze</li>
+<li>Arduino PYNQ Microblaze</li>
+<li>RPI (Raspberry Pi) PYNQ MicroBlaze</li>
+<li>4个跟踪分析器（PMODA,  PMODB, ARDUINO, RASPBERRYPI）</li>
+</ul>
+<h3 id="HDMI"><a href="#HDMI" class="headerlink" title="HDMI"></a>HDMI</h3><p>PYNQ-Z2板上的 HDMI接口 是直接连接到可编程逻辑引脚上的。也就是说在板上没有外用的HDMI电路，HDMI接口是由 HDMI IP 控制生成的。</p>
+<p>HDMI IP是链接到处理系统DRAM上的，视频可以以<strong>流</strong>的方式从HDMI输入端进入内存，然后再从HDMI输出端流出。这就允许我们通过python来处理视频数据，或者干脆通过python写一段视频流然后再由HDMI输出。</p>
+<p>虽然Jupyter notebook支持内嵌的video形式，但是我们从HDMI捕捉到的视频数据会是原生的，如果不进行适当的编码处理，将无法在notebook上直接播放。</p>
+<p><strong>HDMI IN</strong>：HDMI输入端IP可以捕捉标准的HDMI分辨率。在HDMI资源被连接后，HDMI控制器就会启动，并自动检测输入的数据。分辨率情况可以从Python 的HDMI类里读取，图像数据也可以流入处理系统DRAM。</p>
+<p><strong>HDMI OUT</strong>：数据可以从处理系统DRAM流到HDMI输出端。HDMI输出控制器能通过帧缓冲器来达到视频数据的流畅播放。<br>HDMI输出端IP支持以下分辨率：</p>
+<ul>
+<li>640x480</li>
+<li>800x600</li>
+<li>1280x720 (720p)</li>
+<li>1280x1024</li>
+<li>1920x1080 (1080p)</li>
+</ul>
+<p><em><strong>HDMI实例：</strong></em><br>源码在板上的getting_started文件夹下base_overlay_video里。<br>首先，我们得准备一个满足上述条件的输出显示屏，两根HDMI-HDMI线。将HDMI IN端与电脑相连，再将HDMI OUT端与准备的显示屏相连。打开我们的Jupyter Notebook。</p>
+<p>可以结合<a target="_blank" rel="noopener" href="http://pynq:9090/notebooks/getting_started/5_base_overlay_video.ipynb">源码</a>和<a target="_blank" rel="noopener" href="https://pynqdocs.gitbook.io/pynq-tutorial/pynq-zhong-wen-zi-liao/05baseoverlay-jie-shao#hdmi-out">教程</a>来学习使用 HDMI。</p>
+<h3 id="IOP-Pmod"><a href="#IOP-Pmod" class="headerlink" title="IOP-Pmod"></a>IOP-Pmod</h3><p>Pmod包是一个使用Pmod端口的外部设备的驱动集合。一个Pmod端口是一个12引脚接口，传统的Pmod外接设备包括了各式传感器（光、温度）、交互设备（网口、WIFI、蓝牙）以及输入输出设备（按钮、开关、LED）。<br><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45oYcmYScZaIkqVF%2F16.png?generation=1574912160835169&alt=media"><br>每一个Pmod连接器是由2排6引脚共计12引脚构成的。每一排由3.3V(VCC),接地(GND)以及4个数据引脚构成。如果使用两排的话那就是8个数据引脚。<br><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45o_00CI6NFq0CO8%2F17.png?generation=1574912160926567&alt=media"></p>
+<p>所有的引脚都在3.3V时正常工作。根据不同设备的不同pull-up&#x2F;pull-down I&#x2F;O要求，Pmod数据引脚会有不同的IO标准。（例如IIC需要pull-up，SPI需要pull-down）</p>
+<p>引脚0,1和4,5是连接到pull-down电阻器。这个可以支持SPI接口以及大部分外接设备。引脚2,3和6,7是连接到pull-up电阻器。这个可以支持IIC接口。</p>
+<p><em><strong>略~~</strong></em></p>
+<h2 id="Logictools-Overlay"><a href="#Logictools-Overlay" class="headerlink" title="Logictools Overlay"></a>Logictools Overlay</h2><p>Logictools overlay 包含了可编程逻辑硬件区块来与外部数字逻辑电路连接。Python可以做出有限状态机（Finite State Machine）、布尔型逻辑函数和数字模式。一个可编程 switch 连接了硬件区和外部IO引脚之间的输入和输出。Logictools overlay也可以通过追踪分析器（trace analyzer）来捕捉IO接口传来的数据，方便我们分析调试。<br><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45k0Rmf1MxjzmVqs%2F01.png?generation=1574912184317900&alt=media"><br>Logictools IP包含了4个主要硬件区块</p>
+<ul>
+<li>布尔型生成器</li>
+<li>跟踪分析器</li>
+<li>模式生成器</li>
+<li>FSM生成器（有限状态机生成器）</li>
+</ul>
+<p>每一个区块不需要汇编配置文件，这意味着一个配置可以直接加载到生成器里并立即执行。</p>
+<p>PYNQ-Z2 logictools overlay有两个logictools逻辑控制处理器（LCP），一个与Arduino header连接，一个与RPI header连接。<br>Arduino header有20个引脚，RPI有26个引脚，他们可以用作为LCP的GPIO。</p>
+<p>板上的4个LED和4个按钮可以连接到任意一个LCP上，使得扩展输入成为了可能。注意！LED和按钮是共享的，在一个时刻只能被一个LCP使用。<br><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45k2w-Kfk__l6Lk7%2F02.png?generation=1574912184236329&alt=media"></p>
+<p><strong>以下三个例程都在</strong> <a target="_blank" rel="noopener" href="http://pynq:9090/tree/logictools">&#x2F;home&#x2F;xilinx&#x2F;jupyter_notebooks&#x2F;logictools</a></p>
+<h3 id="布尔型生成器"><a href="#布尔型生成器" class="headerlink" title="布尔型生成器"></a>布尔型生成器</h3><p>与BaseOverlay不一样，我们要用LogicToolsOverlay来导入对应的logictools.bit。所谓布尔型生成器，就是用与、或、异或、非来构成最终的布尔型输出。LD是板上的LED，PB是板上的按钮，进行布尔运算之后将结果1&#x2F;0赋值给LD进行输出。从bit文件转换出的logictools_olay类里，我们可以找到布尔型生成器（来自 pynq.lib.logictools 的 boolean_generator），用其初始化一个布尔型生成器出来，并用对应的表达式（存储在列表或字典中）配置该生成器，随后用run来运行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pynq.overlays.logictools <span class="keyword">import</span> LogicToolsOverlay</span><br><span class="line"><span class="keyword">from</span> pynq.lib.logictools <span class="keyword">import</span> BooleanGenerator</span><br><span class="line"></span><br><span class="line">logictools_olay = LogicToolsOverlay(<span class="string">&#x27;logictools.bit&#x27;</span>)</span><br><span class="line">boolean_generator = logictools_olay.boolean_generator</span><br><span class="line"></span><br><span class="line">function = &#123;<span class="string">&#x27;XOR_gate&#x27;</span>:<span class="string">&#x27;LD2 = PB3^PB0&#x27;</span>, <span class="string">&#x27;AND&#x27;</span>:<span class="string">&#x27;LD1 = PB1&amp;PB0&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">boolean_generator.setup(function)</span><br><span class="line">boolean_generator.run()</span><br><span class="line"></span><br><span class="line">boolean_generator.stop() <span class="comment">#调用stop函数即可停止生成器运作。</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="模式生成器"><a href="#模式生成器" class="headerlink" title="模式生成器"></a>模式生成器</h2><p>这里我们用python代码来模拟电路，并用追踪生成器捕捉到的波形来验证我们的结果，展示如何操作模式生成器的单步运行模式。</p>
+<p>首先，我们导入logictools overlay，并通过代码形式模拟波形。波形的构造满足一定格式。用{‘signal’:[]}来表明输入的信号波形。在[]内，我们逐一添加波形信息。格式为：{‘name’:’’, ’pin’:’’, ‘wave’:’lh.’}其中l代表low波，h表示high波，‘.’表示重复前面波形。</p>
+<p>接下来，我们按照上图代码为我们的模拟内容增加一点东西。外层的{‘signal’:[]}框架不变，在[]里，我们将之前的4个模拟波形信号用列表的方式打包，并命名为‘stimulus’（列表的第一个元素为名称），以同样的格式增加一栏‘analysis’。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pynq.overlays.logictools <span class="keyword">import</span> LogicToolsOverlay</span><br><span class="line"><span class="keyword">from</span> pynq.lib.logictools <span class="keyword">import</span> Waveform</span><br><span class="line"></span><br><span class="line">logictools_olay = LogicToolsOverlay(<span class="string">&#x27;logictools.bit&#x27;</span>)</span><br><span class="line"></span><br><span class="line">up_counter = &#123;<span class="string">&#x27;signal&#x27;</span> : [</span><br><span class="line">    [<span class="string">&#x27;stimulus&#x27;</span>,</span><br><span class="line">        &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;bit0&#x27;</span>,<span class="string">&#x27;pin&#x27;</span>:<span class="string">&#x27;D0&#x27;</span>,<span class="string">&#x27;wave&#x27;</span>:<span class="string">&#x27;lh&#x27;</span>*<span class="number">8</span> &#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;bit1&#x27;</span>,<span class="string">&#x27;pin&#x27;</span>:<span class="string">&#x27;D1&#x27;</span>,<span class="string">&#x27;wave&#x27;</span>:<span class="string">&#x27;lh.&#x27;</span>*<span class="number">4</span> &#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;bit2&#x27;</span>,<span class="string">&#x27;pin&#x27;</span>:<span class="string">&#x27;D2&#x27;</span>,<span class="string">&#x27;wave&#x27;</span>:<span class="string">&#x27;l...h...&#x27;</span>*<span class="number">2</span> &#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;bit3&#x27;</span>,<span class="string">&#x27;pin&#x27;</span>:<span class="string">&#x27;D3&#x27;</span>,<span class="string">&#x27;wave&#x27;</span>:<span class="string">&#x27;l.......h.......&#x27;</span> &#125;</span><br><span class="line">        ],</span><br><span class="line">    [<span class="string">&#x27;analysis&#x27;</span>,</span><br><span class="line">        &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;bit0_output&#x27;</span>,<span class="string">&#x27;pin&#x27;</span>:<span class="string">&#x27;D0&#x27;</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;bit1_output&#x27;</span>,<span class="string">&#x27;pin&#x27;</span>:<span class="string">&#x27;D1&#x27;</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;bit2_output&#x27;</span>,<span class="string">&#x27;pin&#x27;</span>:<span class="string">&#x27;D2&#x27;</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;bit3_output&#x27;</span>,<span class="string">&#x27;pin&#x27;</span>:<span class="string">&#x27;D3&#x27;</span>&#125;</span><br><span class="line">        ]</span><br><span class="line">] &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#显示激励和跟踪信号的波形</span></span><br><span class="line">waveform = Waveform(up_counter)</span><br><span class="line">waveform.display() <span class="comment">#Waveform函数只是一个把代码转换成模拟波形并输出的函数而已，不具备追踪功能。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置模式生成器</span></span><br><span class="line">pattern_generator = logictools_olay.pattern_generator</span><br><span class="line">pattern_generator.trace(num_analyzer_samples = <span class="number">16</span>)</span><br><span class="line">pattern_generator.setup(up_counter, </span><br><span class="line">                        stimulus_group_name = <span class="string">&#x27;stimulus&#x27;</span>, </span><br><span class="line">                        analysis_group_name = <span class="string">&#x27;analysis&#x27;</span>)</span><br><span class="line"></span><br><span class="line">pattern_generator.step()                        </span><br><span class="line">pattern_generator.show_waveform()                        </span><br></pre></td></tr></table></figure>
+<p>按照上面代码，我们生成一个模式生成器，其创建方式与布尔型生成器一模一样。在配置setup的时候，我们传入之前我们自己写的波形数据，并把模拟信号和分析内容指示给他。随后，我们调用模式生成器的step函数，即可跟踪模拟信号。重复运行step函数，我们可以看到，analysis栏波形按照上面stimulus栏的波形进行输出。</p>
+<h2 id="FSM生成器"><a href="#FSM生成器" class="headerlink" title="FSM生成器"></a>FSM生成器</h2><p>用FSM生成器来生成一个FSM（有限状态机）。这个例子中，我们做出来的FSM是一个格雷码计数器，它有三个状态位并可以通过8个状态来计数。计数器的输出是用格雷码编写的，这意味状态之间的转换只有一个2进制位会被改动（这是格雷码的特性）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pynq.overlays.logictools <span class="keyword">import</span> LogicToolsOverlay</span><br><span class="line"></span><br><span class="line">logictools_olay = LogicToolsOverlay(<span class="string">&#x27;logictools.bit&#x27;</span>)</span><br><span class="line"></span><br><span class="line">fsm_spec = &#123;<span class="string">&#x27;inputs&#x27;</span>: [(<span class="string">&#x27;reset&#x27;</span>,<span class="string">&#x27;D0&#x27;</span>), (<span class="string">&#x27;direction&#x27;</span>,<span class="string">&#x27;D1&#x27;</span>)],</span><br><span class="line">            <span class="string">&#x27;outputs&#x27;</span>: [(<span class="string">&#x27;bit2&#x27;</span>,<span class="string">&#x27;D3&#x27;</span>), (<span class="string">&#x27;bit1&#x27;</span>,<span class="string">&#x27;D4&#x27;</span>), (<span class="string">&#x27;bit0&#x27;</span>,<span class="string">&#x27;D5&#x27;</span>)],</span><br><span class="line">            <span class="string">&#x27;states&#x27;</span>: [<span class="string">&#x27;S0&#x27;</span>, <span class="string">&#x27;S1&#x27;</span>, <span class="string">&#x27;S2&#x27;</span>, <span class="string">&#x27;S3&#x27;</span>, <span class="string">&#x27;S4&#x27;</span>, <span class="string">&#x27;S5&#x27;</span>, <span class="string">&#x27;S6&#x27;</span>, <span class="string">&#x27;S7&#x27;</span>],</span><br><span class="line">            <span class="string">&#x27;transitions&#x27;</span>: [[<span class="string">&#x27;01&#x27;</span>, <span class="string">&#x27;S0&#x27;</span>, <span class="string">&#x27;S1&#x27;</span>, <span class="string">&#x27;000&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;00&#x27;</span>, <span class="string">&#x27;S0&#x27;</span>, <span class="string">&#x27;S7&#x27;</span>, <span class="string">&#x27;000&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;01&#x27;</span>, <span class="string">&#x27;S1&#x27;</span>, <span class="string">&#x27;S2&#x27;</span>, <span class="string">&#x27;001&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;00&#x27;</span>, <span class="string">&#x27;S1&#x27;</span>, <span class="string">&#x27;S0&#x27;</span>, <span class="string">&#x27;001&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;01&#x27;</span>, <span class="string">&#x27;S2&#x27;</span>, <span class="string">&#x27;S3&#x27;</span>, <span class="string">&#x27;011&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;00&#x27;</span>, <span class="string">&#x27;S2&#x27;</span>, <span class="string">&#x27;S1&#x27;</span>, <span class="string">&#x27;011&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;01&#x27;</span>, <span class="string">&#x27;S3&#x27;</span>, <span class="string">&#x27;S4&#x27;</span>, <span class="string">&#x27;010&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;00&#x27;</span>, <span class="string">&#x27;S3&#x27;</span>, <span class="string">&#x27;S2&#x27;</span>, <span class="string">&#x27;010&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;01&#x27;</span>, <span class="string">&#x27;S4&#x27;</span>, <span class="string">&#x27;S5&#x27;</span>, <span class="string">&#x27;110&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;00&#x27;</span>, <span class="string">&#x27;S4&#x27;</span>, <span class="string">&#x27;S3&#x27;</span>, <span class="string">&#x27;110&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;01&#x27;</span>, <span class="string">&#x27;S5&#x27;</span>, <span class="string">&#x27;S6&#x27;</span>, <span class="string">&#x27;111&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;00&#x27;</span>, <span class="string">&#x27;S5&#x27;</span>, <span class="string">&#x27;S4&#x27;</span>, <span class="string">&#x27;111&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;01&#x27;</span>, <span class="string">&#x27;S6&#x27;</span>, <span class="string">&#x27;S7&#x27;</span>, <span class="string">&#x27;101&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;00&#x27;</span>, <span class="string">&#x27;S6&#x27;</span>, <span class="string">&#x27;S5&#x27;</span>, <span class="string">&#x27;101&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;01&#x27;</span>, <span class="string">&#x27;S7&#x27;</span>, <span class="string">&#x27;S0&#x27;</span>, <span class="string">&#x27;100&#x27;</span>],</span><br><span class="line">                            [<span class="string">&#x27;00&#x27;</span>, <span class="string">&#x27;S7&#x27;</span>, <span class="string">&#x27;S6&#x27;</span>, <span class="string">&#x27;100&#x27;</span>],                            </span><br><span class="line">                            [<span class="string">&#x27;1-&#x27;</span>, <span class="string">&#x27;*&#x27;</span>,  <span class="string">&#x27;S0&#x27;</span>, <span class="string">&#x27;&#x27;</span>]]&#125;  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成实例</span></span><br><span class="line">fsm_generator = logictools_olay.fsm_generator</span><br><span class="line"></span><br><span class="line"><span class="comment"># The FSM generator will work at the default frequency of 10MHz. This can be modified using a frequency argument in the setup() method.</span></span><br><span class="line">fsm_generator.setup(fsm_spec)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示状态转移图</span></span><br><span class="line">fsm_generator.show_state_diagram()</span><br><span class="line"></span><br><span class="line">fsm_generator.run()</span><br><span class="line">fsm_generator.show_waveform()</span><br><span class="line"></span><br><span class="line">fsm_generator.stop()</span><br></pre></td></tr></table></figure>
+
+<h2 id="PYNQ-Library详解-PS与PL接口"><a href="#PYNQ-Library详解-PS与PL接口" class="headerlink" title="PYNQ Library详解 - PS与PL接口"></a>PYNQ Library详解 - PS与PL接口</h2><p>USB端口和其他的标准接口可以连接现成的USB和其他外部设备到Zynq PS上，并可以通过Python&#x2F;Linux进行操控。<br>PYNQ提供overlay的一些底层控制，包括内存映射IO读写，内存分配等。</p>
+<h3 id="interrupt-中断"><a href="#interrupt-中断" class="headerlink" title="interrupt 中断"></a>interrupt 中断</h3><p><strong>Interrupt类</strong>代表了Vivado Block Design中的单一中断引脚。它通过使用一个wait函数去阻塞程序直到一个中断被抛出来模仿一个Python事件。</p>
+<p>中断只有在一个线程或者协程在等待对应事件的时候才能使用，推荐使用方法为在一个循环里进行等待（wait）操作，检查并清除IP里的中断注册器，然后再结束等待。比如说，AxiGPIO类就用这个方法等待所需要的值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">AxiGPIO</span>(<span class="title class_ inherited__">DefaultIP</span>):</span><br><span class="line">    <span class="comment"># Rest of class definition</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wait_for_level</span>(<span class="params">self, value</span>):</span><br><span class="line">        <span class="keyword">while</span> self.read() != value:</span><br><span class="line">            self._interrupt.wait()</span><br><span class="line">            <span class="comment"># Clear interrupt</span></span><br><span class="line">            self._mmio.write(IP_ISR, <span class="number">0x1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="MMIO"><a href="#MMIO" class="headerlink" title="MMIO"></a>MMIO</h3><p><strong>MMIO类</strong>允许Python对象获取<strong>映射的系统内存地址</strong>。特别的，在PL里的外部设备的注册与地址空间都是可以访问的。</p>
+<p>在一个overlay里，连接到 <strong>AXI通用端口（GP）</strong> 的外设将会把他们的注册器或地址空间映射到系统内存里。通过PYNQ，一个IP的注册器或者地址空间就可以通过MMIO类从Python获取。</p>
+<p><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45jVUe_Ugw9vd5Jg%2F53.png?generation=1574912159895092&alt=media"></p>
+<p>MMIO提供了一个简单但方便的方法来访问控制外设。对于只有少量数据交互或者性能要求不高的外设，MMIO通常都是够用了的。如果对性能要求很高，或者大量数据要在PS和PL间传输，那么使用<strong>带有DMA IP和PYNQ DMA类的Zynq HP接口</strong>会更合适。</p>
+<h3 id="PS-GPIO"><a href="#PS-GPIO" class="headerlink" title="PS GPIO"></a>PS GPIO</h3><p>Zynq设备有最多从PS到PL的64个GPIO。它们可以用来做简单的操控。比如base overlay中通过PS GPIO来对IOP进行复位&#x2F;重置。PS GPIO是一个非常简单的接口，并不需要PL中的IP就可以使用。<br><strong>GPIO类</strong>就是用来控制PS GPIO的。(注意: AXI GPIO是由AxiGPIO类控制的)</p>
+<p><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45jXG0ULRUQ7jW4o%2F54.png?generation=1574912159738464&alt=media"></p>
+<p> PS GPIO使用Linux核来控制GPIO。这意味着操作系统会在运行时给GPIO分配一个标号。在使用PS GPIO之前，我们必须把Linux引脚标号映射到Python GPIO实例上。</p>
+<p>Get_gpio_pin()函数就是用来映射PS引脚标号到Linux引脚标号上的。</p>
+<p><strong>Linux引脚标号?</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pynq <span class="keyword">import</span> GPIO</span><br><span class="line"></span><br><span class="line">output = GPIO(GPIO.get_gpio_pin(<span class="number">0</span>), <span class="string">&#x27;out&#x27;</span>)</span><br><span class="line"><span class="built_in">input</span> = GPIO(GPIO.get_gpio_pin(<span class="number">1</span>), <span class="string">&#x27;in&#x27;</span>)</span><br><span class="line"></span><br><span class="line">output.write(<span class="number">0</span>)</span><br><span class="line"><span class="built_in">input</span>.read()</span><br></pre></td></tr></table></figure>
+
+<h3 id="Xlnk"><a href="#Xlnk" class="headerlink" title="Xlnk"></a>Xlnk</h3><p><strong>Xlnk类</strong>用来分配连续内存。</p>
+<p>连接到<strong>AXI Master（HP或ACP端口）的IP</strong>能访问PS DRAM。</p>
+<p>连接到AXI Master（HP或ACP端口）的IP能访问PS DRAM。在PL里的IP访问DRAM前，必须给IP分配内存。Python里的一个数组将会被分配到虚拟内存的某个地方。被分配的物理内存地址必须提供给PL里的IP。</p>
+<p>Xlnk可以分配内存，并提供物理指针。它可以分配连续地址，PL IP可以用的更有效。通过Numpy包，Xlnk可以分配数组，这允许专门制定数组的数据类型。Xlnk也被DMA隐式使用来分配内存。</p>
+<h2 id="PYNQ-Library详解-IP访问"><a href="#PYNQ-Library详解-IP访问" class="headerlink" title="PYNQ Library详解 - IP访问"></a>PYNQ Library详解 - IP访问</h2><p>Vivado工具为各种接口标准和协议的外设提供了IP，PYNQ给常用的外接设备- Video（HDMI IN&#x2F;OUT）、 GPIO设备（Buttons, Switches, LEDs）、传感器和执行器等提供了Python API。这些PYNQ API也可以被扩展用以支持其他的IP。</p>
+<h3 id="Audio"><a href="#Audio" class="headerlink" title="Audio"></a>Audio</h3><p>Audio模块提供了从输入麦克风读取音频、从播放器播放音频以及读写音频文件的方法。Audio模块是连接到Audio IP子系统上来捕获播放内容。该模块可以支持不同的IP子系统。目前支持的有line-in, PYNQ-Z2上使用ADAU1761编码的HP&#x2F;Mic。</p>
+<p>实例在 <code>&lt;Jupyter Home&gt;/base/audio/audio_playback.ipynb</code> 。<br><em>It uses the audio jack HP+MIC to play back recordings; it can take inputs from the microphone on HP+MIC or LINE_IN. Pre-recorded audio sample can also be taken as input. Moreover, visualization with matplotlib is shown.</em></p>
+<h3 id="AxiGPIO"><a href="#AxiGPIO" class="headerlink" title="AxiGPIO"></a>AxiGPIO</h3><p>AxiGPIO类提供了读写通用设备如LED、按钮、开关等（需要通过AXI GPIO控制IP连接到PL上）并接受来自外部的中断。<br>每一个AXIGPIO能有至多两个通道，每一个通道至多有32个引脚。<br><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk4C5en0SfvtAreqaR%2F01.png?generation=1574912187256632&alt=media"></p>
+<h3 id="AxiIIC"><a href="#AxiIIC" class="headerlink" title="AxiIIC"></a>AxiIIC</h3><p>AxiIIC类提供了对AXI IIC控制器IP的读与写。send()和receive()方法可以用来读与写。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">send(address, data, length, option=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Address是外部设备IIC的地址 </li>
+<li>Data是一个被发送到IP的字节数组 </li>
+<li>length是发送的字节数 </li>
+<li>option允许一个IIC重复运行</li>
+</ul>
+<h3 id="DMA（直接内存访问）"><a href="#DMA（直接内存访问）" class="headerlink" title="DMA（直接内存访问）"></a>DMA（直接内存访问）</h3><p>PYNQ支持AX central DMA IP。DMA可以在PS DRAM与PL的快速交互中发挥出色的效果。DMA类只支持简单模式。</p>
+<p>DMA有一个AXI Lite控制接口，一个读写通道以及连接到一个IP的流（stream）端口。</p>
+<p><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk4C5jp2rnhULxrG04%2F03.png?generation=1574912187122306&alt=media"></p>
+<p>读通道会从PS DRAM中读取数据，并写入流中。写通道会从流中读取数据并写回PS DRAM里。</p>
+<p><strong>需要注意</strong>的是DMA在完成数据传输的时候，需要连接到DMA（写通道）的IP来设置AXI TLAST信号。若该信号未被设置，DMA将会永远无法完成该次传输。在使用HLS来产生IP的时候，这一点非常重要——TLAST信号必须在C代码中设置。</p>
+<h3 id="Logictools"><a href="#Logictools" class="headerlink" title="Logictools"></a>Logictools</h3><p>Logictools包含了Trace Analyzer以及三个PYNQ硬件生成器（布尔型生成器、FSM生成器、模式生成器）的驱动。</p>
+<p>Logictools overlay里的主要硬件模块的基础操作都是一致的，它们是setup(), run(), step(), stop(), reset()。每一个模块可能有额外的独有<strong>方法</strong>来提供特定的功能。下图为运行的基本图解：</p>
+<p><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk4C5na0bSI_8GlGdE%2F05.png?generation=1574912187117149&alt=media"></p>
+<ul>
+<li><p>重置态 这个状态是一个模块在overlay加载后准备开始的状态。这个“重置”状态会一直维持直到使用setup()方法进行配置。 在“重置”状态下，所有的逻辑工具、overlay可用的IO都处于未连接状态。这可以预防一些由于粗心大意的驱动而造成的意外。  <strong>模式生成器</strong>有一个BRAM来存储将要生成的模式。在这个状态下，BRAM会被配置为0。类似的还有FSM生成器。</p>
+</li>
+<li><p>准备态 在这个状态下，生成器&#x2F;分析器已经配置完毕。将要连接的输入输出引脚已经准备完毕，但是把这些引脚连接到内部硬件的接口开关还未配置。</p>
+</li>
+<li><p>运行态 一旦生成器在准备状态，调用run()或step()即可使它们进入运行态。在这个状态下，接口开关已经配置为连接外部IO。硬件模块在这个状态下开始运行。 运行时默认是以single-shot模式。这个模式下，生成器将会在追踪分析器采集到足够多的数据或者模式结束后才会停止，这之后生成器和分析器会一起回到准备态。布尔型生成器是一个特例，它总是处于连续模式下运行。 在连续模式下，模式生成器会连续的生成它的模式，并在达到模式的末尾后循环运行。FSM生成器则会持续运行直到被停止。（使用stop()函数）</p>
+</li>
+</ul>
+<p> <strong>通用方法：</strong> </p>
+<ul>
+<li><strong>Setup()</strong> 每一模块必须在使用前使用setup()进行配置。 注意，当配置完成后，IO接口并未连接。 </li>
+<li><strong>Run()</strong> 该方法启动模块，使之进入运行态。 </li>
+<li><strong>Step()</strong> 与run()方法类似，区别在于运行的时候是一步一步运行的。 在对模式生成器使用该函数时，碰到结尾即停止，不会循环。 FSM生成器只有在获得了足够多的样本后才能进行step操作。 </li>
+<li><strong>Stop()</strong> 若一个模块正在运行，则在其重新运行前必须先停止。 一个模块的运行被停止后，它的输出就会与外部IO断开，只有当重新回到运行态后才会连接。 </li>
+<li><strong>Trace()</strong> 追踪功能默认开启。当启用时，追踪分析器会捕获所有已连模块的信息。使用trace方法启用或者停用。 </li>
+<li><strong>Reset()</strong> 重置生成器到初始状态，<strong>在更改硬件配置</strong>时我们需要调用该方法。</li>
+</ul>
+<p><strong>模式生成器：</strong><br>模式生成器支持至多64K的模式。根据sample clock的频率，会不断生产data word。<br>Sample clock也是可编程的。最慢的速度是252KHz，最快可以达到10MHz。</p>
+<p><strong>FSM生成器（有限状态机）：</strong><br>FSM生成器有一个内置模块内存来执行有限状态机。在Arduino shield header上的20个引脚都是可用的。FSM必须有最少1个输入，最多可以有19个输出。最大的输入个数为8个。比如说，基于输入的个数，如下的配置都是可行的。</p>
+<p><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk4C6A3nRKlhiPBgEI%2F17.png?generation=1574912187140929&alt=media"></p>
+<p>追踪分析器是由MicroBlaze子系统控制，它连在一个DMA上，DMA也受到加载配置信息的MicroBlaze子系统的控制，包括配置模块内存来执行FSM。</p>
+<p><strong>Trace Analyzer（跟踪分析器）：</strong><br><strong>片上调试</strong>使得FPGA资源得以被用来监测调试时的内部外部信号。调试电路利用一些设计来保存系统运行时的信号数据。调试数据保存在芯片上的内存，并可以之后被读取分析。传统片上调试的常常会受限于本地内存的大小。这意味着只能得到有限的调试数据。 片上调试的概念已经被扩展到允许调试数据被保存在DDR内存。这使得我们可以获得更多的调试数据，并用python进行分析。 追踪分析器会监测PMOD和Arduino上的外部PL<strong>输入输出模块</strong>（IOB）。这些IOB是三态的。这意味着每一个引脚都会有三个内部信号：input（I），output（O），tri-state（T）。T信号被用来控制一个引脚是用作输入还是输出。Trace Analyzer会连接到IOP上的所有3个信号。 </p>
+<h3 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h3><p>Video子包里有一整套驱动集合——从HDMI-IN端口读取数据、写数据到HDMI-OUT端口、传输数据、设定中断、操作视频帧。</p>
+<p> 视频硬件子系统含有 HDMI-IN模块、HDMI-OUT模块和一个视频DMA。HDMI-IN和HDMI-OUT模块都支持彩色空间转换。例如从YCrCb到RGB或者反过来。 PYNQ-Z2板上有HDMI输入与HDMI输出端口。HDMI接口是直接连接到 可编程逻辑引脚 上的。在板上没有外用的HDMI电路。HDMI接口是由 可编程逻辑模块 的 HDMI IP 控制的。 HDMI IP是链接到处理系统DRAM上的，视频可以以流的方式从HDMI输入端进入内存，然后再从HDMI输出端流出。这就允许我们通过python来处理视频数据，或者干脆通过python写一段视频流然后再由HDMI输出。 虽然Jupyter notebook支持内嵌的video形式，但是我们从HDMI捕捉到的视频数据会是原生的，如果不进行适当的编码处理，将无法在notebook上直接播放。 - <strong>HDMI IN</strong></p>
+<p><strong>YCrCb:</strong> YCrCb即YUV，主要用于优化彩色视频信号的传输，与RGB视频信号传输相比，它最大的优点在于只需占用极少的频宽（RGB要求三个独立的视频信号同时传输）。其中“Y”表示明亮度（Luminance或Luma），也就是灰阶值；而“U”和“V” 表示的则是色度（Chrominance或Chroma），作用是描述影像色彩及饱和度，用于指定像素的颜色。“亮度”是透过RGB输入信号来建立的，方法是将RGB信号的特定部分叠加到一起。“色度”则定义了颜色的两个方面─色调与饱和度，分别用Cr和Cb来表示。其中，Cr反映了RGB输入信号红色部分与RGB信号亮度值之间的差异。而Cb反映的是RGB输入信号蓝色部分与RGB信号亮度值之间的差异。</p>
+<p>HDMI输入端IP可以捕捉标准的HDMI分辨率。在HDMI资源被连接后，HDMI控制器就会启动，并自动检测输入的数据。分辨率情况可以从Python 的HDMI类里读取，图像数据也可以流入处理系统DRAM。</p>
+<h2 id="PYNQ-Library详解-PS-and-PL-control"><a href="#PYNQ-Library详解-PS-and-PL-control" class="headerlink" title="PYNQ Library详解 - PS and PL control"></a>PYNQ Library详解 - PS and PL control</h2><h2 id="PYNQ-Library详解-IOP"><a href="#PYNQ-Library详解-IOP" class="headerlink" title="PYNQ Library详解 - IOP"></a>PYNQ Library详解 - IOP</h2><p>Zynq平台通常有多个Headers和接口，它们用来连接外部设备或者直接连接Zynq PL引脚。许多现成的外部设备都可以连接到Pmod和Arduino接口上。其他的外部设备可以通过转换器（Adapter）或者面包板（Breadboard）连接到这些端口。<strong>需要注意的是</strong>当我们要使用一个外部设备的时候，我们必须先<strong>在overlay中构建一个控制器</strong>，并提供相应的软件驱动，然后我们才能使用这个设备。</p>
+<ul>
+<li>Arduino</li>
+<li>Grove</li>
+<li>Pmod</li>
+<li>RPi</li>
+</ul>
+<h3 id="Arduino"><a href="#Arduino" class="headerlink" title="Arduino"></a>Arduino</h3><p>Arduino子包包含了所有<strong>用来控制</strong> 连接到Arduino端口的外部设备 <strong>的驱动装置</strong>。一个Arduino连接器可以把Arduino compatible shields连接到PL引脚上。 不过要记得<strong>在一个overlay里必须有相应的控制器来执行对应的驱动</strong>，这之后shield才能被使用。 Arduino引脚也可以用作通用引脚来连接传统的硬件设施。</p>
+<p>如果有的话，一个Arduino PYNQ MicroBlaze可以控制Arduino接口。这个MicroBlaze就和Pmod的MicroBlaze一样，只是有更多的AXI控制器。</p>
+<p><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45Tm2OOYZ-C5fpav%2F38.png?generation=1574912159325564&alt=media"></p>
+<p>正如在图标里所示，Arduino PYNQ MicroBlaze有一个PYNQ MicroBlaze子系统，一个配置开关，以及许多AXI控制器 <a target="_blank" rel="noopener" href="https://pynqdocs.gitbook.io/pynq-tutorial/pynq-zhong-wen-zi-liao/0704pynq-library-xiang-jie-iop#arduino">Arduino</a>。</p>
+<p><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45To804LALQA5LIM%2F39.png?generation=1574912159104658&alt=media"></p>
+<p>在pynq.lib.arduino包里可以找到更多有关Arduino的信息。<br><a target="_blank" rel="noopener" href="https://pynq.readthedocs.io/en/latest/pynq_libraries/arduino.html">https://pynq.readthedocs.io/en/latest/pynq_libraries/arduino.html</a></p>
+<h3 id="Pmod"><a href="#Pmod" class="headerlink" title="Pmod"></a>Pmod</h3><p>Pmod包是一个 使用Pmod端的外部设备 的驱动集合。</p>
+<h3 id="Rpi"><a href="#Rpi" class="headerlink" title="Rpi"></a>Rpi</h3><p>Rpi子包是控制 连接RPi（Raspberry Pi）接口外设 的驱动集合。<br>同样的，在使用具体设备之前，我们需要加载相应的overlay上的控制器。RPi引脚也可用作通用引脚来连接传统的硬件设备。</p>
+<p><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45U9Z-38B3Iv8Vwl%2F50.png?generation=1574912159389267&alt=media"></p>
+<p><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45UBlbtSd7VpQGoz%2F51.png?generation=1574912159169195&alt=media"></p>
+<p>在pynq.lib.rpi包里可以找到更多信息。</p>
+<h2 id="PYNQ-Library详解-Pynq-MicroBlaze"><a href="#PYNQ-Library详解-Pynq-MicroBlaze" class="headerlink" title="PYNQ Library详解 - Pynq MicroBlaze"></a>PYNQ Library详解 - Pynq MicroBlaze</h2><p>PYNQ库提供了对子系统Pynq MicroBlaze的支持。<br>它允许我们加载 预编译好的应用，并且可以在Jupyter中 创建编译 新的应用。</p>
+<h3 id="MicroBlaze-Subsystem"><a href="#MicroBlaze-Subsystem" class="headerlink" title="MicroBlaze Subsystem"></a>MicroBlaze Subsystem</h3><p>PYNQ MicroBlaze子系统 可以由 PynqMicroblaze类 进行管控，这允许我们从Python下载程序，通过执行处理器的重置信号、共享数据内存读写 和 管理中断 来进行操控。</p>
+<p>每一个 PYNQ MicroBlaze子系统 都含有一个 IOP（IO处理器），一个IOP定义了一些能被Python控制的交互与动作控制器。现在一共有三个IOP：Arduino，PMOD，Logictools。</p>
+<p>该子系统含有一个MicroBlaze处理器，AXI交互、中断控制器，一个中断请求器和外部系统接口以及BRAM、内存控制器。</p>
+<p><img src="https://2192837526-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Luk3T3QoKyS_b-1joBV%2F-Luk3tukeoHpawWbVABz%2F-Luk45lutSSL0eZk-Bfp%2F52.png?generation=1574912162153238&alt=media"></p>
+<p>AXI交互控制器把MicroBlaze连接到中断控制器、中断请求器和外部接口上。</p>
+<ul>
+<li>中断控制器是其他连接到MicroBlaze处理器的交互&#x2F;动作控制器的接口。</li>
+<li>中断请求器发送中断请求至Zynq处理系统。</li>
+<li>外部接口允许MIcroBlaze子系统与其他控制器或DDR内存进行交互。</li>
+<li>BRAM保存了MicroBlaze的指令和数据。</li>
+</ul>
+<p>BRAM是双端口的：一个端口连接到MicroBlaze指令与数据端口，另一个连接到ARM® Cortex®-A9 通讯处理器。</p>
+<p>如果外部接口连接到了DDR内存，则DDR可以用来在子系统和PS之间传输大量数据分段。</p>
+<p><strong>创建一个新的PYNQ MicroBlaze</strong><br>学到这不学了，等到觉得学这个对以后有帮助再继续吧。<a target="_blank" rel="noopener" href="https://pynqdocs.gitbook.io/pynq-tutorial/pynq-zhong-wen-zi-liao/0705pynq-library-xiang-jie-pynq-microblaze#chuang-jian-yi-ge-xin-de-pynq-microblaze">创建一个新的PYNQ MicroBlaze</a></p>
+<h1 id="本文参考"><a href="#本文参考" class="headerlink" title="本文参考"></a>本文参考</h1><p><a target="_blank" rel="noopener" href="https://pynq.readthedocs.io/en/latest/">官方文档</a><br><a target="_blank" rel="noopener" href="https://pynqdocs.gitbook.io/pynq-tutorial/pynq-zhong-wen-zi-liao">PYNQ-Z2 中文资料</a><br>来自公众号“PYNQ开源社区”的 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/GW_Ke2wEbcr3iXlML8O12w">PYNQ入门资料集锦</a><br><a target="_blank" rel="noopener" href="https://blog.umer-farooq.com/a-pynq-z2-guide-for-absolute-dummies-part-ii-using-verilog-and-vivado-to-burn-code-on-pynq-d856f79948b1">Umer Farooq的文章</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>lichao Zhang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://iridescent-zhang.github.io/2022/10/25/pynqNote/" title="pynqNote">https://iridescent-zhang.github.io/2022/10/25/pynqNote/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/PYNQ/" rel="tag"><i class="fa fa-tag"></i> PYNQ</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/" rel="prev" title="Windows-Terminal美化">
+      <i class="fa fa-chevron-left"></i> Windows-Terminal美化
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/12/03/hlsNote/" rel="next" title="hlsNote">
+      hlsNote <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8-PYNQ"><span class="nav-number">1.</span> <span class="nav-text">启动 PYNQ</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PYNQ-Z2-%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.1.</span> <span class="nav-text">PYNQ-Z2 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E-Jupyter-Notebook"><span class="nav-number">1.2.</span> <span class="nav-text">关于 Jupyter-Notebook</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E8%8A%82%E5%8F%82%E8%80%83%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">本节参考：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0-PYNQ"><span class="nav-number">2.</span> <span class="nav-text">学习 PYNQ</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFPYNQ"><span class="nav-number">2.1.</span> <span class="nav-text">什么是PYNQ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter-Notebook%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">Jupyter Notebook必知必会</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PYNQ-Overlay%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.3.</span> <span class="nav-text">PYNQ Overlay介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BaseOverlay%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.4.</span> <span class="nav-text">BaseOverlay介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HDMI"><span class="nav-number">2.4.1.</span> <span class="nav-text">HDMI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IOP-Pmod"><span class="nav-number">2.4.2.</span> <span class="nav-text">IOP-Pmod</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Logictools-Overlay"><span class="nav-number">2.5.</span> <span class="nav-text">Logictools Overlay</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E5%9E%8B%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-number">2.5.1.</span> <span class="nav-text">布尔型生成器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-number">2.6.</span> <span class="nav-text">模式生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FSM%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-number">2.7.</span> <span class="nav-text">FSM生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PYNQ-Library%E8%AF%A6%E8%A7%A3-PS%E4%B8%8EPL%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.8.</span> <span class="nav-text">PYNQ Library详解 - PS与PL接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#interrupt-%E4%B8%AD%E6%96%AD"><span class="nav-number">2.8.1.</span> <span class="nav-text">interrupt 中断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MMIO"><span class="nav-number">2.8.2.</span> <span class="nav-text">MMIO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PS-GPIO"><span class="nav-number">2.8.3.</span> <span class="nav-text">PS GPIO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Xlnk"><span class="nav-number">2.8.4.</span> <span class="nav-text">Xlnk</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PYNQ-Library%E8%AF%A6%E8%A7%A3-IP%E8%AE%BF%E9%97%AE"><span class="nav-number">2.9.</span> <span class="nav-text">PYNQ Library详解 - IP访问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Audio"><span class="nav-number">2.9.1.</span> <span class="nav-text">Audio</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AxiGPIO"><span class="nav-number">2.9.2.</span> <span class="nav-text">AxiGPIO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AxiIIC"><span class="nav-number">2.9.3.</span> <span class="nav-text">AxiIIC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DMA%EF%BC%88%E7%9B%B4%E6%8E%A5%E5%86%85%E5%AD%98%E8%AE%BF%E9%97%AE%EF%BC%89"><span class="nav-number">2.9.4.</span> <span class="nav-text">DMA（直接内存访问）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Logictools"><span class="nav-number">2.9.5.</span> <span class="nav-text">Logictools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Video"><span class="nav-number">2.9.6.</span> <span class="nav-text">Video</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PYNQ-Library%E8%AF%A6%E8%A7%A3-PS-and-PL-control"><span class="nav-number">2.10.</span> <span class="nav-text">PYNQ Library详解 - PS and PL control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PYNQ-Library%E8%AF%A6%E8%A7%A3-IOP"><span class="nav-number">2.11.</span> <span class="nav-text">PYNQ Library详解 - IOP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Arduino"><span class="nav-number">2.11.1.</span> <span class="nav-text">Arduino</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pmod"><span class="nav-number">2.11.2.</span> <span class="nav-text">Pmod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rpi"><span class="nav-number">2.11.3.</span> <span class="nav-text">Rpi</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PYNQ-Library%E8%AF%A6%E8%A7%A3-Pynq-MicroBlaze"><span class="nav-number">2.12.</span> <span class="nav-text">PYNQ Library详解 - Pynq MicroBlaze</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MicroBlaze-Subsystem"><span class="nav-number">2.12.1.</span> <span class="nav-text">MicroBlaze Subsystem</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">本文参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lichao Zhang"
+      src="/images/cloud.jpg">
+  <p class="site-author-name" itemprop="name">lichao Zhang</p>
+  <div class="site-description" itemprop="description">博观而约取，厚积而薄发</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Iridescent-zhang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Iridescent-zhang" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lczhang93@gmail.com" title="E-Mail → mailto:lczhang93@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/18558575/wo-ladki" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;18558575&#x2F;wo-ladki" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCv42aVozJF9n4hK8xCacCmg" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCv42aVozJF9n4hK8xCacCmg" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/watch?v=DGa4Xv_tcjE&list=LL&index=6" title="https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;DGa4Xv_tcjE&amp;list&#x3D;LL&amp;index&#x3D;6" rel="noopener" target="_blank">Eiro Nareth INTERSTELLAR</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+	  
+		<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+		<div class="widget-wrap">
+		<div id="myCanvasContainer" class="widget tagcloud">
+		<canvas width="220" height="250" id="resCanvas" style="width=100%">
+			<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cmd/" rel="tag">Cmd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Guitar/" rel="tag">Guitar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HLS/" rel="tag">HLS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/" rel="tag">LaTeX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAT/" rel="tag">NAT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PYNQ/" rel="tag">PYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Powershell/" rel="tag">Powershell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li></ul>
+		</canvas>
+		</div>
+		</div>
+	  
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lichao Zhang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">425k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">6:26</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'zmRLZ8XmVpWBhK4yl2baQmHm-gzGzoHsz',
+      appKey     : 'c5e4Xhc2Ec8iU5BMArSxhhAu',
+      placeholder: "Say something",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : 'https://zmrlz8xm.lc-cn-n1-shared.com'
+    });
+  }, window.Valine);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class='fa fa-chevron-down'></i>    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class='fa fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button" onclick="moonMenuClick()">
+    <svg class="moon-menu-svg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+      <g class="moon-menu-points">
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle>
+        <circle class="moon-menu-point" r=".2rem"></circle>
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle>
+      </g>
+    </svg>
+    <div class="moon-menu-icon">
+    </div>
+    <div class="moon-menu-text">
+    </div>
+  </div>
+</div>
+<script src="/js/injector.js"></script>
+    </div>
+  <!-- 音乐播放器 -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+ <div id="aplayer" class="aplayer" data-id="3470747396" data-server="tencent" data-type="playlist" data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
+ <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+ <!-- 音乐播放器 end -->
+</body>
+</html>

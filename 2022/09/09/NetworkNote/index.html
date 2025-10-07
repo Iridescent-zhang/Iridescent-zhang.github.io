@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Witcher.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Witcher.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"iridescent-zhang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"valine","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus","order":-1},"valine":{"text":"Valine","order":-2}},"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="Network">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Network">
+<meta property="og:url" content="https://iridescent-zhang.github.io/2022/09/09/NetworkNote/index.html">
+<meta property="og:site_name" content="Iridescent-zhang">
+<meta property="og:description" content="Network">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdn.net/20150603162431053">
+<meta property="og:image" content="https://img-blog.csdn.net/20150603162755367">
+<meta property="og:image" content="https://img-blog.csdn.net/20150603162836192">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190115095442520.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxMTI1MTgz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190115095452124.jpg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190115095447544.jpg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190115100054829.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxMTI1MTgz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190115100043490.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxMTI1MTgz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019011510012250.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxMTI1MTgz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190115100126627.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxMTI1MTgz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190115100131757.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxMTI1MTgz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190115100137744.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxMTI1MTgz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://camo.githubusercontent.com/30269c605eac9bc8baba56e12beb83934b9641968af6a5b24bc43a2e399f20c4/68747470733a2f2f63732d6e6f7465732d313235363130393739362e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f6e6574776f726b2d6f662d6e6574776f726b732e676966">
+<meta property="og:image" content="https://www.vpndada.com/wp-content/uploads/2018/11/how-vpn-works-1.png">
+<meta property="og:image" content="https://www.vpndada.com/wp-content/uploads/2018/11/how-vpn-works.png">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/e/e8/Network_Bridging.png">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Comparison_of_DSL_and_dial-up_connections.svg/1920px-Comparison_of_DSL_and_dial-up_connections.svg.png">
+<meta property="article:published_time" content="2022-09-08T22:05:39.000Z">
+<meta property="article:modified_time" content="2024-05-01T10:39:45.121Z">
+<meta property="article:author" content="lichao Zhang">
+<meta property="article:tag" content="NAT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20150603162431053">
+
+<link rel="canonical" href="https://iridescent-zhang.github.io/2022/09/09/NetworkNote/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Network | Iridescent-zhang</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Iridescent-zhang</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">醉后不知天在水，满船清梦压星河</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/09/NetworkNote/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cloud.jpg">
+      <meta itemprop="name" content="lichao Zhang">
+      <meta itemprop="description" content="博观而约取，厚积而薄发">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iridescent-zhang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Network
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-09-08 22:05:39" itemprop="dateCreated datePublished" datetime="2022-09-08T22:05:39Z">2022-09-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-05-01 10:39:45" itemprop="dateModified" datetime="2024-05-01T10:39:45Z">2024-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/09/09/NetworkNote/" class="post-meta-item leancloud_visitors" data-flag-title="Network" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/09/09/NetworkNote/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/09/09/NetworkNote/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>20k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>18 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>Network</strong></p>
+<span id="more"></span>
+
+<h1 id="Routing"><a href="#Routing" class="headerlink" title="Routing"></a>Routing</h1><p>路由器（router）：路由器与我们的设备进行连接，路由与路由之间连接构成巨大的“网络”。<br>路由器是提供 Wi-Fi 的设备，通常连接到调制解调器。它将信息从互联网发送到个人设备，如电脑、手机和平板电脑。您家中的这些联网设备构成了您的局域网(LAN)。一旦调制解调器从互联网引入信息，路由器就会将此数据分发到您的个人设备。</p>
+<p>LAN：局域网（local area network）<br>WAN：广域网（Wide Area Network）</p>
+<p><strong>调制解调器（modem）：</strong> 电话这种基础设施将你和外部的世界连在一起，我们通过一种叫调制解调器的设备连接到电话这种网络。modem将网络信息和电话设施可以处理的信息进行转换。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://support.google.com/googlenest/answer/6274112?hl=en&ref_topic=6287511">什么是调制解调器？</a><br>调制解调器是一种在外界或广域网 (WAN)与您的家之间发送信息的设备。<br>调制解调器将您的入站连接（同轴电缆、电话线、光纤线或其他）转换为以太网连接，然后允许 Wi-Fi 路由器连接到 Internet。<br>调制解调器通常由您的Internet 服务提供商 (ISP) 提供。您的路由器应使用以太网电缆连接到调制解调器。<br>调制解调器和路由器组合设备（网关）<br>许多 ISP 提供的设备包括调制解调器和路由器功能（内置WiFi功能）。将您的 Nest Wifi 路由器连接到这些类型的组合网关设备是可以的。但为了获得最佳设置，您可能需要调整组合设备上的设置，<a target="_blank" rel="noopener" href="https://support.google.com/googlenest/answer/6277579">了解有关双重 NAT</a></p>
+</blockquote>
+<p>来自<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B0%83%E5%88%B6%E8%A7%A3%E8%B0%83%E5%99%A8">wiki</a> 调制解调器（英语：modem，modulator-demodulator的缩写）俗称猫，是一个将数字信号调变到模拟信号上进行传输，并解调收到的模拟信号为数字信号的电子设备。它的目标是产生能够方便传输的模拟信号并且能够通过解码还原原来的数字信号。根据不同的应用场合，调制解调器可以<strong>使用不同的方法来传送模拟信号</strong>，比如使用光纤，射频无线电或<strong>电话线</strong>等。<br>使用<strong>普通电话线音频波段进行数据通信</strong>的电话调制解调器是人们最常接触到的调制解调器。</p>
+<p>其他常见的调制解调器还包括用于<strong>宽带数据接入</strong>的有线电视电缆调制解调器、ADSL调制解调器和光纤调制解调器。<strong>数字式移动电话（手机）</strong> 实际上也是一种无线方式的调制解调器。现代电信传输设备是为了在不同的介质上远距离的传输大量信息，因此也都以调制解调器的功能为核心。其中，微波调制解调器速率可以达上百万比特每秒；而使用光纤作为传输介质的 <strong>光调制解调器</strong> 可以达到几十Gbps以上，是现在电信传输的骨干。</p>
+<p><strong>宽带调制解调器</strong><br>DSL (数字用户回路)数 据机是一种调制解调器是通过铜线或者本地电话网提供数字连接的一种技术。<br>ADSL（非对称用户数字线路）调制解调器也是一种调制解调器，俗称宽带猫主要区别在于它不止局限在普通电话使用的语音载波的频段。 现在的ADSL调制解调器使用编码正交频分调变。.<br>VDSL (超高速数字用户回路) 数据机也是一种调制解调器，VDSL允许客户端利用现有铜线获得高带宽服务而不必采用光纤。VDSL和ADSL一样</p>
+<p><strong>光学调制解调器</strong><br>（Optical modem）或光modem，中国俗称光猫，指通过光纤介质传输信号，并将光信号调制解调为其他信号的调制解调器。常见于光纤到户的设备。</p>
+<p>猫是调制解调器，是用来通过电话线上网的（包括ADSL宽带和普通电话线上网），而路由器是用来组建局域网（包括无线和有线的），也可以与猫一起使用达到一条电话线多台电脑同时上网。直接连猫的速度要快。大部分在连接路由器后的有线连接的速度衰减很小可以忽略不计，无线的速度没有有线的快。</p>
+<p><strong>域名</strong>：每个网络中的设备都有独一无二的ip地址，为方便，给ip地址取了一个“域名”，我们变可以通过域名通过网络连接到这些电脑。</p>
+<p><strong>互联网（internet）和网络（web）的区别：</strong><br>互联网是一种基础的技术，它允许我们将成千上万的设备连在一起。在这些设备中，有一些我们称为网络服务器的设备可以发送文件并在我们设备的浏览器上显示，这便构成了网络。互联网是基础设施，网络是建立在这种基础设施上的服务，除了网络，还有一些服务，比如邮箱和IRC也是运行在互联网之上的。</p>
+<h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2><p>每个计算机必须有一个 IP 地址才能够连入因特网。<br>每个 IP 包必须有一个地址才能够发送到另一台计算机。<br>TCP&#x2F;IP 使用 <strong>32 个比特</strong>或者 4 组 0 到 255 之间的数字来为计算机编址，每组数字（一个字节，八个比特）之间由<strong>点号</strong>隔开，比如：<strong>192.168.1.60</strong>。</p>
+<h3 id="IPV6"><a href="#IPV6" class="headerlink" title="IPV6"></a>IPV6</h3><p>IPv6 是 “Internet Protocol Version 6” 的缩写，也被称作下一代互联网协议。</p>
+<p>在 RFC1884 中（ Request for Comments document TCP&#x2F;IP协议的标准文档 ），规定的标准语法建议把 IPv6 地址的 <strong>128 位</strong>（16 个字节）写成 8 个 16 位的无符号整数，每个整数用 4 个十六进制位表示，这些数之间用 <strong>冒号（:）</strong> 分开，例如：<br><code>686E：8C64：FFFF：FFFF：0：1180：96A：FFFF</code></p>
+<p>冒号十六进制记法允许<strong>零压缩，即一串连续的0可以用一对冒号取代</strong>，例如：<br><code>FF05：0：0：0：0：0：0：B3可以定成：FF05：：B3</code></p>
+<p>为了保证零压缩有一个清晰的解释，建议中规定，在任一地址中，只能使用一次零压缩。</p>
+<p>冒号十六进制记法结合有点十进制记法的后缀。这种结合在IPv4向IPv6换阶段特别有用。例如，下面的串是一个合法的冒号十六进制记法：<br><code>0：0：0：0：0：0：128.10.1.1</code><br>再使用零压缩即可得出：<br> <code>：：128.10.1.1</code></p>
+<h3 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h3><p>四组数字很难记忆。使用一个名称更容易。<br>用于 TCP&#x2F;IP 地址的名字被称为域名，runoob.com 就是一个域名。<br>当你键入一个像 <a target="_blank" rel="noopener" href="http://www.runoob.com/">http://www.runoob.com</a> 这样的域名，域名会被一种 <strong>DNS 程序</strong>翻译为数字。</p>
+<p>在全世界，数量庞大的 DNS 服务器被连入因特网。</p>
+<p>DNS 服务器负责将域名翻译为 TCP&#x2F;IP 地址，同时负责使用新的域名信息更新彼此的系统。</p>
+<p>当一个新的域名连同其 TCP&#x2F;IP 地址一起注册后，全世界的 DNS 服务器都会对此信息进行更新。</p>
+<h3 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h3><p>HTTP 代理只能解释和处理 HTTP 和 HTTPS 网页，而 SOCKS5 代理可以处理任何流量。<br>Shadowsocks 和 SSR 都是当作 SOCKS5 代理服务器来突破防火长城 GFW 的限制。<br>代理和 VPN 的主要区别在于：VPN 会对传输流量进行加密，而代理不会加密流量。VPN 提供更稳定的连接，而代理断线的频率较高。</p>
+<p>网页，网站，网络服务器和搜索引擎的区别？</p>
+<blockquote>
+<p>网页是一份显示在网络浏览器上的HTML文档，这种网页文档可以插入各种各样不同类型的资源，例如：</p>
+<ul>
+<li>css样式信息–控制页面观感</li>
+<li>脚本–为页面添加交互性</li>
+<li>多媒体–图像，音频，视频</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>网站，也称作”site”（站点），是共享唯一域名的相互链接的网页的集合。访问网站时，输入域名，浏览器将会显示该网站的<strong>主要网页或主页</strong>。</p>
+</blockquote>
+<blockquote>
+<p>网络服务器：互联网上托管了许多网站的计算机。托管的意思即所有的网页和它们的支持文件在该服务器上都可用，当浏览器发起请求时，服务器将任意网页从托管的网站发送到任意用户的浏览器。</p>
+</blockquote>
+<blockquote>
+<p>搜索引擎是一个用来帮你找其他网页的<strong>网站</strong>。浏览器是一个接收并显示网页的软件！搜索引擎则是一个帮助用户从其他网站寻找网页的网站。搜索引擎（谷歌，必应）的主页面经常是我们使用的浏览器（谷歌浏览器）的默认开始页面，所以容易搞混，需要分清基础设施（浏览器）和服务（搜索引擎）。</p>
+</blockquote>
+<h3 id="MDN"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/What_is_a_web_server#%E9%9D%99%E6%80%81%E5%92%8C%E5%8A%A8%E6%80%81%E5%86%85%E5%AE%B9">什么是网络服务器</a></p>
+<h2 id="内外网"><a href="#内外网" class="headerlink" title="内外网"></a>内外网</h2><p>内网即局域网是指在某一区域内由多台计算机互联成的计算机组，一般是方圆几千米以内。<br><strong>内网IP地址就是私有IP地址</strong>，不允许在公网上面传递，只能供内部使用。内网使用了私有地址无法访问internet 会用到<strong>NAT-地址转换技术</strong>，将内部的私有地址转换为可以访问internet的外网地址让内部可以上网。外网IP地址就是除了私有地址和被保留的地址外的所有地址，需要申请才能使用。<br>如何查电脑局域网IP(内网IP):</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipconfig /<span class="built_in">all</span></span><br></pre></td></tr></table></figure>
+
+<p>外网即广域网 ，<del>又称公网</del> 局域网通过一台服务器或是一个路由器对外连接的网络，这个IP地址是唯一的是连接不同地区局域网或城域网计算机通信的远程网。通常跨接很大的物理范围，所覆盖的范围从几十公里到几千公里，它能连接多个地区、城市和国家，或横跨几个洲并能提供远距离通信，形成国际性的远程网络。广域网并不等同于互联网。<br>外网IP是全世界唯一的IP地址，仅分配给一个网络设备。而内网IP是由路由器分配给每一部内部使用的设备的IP地址，而内网的所有用户都是通过同一个外网IP地址进行上网的，而内网的IP地址每个人的都不一样，Internet上的用户也无法直接访问到内网用户。简单来说呢，外网IP就是标示了您在整个互联网上的地址，就相当于小区的地址，而内网IP呢，就是标识着您在局域网里面的地址，也就是小区内的几栋几楼几号房子。<br>如何查电脑外网IP: 上网查，如<a target="_blank" rel="noopener" href="https://tool.lu/ip/">IP地址查询</a>。<br>注意，ip查询网站只是获得到你本地出口的IP，即使它是经过转发的IP。</p>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>一般内网有自己的IP号段，也不会和互联网号段冲突，内网就是从路由器以下开始的，而且IP都是以192开头的IP。外网Ip一般都是用于公司企业，学校等机构的。</p>
+<p>内网的ip可以经常换，可以自己定义规则；而外网的ip一般都是固定的，你装好宽带的时候，你的ip就固定下来了。</p>
+<p>你家里装了宽带，为了多个人可以用同一个宽带，你买路由器，这时候，所有连接在路由器上的电脑、连接路由器放出来的wifi上的电脑、手机，他们则属于同一个局域网内，你查看他们的网络连接，就会发现都是192开头的，ip的前3个网段数字都是一样的，只有最后一个不一样。这些手机、电脑用的就是内网，但是如果他们都去访问互联网的网址，那么他们对外的ip地址，就是你宽带的ip地址，所有手机和电脑对外都是同一个ip地址，这就是外网。</p>
+<p>在局域网中，每台电脑都可以自己分配自己的IP，这个IP只在局域网中有效。而如果你将电脑连接到互联网，你的网络提供商（ISP）的服务器会为你分配一个IP地址，这个IP地址才是你在外网的IP。两个IP同时存在，一个对内，一个对外。</p>
+<p>你在内网的机子在上网时，都是在向网关发出请求，再由网关（一般为路由器）用外网IP转到INT网上，接受数据后，再分发到你的内网IP上。</p>
+<blockquote>
+<p>IPv4地址分为A、B、C、D、E五类，除去特殊作用的D、E两类，剩下的A、B、C三类地址是我们常见的IP地址段。A类地址的容量最大，可以容纳16777214个主机，B类地址可以容纳65534个主机，C类地址可以容纳254个主机。<br>在这三类地址中，绝大多数的IP地址都是公有地址，需要向国际互联网信息中心申请注册。但是在IPv4地址协议中预留了3个IP地址段，<strong>作为私有地址，供组织机构内部使用</strong>。<br>这三个地址段分别位于A、B、C三类地址内：</p>
+<ul>
+<li>A类地址：10.0.0.0–10.255.255.255</li>
+<li>B类地址：172.16.0.0–172.16.255.255</li>
+<li>C类地址：192.168.0.0–192.168.255.255<br>所以局域网在选取使用私有地址时，一般会按照实际需要容纳的主机数来选择私有地址段。常见的局域网由于容量小，一般选择C类的192.168.0.0作为地址段使用，一些大型企业就需要使用B类甚至A类地址段作为内部网络的地址段。<br>最后需要补充说明的是，由于NAT和子网掩码的存在，实际在使用中，一个C类大小的局域网也可以选择A类的10.0.0.0网段作为自己的IP地址段。大多数局域网之所以仍然选择192.168.0.0&#x2F;24或者192.168.1.0&#x2F;24作为自己的IP地址段，更多的是因为约定成俗或者说网管个人习惯的关系。<br>我们常见的路由器默认的IP以及我们部以太网时，网关的默认IP都是192.168.1.1主要是因为192.168.0.0-192.168.255.255是一个私有IP范围。</li>
+</ul>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0cbfdcf4261b">搞不清的内网、外网、私网、公网</a><br><strong>内网和外网</strong><br>这一组概念是相对于某个组织而言的，如果你在一个局域网内（比如学校、公司等），那局域网外部的网络都叫外网， 你自己所在的网络就是内网。内网和外网只是一个相对的概念。实际上并不存在。公网和私网才是真实存在的。</p>
+<p><strong>私网和公网</strong><br>公网就是人人都能访问的网络，比如<a href="www.baidu.com">百度</a>。<br>私网顾名思义，私有网络，未经授权无法访问的网络。局域网也是某种意义上的私网。私网地址产生的一个原因是因为公网地址非常缺乏，大家不得不使用同一个公网IP地址上网。</p>
+<p><strong>宽泛而言，内网≈私网 外网≈公网，不过这也得看具体场景。</strong></p>
+<p>公有地址(Public address)：由 Inter NIC(Internet Network Information Center 因特网信息中心)负责。这些 IP 地址分配给注册并向Inter NIC提出申请的组织机构，公有 IP 全球唯一，通过它直接访问因特网(直接能上网)。</p>
+<p>私有地址(Private address)：属于非注册地址，专门为组织机构内部使用，说白了，私有 IP 不能直接上网。</p>
+<p>而我们平时通过运营商(电信、移动、联通宽带等)上网，家里面通过路由器分出来的 IP 都是私有 IP(局域网 IP)，<br>运营商买了一些公有 IP，然后通过这些公有 IP 分出来，再分给一个一个的用户使用。这个过程有点类似于，我们去安装了宽度，通过路由器分出几个 IP，让好几个人都能上网，当然运营商通过公有 IP 分出来的过程肯定比这个复杂多了。所以，我们平时上网用的 IP 是私有 IP，真正拥有公有 IP 的是运营商(当然，我们可以租用一个公有 IP )。所以，A 家庭的局域网 IP 和 B 家庭的局域网 IP 相同很正常，但是，最终 A 和 B 能上网(数据走出去)还是通过运营商的公有 IP，毕竟，公有 IP 的资源有限，这一片区域的用户使用的很有可能(实际上就是这样的)是同一个公有 IP。</p>
+<p>公有IP地址：也叫全局地址，是指合法的IP地址，它是由NIC（网络信息中心）或者ISP(网络服务提供商)分配的地址，对外代表一个或多个内部局部地址，是全球统一的可寻 址的地址。</p>
+<p>私有IP地址：也叫内部地址，属于非注册地址，专门为组织机构内部使用。因特网分配编号委员会（IANA）保留了3块IP地址做为私有IP地址。</p>
+<p><strong>以下参考自</strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ranyonsue/p/9713992.html">内网和外网之间的通信（端口映射原理）</a><br> 你在内网的机子在上网时，都是在向网关发出请求，再由网关（一般为路由器）用外网IP转到INT网上，接受数据后，再分发到你的内网IP上。</p>
+<p>我们平时通过运营商(电信、移动、联通宽带等)上网，家里面通过路由器分出来的 IP 都是私有 IP(局域网 IP)，但是我们可以上网啊，怎么会是私有 IP 呢？租用(申请)公有 IP 是需要钱的。 运营商买了一些公有 IP，然后通过这些公有 IP 分出来，再分给一个一个的用户使用。这个过程有点类似于，我们去安装了宽度，通过路由器分出几个 IP，让好几个人都能上网，当然运营商通过公有 IP 分出来的过程肯定比这个复杂多了。所以，我们平时上网用的 IP 是私有 IP，真正拥有公有 IP 的是运营商(当然，我们可以租用一个公有 IP )。所以，A 家庭的局域网 IP 和 B 家庭的局域网 IP 相同很正常，但是，最终 A 和 B 能上网(数据走出去)还是通过运营商的公有 IP，毕竟，公有 IP 的资源有限，这一片区域的用户使用的很有可能(实际上就是这样的)是同一个公有 IP，这样的话，假如 A 和 B 的局域网 IP 相同(192.168.31.11)，当他们同时访问百度服务器的时候，百度服务器如何区分哪个是 A，哪个是 B 呢?</p>
+<h3 id="端口映射"><a href="#端口映射" class="headerlink" title="端口映射"></a>端口映射</h3><p>端口映射是 NAT 的一种，它将外网主机的 IP 地址的一个端口映射到内网中一台机器，提供相应的服务。当用户访问该 IP 的这个端口时，服务器自动将请求映射到对应局域网内部的机器上。</p>
+<p>我们平时经过路由器，通过宽带，最终去到运营商那边，数据是从运营商出去，最终数据是回到运营商那边，运营商再把数据发送到用户的电脑。</p>
+<p>　路由器，至少有两个端口：WAN 口和 LAN 口。</p>
+<p>WAN：接外部 IP 地址用，通常指的是出口，转发来自内部 LAN 接口的 IP 数据包，这个口的 IP 是唯一的。<br>LAN：接内部 IP 地址用，LAN 内部是交换机。</p>
+<p>这里，我们简化这个过程，我们把运营商当做一个 NAT 设备。<br><img src="https://img-blog.csdn.net/20150603162431053"></p>
+<blockquote>
+<p>A 电脑的 IP 是局域网 IP(192.168.31.11)，这个 IP(192.168.31.11)是从路由器的 lan口分配的。<br>当我们上百度的时候，经过路由器的 wan口，进行相应的IP、端口转化：192.168.31.11:80 -&gt; 10.221.0.24:8080,所以，从 wan口出去的地址为：10.221.0.24:8080。<br><img src="https://img-blog.csdn.net/20150603162755367"><br>最后，经过运营商，运营商那边会做相应的端口映射(而且是动态端口映射)，子网 IP(10.221.0.24:8080)转化为公网 IP(128.0.0.1:8888)，通过这个公网 IP 去访问百度服务器。<br><img src="https://img-blog.csdn.net/20150603162836192"><br>通过这样的层层端口映射，最终保证地址(IP + 端口)的唯一性。A 和 B 访问百度服务器，尽管它们的局域网 IP 是一样的，但是最终它们访问百度的地址(IP + 端口)是唯一的，所以，百度服务器回复时，原路返回时能够区分到底给谁回。</p>
+</blockquote>
+<h1 id="NAT-网络地址转换"><a href="#NAT-网络地址转换" class="headerlink" title="NAT 网络地址转换"></a>NAT 网络地址转换</h1><p><em><strong>本节转载自</strong></em><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_21125183/article/details/86487747">计算机网络：NAT基本原理</a></p>
+<p>NAT英文全称是“Network Address Translation”，中文意思是“网络地址转换”，它是一个IETF(Internet Engineering Task Force, Internet工程任务组)标准，允许一个整体机构以一个公用IP（Internet Protocol）地址出现在Internet上。顾名思义，它是一种把内部私有网络地址（IP地址）翻译成合法网络IP地址的技术</p>
+<p>当主机本来已经分配到了本地IP地址（即仅在本专用网内使用的专用地址），但现在又想和因特网上的主机通信时，可使用NAT方法。<br><img src="https://img-blog.csdnimg.cn/20190115095442520.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxMTI1MTgz,size_16,color_FFFFFF,t_70"><br>NAT就是在局域网中使用内部地址，而当内部节点要与外部网络进行通讯时，就在网关处，将内部地址替换成公用地址，从而在外部公网（internet）上正常使用，NAT可以使多台计算机共享Internet连接，这一功能很好地解决了公共 IP地址紧缺的问题。通过这种方法，可以只申请一个合法IP地址，就把整个局域网中的计算机接入Internet中。这时，NAT屏蔽了内部网络，所有内部网计算机对于公共网络来说是不可见的，而内部网计算机用户通常不会意识到NAT的存在。如下图所示。这里提到的内部地址，是指在内部网络中分配给节点的私有IP地址，这个地址只能在内部网络中使用，不能被路由转发。</p>
+<h2 id="NAT分类"><a href="#NAT分类" class="headerlink" title="NAT分类"></a>NAT分类</h2><p>NAT可以分为三种类型：分别是静态NAT(Static NAT)、动态地址NAT(Pooled NAT)、网络地址端口转换NAPT（Port-Level NAT）。<br><img src="https://img-blog.csdnimg.cn/20190115095452124.jpg"></p>
+<h3 id="静态NAT"><a href="#静态NAT" class="headerlink" title="静态NAT"></a>静态NAT</h3><p>静态转换是指将内部网络的私有IP地址转换为公有IP地址，IP地址对是一对一的，是一成不变的，某个私有IP地址只转换为某个公有IP地址。借助于静态转换，可以实现外部网络对内部网络中某些特定设备(如服务器)的访问。<br>对于以下网络拓扑图，当内网主机 192.168.1.2如果要与外网的主机202.20.65.4通信时，主机（IP：192.168.1.2）的数据包经过路由器时，路由器通过查找NAT table 将IP数据包的源IP地址（192.168.1.2）改成与之对应的全局IP地址（202.20.65.4），而目标IP地址202.20.65.4保持不变，这样，数据包就能到达202.20.65.4。而当主机HostB(IP:202.20.65.4) 响应的数据包到达与内网相连接的路由器时，路由器同样查找NAT table，将IP数据包的目的IP 地址改成192.168.1.2，这样内网主机就能接收到外网主机发过来的数据包。在静态NAT方式中，内部的IP地址与公有IP地址是一种一一对应的映射关系，所以，采用这种方式的前提是，机构能够申请到足够多的全局IP地址。<br><img src="https://img-blog.csdnimg.cn/20190115095447544.jpg"></p>
+<h3 id="动态NAT"><a href="#动态NAT" class="headerlink" title="动态NAT"></a>动态NAT</h3><p>动态转换（亦称NAT pool）是指不建立内部地址和全局地址的一对一的固定对应关系。而通过共享NAT地址池的IP地址动态建立NAT的映射关系。当内网主机需要进行NAT地址转换时，路由器会在NAT地址池中选择空闲的全局地址进行映射，每条映射记录是动态建立的，在连接终止时也被收回。<br><img src="https://img-blog.csdnimg.cn/20190115100054829.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxMTI1MTgz,size_16,color_FFFFFF,t_70"><br>动态NAT方式适合于 当机构申请到的全局IP地址较少，而内部网络主机较多的情况。内网主机IP与全局IP地址是多对一的关系。当数据包进出内网时，具有NAT功能的设备对IP数据包的处理与静态NAT的一样，只是NAT table表中的记录是动态的，若内网主机在一定时间内没有和外部网络通信，有关它的IP地址映射关系将会被删除，并且会把该全局IP地址分配给新的IP数据包使用，形成新的NAT table映射记录。</p>
+<h3 id="网络地址端口转换NAPT"><a href="#网络地址端口转换NAPT" class="headerlink" title="网络地址端口转换NAPT"></a>网络地址端口转换NAPT</h3><p>网络地址端口转换NAPT（Network Address Port Translation）则是把内部地址映射到外部网络的一个IP地址的不同端口上。它可以将中小型的网络隐藏在一个合法的IP地址后面。NAPT与 动态地址NAT不同，它将内部连接映射到外部网络中的一个单独的IP地址上，同时在该地址上加上一个由NAT设备选定的端口号。<br>NAPT是使用最普遍的一种转换方式，它又包含两种转换方式：SNAT和DNAT。</p>
+<blockquote>
+<ul>
+<li>源NAT（Source NAT，SNAT）：修改数据包的源地址。源NAT改变第一个数据包的来源地址，它永远会在数据包发送到网络之前完成，数据包伪装就是一具SNAT的例子。</li>
+<li>修改数据包的目的地址。Destination NAT刚好与SNAT相反，它是改变第一个数据包的目的地地址，如平衡负载、端口转发和透明代理就是属于NAT。</li>
+</ul>
+</blockquote>
+<h2 id="NAT-基本原理"><a href="#NAT-基本原理" class="headerlink" title="NAT 基本原理"></a>NAT 基本原理</h2><p>NAT的基本工作原理是，当私有网主机和公共网主机通信的IP包经过NAT网关时，将IP包中的源IP或目的IP在私有IP和NAT的公共IP之间进行转换。</p>
+<h3 id="地址转换（静态NAT）"><a href="#地址转换（静态NAT）" class="headerlink" title="地址转换（静态NAT）"></a>地址转换（静态NAT）</h3><p>NAT的基本工作原理是，当私有网主机和公共网主机通信的IP包经过NAT网关时，将IP包中的源IP或目的IP在私有IP和NAT的公共IP之间进行转换。</p>
+<p>如下图所示，NAT网关有2个网络端口，其中公共网络端口的IP地址是统一分配的公共 IP，为202.20.65.5；私有网络端口的IP地址是保留地址为192.168.1.1。私有网中的主机192.168.1.2向公共网中的主机202.20.65.4发送了1个IP包(Dst&#x3D;202.20.65.4,Src&#x3D;192.168.1.2)。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190115100043490.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxMTI1MTgz,size_16,color_FFFFFF,t_70"><br>当IP包经过NAT网关时，NAT Gateway会将IP包的源IP转换为NAT Gateway的公共IP并转发到公共网，此时IP包（Dst&#x3D;202.20.65.4，Src&#x3D;202.20.65.5）中已经不含任何私有网IP的信息。由于IP包的源IP已经被转换成NAT Gateway的公共IP，Web Server发出的响应IP包（Dst&#x3D; 202.20.65.5,Src&#x3D;202.20.65.4）将被发送到NAT Gateway。</p>
+<p>这时，NAT Gateway会将IP包的目的IP转换成私有网中主机的IP，然后将IP包（Des&#x3D;192.168.1.2，Src&#x3D;202.20.65.4）转发到私有网。对于通信双方而言，这种地址的转换过程是完全透明的。转换示意图如下。<br><img src="https://img-blog.csdnimg.cn/2019011510012250.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxMTI1MTgz,size_16,color_FFFFFF,t_70"></p>
+<h3 id="连接跟踪"><a href="#连接跟踪" class="headerlink" title="连接跟踪"></a>连接跟踪</h3><p>在上述过程中，NAT Gateway在收到响应包后，就需要判断将数据包转发给谁。此时如果子网内仅有少量客户机，可以用静态NAT手工指定；但如果内网有多台客户机，并且各自访问不同网站，这时候就需要连接跟踪（connection track）。如下图所示：<br><img src="https://img-blog.csdnimg.cn/20190115100126627.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxMTI1MTgz,size_16,color_FFFFFF,t_70"></p>
+<h3 id="端口转换（网络地址端口转换NAPT）"><a href="#端口转换（网络地址端口转换NAPT）" class="headerlink" title="端口转换（网络地址端口转换NAPT）"></a>端口转换（网络地址端口转换NAPT）</h3><p>以上述客户机访问服务器为例，当仅有一台客户机访问服务器时，NAT Gateway只须更改数据包的源IP或目的IP即可正常通讯。但是如果Client A和Client B同时访问Web Server，那么当NAT Gateway收到响应包的时候，就无法判断将数据包转发给哪台客户机，如下图所示:<br><img src="https://img-blog.csdnimg.cn/20190115100131757.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxMTI1MTgz,size_16,color_FFFFFF,t_70"><br>此时，NAT Gateway会在Connection Track中加入端口信息加以区分。如果两客户机访问同一服务器的源端口不同，那么在Track Table里加入端口信息即可区分，如果源端口正好相同，那么在实行SNAT和DNAT的同时对源端口也要做相应的转换，如下图所示:<br><img src="https://img-blog.csdnimg.cn/20190115100137744.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxMTI1MTgz,size_16,color_FFFFFF,t_70"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>NAT技术无可否认是在ipv4地址资源的短缺时候起到了缓解作用；在减少用户申请ISP服务的花费和提供比较完善的负载平衡功能等方面带来了不少好处。但是在ipv4地址在以后几年将会枯竭，NAT技术不能改变ip地址空间不足的本质。然而在安全机制上也潜在着威胁，在配置和管理上也是一个挑战。如果要从根本上解决ip地址资源的问题，ipv6才是最根本之路。在ipv4转换到ipv6的过程中，NAT技术确实是一个不错的选择，相对其他的方案优势也非常明显<br>NAT模式包括三种类型：静态NAT(网关中含有多个外网IP地址)、动态NAT(共享网关中的地址池实现网络地址转换)、网络地址端口转换NPAT(连接跟踪，使用端口转换)</p>
+<hr>
+<p>网络把主机连接起来，而互连网（internet）是把多种不同的网络连接起来，因此互连网是网络的网络。而互联网（Internet）是全球范围的互连网。<br><img src="https://camo.githubusercontent.com/30269c605eac9bc8baba56e12beb83934b9641968af6a5b24bc43a2e399f20c4/68747470733a2f2f63732d6e6f7465732d313235363130393739362e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f6e6574776f726b2d6f662d6e6574776f726b732e676966"></p>
+<hr>
+<h3 id="ISP"><a href="#ISP" class="headerlink" title="ISP"></a>ISP</h3><p>互联网服务提供商（internet serve provider）：ISP是一家可以管理一些特殊的路由器的公司，这些路由器连接其他 ISP 的路由器。你的网络消息可以被 ISP 捕获并发送到相应的网络。</p>
+<p>ISP主要的功能是要将你家里的电脑与网际网路之间搭起连线的桥梁，所以其实你会发现ISP公司其实是在网际网路的专线上，而你家里的电脑则透过电话线与ISP的电脑连接，当电话拨通时，ISP会随机(Random)的给你一组IP，以便你在Internet 上熬游。</p>
+<p>您的互联网服务提供商（ISP）是您付费以访问互联网的公司。 无论是互联网接入（有线，DSL，拨号），ISP都可以为您或您的企业提供一条更大的管道到互联网。</p>
+<p>所有连接互联网的设备都通过ISP运行每个请求，以访问服务器以下载网页和文件，而这些服务器本身只能通过自己的ISP为您提供这些文件。</p>
+<p>几台计算机连接起来，互相可以看到其他人的文件，这叫局域网，整个城市的计算机都连接起来，就是城域网，把城市之间连接起来的网就叫骨干网。这些骨干网是国家批准的可以直接和国外连接的互联网。其他有接入功能的ISP（互联网服务提供商）想连到国外都得通过这些骨干网。</p>
+<p>骨干网（Backbone Network）是用来连接多个区域或地区的高速网络。每个骨干网中至少有一个和其他骨干网进行互联互通的连接点。不同的网络供应商都拥有自己的骨干网，用以连接其位于不同区域的网络。</p>
+<blockquote>
+<p>您的互联网服务提供商（ISP）是您付费以访问互联网的公司。 无论是互联网接入（有线，DSL，拨号），ISP都可以为您或您的企业提供一条更大的管道到互联网。<br>所有连接互联网的设备都通过ISP运行每个请求，以访问服务器以下载网页和文件，而这些服务器本身只能通过自己的ISP为您提供这些文件。<br>一些ISP的例子包括AT＆T，Comcast，Verizon，Cox，NetZero等等。 他们可能直接连接到家庭或企业，或通过卫星或其他技术无线发射。<br>假设您在家中使用笔记本电脑访问此页面。 您的网络浏览器首先使用设备上设置的DNS服务器将“”域名转换为与其相关的正确IP地址。<br>您要访问的IP地址然后从您的路由器发送到您的ISP，ISP将该请求转发给使用的ISP。<br>在这一点上，ISP可以发送这个https：&#x2F;&#x2F; www。 &#x2F; internet-service-provider-isp-2625924文件发回给您自己的ISP，它将数据转发到您的家庭路由器并返回到您的笔记本电脑。<br>所有这些都很快完成 - 通常在几秒钟内完成，这实际上非常了不起。<br>如何隐藏来自ISP的Internet通信<br>由于互联网服务提供商提供了所有互联网流量的路径，因此他们可以监控或记录您的互联网活动。 如果这是您的担忧，避免完成此操作的一种常用方法是使用虚拟专用网络（VPN） 。<br>基本上，VPN 通过您的设备通过您的ISP提供加密隧道到不同的 ISP，从而有效地隐藏您的直接ISP的所有流量，并允许您使用的VPN服务查看您的所有流量（他们通常不会监视器或日志）。<br>你可以在<a target="_blank" rel="noopener" href="https://www.whatismyisp.com/">whatismyisp</a>查看你的ISP。</p>
+</blockquote>
+<hr>
+<h3 id="校园组网"><a href="#校园组网" class="headerlink" title="校园组网"></a>校园组网</h3><p>一些公寓楼和宿舍不需要调制解调器来进行宽带连接。如果是这种情况，您可以将路由器直接插入可用的墙壁以太网端口。</p>
+<blockquote>
+<p>以下转载自<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/419283390/answer/1465715167">xw Lee的回答</a><br>光猫是实现光电转换功能，需要光猫的前提是有光纤接入。<br>额外补充一点，光猫一般来说是没得购买，都是向三大运营商申请宽带的时候运营商提供的。当然你会在淘宝上查到各种光猫在买，其实都是通过非法途径套取运营商光猫在网上卖的；还有一点，光猫不等同于路由器，它的调测过程是需要跟运营商后台系统进行交互的，如果没有运营商的师傅上门使用专用的工具是没法调通的。<br>一般校园网络的组网模式，都是宿舍每层楼均有一个或多台汇聚交换机，每间房间均有一根或多根网线连接交换机，在房间里面就留有对应的网口面板或网线，理论上一根网线接上电脑，输入学校提供的上网账号密码即可上网，这些网口也就是以太网。<br>如果您房间只有一根网线，需要满足6人同时有线上网，网线连接一台多口交换机，交换机后再连接6根网线到6台电脑上即可。如果需要整个房间都有WIFI覆盖，买一台无线路由器即可，墙上网线接路由器，交换机接在路由器后面，即可满足有线上网又可以满足WIFI上网。当然交换机不是必须的，路由器LAN口内部就是交换机，连接网线到电脑也能用。<br>开启WIFI 5G频段，手机连接WIFI 5G频段才有好的体验。</p>
+</blockquote>
+<p>校园宽带都是在宿舍内留光纤，然后用光猫进行光电转换的。以XDU为例，大三学校在每个宿舍房间安装了一个光猫（应该是），并且这个光猫自带无线功能，从此在宿舍便能连接校园wifi了。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/472689094.html">局域网为什么不用调制解调器？</a><br>传输模拟信号时，可以实现远距离传送，比如常用的电话线，几公里远是很正常的。传输数字信号时，距离就很短，比如常用的网线，连100米的实用距离都很难突破。短距离局域网中传输的都是数字信号，不是模拟信号。有些大型局域网，比如几万台终端、覆盖几平方公里的大型局域网络，也有使用调制解调器的。<br>局域网范围较大的话，它中间有用交换机中转的，无线也可以用无线AP中转的。所以它仍然不会使用模拟信号。模拟信号的特点是抗干扰性强，但它速率较慢。一般局域网中都不会用模拟信号传输，或尽量避免使用模拟信号传输。<br>大学校园很可能会覆盖几平方公里，所以在长距离网络布线中都要使用交换机中转。但交换机又有一个缺陷：它在一条线路上最多只能连续串联5个交换机。串的交换机太多了，信号就损耗严重，不能满足网络传输需要。所以，在四个或五个交换机之后，又要加一个路由器才行。有了这个路由器，它又可以再串联五个交换机了。用这种方式，网线可以拉到几千米远去。但事实上，这么长距离布线是没人使用双绞线的，除非沿途都有计算机节点。一般在大型局域网中，网络主干都会使用光纤。比如大学校园网，都是光纤到每一栋楼，连接一台光电转换器（光猫）；光电转换器连接骨干交换机，然后再用小交换机接到各个楼层。</p>
+</blockquote>
+<hr>
+<h3 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a>VPN</h3><blockquote>
+<p>参考自<a target="_blank" rel="noopener" href="https://www.vpndada.com/what-is-vpn-cn/">VPN是什么？(史上最好懂版本)</a><br><strong>VPN是什么（一句话概括）</strong>：<br>VPN是一种网络通讯方式，最早主要用于<strong>保证网络通讯的安全和私密</strong>，如今也经常用于突破网络封锁（俗称“翻墙”）</p>
+<p><strong>VPN本来是干什么用的？</strong><br>VPN这种东西被发明出来，最早并不是用来翻墙的。<br>VPN的英文全称是“Virtual Private Network”，翻译成中文是“虚拟专用网络”。要明白VPN的最初用途，就让我们来先去掉“虚拟”这两个字，来谈一谈“专用网络”。<br>假如你在一家跨国大企业工作，你每天在公司里通过互联网干活，你公司电脑里的的资料可能都是价值连城的商业秘密，如果一旦泄露，公司可能会受到巨大损失。怎么解决这个问题呢？在大公司内部，员工使用的互联网其实是“专用网络”，或者叫“专线”，这个网络和公司外面的公共网络并不直接连接（或者有严密的关卡），所以公司外面的黑客无法进入这个网络，这样，公司的数据就是安全的。<br>那么问题来了：假如公司员工到外地出差，必须用酒店的WIF远程工作，不可能用公司的专线，那怎样保证网络传输中的数据安全呢？这种情况下，公司会建议员工使用VPN。VPN虽然不是“专线网络”，却是“虚拟专线网络”，也就是说连了VPN以后，员工即使不在公司内部，上网时也可以相当于在公司内部上网。</p>
+<p><strong>VPN的工作原理</strong><br>让我们接着上面的例子来讲，对于出差的员工，公司的IT部门会在他们的电脑上装上VPN软件。这个VPN软件可以连接到一台由公司内部控制的电脑服务器上，叫“VPN服务器”（VPN Server）。出差员工连上VPN以后，他上网时就不再直接访问公共互联网，而是通过VPN服务器间接访问。<br><img src="https://www.vpndada.com/wp-content/uploads/2018/11/how-vpn-works-1.png"><br>举例来说，这个人想要打开Google，如果不用VPN，他的电脑就直接去连Google的网站。而开启VPN以后，如果他想打开Google，他的电脑就不再直接连接Google网站，而是去连接VPN服务器，并给VPN服务器发一条指令——“我要访问Google”。VPN服务器接到指令后，自己去访问Google，收到Google网页的内容，再把内容回传给员工，这样使用VPN的员工最终就能看到Google网站的内容了。也就是说，使用VPN时，这个员工的所有网上访问都通过<strong>VPN服务器代理完成</strong>的。<br>此外，VPN还有一个<strong>重要特点：VPN用户和VPN服务器之间的通讯是加密的</strong>，这样就不会被黑客盗取内容。</p>
+<p>有了这些特点，我们就可以理解为什么使用VPN能保证用户的网络安全：用户所有的网络访问都不直接完成，而是通过VPN服务器作为中间人传递内容，而用户和VPN服务器之间的所有连接都是加密的，这样黑客就无法拦截破解VPN用户的网络访问内容。你只与VPN服务器通信来获取网页内容，并且你们的通讯是加密的，别人自然无法破解你的网络访问内容。</p>
+<p><strong>VPN有什么用：</strong></p>
+<ol>
+<li><strong>VPN可以提高上网的安全性</strong><br>因为使用VPN时所用的网络访问都是加密进行的，所以使用VPN上网，安全性就更高，黑客很难截取用户的重要信息。如果你使用公共WIFI上网（例如在咖啡馆上网）时，需要做安全性强的操作（比如使用网上银行或网上投资账户），那么建议你连上VPN（ExpressVPN，NordVPN），因为这样会大大提高安全性。</li>
+<li><strong>VPN可以隐藏上网者的身份</strong><br>因为VPN用户访问任何网站都是通过VPN服务器间接访问的，所以被访问的网站看到的访问者是VPN服务器，而不是VPN用户本人的电脑，这样VPN用户就能对要访问的网站隐藏自己的真正身份。</li>
+<li><strong>VPN可以突破网站的地域限制</strong><br>很多网站都有地域限制，比如视频网站Netflix在不同国家提供不同的内容，美国用户访问Netflix时看到的是美国版的内容，德国用户看到的是德国版的内容。网站的这种功能是通过查看访问者的IP地址属于哪个国家来实现的。而VPN可以用来突破这种IP限制。比如：德国的用户想要看到美国版Netflix的内容，可以先连接到一台位于美国的VPN服务器。这样Netflix网站就会以为访问者来自美国，而提供美国版的内容给VPN服务器，之后VPN服务器再将网页内容发送给用户。同理，使用日本VPN可以以日本用户的身份访问日本网站和服务，使用德国VPN可以以德国用户的身份上网。基于同样的道理，海外华人可以通过VPN翻墙回国，观看仅限国内用户观看的视频内容。另外，VPN还可以用来在网上购物时省钱，因为一些酒店和机票网站对不同国家有不同的价格，通过VPN换成不同国家的IP往往可以省钱。</li>
+<li><strong>突破网络封锁（翻墙）</strong><br>为什么VPN可以用来翻墙呢？先让我们看看网站是如何被墙的。当用户在中国大陆直接访问被封网站（比如Google）时，网络监控发现你要连接到被墙网站，直接就把你拦截了。而如果你通过VPN访问这个网站，我们前面提到，VPN用户访问任何网站都是通过VPN服务器代为访问的，用户连接的其实是VPN服务器，而不是Google，你只是告诉VPN服务器你要访问Google，然后VPN服务器去连接Google，把Google的内容回传给你。这样的话，网络监控看到的是你在连接VPN服务器，而不是在连接Google，同时因为VPN传输是加密的，网络监控也无法破解你和VPN服务器之间在传输什么信息，所以，（除非VPN服务器也在被墙网址之内，这种情况下你无法连接上VPN）网络监控就不会切断你的连接，于是你就成功翻墙了。<br><img src="https://www.vpndada.com/wp-content/uploads/2018/11/how-vpn-works.png"><br>因为VPN具有翻墙功能，所以现在大家提到VPN，想到的第一件事就是翻墙软件。</li>
+</ol>
+<p><strong>有了VPN就可以翻墙了吗？</strong><br>不是。事实上大部分VPN都已经被封或者被干扰，在中国大陆根本无法使用。免费VPN大部分都已被封，从2017年开始中国政府发布条令，宣布禁止私自提供VPN服务，翻墙面临违法的危险，接着大部分国内VPN服务（如GreenVPN）都无法使用了。国外VPN服务商虽然不被中国政府控制，但也经常受到干扰，很多国际老牌知名VPN在国内也无法使用。所以，要选用翻墙VPN，必须事先知道这个VPN在中国大陆是否好用。</p>
+<p><strong>VPN有哪些替代品？</strong><br>虽然VPN目前可能是最流行的翻墙工具，但除传统VPN之外，最近几年出现了一些其它的翻墙工具，其中很多也很受欢迎，大家可以试用：</p>
+<ul>
+<li>Shadowsocks：可参考这篇<a target="_blank" rel="noopener" href="https://www.vpndada.com/shadowsocks-tutorial-cn/">Shadowsocks教程</a></li>
+<li>V2Ray：可参考这篇<a target="_blank" rel="noopener" href="https://www.vpndada.com/v2ray-tutorial-cn/">V2Ray教程</a></li>
+</ul>
+</blockquote>
+<h3 id="Shadowsocks"><a href="#Shadowsocks" class="headerlink" title="Shadowsocks"></a>Shadowsocks</h3><blockquote>
+<p>参考自<a target="_blank" rel="noopener" href="https://www.vpndada.com/shadowsocks-tutorial-cn/">Shadowsocks（影梭）教程</a><br>在翻墙变得越来越难、好用的VPN越来越少、翻墙有可能因违法被抓的今天，很多人开始尝试使用Shadowsocks（影梭，特别是SSR）V2Ray这样的翻墙软件来翻墙。<em>比起传统的VPN，Shadowsocks（尤其是SSR）具有一定的优势，比如不容易被网络监控系统发现和干扰，等等。</em></p>
+<p><strong>Shadowsocks简介</strong><br>Shadowsocks本质上并不是一个软件或品牌，而是<strong>一种用于翻墙的技术协议</strong>。Shadowsocks背后也并没有一家公司在支持，而是由志愿者免费开发，并开源提供给大家使用的。Shadowsocks有不同的分支，目前<strong>最流行的是SSR（ShadowsocksR）</strong>，这里主要介绍ShadowsocksR（SSR）。</p>
+<p><strong>SSR翻墙系统的组成部分：</strong></p>
+<ul>
+<li>SSR服务器（Server）：<ul>
+<li>SSR服务器搭建在位于墙外（国外）的电脑服务器（如VPS）上。</li>
+<li>可以为多个用户、多种设备提供翻墙服务。</li>
+<li>可以自己搭建，也有公司出售服务（提供用于连接的IP、密码等）。</li>
+</ul>
+</li>
+<li>SSR客户端软件（Client）:<ul>
+<li>运行在不同的设备上：如电脑、手机（苹果、安卓）等。</li>
+<li>可以免费下载。</li>
+<li>使用时连接到Shadowsocks服务器上，达到翻墙的作用。</li>
+</ul>
+</li>
+</ul>
+<p><strong>Shadowsocks的不同版本：</strong><br>Shadowsocks目前有两个不同的版本：原始版本的Shadowsocks（SS）和 ShadowsocksR（SSR），前者是最早的Shadowsocks版本，仍然可用，但功能有限。后者在SS版本上做了一些改进，增加了一些功能，如用于反干扰的混淆协议等，在国内更好用。<br><strong>代理模式的设置:</strong></p>
+<ul>
+<li>全局模式（Global）：访问所有网站都通过Shadowsocks，如果平时大部分时间访问国外网站，选用这种模式即可。</li>
+<li>PAC模式（PAC）：通过PAC文件里的规则列表控制哪些流量走SS，哪些不走（比如国内流量不走）。注：在Windows版本的SSR客户端，这个功能已经可以被“代理规则”（Proxy Rule）设置代替（除非使用gfwlist），因此在Windows版本的SSR客户端一般不建议用这一模式。</li>
+<li>直连模式（Disable System Proxy）：基本可以理解为关掉Shadowsocks。</li>
+</ul>
+</blockquote>
+<p><strong>机场</strong>指的是我们平时翻墙所用的 Shadowsocks、V2ray、Trojan <strong>翻墙节点服务商</strong>，和VPN有所不同，机场是最适应中国国内翻墙环境的最新一代翻墙方案，</p>
+<hr>
+<h3 id="拨号连线"><a href="#拨号连线" class="headerlink" title="拨号连线"></a>拨号连线</h3><p>拨号连线，或称拨接上网，是指通过本地电话线经由调制解调器连接互联网，于1990年代网络刚兴起时比较普及，但因收费昂贵、速度慢，渐被ADSL连线取代。根据国际通信联盟（International Telecommunication Union）的统计数字，到2005年底，全球互联网用户中有56%通过宽带上网。<br>拨号上网时，电话公司和互联网服务提供商通常都会分别收费。</p>
+<p>当时技术不允许电话线上有不同的载波信号，拨号上网依赖于音频通信。</p>
+<p>调制解调器将从计算机中获取数字数据，将其调制成音频信号，并将其发送到接收调制解调器，这种方式和与某人打电话相似。</p>
+<p>接收调制解调器将模拟噪声信号解调成数字数据，供计算机处理。而且在通话结束之前，用户无法通过电话线与他人打电话。使用该技术的互联网速度可降至21.6 kbit&#x2F;s或更低。原因是线路状况差、噪声水平高等因素。因此，它通常被称为21600综合征。</p>
+<h2 id="ADSL"><a href="#ADSL" class="headerlink" title="ADSL"></a>ADSL</h2><p>非对称数字用户线路（英语：Asymmetric Digital Subscriber Line）又称非对称数字用户环路（Asymmetric Digital Subscriber Loop），简称ADSL。</p>
+<p>ADSL是一个依靠铜质电话线的数据传输技术比传统的调制器更快。ADSL因为上行（从用户到电信服务提供商方向，如上传动作）和下行（从电信服务提供商到用户的方向，如下载动作）带宽不对称（即上行和下行的速率不相同）因此称为非对称数字用户线路。它采用频分多路复用技术把普通的电话线分成了电话、上行和下行三个相对独立的信道，从而避免了相互之间的干扰。通常ADSL在不影响正常电话通信的情况下可以提供最高3.5Mbps的上行速度和最高24Mbps的下行速度。</p>
+<p>ADSL是一种<strong>异步传输模式（ATM）</strong>。</p>
+<p>在电信服务提供商端，需要将每条开通ADSL业务的电话线路连接在数字用户线路访问多路复用器（DSLAM）上。而在用户端，用户需要使用一个ADSL终端（和传统的调制解调器（Modem）类似）来连接电话线路。由于ADSL使用高频信号，所以在两端还都要使用ADSL信号分离器（splitter）将ADSL数据信号和普通音频电话信号分离出来，避免打电话的时候出现噪音干扰。</p>
+<p>通常的ADSL终端有一个电话Line-In，一个以太网口，有些终端集成了ADSL信号分离器，还提供一个连接的Phone接口。</p>
+<p>由于受到传输高频信号的限制，ADSL需要电信服务提供商端接入设备和用户终端之间的距离不能超过5公里，也就是用户的电话线连到电话局的距离不能超过5公里。</p>
+<p>ADSL通常提供三种网络登录方式：</p>
+<ul>
+<li>桥接，直接提供静态IP</li>
+<li>PPPoA，基于ATM的端对端协议</li>
+<li>PPPoE，基于以太网的端对端协议<br>后两种通常不提供静态IP，而是动态的给用户分配网络地址。</li>
+</ul>
+<h3 id="桥接"><a href="#桥接" class="headerlink" title="桥接"></a>桥接</h3><p>桥接器（英语：network bridge），又称网桥，一种网络设备，负责网络桥接（network bridging）。桥接器将网络的多个网段在数据链路层（OSI模型第2层）连接起来（即桥接）。</p>
+<p>桥接器有别于路由器。路由器允许多网络之间的独立通信，但又保持区隔，而桥接器则是将两个独立的网络连接起来，就如同单一网络。如果所桥接的网络有一个以上的区段是无线网络，则该设备称为无线桥接器。<br><img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Network_Bridging.png"></p>
+<h3 id="PPPoA"><a href="#PPPoA" class="headerlink" title="PPPoA"></a>PPPoA</h3><p>PPPoA是异步传输模式上的点对点协议（Point-to-Point Protocol over Asynchronous Transfer Mode）的简称，是OSI模型中数据链接层的协议，常用来透过电话线链接家用的宽带Modem和网络服务供应商（ISP）。</p>
+<h3 id="PPPoE"><a href="#PPPoE" class="headerlink" title="PPPoE"></a>PPPoE</h3><p>PPPoE（英语：Point-to-Point Protocol over Ethernet），以太网上的点对点协议，是将点对点协议（PPP）封装在以太网（Ethernet）框架中的<strong>一种网络隧道协议</strong>。由于协议中集成PPP协议，所以实现出传统以太网不能提供的身份验证、加密以及压缩等功能，也可用于缆线调制解调器（cable modem）和数字用户线路（DSL）等以以太网协议向用户提供接入服务的协议体系。本质上，它是一个允许在以太网广播域中的两个以太网接口间创建点对点隧道的协议。</p>
+<h3 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h3><p>以太网（英语：Ethernet）是一种计算机局域网技术。IEEE组织的IEEE 802.3标准制定了以太网的技术标准，它规定了包括物理层的连线、电子信号和介质访问控制的内容。以太网是目前应用最普遍的局域网技术，取代了其他局域网标准如令牌环、FDDI和ARCNET。</p>
+<p>以太网的标准拓扑结构为总线型拓扑，但目前的快速以太网（100BASE-T、1000BASE-T标准）为了减少冲突，将能提高的网络速度和使用效率最大化，使用交换机（Switch hub）来进行网络连接和组织。如此一来，以太网的拓扑结构就成了星型；但在逻辑上，以太网仍然使用总线型拓扑和CSMA&#x2F;CD（Carrier Sense Multiple Access&#x2F;Collision Detection，即载波多重访问&#x2F;碰撞侦测）的总线技术。</p>
+<p>以太网实现了网络上无线电系统多个节点发送信息的想法，每个节点必须获取电缆或者信道才能传送信息，有时也叫作以太（Ether）。这个名字来源于19世纪的物理学家假设的电磁辐射媒体——光以太。每一个节点有全球唯一的48位地址也就是制造商分配给网卡的MAC地址，以保证以太网上所有节点能互相鉴别。由于以太网十分普遍，许多制造商把以太网卡直接集成进计算机主板。</p>
+<h3 id="宽带"><a href="#宽带" class="headerlink" title="宽带"></a>宽带</h3><p>宽带（英语：Broadband）在基本电子和电子通信上，是描述电子线路能够同时处理较宽的频率范围。宽带是一种相对的描述方式，频带的范围愈大，也就是带宽愈高时，能够发送的资料也相对增加。譬如说在无线电通信上，频率范围比较窄的带宽只能发送摩尔斯电码，发送高质量的音乐就需要较大的带宽。电视天线的宽带代表能够接收数量较多的信道。在资料发送方面，同样是以电话线作为信号传递的介质，目前光纤电缆则愈来愈普及，拨号上网最快速度仅为54Kbps，<strong>宽带的ADSL和光纤</strong>能够提供更高的发送速率。</p>
+<ul>
+<li>OECD于2006年报告称，任何传输速率在256Kbps以上的互联网连接，可称为宽带。</li>
+<li>FCC于2015年发布解释，下载速率25Mbps以上，上传速率3Mbps以上的互联网，可称为宽带。<br>在这里宽带是一个形容词。</li>
+</ul>
+<p><strong>宽带因特网连接</strong>，简称“宽带”，是相对于通过拨号访问的56千比特率速度而言的高速率因特网访问。一般低速率宽带范围是64千比特率到2兆比特率。</p>
+<p>目前使用最多的宽带技术为光纤和ADSL。</p>
+<ul>
+<li>光纤</li>
+<li>ADSL</li>
+<li>专线</li>
+<li>卫星网络</li>
+</ul>
+<h3 id="电话线"><a href="#电话线" class="headerlink" title="电话线"></a>电话线</h3><p>电话线或电话线路是一个单用户电话通信电路系统。电话线是一种物理线路或者说是一种将用户电话设备连接到电信网路的媒介，并且通常每个用户有一个电话号码来进行计费。电话线路是用来提供固定电话服务和数字用户线(DSL)互联网服务的前提。电话线接入到公共交换电话网络中。</p>
+<h3 id="DSL"><a href="#DSL" class="headerlink" title="DSL"></a>DSL</h3><p>数字用户线路（Digital Subscriber Line，缩写：DSL）是通过铜线或者本地电话网提供数字连接的一种技术。它的历史要追溯到1988年，贝尔实验室一位工程师设计了一种方法可以让数字信号加载到电话线路未使用频段，这就实现了不影响话音服务的前提下在普通电话线上提供数据通信。但是贝尔的管理层对这个并不热心，因为如果用户安装两条线路会带来更多的利润。这一状况直到1990年代晚期有线电视公司开始推销宽带互联网访问时才得到改善。当意识到大多数用户绝对会放弃安装两条电话线访问互联网，贝尔公司才搬出他们已经讨论了10年的DSL技术，来争夺有线电视网络公司的宽带市场份额。</p>
+<p>电话系统设计之初，主要用来传送话音调用，出于经济的考虑，电话系统设计传送频率范围在300Hz到3.4kHz范围的信号（尽管人的话音可以到15kHz，但是这个范围内还是很容易辨别对方的）</p>
+<p>然而本地电话网到最终用户的铜缆实际上可以提供更高的带宽，至少从最低频率到200-800kHz不等，这取决于电路质量和设备的复杂度（一般认为到最终用户分线器之间接头越少越有利于提高带宽，线路传输路过的环境，电子干扰越小越有益于提高线路带宽）。</p>
+<p>DSL服务通过利用电话线的附加频段成功克服了在话音频带上传送大量数据的难题（参看香农定理）。</p>
+<p>DSL服务通常保留0.3-4kHz这个范围的频段给话音服务，也就是所谓的<strong>普通老式电话服务（POTS）</strong>使用的频段，使用这个范围以外的频率传送数据。</p>
+<p>DSL连接在用户设备DSL调制解调器和电话交换机之间创建，然后交换机通过一些其他的协议与用户真正要连接的（典型的）ISP创建连接。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Comparison_of_DSL_and_dial-up_connections.svg/1920px-Comparison_of_DSL_and_dial-up_connections.svg.png"></p>
+<p>用户终端设备是DSL调制解调器。</p>
+<p>很多DSL技术在低水平比特流的ATM层实现，以保证不同的技术能够在相同的链路上实现。</p>
+<p>DSL设备通常可以作为桥接器或路由器。在桥接器模式，一组用户的计算机可以方便的连接到一个子网。早期的设备使用DHCP服务来分配提供一些配置细节例如网卡的IP地址，基于MAC地址的认证或者分配主机名。 后来的的设备一般使用<strong>PPPoE（以太网上的PPP）或者PPPoA（ATM网上的点到点协议）</strong>，验证的时候使用用户名和密码，然后使用PPP原理去分配网络配置（IP地址，子网掩码，网关（默认网关），DNS等）。</p>
+<p>可达范围（从电话交换中心到用户的线路长度）与数据速率成反比，例如VDSL（超高速数字用户线）这样的技术只能提供短距离链路。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>lichao Zhang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://iridescent-zhang.github.io/2022/09/09/NetworkNote/" title="Network">https://iridescent-zhang.github.io/2022/09/09/NetworkNote/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/NAT/" rel="tag"><i class="fa fa-tag"></i> NAT</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/07/htmlNote/" rel="prev" title="学习HTML">
+      <i class="fa fa-chevron-left"></i> 学习HTML
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/09/19/JsNote/" rel="next" title="学习JS">
+      学习JS <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Routing"><span class="nav-number">1.</span> <span class="nav-text">Routing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IP"><span class="nav-number">1.1.</span> <span class="nav-text">IP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IPV6"><span class="nav-number">1.1.1.</span> <span class="nav-text">IPV6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D"><span class="nav-number">1.1.2.</span> <span class="nav-text">域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%90%86"><span class="nav-number">1.1.3.</span> <span class="nav-text">代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MDN"><span class="nav-number">1.1.4.</span> <span class="nav-text">MDN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%A4%96%E7%BD%91"><span class="nav-number">1.2.</span> <span class="nav-text">内外网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.1.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84"><span class="nav-number">1.2.2.</span> <span class="nav-text">端口映射</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NAT-%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.</span> <span class="nav-text">NAT 网络地址转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NAT%E5%88%86%E7%B1%BB"><span class="nav-number">2.1.</span> <span class="nav-text">NAT分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81NAT"><span class="nav-number">2.1.1.</span> <span class="nav-text">静态NAT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81NAT"><span class="nav-number">2.1.2.</span> <span class="nav-text">动态NAT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E7%AB%AF%E5%8F%A3%E8%BD%AC%E6%8D%A2NAPT"><span class="nav-number">2.1.3.</span> <span class="nav-text">网络地址端口转换NAPT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NAT-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text">NAT 基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%EF%BC%88%E9%9D%99%E6%80%81NAT%EF%BC%89"><span class="nav-number">2.2.1.</span> <span class="nav-text">地址转换（静态NAT）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E8%B7%9F%E8%B8%AA"><span class="nav-number">2.2.2.</span> <span class="nav-text">连接跟踪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%AF%E5%8F%A3%E8%BD%AC%E6%8D%A2%EF%BC%88%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E7%AB%AF%E5%8F%A3%E8%BD%AC%E6%8D%A2NAPT%EF%BC%89"><span class="nav-number">2.2.3.</span> <span class="nav-text">端口转换（网络地址端口转换NAPT）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ISP"><span class="nav-number">2.3.1.</span> <span class="nav-text">ISP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%A1%E5%9B%AD%E7%BB%84%E7%BD%91"><span class="nav-number">2.3.2.</span> <span class="nav-text">校园组网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VPN"><span class="nav-number">2.3.3.</span> <span class="nav-text">VPN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shadowsocks"><span class="nav-number">2.3.4.</span> <span class="nav-text">Shadowsocks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%A8%E5%8F%B7%E8%BF%9E%E7%BA%BF"><span class="nav-number">2.3.5.</span> <span class="nav-text">拨号连线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ADSL"><span class="nav-number">2.4.</span> <span class="nav-text">ADSL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%A5%E6%8E%A5"><span class="nav-number">2.4.1.</span> <span class="nav-text">桥接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PPPoA"><span class="nav-number">2.4.2.</span> <span class="nav-text">PPPoA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PPPoE"><span class="nav-number">2.4.3.</span> <span class="nav-text">PPPoE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91"><span class="nav-number">2.4.4.</span> <span class="nav-text">以太网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%BD%E5%B8%A6"><span class="nav-number">2.4.5.</span> <span class="nav-text">宽带</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E8%AF%9D%E7%BA%BF"><span class="nav-number">2.4.6.</span> <span class="nav-text">电话线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DSL"><span class="nav-number">2.4.7.</span> <span class="nav-text">DSL</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lichao Zhang"
+      src="/images/cloud.jpg">
+  <p class="site-author-name" itemprop="name">lichao Zhang</p>
+  <div class="site-description" itemprop="description">博观而约取，厚积而薄发</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Iridescent-zhang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Iridescent-zhang" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lczhang93@gmail.com" title="E-Mail → mailto:lczhang93@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/18558575/wo-ladki" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;18558575&#x2F;wo-ladki" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCv42aVozJF9n4hK8xCacCmg" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCv42aVozJF9n4hK8xCacCmg" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/watch?v=DGa4Xv_tcjE&list=LL&index=6" title="https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;DGa4Xv_tcjE&amp;list&#x3D;LL&amp;index&#x3D;6" rel="noopener" target="_blank">Eiro Nareth INTERSTELLAR</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+	  
+		<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+		<div class="widget-wrap">
+		<div id="myCanvasContainer" class="widget tagcloud">
+		<canvas width="220" height="250" id="resCanvas" style="width=100%">
+			<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cmd/" rel="tag">Cmd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Guitar/" rel="tag">Guitar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HLS/" rel="tag">HLS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/" rel="tag">LaTeX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAT/" rel="tag">NAT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PYNQ/" rel="tag">PYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Powershell/" rel="tag">Powershell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li></ul>
+		</canvas>
+		</div>
+		</div>
+	  
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lichao Zhang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">425k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">6:26</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'zmRLZ8XmVpWBhK4yl2baQmHm-gzGzoHsz',
+      appKey     : 'c5e4Xhc2Ec8iU5BMArSxhhAu',
+      placeholder: "Say something",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : 'https://zmrlz8xm.lc-cn-n1-shared.com'
+    });
+  }, window.Valine);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class='fa fa-chevron-down'></i>    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class='fa fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button" onclick="moonMenuClick()">
+    <svg class="moon-menu-svg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+      <g class="moon-menu-points">
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle>
+        <circle class="moon-menu-point" r=".2rem"></circle>
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle>
+      </g>
+    </svg>
+    <div class="moon-menu-icon">
+    </div>
+    <div class="moon-menu-text">
+    </div>
+  </div>
+</div>
+<script src="/js/injector.js"></script>
+    </div>
+  <!-- 音乐播放器 -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+ <div id="aplayer" class="aplayer" data-id="3470747396" data-server="tencent" data-type="playlist" data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
+ <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+ <!-- 音乐播放器 end -->
+</body>
+</html>

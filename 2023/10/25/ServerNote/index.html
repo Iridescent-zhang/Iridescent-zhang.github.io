@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Witcher.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Witcher.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"iridescent-zhang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"valine","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus","order":-1},"valine":{"text":"Valine","order":-2}},"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="csnd 收藏夹 服务器 https:&#x2F;&#x2F;github.com&#x2F;xiaonanQua&#x2F;serverdoc https:&#x2F;&#x2F;codle.net&#x2F;how-to-remote-dev-in-lab&#x2F; https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;410396061 ssh -p 18082 &amp;#83;&amp;#x32;&amp;#51;&amp;#122;&amp;#x68;&amp;#97;&amp;#x6e;&amp;#x67;&amp;#x6c;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ServerNote">
+<meta property="og:url" content="https://iridescent-zhang.github.io/2023/10/25/ServerNote/index.html">
+<meta property="og:site_name" content="Iridescent-zhang">
+<meta property="og:description" content="csnd 收藏夹 服务器 https:&#x2F;&#x2F;github.com&#x2F;xiaonanQua&#x2F;serverdoc https:&#x2F;&#x2F;codle.net&#x2F;how-to-remote-dev-in-lab&#x2F; https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;410396061 ssh -p 18082 &amp;#83;&amp;#x32;&amp;#51;&amp;#122;&amp;#x68;&amp;#97;&amp;#x6e;&amp;#x67;&amp;#x6c;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://iridescent-zhang.github.io/ServerNote/8.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/ServerNote/9.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/ServerNote/1.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/ServerNote/2.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/ServerNote/3.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/ServerNote/4.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/ServerNote/5.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/ServerNote/6.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/ServerNote/7.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2023/10/25/ServerNote/10.png">
+<meta property="article:published_time" content="2023-10-24T19:26:25.000Z">
+<meta property="article:modified_time" content="2025-02-20T14:03:11.361Z">
+<meta property="article:author" content="lichao Zhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://iridescent-zhang.github.io/ServerNote/8.png">
+
+<link rel="canonical" href="https://iridescent-zhang.github.io/2023/10/25/ServerNote/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>ServerNote | Iridescent-zhang</title><meta name="robots" content="noindex">
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Iridescent-zhang</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">醉后不知天在水，满船清梦压星河</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2023/10/25/ServerNote/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cloud.jpg">
+      <meta itemprop="name" content="lichao Zhang">
+      <meta itemprop="description" content="博观而约取，厚积而薄发">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iridescent-zhang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ServerNote
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-10-24 19:26:25" itemprop="dateCreated datePublished" datetime="2023-10-24T19:26:25Z">2023-10-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-02-20 14:03:11" itemprop="dateModified" datetime="2025-02-20T14:03:11Z">2025-02-20</time>
+              </span>
+
+          
+            <span id="/2023/10/25/ServerNote/" class="post-meta-item leancloud_visitors" data-flag-title="ServerNote" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2023/10/25/ServerNote/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/10/25/ServerNote/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>7.2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>7 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>csnd 收藏夹 服务器</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/xiaonanQua/serverdoc">https://github.com/xiaonanQua/serverdoc</a></p>
+<p><a target="_blank" rel="noopener" href="https://codle.net/how-to-remote-dev-in-lab/">https://codle.net/how-to-remote-dev-in-lab/</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/410396061">https://zhuanlan.zhihu.com/p/410396061</a></p>
+<p>ssh -p 18082 <a href="mailto:&#83;&#x32;&#51;&#122;&#x68;&#97;&#x6e;&#x67;&#x6c;&#x63;&#x40;&#x31;&#x30;&#46;&#49;&#x32;&#57;&#x2e;&#x33;&#46;&#x32;&#50;&#54;">&#83;&#x32;&#51;&#122;&#x68;&#97;&#x6e;&#x67;&#x6c;&#x63;&#x40;&#x31;&#x30;&#46;&#49;&#x32;&#57;&#x2e;&#x33;&#46;&#x32;&#50;&#54;</a><br>账户名：S23zhanglc<br>密码：220230900<br><a href="mailto:&#83;&#x32;&#51;&#122;&#x68;&#97;&#x6e;&#103;&#x6c;&#x63;&#64;&#x31;&#x30;&#x2e;&#x31;&#x32;&#57;&#x2e;&#51;&#46;&#x32;&#50;&#x36;">&#83;&#x32;&#51;&#122;&#x68;&#97;&#x6e;&#103;&#x6c;&#x63;&#64;&#x31;&#x30;&#x2e;&#x31;&#x32;&#57;&#x2e;&#51;&#46;&#x32;&#50;&#x36;</a>:18082<br><a href="mailto:&#x53;&#x32;&#51;&#x73;&#117;&#x6e;&#106;&#108;&#64;&#x31;&#48;&#46;&#x31;&#x32;&#x39;&#x2e;&#x33;&#46;&#x32;&#50;&#54;">&#x53;&#x32;&#51;&#x73;&#117;&#x6e;&#106;&#108;&#64;&#x31;&#48;&#46;&#x31;&#x32;&#x39;&#x2e;&#x33;&#46;&#x32;&#50;&#54;</a>:18082<br><img src="/ServerNote/8.png"></p>
+<p><img src="/ServerNote/9.png"></p>
+<p>ssh 10.129.3.230 -p 18082<br>ssh 10.129.3.228 -p 18082<br>220230900</p>
+<p>141、142之间，146(现226)、147、170(现230)之间做了免密和目录共享，可以互相免密直连，命令为：ssh 服务器ip -p 端口号，如：<br><code>ssh 10.129.3.230 -p 18082</code>。其中端口号应该是你想用的端口，不要写22。<br><strong>226集群中的230服务器升级CUDA</strong>：<br>通过主机名来判断自己当前在哪个服务器。</p>
+<p>校外得开vpn，vpn不与Friendmall共存，连不到redis。（设置clash 的 system proxy bypass就解决了）</p>
+<p>MobaXterm 有一个主加密密码来加密我保存的密码，Master Encrypt<br>设置为：220230900</p>
+<h2 id="配置服务器环境"><a href="#配置服务器环境" class="headerlink" title="配置服务器环境"></a>配置服务器环境</h2><p>python虚拟环境： 在跑实验的时候由于python版本和tensorflow以及keras等各类库不兼容问题的时候很是头痛，因此我们需要实现快速构建一个python虚拟环境使得可以快速跑baseline模型，并且进行调试并且学习。</p>
+<ol>
+<li><p>查看系统发行版版本信息<br>cat &#x2F;etc&#x2F;redhat-release<br><strong>CentOS Linux release 7.5.1804</strong> (Core)<br>为什么使用redhat-release命令， 因为CentOS它是来自于Red Hat Enterprise Linux依照开放源代码规定释出的源代码所编译而成。</p>
+</li>
+<li><p>查看Linux内核信息<br>cat &#x2F;proc&#x2F;version<br><strong>Linux version 3.10.0-862</strong>.el7.x86_64 (<a href="mailto:&#x62;&#117;&#x69;&#x6c;&#x64;&#x65;&#x72;&#x40;&#x6b;&#98;&#117;&#105;&#x6c;&#100;&#x65;&#x72;&#x2e;&#100;&#101;&#x76;&#x2e;&#99;&#x65;&#110;&#x74;&#x6f;&#115;&#46;&#111;&#114;&#x67;">&#x62;&#117;&#x69;&#x6c;&#x64;&#x65;&#x72;&#x40;&#x6b;&#98;&#117;&#105;&#x6c;&#100;&#x65;&#x72;&#x2e;&#100;&#101;&#x76;&#x2e;&#99;&#x65;&#110;&#x74;&#x6f;&#115;&#46;&#111;&#114;&#x67;</a>) (<strong>gcc version 4.8.5</strong> 20150623 (<strong>Red Hat 4.8.5-28</strong>) (GCC) ) #1 SMP Fri Apr 20 16:44:24 UTC 20181111<br>这个命令可以查询Linux内核版本却不能具体到发行版版本。</p>
+</li>
+<li><p>查看显卡信息（服务器原146，现226：6张16g V100）<br>lspci | grep -i nvidia<br>3d:00.0 3D controller: NVIDIA Corporation GV100GL [Tesla V100 PCIe] (rev a1)<br>41:00.0 3D controller: NVIDIA Corporation GV100GL [Tesla V100 PCIe] (rev a1)<br><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15642578/5306000">解析nvidia-smi</a><br>另外最上面的 NVIDIA_SMI 和 Driver Version 指的是显卡驱动的版本号。<br>nvidia-smi -L 列出所有可用的NVIDIA设备信息。<br>GPU 0: Tesla V100-PCIE-16GB (UUID: GPU-e6c9bb9d-2ffd-941f-8e29-ca50e108da3f)<br>GPU 1: Tesla V100-PCIE-16GB (UUID: GPU-8c5ec88e-35c8-877b-bbef-d61e145e8c5b)</p>
+</li>
+<li><p>配置CUDA、CUdnn版本<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sddai/p/10278005.html">服务器配置多版本CUDA、CUdnn(不同Linux账户使用不同CUDA、CUdnn版本）
+</a><br>服务器已经装了CUDA-10.0和CUDA-10.1两个版本，默认安装位置是&#x2F;usr&#x2F;local，两个版本的CUDA和Linux系统和GCC的对应关系如下：<br><img src="/ServerNote/1.png"><br><img src="/ServerNote/2.png"><br>两个版本的CUDA和要求的显卡驱动版本对应关系如下：<br><img src="/ServerNote/3.png"><br><img src="/ServerNote/4.png"><br>考虑到服务器<strong>显卡驱动版本(410.48)</strong> 和 <strong>CentOS Linux release 7.5.1804</strong>，使用 CUDA-10.0 可能更加合适。<br>同样的，CUdnn也要在<a target="_blank" rel="noopener" href="https://developer.nvidia.com/rdp/cudnn-archive">选择</a>与CUDA版本对应的。<br><img src="/ServerNote/5.png"><br>查看 CUDA 版本：<br>nvcc -V<br>查看 cuDNN 版本：<br>cat &#x2F;usr&#x2F;local&#x2F;cuda&#x2F;include&#x2F;cudnn.h | grep CUDNN_MAJOR -A 2<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Kefenggewu_/article/details/117675079">Linux（多用户下）查看cuda、cudnn版本、查看已经安装的cuda版本、切换不同版本cuda之间的切换等相关命令</a> 讲到了CUDA两种API：运行时API和驱动API，以及CUDA版本切换用到的软链接，这篇讲的挺好的，</p>
+</li>
+<li><p>【<strong>重要</strong>】Windows 安装 anaconda，<strong>配置pytorch cuda等环境</strong><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2152362">超详细配置教程：用 Windows 电脑训练深度学习模型</a> 里面这个命令<code>conda install pytorch torchvision cudatoolkit -c pytorch</code>会在安装torch的同时安装配套的cuda。<br>检查版本：<br>import torch<br>torch.<strong>version</strong>  &#x2F;&#x2F; torch版本<br>torch.version.cuda  &#x2F;&#x2F; cuda版本</p>
+</li>
+<li><p>安装anaconda，anaconda可以帮助我们创建和管理多个虚拟开发环境，也可以帮助我们安装第三方包。<a target="_blank" rel="noopener" href="https://blog.csdn.net/u014628771/article/details/80066624">Anaconda 查看、创建、管理和使用python环境</a></p>
+</li>
+<li><p>安装gpu版本<a target="_blank" rel="noopener" href="https://pytorch.org/">pytorch</a>，过程中要注意<strong>显卡驱动版本(410.48)、cuda版本、pytorch版本</strong>对应关系<br>pytorch版本 ≥ 1.7就行，其他的可以边跑边看，缺什么装什么<br>（ 注意：没有管理员权限不能安装显卡驱动，只能根据现有驱动的版本来选择CUDA版本。）<br>  PyTorch 是一种用于构建深度学习模型的功能完备框架。 使用 Python 编写，因此对于大多数深度学习开发者而言，学习和使用起来相对简单。</p>
+</li>
+<li><p>安装依赖包，如果是不能联网的，去<a target="_blank" rel="noopener" href="https://pypi.org/%E8%87%AA%E5%B7%B1%E6%90%9C%E5%A5%BD%E5%AF%B9%E5%BA%94%E7%89%88%E6%9C%AC%E4%BC%A0%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E7%84%B6%E5%90%8E">https://pypi.org/自己搜好对应版本传到服务器，然后</a></p>
+<p> pip install “文件名”，过程中注意平台的选择（win，linux）</p>
+</li>
+</ol>
+<p>pip 下载的包(都在虚拟环境下进行 Python&#x3D;3.6)：<br>Pytorch见上文【5.】</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">data_augmentation_unite.py:</span><br><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn opencv-contrib-python==3.4.9.33</span><br><span class="line">pip install scikit-learn==0.24.2</span><br><span class="line">pip install pyyaml</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">train.py:</span><br><span class="line">pip install tensorboard</span><br><span class="line">pip install tqdm</span><br><span class="line">pip install matplotlib==3.3.4</span><br><span class="line">要在同目录加一个test.py，在(https://github.com/ultralytics/yolov5/tree/v4.0)里，注意tag，因为这个test.py后面改版为val.py。</span><br><span class="line"></span><br><span class="line">export.py</span><br><span class="line">pip install onnx==1.7.0</span><br></pre></td></tr></table></figure>
+
+<p>注意：关于在开代理的情况下pip会失败，原因是pip 镜像源（无论还是清华，亦或是阿里）对代理服务器进行了屏蔽，所以我们的目标是访问镜像源的时候就不要走代理网络，在网络设置里面这样设置：<br><img src="/ServerNote/6.png"><br>但使用clash的这样可能不管用，因为：<br><img src="/ServerNote/7.png"><br>这个也能解释为什么friendmall.com和代理不能共存，应该也是因为访问这个域名同样去找代理了，使我们配置的switchhost也失效了，反正后面试试吧。</p>
+<p>运行脚本需要打开git bash这个sh工具，执行命令.&#x2F;train.sh。<br>但是需要先在git中切换到虚拟环境MyTestEnv：<br>    source activate your_env_name</p>
+<p>注意：为了跑程序，给anaconda所在的E盘分配了50G的虚拟内存，所以I盘显示的容量小了50G，具体可以看CSDN收藏中是如何设置的。</p>
+<p>conda install pytorch&#x3D;&#x3D;1.7.0 torchvision&#x3D;&#x3D;0.8.0 torchaudio&#x3D;&#x3D;0.7.0 cudatoolkit&#x3D;10.2 cudnn&#x3D;7.6.5</p>
+<h2 id="最后的环境配置总结："><a href="#最后的环境配置总结：" class="headerlink" title="最后的环境配置总结："></a>最后的环境配置总结：</h2><p><strong>虚拟环境 yolo</strong>：</p>
+<p>Pytorch在<a target="_blank" rel="noopener" href="https://pytorch.org/get-started/previous-versions/">官网</a>查，很方便的，安装命令都给你了，用11.7那个就可以。</p>
+<img src="/2023/10/25/ServerNote/10.png" class="">
+
+<p>这几个都查一下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="comment">#查看版本</span></span><br><span class="line"><span class="built_in">print</span>(torch.__version__)</span><br><span class="line"><span class="comment">#查看gpu是否可用.返回True则表示可以使用gpu</span></span><br><span class="line">torch.cuda.is_available()</span><br><span class="line"><span class="comment">#返回设备gpu个数</span></span><br><span class="line">torch.cuda.device_count()</span><br></pre></td></tr></table></figure>
+
+<p>这篇<a target="_blank" rel="noopener" href="https://blog.csdn.net/handsomeandge/article/details/116238172">win10+anaconda安装yolov5</a>讲的很好。<br>安装相关库：<br>安装opencv就用这个 ：<code>pip3 install opencv-python==4.4.0.46 -i https://pypi.tuna.tsinghua.edu.cn/simple/</code></p>
+<h3 id="迁移环境"><a href="#迁移环境" class="headerlink" title="迁移环境"></a>迁移环境</h3><p>conda info –e （conda info –envs）查看环境列表</p>
+<p>检查环境是否完全复制<br>pip list<br>conda list</p>
+<p>conda create -n yolo311 –offline python&#x3D;3.11<br>cp -r ~&#x2F;rail&#x2F;. &#x2F;home&#x2F;S23zhanglc&#x2F;anaconda3&#x2F;envs&#x2F;yolo311&#x2F;</p>
+<p>torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 26.00 MiB. GPU 0 has a total capacity of 15.77 GiB of which 23.12 MiB is free. Process 155100 has 8.29 GiB memory in use. Including non-PyTorch memory, this process has 7.46 GiB memory in use. Of the allocated memory 6.29 GiB is allocated by PyTorch, and 28.32 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF&#x3D;expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (<a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/notes/cuda.html#environment-variables">https://pytorch.org/docs/stable/notes/cuda.html#environment-variables</a>)</p>
+<p>打开gitbash传</p>
+<p>scp <a href="mailto:&#83;&#x32;&#x33;&#x7a;&#104;&#97;&#x6e;&#x67;&#108;&#x63;&#64;&#49;&#x30;&#46;&#49;&#x32;&#57;&#x2e;&#x33;&#x2e;&#x32;&#x32;&#x36;">&#83;&#x32;&#x33;&#x7a;&#104;&#97;&#x6e;&#x67;&#108;&#x63;&#64;&#49;&#x30;&#46;&#49;&#x32;&#57;&#x2e;&#x33;&#x2e;&#x32;&#x32;&#x36;</a>:&#x2F;tmp&#x2F;best.onnx &#x2F;C&#x2F;Users&#x2F;Iridescent_zlc&#x2F;Desktop</p>
+<p>从服务器传文件夹到本地</p>
+<p>scp -r <a href="mailto:&#83;&#50;&#51;&#122;&#x68;&#97;&#110;&#103;&#x6c;&#x63;&#64;&#49;&#48;&#46;&#x31;&#x32;&#x39;&#x2e;&#x33;&#x2e;&#50;&#x32;&#x36;">&#83;&#50;&#51;&#122;&#x68;&#97;&#110;&#103;&#x6c;&#x63;&#64;&#49;&#48;&#46;&#x31;&#x32;&#x39;&#x2e;&#x33;&#x2e;&#50;&#x32;&#x36;</a>:&#x2F;tmp&#x2F;exp &#x2F;C&#x2F;Users&#x2F;Iridescent_zlc&#x2F;Desktop</p>
+<p>tar -zxvf &#x2F;bbs.tar.zip -C &#x2F;zzz&#x2F;bbs   </p>
+<p>删xml<br>del &#x2F;a &#x2F;f &#x2F;s &#x2F;q  “*.xml”</p>
+<p>删图<br>del &#x2F;a &#x2F;f &#x2F;s &#x2F;q  “*.jpg”</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7078965942968909854">安装miniconda</a> 讲的很好。</p>
+<p>复制<br>cp -rf &#x2F;home&#x2F;user1&#x2F;* &#x2F;root&#x2F;temp&#x2F;</p>
+<p>cp -r &#x2F;home&#x2F;user&#x2F;source_directory &#x2F;home&#x2F;user&#x2F;destination_directory&#x2F;<br>保留源目录名：如果你指定的目标路径是一个目录路径（不包括新的目录名），即 &#x2F;home&#x2F;user&#x2F;destination_directory&#x2F;，那么源目录 source_directory 会连同其内容一起被复制到目标路径中，并保留源目录名。(最后面的&#x2F;很关键)<br>重命名源目录：如果你指定目标路径中包含新的目录名，即 &#x2F;home&#x2F;user&#x2F;destination_directory&#x2F;new_directory_name，源目录会在新位置被重命名为 new_directory_name。</p>
+<p>ssh 10.129.3.228 -p 18082</p>
+<p>移动<br>mv &#x2F;data&#x2F;new &#x2F;data&#x2F;old&#x2F;<br>注：移动&#x2F;data&#x2F;new文件夹 到&#x2F;data&#x2F;old&#x2F;文件夹下<br>注意点：移动文件夹的话就不要再加 &#x2F; 了<br>如果是移动文件夹下的所有文件的话就可以文件夹后面跟上 &#x2F;*<br>mv &#x2F;data&#x2F;new&#x2F;* &#x2F;data&#x2F;old&#x2F;</p>
+<p>unzip解压的话会保留原文件夹，比如datasets.zip解压完为datasets</p>
+<p>压缩文件夹到目录<br>tar -zcvf &#x2F;xxx&#x2F;zzz.tar.gz OridinaryFile_name</p>
+<p>解压到指定目录<br>tar -zxvf &#x2F;bbs.tar.gz -C &#x2F;zzz&#x2F;bbs    </p>
+<p>都要在想要安装这个包的环境下运行才行（比如rail）<br>用–offline更好<br>conda install –use-local &#x2F;desired&#x2F;path&#x2F;to&#x2F;conda&#x2F;pkgs&#x2F;scikit-learn-1.5.1-py312h775a589_0.conda</p>
+<p>pip install &#x2F;path&#x2F;to&#x2F;joblib-1.2.0-py3-none-any.whl</p>
+<p>find &#x2F;home&#x2F;S23zhanglc&#x2F;miniconda3&#x2F;envs&#x2F;rail -name “<em>scikit-learn</em>“<br>find &#x2F;home&#x2F;S23zhanglc&#x2F;miniconda3&#x2F;envs&#x2F;rail -name “sklearn”</p>
+<p>rm &#x2F;home&#x2F;S23zhanglc&#x2F;miniconda3&#x2F;envs&#x2F;rail&#x2F;conda-meta&#x2F;scikit-learn-1.5.1-py312h775a589_0.json</p>
+<p>ssh 10.129.3.230 -p 18082<br>查看文件数目 ls -l | grep “^-“ | wc -l</p>
+<h3 id="遇到的bug："><a href="#遇到的bug：" class="headerlink" title="遇到的bug："></a>遇到的bug：</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Thebest_jack/article/details/125649451">RuntimeError: result type Float can‘t be cast to the desired output type long int</a>改一点源码。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42092516/article/details/128405985">ImportError: cannot import name ‘OrderedDict‘ from ‘typing‘</a> python的版本有问题  于是在anconda上更改这个环境的版本到python3.7.2（原来是3.7.1）。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/yandaonan/article/details/52047603">关于windows和linux文件路径斜杠</a> 代码中配置文件路径时可能会有这个问题，windows的话目前都写双反斜杠\\，没有排查是否会出现问题。</p>
+<h2 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h2><p>几篇代码部署在服务器的<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_73524607/article/details/128051813">跑深度学习的代码全过程</a></p>
+<!-- flag of hidden posts -->
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>lichao Zhang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://iridescent-zhang.github.io/2023/10/25/ServerNote/" title="ServerNote">https://iridescent-zhang.github.io/2023/10/25/ServerNote/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">配置服务器环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">最后的环境配置总结：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%81%E7%A7%BB%E7%8E%AF%E5%A2%83"><span class="nav-number">2.1.</span> <span class="nav-text">迁移环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E7%9A%84bug%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">遇到的bug：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lichao Zhang"
+      src="/images/cloud.jpg">
+  <p class="site-author-name" itemprop="name">lichao Zhang</p>
+  <div class="site-description" itemprop="description">博观而约取，厚积而薄发</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Iridescent-zhang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Iridescent-zhang" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lczhang93@gmail.com" title="E-Mail → mailto:lczhang93@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/18558575/wo-ladki" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;18558575&#x2F;wo-ladki" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCv42aVozJF9n4hK8xCacCmg" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCv42aVozJF9n4hK8xCacCmg" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/watch?v=DGa4Xv_tcjE&list=LL&index=6" title="https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;DGa4Xv_tcjE&amp;list&#x3D;LL&amp;index&#x3D;6" rel="noopener" target="_blank">Eiro Nareth INTERSTELLAR</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+	  
+		<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+		<div class="widget-wrap">
+		<div id="myCanvasContainer" class="widget tagcloud">
+		<canvas width="220" height="250" id="resCanvas" style="width=100%">
+			<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cmd/" rel="tag">Cmd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Guitar/" rel="tag">Guitar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HLS/" rel="tag">HLS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/" rel="tag">LaTeX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAT/" rel="tag">NAT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PYNQ/" rel="tag">PYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Powershell/" rel="tag">Powershell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li></ul>
+		</canvas>
+		</div>
+		</div>
+	  
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lichao Zhang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">425k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">6:26</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'zmRLZ8XmVpWBhK4yl2baQmHm-gzGzoHsz',
+      appKey     : 'c5e4Xhc2Ec8iU5BMArSxhhAu',
+      placeholder: "Say something",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : 'https://zmrlz8xm.lc-cn-n1-shared.com'
+    });
+  }, window.Valine);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class='fa fa-chevron-down'></i>    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class='fa fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button" onclick="moonMenuClick()">
+    <svg class="moon-menu-svg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+      <g class="moon-menu-points">
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle>
+        <circle class="moon-menu-point" r=".2rem"></circle>
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle>
+      </g>
+    </svg>
+    <div class="moon-menu-icon">
+    </div>
+    <div class="moon-menu-text">
+    </div>
+  </div>
+</div>
+<script src="/js/injector.js"></script>
+    </div>
+  <!-- 音乐播放器 -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+ <div id="aplayer" class="aplayer" data-id="3470747396" data-server="tencent" data-type="playlist" data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
+ <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+ <!-- 音乐播放器 end -->
+</body>
+</html>

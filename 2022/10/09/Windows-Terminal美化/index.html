@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Witcher.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Witcher.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"iridescent-zhang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"valine","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus","order":-1},"valine":{"text":"Valine","order":-2}},"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="颜值就是生产力">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows-Terminal美化">
+<meta property="og:url" content="https://iridescent-zhang.github.io/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/index.html">
+<meta property="og:site_name" content="Iridescent-zhang">
+<meta property="og:description" content="颜值就是生产力">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/15QHCpYd/1.jpg">
+<meta property="og:image" content="https://i.postimg.cc/sX7BgQCv/1.jpg">
+<meta property="article:published_time" content="2022-10-09T10:43:08.000Z">
+<meta property="article:modified_time" content="2024-03-18T16:04:12.230Z">
+<meta property="article:author" content="lichao Zhang">
+<meta property="article:tag" content="Powershell">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/15QHCpYd/1.jpg">
+
+<link rel="canonical" href="https://iridescent-zhang.github.io/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Windows-Terminal美化 | Iridescent-zhang</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Iridescent-zhang</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">醉后不知天在水，满船清梦压星河</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cloud.jpg">
+      <meta itemprop="name" content="lichao Zhang">
+      <meta itemprop="description" content="博观而约取，厚积而薄发">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iridescent-zhang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Windows-Terminal美化
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-10-09 10:43:08" itemprop="dateCreated datePublished" datetime="2022-10-09T10:43:08Z">2022-10-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-03-18 16:04:12" itemprop="dateModified" datetime="2024-03-18T16:04:12Z">2024-03-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/" itemprop="url" rel="index"><span itemprop="name">Shell</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/" class="post-meta-item leancloud_visitors" data-flag-title="Windows-Terminal美化" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>17k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>16 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>颜值就是生产力</strong></p>
+<span id="more"></span>
+<h2 id="美化PowerShell"><a href="#美化PowerShell" class="headerlink" title="美化PowerShell"></a>美化PowerShell</h2><ol>
+<li><p>升级 Windows Terminal<br> 到 <a target="_blank" rel="noopener" href="https://github.com/microsoft/terminal/releases">Microsoft&#x2F;Terminal</a> 找最新的的版本下载，双击安装。</p>
+<blockquote>
+</blockquote>
+</li>
+<li><p>安装powershell最新版<br> 到 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.2">Microsoft&#x2F;Powershell</a>寻找下载方法，我用的是：<code>winget</code></p>
+</li>
+<li><p>安装 Oh My Posh<br>最好以管理员身份运行powershell。</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget install JanDeDobbeleer.OhMyPosh -s winget</span><br></pre></td></tr></table></figure>
+<p>这个下载内容包括两个东西:</p>
+<ul>
+<li>oh-my-posh.exe-Windows executable<br>这个是基于Windows系统的oh-my-posh的可执行文件, 但是点击运行没有用, 必须要在Powershell中执行。在Powershell输入oh-my-posh可以运行程序，如果报错，查看path环境变量是否包含</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://i.postimg.cc/15QHCpYd/1.jpg"></p>
+<p>如果包含的话，说明该环境变量在当前程序不起作用，重启终端即可。<br>    查看oh-my-posh版本<br>        <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oh-my-posh version</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>theme<br>   oh-my-posh的主题。<br>   查看环境变量是否包含：</li>
+</ul>
+<pre><code>[官方文档](https://ohmyposh.dev/docs/installation/windows)给出了oh-my-posh的更新命令, 如果是刚刚下载的那么就不需要更新了。
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget upgrade JanDeDobbeleer.OhMyPosh -s winget</span><br></pre></td></tr></table></figure>
+</code></pre>
+<ol>
+<li>配置主题<br> 在对powershell进行个性化配置oh-my-posh的时候，powershell需要运行配置脚本文件$PROFILE，由于win11默认防止执行不信任的脚本文件，导致配置过程无法正常进行。<br> 参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/ahahayaa/article/details/125470163">博客</a><br> 执行命令:<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set-ExecutionPolicy RemoteSigned </span><br></pre></td></tr></table></figure></li>
+<li>使用以下这行命令进行主题的初始化, 其中jandedobbeleer是主题的名字<br> <code>oh-my-posh init pwsh --config &quot;$env:POSH_THEMES_PATH\jandedobbeleer.omp.json&quot;</code><br>1. 主题的更换要依托于一个PROFILE脚本文件来进行<br>基于PROFILE脚本文件涉及到 创建、打开、填充配置语句、执行脚本文件 四条命令<br>- 创建PROFILE文件<br>  <code>New-Item -Path $PROFILE -Type File -Force</code><br>- 打开PROFILE文件<br>  <code>notepad $PROFILE</code><br>- 在PROFILE文件中添加以下内容<br>  <code>oh-my-posh init pwsh | Invoke-Expression</code><br>- 执行PROFILE脚本文件, 通过以下这条命令<br>  <code>. $PROFILE</code> &#x2F;&#x2F;执行脚本文件命令<br> 更换主题，修改<code>$profile</code>文件对应主题名即可。</li>
+</ol>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oh-my-posh init pwsh --config ~\AppData\Local\Programs\oh-my-posh\themes\atomic.omp.json | Invoke-Expression</span><br></pre></td></tr></table></figure>
+
+<p><strong>建议</strong>按照这个流程来，之前我在装了win11的新电脑配置oh-my-posh的时候，与3、4两步配置流程上有点差异(但是同样的配置方法在我win10的电脑上是有效的)，导致配置完成非常怪，显示的主题无法更改且并非默认主题，并且pwsh启动时间长达5s，之后按照3、4流程走一遍还是达到了预期效果。</p>
+<ol start="5">
+<li>修改字体<br> Oh My Posh 的部分主题需要相应的字体支持，否则会出现乱码。<br> 安装<code>Nerd Font</code>系列字体。<a target="_blank" rel="noopener" href="https://www.nerdfonts.com/font-downloads">字体下载地址</a><br> 我安装的是<code>Caskaydia Cove Nerd Font</code>。<br> 在shell的配置中选择字体：<br> <img src="https://i.postimg.cc/sX7BgQCv/1.jpg"><br> <strong>顺便说一下</strong>，这里的配色方案就是Windows Terminal配置文件中的scheme，也是可以自己配置的。</li>
+</ol>
+<p> <strong>安装插件可以参考</strong><a target="_blank" rel="noopener" href="https://www.kwchang0831.dev/dev-env/pwsh/oh-my-posh">安裝新版 Oh My Posh 與插件</a></p>
+<ol start="6">
+<li><p>安裝 Scoop<br> Scoop 就像Mac 的 Homebrew 一样让可以我们更快速地用指令行安装软件。<br> pwsh 输入</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</span><br><span class="line">Invoke-WebRequest get.scoop.sh | Invoke-Expression</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装插件posh-git<br>   &#x2F;&#x2F; 注： 如果不用scope安装，用常规方法可能很难装，这时候可以用管理员模式打开pwsh执行命令<br> posh-git 让 Git 的指令可以用 Tab 补全。<br> pwsh 输入</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket add extras</span><br><span class="line">scoop install posh-git</span><br><span class="line">Add-PoshGitToProfile</span><br></pre></td></tr></table></figure>
+<p> 在 <code>$Profile</code> 档案最后一行新增以下指令：</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Import-Module posh-git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装插件ZLocation<br> ZLocation 类似于 autojump 或是 Zsh-z 的插件，<br>可以用关键字直接跳到想去的资料夹，比使用 <code>cd</code> 更快速。<br> 用PowerShell 输入以下指令：</p>
+ <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Install-Module ZLocation -Scope CurrentUser</span><br></pre></td></tr></table></figure>
+<p>  输入[A] Yes to All ，全部同意。<br>  在 $Profile 档案最后一行新增以下指令，</p>
+ <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Import-Module ZLocation</span><br></pre></td></tr></table></figure>
+<p> ZLocation 使用方式:</p>
+<ul>
+<li>查看已知的文件夹位置，指令：<code>z</code></li>
+<li>进入包含字符串<code>string</code>的文件夹（不是文件夹路径包含字符串），可以用 Tab 来选择结果，指令：<code>z string</code></li>
+<li>回到之前的文件夹，指令：<code>z -</code></li>
+</ul>
+</li>
+<li><p>(选用) 安装NeoFetch<br> NeoFetch 用来显示电脑配置。</p>
+</li>
+</ol>
+<p>如果过去用<code>Install-Module</code> 的方式安装<code>Oh My Posh</code>，即使用<code>Install-Module oh-my-posh -Scope CurrentUser</code>，需要删除旧版本，用命令<code>Uninstall-Module oh-my-posh -AllVersions</code>，并且删除<code>$Profile</code>里的 <code>Import-Module oh-my-posh</code>，按前面的方法重新安装。</p>
+<p> <strong>注意：</strong> 在<code>$Profile</code>中添加的内容越多，对应的shell启动时间越慢</p>
+<h3 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h3><p> 查看shell的配置文件的文件地址 </p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">profile</span></span><br></pre></td></tr></table></figure>
+
+<p> 在pwsh输入命令可以直接用vsc打开配置文件</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code $profile</span><br></pre></td></tr></table></figure>
+
+<p> Windows PowerShell <code>$profile</code> 地址<br> <code>~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</code><br> <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oh-my-posh --init --shell pwsh --config ~\AppData\Local\Programs\oh-my-posh\themes\craver.omp.json | Invoke-Expression</span><br></pre></td></tr></table></figure></p>
+<p> PowerShell 7 <code>$profile</code> 地 <code>~\PowerShell\Microsoft.PowerShell_profile.ps1</code><br> <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oh-my-posh --init --shell pwsh --config ~\AppData\Local\Programs\oh-my-posh\themes\jandedobbeleer.omp.json | Invoke-Expression</span><br></pre></td></tr></table></figure></p>
+<p> 让<code>$profile</code>配置立即生效</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. $profile</span><br></pre></td></tr></table></figure>
+
+<p> 下载的 Oh My Posh 主题在文件夹<code>~\AppData\Local\Programs\oh-my-posh\themes</code>，里面有包括<code>craver.omp.json 、jandedobbeleer.omp.json</code>在内的许多<code>.omp.json</code>文件，修改<code>$profile</code>对应位置即可修改主题。<br> 预览主题在 <a target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/themes">Oh my posh 官网</a><br> 也可以输入命令查看</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Get-PoshThemes</span><br></pre></td></tr></table></figure>
+
+<p><strong>profile.ps1 格式</strong></p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Import-Module ZLocation</span><br><span class="line">Import-Module posh-git</span><br><span class="line">oh-my-posh init pwsh --config $env:POSH_THEMES_PATH\if_tea.omp.json | Invoke-Expression</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">推荐几个theme</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">if_tea</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">jandedobbeleer</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">jv_sitecorian</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"> quick-term</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">atomic</span> </span><br></pre></td></tr></table></figure>
+
+<h3 id="我的-windows-terminal-配置文件"><a href="#我的-windows-terminal-配置文件" class="headerlink" title="我的 windows terminal 配置文件"></a>我的 windows terminal 配置文件</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;$help&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://aka.ms/terminal-documentation&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;$schema&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://aka.ms/terminal-profiles-schema&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;actions&quot;</span><span class="punctuation">:</span> </span><br><span class="line">    <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;paste&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+v&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> </span><br><span class="line">            <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;copy&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;singleLine&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+c&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;find&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+shift+f&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> </span><br><span class="line">            <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;splitPane&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;split&quot;</span><span class="punctuation">:</span> <span class="string">&quot;auto&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;splitMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;duplicate&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;alt+shift+d&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;copyFormatting&quot;</span><span class="punctuation">:</span> <span class="string">&quot;none&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;copyOnSelect&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;defaultProfile&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;574e775e-4f2a-5b96-ac1e-a2962a402336&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;profiles&quot;</span><span class="punctuation">:</span> </span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;defaults&quot;</span><span class="punctuation">:</span> </span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;startingDirectory&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;list&quot;</span><span class="punctuation">:</span> </span><br><span class="line">        <span class="punctuation">[</span></span><br><span class="line">            <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;backgroundImage&quot;</span><span class="punctuation">:</span> <span class="string">&quot;C:\\Users\\ASUS\\Pictures\\PowershellBG\\kalen.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;backgroundImageOpacity&quot;</span><span class="punctuation">:</span> <span class="number">0.7</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;colorScheme&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cyberpunk&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;font&quot;</span><span class="punctuation">:</span> </span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;face&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Cascadia Code&quot;</span></span><br><span class="line">                <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;guid&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;61c54bbd-c2c6-5271-96e7-009a87ff44bf&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Windows PowerShell&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;guid&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;0caa0dad-35be-5f56-a8ff-afceeeaa6101&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cmd&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;guid&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;b453ae62-4e3d-5e58-b989-0a998ec441b8&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Azure Cloud Shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;source&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Windows.Terminal.Azure&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;backgroundImage&quot;</span><span class="punctuation">:</span> <span class="string">&quot;C:\\Users\\ASUS\\Pictures\\PowershellBG\\kalen.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;backgroundImageOpacity&quot;</span><span class="punctuation">:</span> <span class="number">0.7</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;font&quot;</span><span class="punctuation">:</span> </span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;face&quot;</span><span class="punctuation">:</span> <span class="string">&quot;DejaVu Sans Mono for Powerline&quot;</span></span><br><span class="line">                <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;guid&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;2c4de342-38b7-51cf-b940-2309a097f518&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Ubuntu&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;source&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Windows.Terminal.Wsl&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;backgroundImage&quot;</span><span class="punctuation">:</span> <span class="string">&quot;C:\\Users\\ASUS\\Pictures\\PowershellBG\\kalen.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;backgroundImageOpacity&quot;</span><span class="punctuation">:</span> <span class="number">0.7</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;colorScheme&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cyberpunk&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;commandline&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:\\Git\\Git\\bin\\bash.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;guid&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;11606d4b-0660-5aa9-861e-dfce500b7054&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:\\Git\\Git\\mingw64\\share\\git\\git-for-windows.ico&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Git Bash&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;backgroundImage&quot;</span><span class="punctuation">:</span> <span class="string">&quot;C:\\Users\\ASUS\\Pictures\\PowershellBG\\benjamin.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;backgroundImageOpacity&quot;</span><span class="punctuation">:</span> <span class="number">0.8</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;colorScheme&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cyberpunk&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;font&quot;</span><span class="punctuation">:</span> </span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;face&quot;</span><span class="punctuation">:</span> <span class="string">&quot;CaskaydiaCove Nerd Font&quot;</span></span><br><span class="line">                <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;guid&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;574e775e-4f2a-5b96-ac1e-a2962a402336&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;PowerShell 7&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;source&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Windows.Terminal.PowershellCore&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;startingDirectory&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;schemes&quot;</span><span class="punctuation">:</span> </span><br><span class="line">    <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#0C0C0C&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;black&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#0C0C0C&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;blue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#0037DA&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#767676&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#3B78FF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightCyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#61D6D6&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightGreen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#16C60C&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightPurple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#B4009E&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightRed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#E74856&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightWhite&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#F2F2F2&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightYellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#F9F1A5&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cursorColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#3A96DD&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;foreground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#CCCCCC&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;green&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#13A10E&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Campbell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;purple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#881798&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;red&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#C50F1F&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;selectionBackground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;white&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#CCCCCC&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;yellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#C19C00&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#012456&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;black&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#0C0C0C&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;blue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#0037DA&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#767676&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#3B78FF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightCyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#61D6D6&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightGreen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#16C60C&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightPurple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#B4009E&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightRed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#E74856&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightWhite&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#F2F2F2&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightYellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#F9F1A5&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cursorColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#3A96DD&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;foreground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#CCCCCC&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;green&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#13A10E&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Campbell Powershell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;purple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#881798&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;red&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#C50F1F&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;selectionBackground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;white&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#CCCCCC&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;yellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#C19C00&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#1F1F1F&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;black&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#3A3D43&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;blue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#4F76A1&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#368BFA&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#428FFA&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightCyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#2E706D&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightGreen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#0F722F&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightPurple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FB0067&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightRed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#EB001F&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightWhite&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FDFFB9&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightYellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#EEF107&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cursorColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#578FA4&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;foreground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#B9BCBA&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;green&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#879A3B&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;DimmedMonokai&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;purple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#855C8D&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;red&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#BE3F48&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;selectionBackground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;white&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#B9BCBA&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;yellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#C5A635&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#282C34&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;black&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#282C34&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;blue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#61AFEF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#5A6374&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#61AFEF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightCyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#56B6C2&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightGreen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#98C379&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightPurple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#C678DD&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightRed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#E06C75&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightWhite&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#DCDFE4&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightYellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#E5C07B&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cursorColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#56B6C2&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;foreground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#DCDFE4&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;green&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#98C379&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;One Half Dark&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;purple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#C678DD&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;red&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#E06C75&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;selectionBackground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;white&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#DCDFE4&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;yellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#E5C07B&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FAFAFA&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;black&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#383A42&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;blue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#0184BC&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#4F525D&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#61AFEF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightCyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#56B5C1&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightGreen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#98C379&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightPurple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#C577DD&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightRed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#DF6C75&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightWhite&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightYellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#E4C07A&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cursorColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#4F525D&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#0997B3&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;foreground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#383A42&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;green&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#50A14F&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;One Half Light&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;purple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#A626A4&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;red&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#E45649&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;selectionBackground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;white&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FAFAFA&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;yellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#C18301&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#002B36&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;black&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#002B36&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;blue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#268BD2&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#073642&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#839496&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightCyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#93A1A1&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightGreen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#586E75&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightPurple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#6C71C4&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightRed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#CB4B16&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightWhite&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FDF6E3&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightYellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#657B83&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cursorColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#2AA198&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;foreground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#839496&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;green&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#859900&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Solarized Dark&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;purple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#D33682&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;red&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#DC322F&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;selectionBackground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;white&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#EEE8D5&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;yellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#B58900&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FDF6E3&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;black&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#002B36&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;blue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#268BD2&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#073642&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#839496&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightCyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#93A1A1&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightGreen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#586E75&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightPurple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#6C71C4&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightRed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#CB4B16&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightWhite&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FDF6E3&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightYellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#657B83&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cursorColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#002B36&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#2AA198&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;foreground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#657B83&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;green&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#859900&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Solarized Light&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;purple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#D33682&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;red&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#DC322F&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;selectionBackground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;white&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#EEE8D5&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;yellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#B58900&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#000000&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;black&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#000000&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;blue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#3465A4&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#555753&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#729FCF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightCyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#34E2E2&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightGreen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#8AE234&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightPurple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#AD7FA8&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightRed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#EF2929&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightWhite&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#EEEEEC&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightYellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FCE94F&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cursorColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#06989A&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;foreground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#D3D7CF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;green&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#4E9A06&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Tango Dark&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;purple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#75507B&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;red&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#CC0000&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;selectionBackground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;white&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#D3D7CF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;yellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#C4A000&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;black&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#000000&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;blue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#3465A4&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#555753&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#729FCF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightCyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#34E2E2&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightGreen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#8AE234&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightPurple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#AD7FA8&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightRed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#EF2929&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightWhite&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#EEEEEC&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightYellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FCE94F&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cursorColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#000000&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#06989A&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;foreground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#555753&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;green&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#4E9A06&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Tango Light&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;purple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#75507B&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;red&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#CC0000&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;selectionBackground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;white&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#D3D7CF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;yellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#C4A000&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#000000&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;black&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#000000&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;blue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#000080&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#808080&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#0000FF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightCyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#00FFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightGreen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#00FF00&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightPurple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FF00FF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightRed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FF0000&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightWhite&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightYellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFF00&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cursorColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#008080&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;foreground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#C0C0C0&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;green&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#008000&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Vintage&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;purple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#800080&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;red&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#800000&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;selectionBackground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;white&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#C0C0C0&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;yellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#808000&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#332A57&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;black&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#000000&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;blue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#00BFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#647DA1&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightBlue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#1BCCFD&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightCyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#99D6FC&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightGreen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#21F6BC&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightPurple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#E6AEFE&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightRed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FF8AA4&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightWhite&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;brightYellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFF787&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cursorColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#86CBFE&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;foreground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#E5E5E5&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;green&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#00FBAC&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cyberpunk&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;purple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#DF95FF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;red&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FF7092&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;selectionBackground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;white&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;yellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFA6A&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;themes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="powershell-常用命令"><a href="#powershell-常用命令" class="headerlink" title="powershell 常用命令"></a>powershell 常用命令</h2><blockquote>
+<p>获取当前窗口命令历史记录。  </p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Get-History</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>显示上一个、下一个命令。</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UpArrow DownArrow 方向键</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>查找<br><code>ctrl+shift+F</code></p>
+<blockquote>
+<p>查看powershell版本</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">PSVersionTable</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://sspai.com/post/69911">Oh My Posh：全平台终端提示符个性化工具</a><br><a target="_blank" rel="noopener" href="https://www.kwchang0831.dev/dev-env/pwsh/oh-my-posh">安裝新版 Oh My Posh 與插件</a><br><a target="_blank" rel="noopener" href="https://chaisw.cn/blog/1912.html">有讲到Tabby</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/ahahayaa/article/details/125470204">3，4步骤来源</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>lichao Zhang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://iridescent-zhang.github.io/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/" title="Windows-Terminal美化">https://iridescent-zhang.github.io/2022/10/09/Windows-Terminal美化/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Powershell/" rel="tag"><i class="fa fa-tag"></i> Powershell</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/24/latexNote/" rel="prev" title="latexNote">
+      <i class="fa fa-chevron-left"></i> latexNote
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/10/25/pynqNote/" rel="next" title="pynqNote">
+      pynqNote <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%8C%96PowerShell"><span class="nav-number">1.</span> <span class="nav-text">美化PowerShell</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="nav-number">1.1.</span> <span class="nav-text">补充说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E7%9A%84-windows-terminal-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">我的 windows terminal 配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#powershell-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">powershell 常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lichao Zhang"
+      src="/images/cloud.jpg">
+  <p class="site-author-name" itemprop="name">lichao Zhang</p>
+  <div class="site-description" itemprop="description">博观而约取，厚积而薄发</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Iridescent-zhang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Iridescent-zhang" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lczhang93@gmail.com" title="E-Mail → mailto:lczhang93@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/18558575/wo-ladki" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;18558575&#x2F;wo-ladki" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCv42aVozJF9n4hK8xCacCmg" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCv42aVozJF9n4hK8xCacCmg" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/watch?v=DGa4Xv_tcjE&list=LL&index=6" title="https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;DGa4Xv_tcjE&amp;list&#x3D;LL&amp;index&#x3D;6" rel="noopener" target="_blank">Eiro Nareth INTERSTELLAR</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+	  
+		<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+		<div class="widget-wrap">
+		<div id="myCanvasContainer" class="widget tagcloud">
+		<canvas width="220" height="250" id="resCanvas" style="width=100%">
+			<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cmd/" rel="tag">Cmd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Guitar/" rel="tag">Guitar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HLS/" rel="tag">HLS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/" rel="tag">LaTeX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAT/" rel="tag">NAT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PYNQ/" rel="tag">PYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Powershell/" rel="tag">Powershell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li></ul>
+		</canvas>
+		</div>
+		</div>
+	  
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lichao Zhang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">425k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">6:26</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'zmRLZ8XmVpWBhK4yl2baQmHm-gzGzoHsz',
+      appKey     : 'c5e4Xhc2Ec8iU5BMArSxhhAu',
+      placeholder: "Say something",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : 'https://zmrlz8xm.lc-cn-n1-shared.com'
+    });
+  }, window.Valine);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class='fa fa-chevron-down'></i>    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class='fa fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button" onclick="moonMenuClick()">
+    <svg class="moon-menu-svg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+      <g class="moon-menu-points">
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle>
+        <circle class="moon-menu-point" r=".2rem"></circle>
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle>
+      </g>
+    </svg>
+    <div class="moon-menu-icon">
+    </div>
+    <div class="moon-menu-text">
+    </div>
+  </div>
+</div>
+<script src="/js/injector.js"></script>
+    </div>
+  <!-- 音乐播放器 -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+ <div id="aplayer" class="aplayer" data-id="3470747396" data-server="tencent" data-type="playlist" data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
+ <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+ <!-- 音乐播放器 end -->
+</body>
+</html>

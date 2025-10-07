@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Witcher.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Witcher.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"iridescent-zhang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"valine","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus","order":-1},"valine":{"text":"Valine","order":-2}},"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="无志之人常立志，有志之人立常志">
+<meta property="og:type" content="article">
+<meta property="og:title" content="InternetBasicsNote">
+<meta property="og:url" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/index.html">
+<meta property="og:site_name" content="Iridescent-zhang">
+<meta property="og:description" content="无志之人常立志，有志之人立常志">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/1.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/2.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/3.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/4.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/7.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/8.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/5.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/6.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/10.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/12.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/13.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/9.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/11.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/15.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/14.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/16.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/17.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/18.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/19.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/20.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/21.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/22.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/23.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/24.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/31.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/32.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/33.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/26.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/27.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/28.png">
+<meta property="article:published_time" content="2024-04-01T15:05:49.000Z">
+<meta property="article:modified_time" content="2025-09-29T12:04:04.262Z">
+<meta property="article:author" content="lichao Zhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/1.png">
+
+<link rel="canonical" href="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>InternetBasicsNote | Iridescent-zhang</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Iridescent-zhang</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">醉后不知天在水，满船清梦压星河</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cloud.jpg">
+      <meta itemprop="name" content="lichao Zhang">
+      <meta itemprop="description" content="博观而约取，厚积而薄发">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iridescent-zhang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          InternetBasicsNote
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2024-04-01 15:05:49" itemprop="dateCreated datePublished" datetime="2024-04-01T15:05:49Z">2024-04-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-09-29 12:04:04" itemprop="dateModified" datetime="2025-09-29T12:04:04Z">2025-09-29</time>
+              </span>
+
+          
+            <span id="/2024/04/01/InternetBasicsNote/" class="post-meta-item leancloud_visitors" data-flag-title="InternetBasicsNote" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2024/04/01/InternetBasicsNote/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2024/04/01/InternetBasicsNote/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>45k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>41 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><em><strong>无志之人常立志，有志之人立常志</strong></em></p>
+<span id="more"></span>
+
+<h1 id="Java-后端"><a href="#Java-后端" class="headerlink" title="Java 后端"></a>Java 后端</h1><h2 id="知识框架"><a href="#知识框架" class="headerlink" title="知识框架"></a>知识框架</h2><p>Web开发：主要是Web开发相关的内容，包括HTML&#x2F;CSS&#x2F;js(前端页面)、 Servlet&#x2F;JSP(J2EE)以及MySQL(数据库)相关的知识。它们的学习顺序应该是从前到后，因此最先学习的应该是HTML&#x2F;CSS&#x2F;JS(前端页面)。<br>　　J2EE：你需要学习的是Servlet&#x2F;JSP(J2EE)部分，这部分是Java后端开发必须非常精通的部分，因此这部分是这三部分中最需要花精力的。关于Servlet&#x2F;Jsp部分视频的选择，业界比较认可马士兵的视频。<br>　　最后一步，你需要学会使用数据库：mysql是个不错的入门选择，而且Java领域里主流的关系型数据库就是mysql。这部分一般在你学习Servlet&#x2F;Jsp的时候，就会接触到的，其中的JDBC部分就是数据库相关的部分。<br>　　你不仅要学会使用JDBC操作数据库，还要学会使用数据库客户端工具，比如navicat，sqlyog，二选一即可。<br>　　开发框架：目前比较主流的是SSM框架，即spring、springmvc、mybatis。你需要学会这三个框架的搭建，并用它们做出一个简单的增删改查的Web项目。<br>　　你可以不理解那些配置都是什么含义，以及为什么要这么做，这些留着后面你去了解。但你一定要可以快速的利用它们三个搭建出一个Web框架，你可以记录下你第一次搭建的过程，相信我，你一定会用到的。<br>　　还要提一句的是，你在搭建SSM的过程中，可能会经常接触到一个叫maven的工具。<br>　　这个工具也是你以后工作当中几乎是必须要使用的工具，所以你在搭建SSM的过程中，也可以顺便了解一下maven的知识。在你目前这个阶段，你只需要在网络上了解一下maven基本的使用方法即可，一些高端的用法随着你工作经验的增加，会逐渐接触到的。<br>　　你需要去看一些JDK中的类的源码，也包括你所使用的框架的源码。这些源码能看懂的前提是，你必须对设计模式非常了解。否则的话，你看源码的过程中，永远会有这样那样的疑问，这段代码为什么要这么写?<br>　　为什么要定义这个接口，它看起来好像很多余?由此也可以看出，这些学习的过程是环环相扣的，如果你任何一个阶段拉下来了，那么你就真的跟不上了，或者说是一步慢步步慢。而且我很负责的告诉你，我在这个阶段的时候，所学习的东西远多于这里所罗列出来的。<br>　　总而言之，这个阶段，你需要做的是深入了解Java底层和Java类库(比如并发那本书就是Java并发包Java.concurrent的内容)，也就是JVM和JDK的相关内容。而且还要更深入的去了解你所使用的框架，方式比较推荐看源码或者看官方文档。<br>　　再总而言之，就是 学习、学习、再学习~活到老，学到老</p>
+<p>1、面向对象的知识<br>java是一种面向对象的开发语言，因此熟悉面向对象对学习java很有必要，你需要了解：什么是对象，什么是类，什么是封装，什么是多态，什么是继承，什么是抽象类，什么是接口。理解以上概念后，还需要知道这些概念是如何体现的，如类和对象有什么区别?类是如何封装的?</p>
+<p>2、java语言<br>Java 是一门纯粹的面向对象的编程语言，所以除了基础语法之外，必须得弄懂它的 oop 特性：封装、继承、多态。此外还有泛型、反射 的特性，很多框架的技术都依赖它，比如 Spring 核心的 Ioc 和 AOP，都用到了反射，而且 Java 自身的动态代理也是利用反射实现的。 此外还有 Java 一些标准库也是非常常见，比如集合、I&#x2F;O、并发，几乎在 Web 开发中无处不在，也是面试经常会被问到的，所以在学 Java 后端之前，不妨先打好这些基础，另外还有 Java8 的一些新特性，也要重点关注，比如 Lambda 表达式、集合的 Stream 流操作、全新的 Date API 等等，关于新特性。</p>
+<p>3、JSP和HTML<br>在我国的绝大多数公司，做java程序开发都少不了和JSP以及HTML打交道。所以，要熟悉java程序开发就要熟悉JSP和HTML，较好能知道JSP的几个内置对象，如Session，Request，Reponse，，以及常用的JSP标签，如include,userBean等。尽管一些工具会帮你生成HTML代码，但还是要熟悉比如title，等。如果再熟悉一下JS和CSS就更好了，那会使做出的页面更友好。</p>
+<p>4、数据库<br>后端开发免不了与数据库打交道，所以掌握Java的数据库操作是一个基本要求。Java操作数据库涉及到的内容有JDBC、JNDI、RMI、DAO等内容，其中使用RMI+JDBC是构建java数据库开发的一个常见的解决方案，而JNDI则是对各种资源的定义。</p>
+<p>5、Web Server<br>熟悉一种Web Server，比如：TOMCAT，RESIN等。您要熟悉如何发布你的应用，如何利用Web Server的数据库资源等。</p>
+<p>6、Servlet<br>Servlet技术是Java后端的重要技术之一，作为Java Web开发的核心组件，Servlet承担了Web MVC结构中的核心作用（功能导航）。传统的Model2结构（Servlet+JavaBean+JSP）虽然在目前已经很少使用了，但是Web开发的基本结构依然没有改变。Servlet技术的应用涉及到Web容器、会话（HttpSession）、安全、同步、Web应用部署等相关内容。</p>
+<p>7、Web主流框架<br>熟悉一种框架其实是java程序开发的一种可选知识，但目前开发B&#x2F;S结构的应用的开发小组，都差不多会采用一种框架来构建自己的应用系统。框架都会有许多可重用的代码，良好的层次关系和业务控制逻辑，基于框架的开发使你可以省出很多的开发成本。目前比较流行的框架有Struts和Spring等。</p>
+<p>Spring+SpringMVC+MyBatis是目前一个比较常见的后端开发方案，Spring的原理就是构建了一个“业务组件容器”，SpringMVC则是Web MVC的一个具体实现框架，而MyBatis则是一个基于DAO的实现框架。从性能的角度来说，Spring是EJB的轻量级解决方案，得到了广大Java程序员的欢迎。</p>
+<p>网络协议是为计算机网络中进行数据交换而建立的规则、标准或约定的集合。没有网络协议就根本不可能上网，任何和互联网有关的操作都离不开网络协议。我们开发的软件网络是不可缺少的，因此计算机协议的相关知识也是不可或缺的。</p>
+<p>尤其是要学习<strong>http</strong>协议，浏览器与服务器通过http协议交互，其实就是相互之间传递一串特定格式的字符串。get参数，post参数，url，和cookie等信息其实都包含在这字符串里面。所以说http协议是一个重要的存在，也是我们学习后端开发一个必不可少的要点</p>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><h3 id="J2EE-JSP-Java的区别"><a href="#J2EE-JSP-Java的区别" class="headerlink" title="J2EE,JSP,Java的区别"></a>J2EE,JSP,Java的区别</h3><p>JSP就是用来做动态页面的,可以归属到J2EE系列中。Java 这个词的概括可能更广一些 ,因为Java包含3个领域,分别是: J2EE: 企业级开发，J2ME :嵌入式开发，J2SE :图形界面开发。</p>
+<p>java包含三大分支:</p>
+<p>J2SE –java standard edition–标准版本，这个是下面两个的基础!一般是位于客户端的应用; J2ME–java Micro edition —般位于嵌入式应用，例如手机游戏J2EE –java Enterprise Editon —般为服务器端程序的应用。J2EE的全称是Java 2 Platform Enterprise Edition。</p>
+<p>java通俗的说是一个统称了， 他包括了javase(j2se) javaee(j2ee) javame(j2me)</p>
+<p>javase是java的基础,涵盖基本语法结构,IO,集合等,反正看成是java的基石就对了</p>
+<p>javaee是企业开发的规范,里面是一大堆的接口,但是自 己也不实现这一套规范, 他需要各大企业或者组织去实现，比如tomcatjboss等,然后开发者在javaee的规范下开发web程序,部署到web容器(tomcat等)中，就可以运行了</p>
+<p>javaee里面最基本的就是Servlet,他接收请求，返回响应,对网页开发的应用来说,需要在Servlet里面拼接Html代码，然后使用PrintWriter进行输出</p>
+<p>Servlet的开发难度太高也不友好后来就出现了MVC概念,让Servlet作为控制层复杂业务中转,JSP就去做前台的显示层和ASP异曲同工，因为JSP开发也可以像HTML开发-样, 所见即所得可视化开发,并组可以把html直接转换成jsp,大大提高开发效率</p>
+<p>最后说下关系, j2ee需要用到javase才能运行, Servlet是j2ee里面的一个组成部分，负责处理请求转发,JSP其实就是Servlet,只是比Servlet的开发难度低一点，对开发者更加友好</p>
+<h3 id="后端和前端有什么区别"><a href="#后端和前端有什么区别" class="headerlink" title="后端和前端有什么区别"></a>后端和前端有什么区别</h3><p>后端和前端的区别是：1、定义不同；2、展示方式不同；3、所需的技能不同；4、思考角度不同；5、入门难度不同。其中，<strong>前端统称为客户端开发</strong>，在应用程序或网站的屏幕上看到的所有内容都属于前端的工作范畴。后端称为“<strong>服务器端开发</strong>”，属于在系统“后面”所发生的事情。</p>
+<p>1、定义不同<br>前端统称为”客户端开发“，在应用程序或网站的屏幕上看到的所有内容，都是<strong>由浏览器解析、处理、渲染</strong>相关HTML、CSS、JAVASCRIPT文件后呈现出来，都属于前端的工作范畴。</p>
+<p>后端称为“服务器端开发”，属于在系统“后面”所发生的事情。在后端服务器和浏览器或应用程序之间<strong>存储网站、应用数据和中间媒介</strong>的服务器都在后端的工作范畴内。在应用程序或网站屏幕上看不到的东西基本上都是后端。</p>
+<p>2、展示方式不同<br>前端的工作是<strong>制作网页</strong>，后端是<strong>结合数据库实现一些代码的功能逻辑</strong>。也就是说前端开发人员在应用程序中创建一个界面，上面有一个按钮，通过按下按钮可以获取客户的数据。</p>
+<p>后端开发人员负责写出按钮工作的代码，通过指出从数据库中提取哪些数据并将其传回到前端(且最终显示在那个位置)。</p>
+<p>3、所需的技能不同<br>前端开发需要具备的技能：对美学、艺术和设计有较好的理解、了解各种 CMS，如 WordPress，Joomla 或 Drupal、直观的用户需求、PHP 和 OOP 知识(面向对象编程)、专业的质量保证、能够使用 PhotoShop，Sketch 或 Figma 等设计工具、网络托管基础知识等。</p>
+<p>后端开发需要具备的技能：全面深入了解第三方附加组件、关于如何调试代码的批判性理解、将客户的业务需求转换为功能代码、了解 Web 服务器配置、兼容外部系统(支付处理，社交媒体网站)、批判性思维技巧、设计用户交互系统等。</p>
+<p>4、思考角度不同<br>前端主要是考虑怎么能让用户觉得用起来更舒服，考虑页面布局、交互效果、页面加载速度等，主要是偏向用户看得见的部分。</p>
+<p>后端更多是考虑<strong>业务逻辑、数据库表结构、服务器配置、负载均衡、数据的存储</strong>、跨平台API设计等等。更多的是考虑用户看不到的部分，保证业务逻辑处理数据的谨慎，保证数据吞吐的性能。</p>
+<p>5、入门难度不同<br>前端开发入门简单初期容易后期难，能看到自己做出来的展示界面会很有成就感。</p>
+<p>后端开发入门难，想要深入则更难，后端枯燥乏味没有太大成就感，平时工作就是看一堆业务逻辑代码。</p>
+<h2 id="SSM"><a href="#SSM" class="headerlink" title="SSM"></a>SSM</h2><p>Java的SSM是什么？</p>
+<p>Java的SSM是指使用Spring、SpringMVC和MyBatis这三个开源框架进行软件开发的一种架构模式。这三个框架分别代表了Java开发生态中的不同领域，通过它们的组合，可以实现更加高效、灵活和可维护的软件开发。</p>
+<p>首先，让我们来看看每个框架的作用和特点。</p>
+<p>Spring是一个轻量级的Java开发框架，提供了诸多功能和特性，如依赖注入、面向切面编程、事务管理等。它的核心思想是通过控制反转（IoC，也叫依赖注入，Dependency Injection，简称DI）和面向切面编程（AOP）来解耦和管理应用程序的各个组成部分。使用Spring，可以实现代码的模块化和解耦，提高代码的可测试性和可维护性。</p>
+<p>SpringMVC是基于Spring的Web开发框架，它使用了MVC（Model-View-Controller）的架构模式，将应用程序的逻辑、数据和视图进行分离。SpringMVC提供了强大的请求映射、数据绑定、异常处理等功能，同时也支持RESTful风格的Web服务开发。使用SpringMVC，可以快速构建响应式、可扩展和可定制化的Web应用程序。</p>
+<p>MyBatis是一个优秀的持久层框架，它很好地解决了Java应用程序与关系型数据库之间的交互问题。MyBatis通过提供简洁的SQL映射和灵活的SQL查询方式，将数据库操作与Java代码进行了解耦。与传统的ORM框架相比，MyBatis更加灵活，可以更好地控制SQL查询和结果映射过程，提高数据访问层的性能和可维护性。</p>
+<p>将Spring、SpringMVC和MyBatis结合起来使用，可以构建一个完整的Java应用程序。使用SSM架构，可以实现前后端的分离、模块化的开发方式，提高团队的协作效率和开发效率。</p>
+<p>在使用SSM进行开发时，首先需要配置好每个框架的环境和依赖关系。可以使用Maven或Gradle等构建工具来管理这些依赖。接下来，需要编写相应的配置文件，如Spring的配置文件、MyBatis的映射文件等。通过这些配置文件，可以定义应用程序的各种组件和配置项。</p>
+<p>在开发过程中，可以使用Spring的依赖注入和AOP来实现代码的解耦和模块化。可以使用SpringMVC的注解和请求映射机制来处理用户请求并返回相应的结果。可以使用MyBatis的注解和XML配置文件来定义数据库操作和查询。</p>
+<p>使用SSM进行开发，有很多优势。首先，它能够提高开发效率和代码的可维护性。通过使用这些成熟的框架，可以避免重复造轮子，减少开发工作量。其次，它能够提供更好的性能和扩展性。这些框架都经过了大量的实践和优化，能够提供高性能、高并发的支持。最后，它能够提供更好的开发体验和生态支持。这些框架都有庞大而活跃的社区，提供了丰富的文档、示例和解决方案。</p>
+<p>总之，Java的SSM是指使用Spring、SpringMVC和MyBatis这三个开源框架进行软件开发的架构模式。它的优势在于提高开发效率、提供更好的性能和扩展性，并且有庞大的社区支持。通过使用SSM，可以构建出高效、灵活和可维护的Java应用程序。</p>
+<h1 id="数据库基础和原理"><a href="#数据库基础和原理" class="headerlink" title="数据库基础和原理"></a>数据库基础和原理</h1><h2 id="SQL-DB-关系型数据库是如何工作的"><a href="#SQL-DB-关系型数据库是如何工作的" class="headerlink" title="SQL DB - 关系型数据库是如何工作的"></a>SQL DB - 关系型数据库是如何工作的</h2><p>这里关注的不是知识点，而是<strong>知识点之间的关联</strong>。</p>
+<h3 id="B-树索引"><a href="#B-树索引" class="headerlink" title="B+树索引"></a>B+树索引</h3><p>是大多数 MySQL <strong>存储引擎</strong>的默认索引类型。</p>
+<p>当一次IO时，不光把当前磁盘地址的数据，而是把相邻的数据也都读取到内存缓冲区内，因为局部预读性原理告诉我们，当计算机访问一个地址的数据的时候，与其相邻的数据也会很快被访问到。每一次IO读取的数据我们称之为<strong>一页</strong>(page)。具体一页有多大数据跟操作系统有关，一般为4k或8k也就是我们读取一页内的数据时候，实际上才发生了一次IO，这个理论对于索引的数据结构设计非常有帮助。</p>
+<p>我们现在总结一下，我们需要这种数据结构能够做些什么，其实很简单，那就是：每次查找数据时把磁盘IO次数控制在一个很小的数量级，最好是常数数量级。那么我们就想到如果一个高度可控的多路搜索树是否能满足需求呢？就这样，b+树应运而生。</p>
+<p>B+树通常用于数据库和操作系统的文件系统中。B+树的特点是能够保持数据稳定有序， 其插入与修改拥有较稳定的对数时间复杂度。B+树元素自底向上插入。</p>
+<p>B+树是应文件系统所需而出的一种B-树的变型树。一棵m阶（孩子节点数）的B+树和m阶的B-树的差异在于：</p>
+<ol>
+<li><p>有n棵子树的节点中含有n个关键字(即每个关键字对应一棵子树)；</p>
+</li>
+<li><p><strong>所有叶子节点</strong>中包含了<strong>全部关键字</strong>的信息， 及指向含这些关键字记录的指针，且叶子节点<strong>本身依关键字的大小自小而大顺序链接</strong>；</p>
+</li>
+</ol>
+<ol start="3">
+<li>所有的非终端节点可以看成是索引部分，节点中仅含有其所有子树（根节点）中的最大（或最小关键字</li>
+</ol>
+<ol start="4">
+<li>除根节点外，其他<strong>所有</strong>节点中所含<strong>关键字</strong>的个数必须&gt;&#x3D;⌈m&#x2F;2⌉(注意： B-树是除根以外的所有<strong>非终端节点(非叶子节点)<strong>至少有⌈m&#x2F;2⌉棵</strong>子树</strong>)</li>
+</ol>
+<p>下图是所示为一棵3阶的B+树，通常在B+树上有两个指针头， 一个指向根节点，另一个指向<strong>关键字最小的叶子节点</strong>。因此，可以对B+树进行两种查找运算： 一种是从最小关键字起顺序查找，另一种是从根节点开始，进行随机查找。</p>
+<img src="/2024/04/01/InternetBasicsNote/1.png" class="">
+
+<img src="/2024/04/01/InternetBasicsNote/2.png" class="">
+
+<p>各种资料上B+树的定义各有不同，一种定义方式是关键字个数和孩子结点个数相同。这里我们采取维基百科上所定义的方式，即关键字个数比孩子结点个数小1，这种方式是和B树基本等价的。下图就是一颗阶数为4的B+树。</p>
+<img src="/2024/04/01/InternetBasicsNote/3.png" class="">
+
+<p>除此之外B+树还有以下的要求:</p>
+<p>B+树包含2种类型的结点：内部结点（也称索引结点）和叶子结点。根结点本身即可以是内部结点，也可以是叶子结点。根结点的关键字个数最少可以只有1个。</p>
+<p>B+树与B树最大的不同是<strong>内部结点不保存数据</strong>，<strong>只用于索引</strong>，<strong>所有数据</strong>（或者说记录）<strong>都保存在叶子结点中</strong>。</p>
+<p>m阶B+树表示了内部结点最多有m-1个关键字（或者说内部结点最多有m个子树），阶数m同时限制了<strong>叶子结点最多存储m-1个记录</strong>。</p>
+<p>内部结点中的key<strong>都按照从小到大的顺序排列</strong>，对于内部结点中的一个<strong>key</strong>，左树中的所有key都小于它，右子树中的key都大于等于它。叶子结点中的记录也按照key的大小排列。</p>
+<p>每个叶子结点都<strong>存有相邻叶子结点的指针</strong>，叶子结点本身依关键字的大小自小而大顺序链接。</p>
+<p>B+树的特性</p>
+<p>所有关键字都出现在<strong>叶子节点的链表中</strong>（稠密索引），且链表中的关键字恰好是有序的；</p>
+<p>非叶子节点相当于<strong>叶子节点的索引</strong>（稀疏索引），叶子节点相当于是存储（关键字）数据的<strong>数据层</strong>；</p>
+<p>B+树的查找</p>
+<p>对B+树可以进行两种查找运算：</p>
+<ol>
+<li><p>从最小关键字起顺序查找；</p>
+</li>
+<li><p>从根节点开始，进行随机查找</p>
+</li>
+</ol>
+<p>在查找时，若非终端节点上的关键字等于给定值，并不终止，而是继续向下直到叶子节点。因此，在B+树中，不管查找成功与否，每次查找都是走了一条从根到叶子节点的路径。其余同B-树的查找类似。</p>
+<p>B+树的插入</p>
+<p>插入比较复杂，只要是由底至上，归并的过程。</p>
+<p>参考<a target="_blank" rel="noopener" href="https://ivanzz1001.github.io/records/post/data-structure/2018/06/16/ds-bplustree#3-b%E6%A0%91%E7%9A%84%E6%8F%92%E5%85%A5">B+树详解</a></p>
+<p>与B-树的比较</p>
+<p>一棵m阶的B+树和m阶的B树的异同点在于：</p>
+<p>所有的叶子节点中包含了全部关键字的信息，即指向含有这些关键字记录的指针，且叶子节点本身依关键字的大小自小而大的顺序链接。（而B-树的叶子节点并没有包括全部需要查找的信息）</p>
+<p>所有的非终端节点可以看成是索引部分，节点中仅含有其子树根节点中最大（或最小）关键字。（而B-树的非终节点也包含需要查找的有效信息）</p>
+<p>B+树用途</p>
+<p>B+树主要适用于索引操作。为什么说B+树比B-树更适合实际应用于操作系统的文件索引和数据库索引？</p>
+<p>B+树的磁盘读写代价更低: B+树的内部节点并没有指向关键字具体信息的指针。因此其内部节点相对B-树更小。如果把所有同一内部节点的关键字存放在同一盘块中，那么盘块所能容纳的关键字数量也越多。一次性读入内存中的需要查找的关键字也就越多。相对来说IO读写次数也就降低了。举个例子：假设磁盘中的一个盘块容纳16bytes，而一个关键字2bytes, 一个关键字具体信息指针2bytes。一棵9阶B-树（一个节点最多8个关键字）的内部节点需要2个盘块。而B+树内部节点只需要1个盘块。当需要把内部节点读入内存的时候，B-树就比B+树多一次盘块查找时间（在磁盘中就是盘片旋转时间）</p>
+<p>B+树的查询效率更加稳定: 由于非终节点并不是最终指向文件内容的节点，而只是叶子节点中关键字的索引。所以任何关键字的查找必须走一条从根节点到叶子节点的路。所有关键字查询的路径长度相同，导致每一个数据的查询效率相当。</p>
+<img src="/2024/04/01/InternetBasicsNote/4.png" class="">
+
+<p><strong>这段话很重要</strong>。</p>
+<p>浅蓝色的块我们称之为一个磁盘块，可以看到每个磁盘块包含几个数据项（深蓝色所示）和指针（黄色所示），如磁盘块1包含数据项17和35，包含指针P1、P2、P3，<strong>P1表示小于17的磁盘块，P2表示在17和35之间的磁盘块，P3表示大于35的磁盘块</strong>。<strong>真实的数据存在于叶子节点</strong>即3、5、9、10、13、15、28、29、36、60、75、79、90、99。<strong>非叶子节点不存储真实的数据，只存储指引搜索方向的数据项</strong>，如17、35并不真实存在于数据表中。</p>
+<p>b+树的查找过程</p>
+<p>如图所示，如果要查找数据项29，那么首先会把磁盘块1由磁盘加载到内存，此时发生一次IO，在内存中用二分查找确定29在17和35之间，锁定磁盘块1的P2指针，内存时间因为非常短（相比磁盘的IO）可以忽略不计，通过磁盘块1的P2指针的磁盘地址把磁盘块3由磁盘加载到内存，发生第二次IO，29在26和30之间，锁定磁盘块3的P2指针，通过指针加载磁盘块8到内存，发生第三次IO，同时内存中做二分查找找到29，结束查询，总计三次IO。真实的情况是，3层的b+树可以表示上百万的数据，如果上百万的数据查找只需要三次IO，性能提高将是巨大的，如果没有索引，每个数据项都要发生一次IO，那么总共需要百万次的IO，显然成本非常非常高。</p>
+<p>b+树性质</p>
+<ol>
+<li>通过上面的分析，我们知道IO次数取决于b+数的高度h，假设当前数据表的数据为N，每个磁盘块的数据项的数量是m，则有h&#x3D;㏒(m+1)N，当数据量N一定的情况下，m越大，h越小；而m &#x3D; 磁盘块的大小 &#x2F; 数据项的大小，磁盘块的大小也就是一个数据页的大小，是固定的，如果数据项占的空间越小，数据项的数量越多，树的高度越低。这就是为什么每个数据项，即索引字段要尽量的小，比如int占4字节，要比bigint8字节少一半。这也是为什么b+树要求把真实的数据放到叶子节点而不是内层节点，一旦放到内层节点，磁盘块的数据项会大幅度下降，导致树增高。当数据项等于1时将会退化成线性表。</li>
+<li>当b+树的数据项是复合的数据结构，比如(name,age,sex)的时候，b+数是按照从左到右的顺序来建立搜索树的，比如当(张三,20,F)这样的数据来检索的时候，b+树会优先比较name来确定下一步的所搜方向，如果name相同再依次比较age和sex，最后得到检索的数据；但当(20,F)这样的没有name的数据来的时候，b+树就不知道下一步该查哪个节点，因为建立搜索树的时候name就是第一个比较因子，必须要先根据name来搜索才能知道下一步去哪里查询。比如当(张三,F)这样的数据来检索时，b+树可以用name来指定搜索方向，但下一个字段age的缺失，所以只能把名字等于张三的数据都找到，然后再匹配性别是F的数据了， 这个是非常重要的性质，即<strong>索引的最左匹配特性</strong>。</li>
+</ol>
+<p><strong>慢查询优化</strong><br>关于MySQL索引原理是比较枯燥的东西，大家只需要有一个感性的认识，并不需要理解得非常透彻和深入。我们回头来看看一开始我们说的慢查询。</p>
+<p>总结：</p>
+<p>MySQL采用B+树原因<br>MySQL等数据库普遍都采用B+树，而不是B-树。主要有如下原因：</p>
+<ol>
+<li><p>B-树和B+树最重要的一个区别就是B+树只有叶子节点存放数据，其余节点用来索引。而B-树是每个索引节点都会有data域。这就决定了B+树更适合用来存储外部数据。也就是所谓的磁盘数据。</p>
+</li>
+<li><p>从MySQL InnoDB的角度来看，B+树是用来充当索引的，一般来说索引非常大，尤其是关系型数据库这种数据量大的索引能达到亿级别，所以为了减少内存的占用，索引也会存储在磁盘上。</p>
+</li>
+<li><p>B+树的磁盘读写代价更低。B+树的内部节点并没有指向关键字具体信息的指针，因此其内部节点相对B-树更小。如果把所有同一内部节点的关键字存放在同一盘块中，那么盘块所能容纳的关键字数量也越多。一次性读入内存中的需要查找的关键字也就越多。相对来说IO读写次数也就降低了。</p>
+</li>
+<li><p>B+树的查询效率更加稳定。由于非终节点并不是最终指向文件内容的节点，而只是叶子节点中关键字的索引。所以任何关键字的查找必须走一条从根节点到叶子节点的路。所有关键字查询的路径长度相同，导致每一个数据的查询效率相当。</p>
+</li>
+<li><p>B+树所有的Data域在叶子节点，一般来说都会进行一个优化，就是将所有的叶子节点用指针串起来。这样遍历叶子节点就能获得全部数据，这样就能进行区间访问了。</p>
+</li>
+</ol>
+<p>聚簇索引与非聚簇索引（应该就是聚集索引和非聚集索引）</p>
+<p>在《数据库原理》里面，对聚簇索引的解释是： 聚簇索引的顺序就是数据的物理存储顺序； 而对非聚簇索引的解释是： 索引顺序与数据物理排列无关。正是因为如此，所以一个表最多只能有一个聚簇索引。直观上来说，聚簇索引的叶子节点就是数据节点； 而非聚簇索引的叶子节点仍然是索引节点，只不过是指向对应数据块的指针。<strong>不懂</strong></p>
+<h2 id="Java-连接-Workbench-创建的数据库"><a href="#Java-连接-Workbench-创建的数据库" class="headerlink" title="Java 连接 Workbench 创建的数据库"></a>Java 连接 Workbench 创建的数据库</h2><p>首先需要在 MySQL Workbench 中创建一个 <strong>连接Connection</strong>，接着在这个连接里创建一个 <strong>数据库database</strong>，接着建表，复制下该 Connection 的<strong>JDBC链接</strong></p>
+<img src="/2024/04/01/InternetBasicsNote/7.png" class="">
+
+<p>Java的<strong>数据库编程</strong>：JDBC<br><strong>JDBC</strong>，即Java Database Connectivity，java数据库连接。是一种<strong>用于执行SQL语句的Java API</strong>，它是Java中的数据库连接规范。这个API由 java.sql.,javax.sql. 包中的一些类和接口组成，它为Java开发人员操作数据库提供了一个标准的API，可以为多种关系数据库提供统一访问。</p>
+<p>JDBC<strong>优势</strong>：<br>Java语言访问数据库操作<strong>完全面向抽象接口</strong>编程<br>开发数据库应用不用限定在特定数据库厂商的API<br>程序的可移植性大大增强</p>
+<p>创建 Java 文件，在源文件夹下创建 lib 文件夹并在这里导入 <strong>依赖</strong><code>mysql-connector-j-8.3.0.jar</code>，新建lib文件夹而不是将依赖放在 libraries中的原因是防止将文件发给别人后里面的依赖不见了。</p>
+<p>之后配置依赖，两种方式：<br>第一种方式：直接<strong>将lib文件夹设置为library</strong></p>
+<img src="/2024/04/01/InternetBasicsNote/8.png" class="">
+
+<p>第二种方式：<br>项目左边栏右键空白处之后选择： <code>Open Module Settings</code>，点击 + 号选择<code>Jars or Directories</code>选项并导入之前创建的 lib 文件夹即可完成配置。</p>
+<p>数据库连接代码样例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Conn</span> &#123; <span class="comment">// 创建类Conn</span></span><br><span class="line">    Connection con; <span class="comment">// 声明Connection对象</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String user;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span>  String password;</span><br><span class="line">    <span class="keyword">public</span> Connection <span class="title function_">getConnection</span><span class="params">()</span> &#123; <span class="comment">// 建立返回值为Connection的方法</span></span><br><span class="line">        <span class="keyword">try</span> &#123; <span class="comment">// 加载数据库驱动类</span></span><br><span class="line">            Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;数据库驱动加载成功&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        user = <span class="string">&quot;root&quot;</span>;<span class="comment">//数据库登录名</span></span><br><span class="line">        password = <span class="string">&quot;123456&quot;</span>;<span class="comment">//密码</span></span><br><span class="line">        <span class="keyword">try</span> &#123; <span class="comment">// 通过访问数据库的URL获取数据库连接对象</span></span><br><span class="line">            con = DriverManager.getConnection(<span class="string">&quot;jdbc:mysql://127.0.0.1:3306/?user=root&quot;</span>, user, password);</span><br><span class="line">            System.out.println(<span class="string">&quot;数据库连接成功&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> con; <span class="comment">// 按方法要求返回一个Connection对象</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> SQLException &#123; <span class="comment">// 主方法，测试连接</span></span><br><span class="line">        <span class="type">Conn</span> <span class="variable">c</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Conn</span>(); <span class="comment">// 创建本类对象</span></span><br><span class="line">        <span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> c.getConnection(); <span class="comment">// 调用连接数据库的方法</span></span><br><span class="line"><span class="comment">//        4.执行SQL对象Statement，执行SQL的对象</span></span><br><span class="line">        <span class="type">Statement</span> <span class="variable">statement</span> <span class="operator">=</span> connection.createStatement();</span><br><span class="line"><span class="comment">//        5.执行SQL的对象去执行SQL，返回结果集</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;SELECT * FROM databasejdbc.student;&quot;</span>;</span><br><span class="line">        <span class="type">ResultSet</span> <span class="variable">resultSet</span> <span class="operator">=</span> statement.executeQuery(sql);</span><br><span class="line">        <span class="keyword">while</span>(resultSet.next())&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Id=&quot;</span>+resultSet.getString(<span class="string">&quot;id&quot;</span>));</span><br><span class="line">            System.out.println(<span class="string">&quot;name=&quot;</span>+resultSet.getString(<span class="string">&quot;name&quot;</span>));</span><br><span class="line">            System.out.println(<span class="string">&quot;score=&quot;</span>+resultSet.getString(<span class="string">&quot;score&quot;</span>));</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        6.释放连接</span></span><br><span class="line">        resultSet.close();</span><br><span class="line">        statement.close();</span><br><span class="line">        connection.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/373515920">MySQL 5.7史上最详细下载安装配置教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1533580">MySQL之source命令</a></p>
+<p>用 zip 安装的 mysql 5.7 版本，root是<strong>用户名</strong>， <strong>密码</strong>为 123465。<br>mysql -u root -p</p>
+<p>GRANT USAGE ON <em>.</em> TO ‘user01‘@’localhost’ IDENTIFIED BY ‘123456’ WITH GRANT OPTION;</p>
+<p>用户：user01，密码：123456</p>
+<p>CREATE USER ‘laowang‘@’localhost’ IDENTIFIED BY ‘123456’;<br>授予账户权限的方法如下：</p>
+<p>GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON <em>.</em> TO ‘laowang‘@’localhost’;<br>授予所有权限：</p>
+<p>GRANT ALL PRIVILEGES ON <em>.</em> TO ‘laowang‘@’localhost’；<br>查看用户权限：</p>
+<p>show grants for ‘laowang‘@’localhost’;</p>
+<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><p>SQL 是用于访问和处理数据库的标准的计算机语言。</p>
+<p>SQL (Structured Query Language:<strong>结构化查询语言</strong>) 是用于管理<strong>关系数据库管理系统</strong>（RDBMS）。 SQL 的范围包括数据插入、查询、更新和删除，数据库模式创建和修改，以及数据访问控制。</p>
+<p>RDBMS 指关系型数据库管理系统，全称 Relational Database Management System。</p>
+<p>RDBMS 是 SQL 的基础，同样也是所有现代数据库系统的基础，比如 MS SQL Server、IBM DB2、Oracle、MySQL 以及 Microsoft Access。</p>
+<p>RDBMS 中的数据存储在被称为<strong>表</strong>的数据库对象中。</p>
+<p>表是相关的数据项的集合，它由列和行组成。</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>列（column） - 表中的一个<strong>字段</strong>。所有表都是由<strong>一个或多个列</strong>组成的。<br><strong>行</strong>（row） - 表中的一个<strong>记录</strong>（行是一个完整的记录）。<br><strong>主键</strong>（primary key） - <strong>一列</strong>（或<strong>一组列</strong>），其值能够唯一标识表中每一行。</p>
+<img src="/2024/04/01/InternetBasicsNote/5.png" class="">
+
+<p>处理 SQL 语句时，<strong>所有空格都被忽略</strong>。SQL 语句可以写成一行，也可以分写为多行。</p>
+<p>SQL <strong>对大小写不敏感</strong>：SELECT 与 select 是相同的，但是数据库表名、列名和值是否区分，依赖于具体的 DBMS 以及配置。</p>
+<p>某些数据库系统要求在每条 SQL 语句的末端<strong>使用分号</strong>。</p>
+<p>分号是在数据库系统中分隔每条 SQL 语句的标准方法，这样就可以在对服务器的相同请求中执行一条以上的 SQL 语句。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-- 一行 SQL 语句</span><br><span class="line">UPDATE user SET username=&#x27;robot&#x27;, password=&#x27;robot&#x27; WHERE username = &#x27;root&#x27;;</span><br><span class="line"></span><br><span class="line">-- 多行 SQL 语句</span><br><span class="line">UPDATE user</span><br><span class="line">SET username=&#x27;robot&#x27;, password=&#x27;robot&#x27;</span><br><span class="line">WHERE username = &#x27;root&#x27;;</span><br><span class="line"></span><br><span class="line">## 注释1</span><br><span class="line">-- 注释2</span><br><span class="line">/* 注释3 */</span><br></pre></td></tr></table></figure>
+
+<p><strong>一些最重要的 SQL 命令</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SELECT - 从数据库中提取数据</span><br><span class="line">UPDATE - 更新数据库中的数据</span><br><span class="line">DELETE - 从数据库中删除数据</span><br><span class="line">INSERT INTO - 向数据库中插入新数据</span><br><span class="line">CREATE DATABASE - 创建新数据库</span><br><span class="line">ALTER DATABASE - 修改数据库</span><br><span class="line">CREATE TABLE - 创建新表</span><br><span class="line">ALTER TABLE - 变更（改变）数据库表</span><br><span class="line">DROP TABLE - 删除表</span><br><span class="line">CREATE INDEX - 创建索引（搜索键）</span><br><span class="line">DROP INDEX - 删除索引</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="SQL-分类"><a href="#SQL-分类" class="headerlink" title="SQL 分类"></a>SQL 分类</h2><p>数据定义语言（Data Definition Language，<strong>DDL</strong>）是 SQL 语言集中负责<strong>数据结构定义与数据库对象定义</strong>的语言。<br>DDL 的核心指令是 <code>CREATE、ALTER、DROP</code>。</p>
+<p>数据操纵语言（Data Manipulation Language, <strong>DML</strong>）是用于<strong>数据库操作</strong>，对数据库中的对象和数据<strong>运行访问工作</strong>的编程语句。<br>DML 的主要功能是 <strong>访问数据</strong>，因此其语法都是<strong>以读写数据库为主</strong>。<br>DML 的核心指令是 <code>INSERT、UPDATE、DELETE、SELECT</code>。这四个指令合称 <code>CRUD(Create, Read, Update, Delete)</code>，即<strong>增删改查</strong>。</p>
+<p>事务控制语言（Transaction Control Language, <strong>TCL</strong>）用于<strong>管理数据库中的事务</strong>。这些用于管理由 <strong>DML</strong> 语句所做的更改。它还允许将语句分组为逻辑事务。<br>TCL 的核心指令是 <code>COMMIT、ROLLBACK</code>。</p>
+<p>数据控制语言（Data Control Language, <strong>DCL</strong>）是一种可<strong>对数据访问权进行控制的指令</strong>，它可以控制特定用户账户对数据表、查看表、预存程序、用户自定义函数等<strong>数据库对象</strong>的<strong>控制权</strong>。<br>DCL 的核心指令是 <code>GRANT、REVOKE</code>。<br>DCL 以<strong>控制用户的访问权限为主</strong>，因此其指令作法并不复杂，可利用 DCL 控制的权限有：<code>CONNECT、SELECT、INSERT、UPDATE、DELETE、EXECUTE、USAGE、REFERENCES</code>。<br>根据不同的 DBMS 以及不同的安全性实体，其支持的权限控制也有所不同。</p>
+<h2 id="常用语句"><a href="#常用语句" class="headerlink" title="常用语句"></a>常用语句</h2><p>上下分别为 test_table, new_table。</p>
+<img src="/2024/04/01/InternetBasicsNote/6.png" class="">
+<img src="/2024/04/01/InternetBasicsNote/10.png" class="">
+
+<p>注意语句结束时需要分号，同时注意什么时候是语句结束。</p>
+<h3 id="SQL-SELECT-语句"><a href="#SQL-SELECT-语句" class="headerlink" title="SQL SELECT 语句"></a>SQL SELECT 语句</h3><p>SELECT 语句用于从数据库中选取数据，获取结果集。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table_name;</span><br><span class="line"></span><br><span class="line">SELECT * FROM table_name;  <span class="comment">// 选择全部字段</span></span><br></pre></td></tr></table></figure>
+<p>column1, column2, …：要选择的<strong>字段</strong>（列）名称，可以为多个字段。如果不指定字段名称，则会选择所有字段。<br>table_name：要查询的表名称。</p>
+<p>SQL SELECT <strong>DISTINCT</strong> 语句<br>在表中，<strong>一个列可能会包含多个重复值</strong>，此语句用于去重。<br>当选择多个列时，只有所有列的值都相同才算相同。</p>
+<h3 id="SQL-WHERE-子句"><a href="#SQL-WHERE-子句" class="headerlink" title="SQL WHERE 子句"></a>SQL WHERE 子句</h3><p>WHERE 子句用于<strong>提取那些满足指定条件的记录</strong>。</p>
+<p>注意： SELECT 的关键是<strong>影响 结果集 中有哪些列</strong>，比如<strong>显示</strong>出来哪些列，并不是说 WHERE 查询的列一定得在 SELECT 选择的列里面。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE condition;</span><br></pre></td></tr></table></figure>
+
+<p>如：<code>SELECT * FROM Websites WHERE name=&#39;zlc&#39;;</code>使用<code>SELECT * FROM Websites WHERE name=&#39;zlc&#39;;</code>同样会只选择 name&#x3D;’zlc’ 的行，但选择的结果只显示 id 。</p>
+<p>SQL 使用<strong>单引号来环绕文本值</strong>（大部分数据库系统也接受双引号）。<br>在上个实例中 ‘zlc’ 文本字段使用了单引号。<br>如果是<strong>数值字段</strong>，<strong>请不要使用引号</strong>。（MySQL Workbench 好像对数值用单引号也可以）</p>
+<p>WHERE 子句中的运算符：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">=	等于</span><br><span class="line">&lt;&gt;	不等于。注释：在 SQL 的一些版本中，该操作符可被写成 != </span><br><span class="line">&gt;	大于</span><br><span class="line">&lt;	小于</span><br><span class="line">&gt;=	大于等于</span><br><span class="line">&lt;=	小于等于</span><br><span class="line">and or not 逻辑运算，再加入括号组成复合表达式，如：WHERE age &gt; 15 AND (name=&#x27;zlc&#x27; OR score&gt;90);</span><br><span class="line">BETWEEN	and 在某个范围内 between lowLimit and highLimit 包含上下界</span><br><span class="line">IN	指定针对某个列的多个可能值   in(a,b,c..)罗列值</span><br><span class="line">LIKE	搜索某种模式（模糊查询即为不全信息查询） 只有字段是文本值时才使用 LIKE，通配符 % 表示任何字符出现任意次数，_ 下划线表示任何字符出现一次，如：</span><br><span class="line">  M% : 正则表达式，表示的意思为模糊查询信息为 M 开头的。</span><br><span class="line">  %M% : 表示查询包含M的所有内容。</span><br><span class="line">  %M_ : 表示查询以M在倒数第二位的所有内容。</span><br><span class="line">  不要滥用通配符，通配符位于开头处匹配会非常慢</span><br><span class="line">  例如 WHERE name LIKE &#x27;%s%&#x27;; 能匹配 &#x27;sjl&#x27; &#x27;sxr&#x27;</span><br><span class="line">IS NULL 以及 IS NOT NULL 用来查找列中带有 NULL 值和不带有 Null 值的记录，</span><br><span class="line">请始终使用 IS NULL 来查找 NULL 值。如 where id is null。</span><br><span class="line">另外：工作中一般建表的时候一般会禁止使用 NULL 的，不利于代码维护。</span><br></pre></td></tr></table></figure>
+
+<h3 id="SQL-ORDER-BY-关键字"><a href="#SQL-ORDER-BY-关键字" class="headerlink" title="SQL ORDER BY 关键字"></a>SQL ORDER BY 关键字</h3><p>ORDER BY 关键字用于对结果集按照一个列或者多个列进行排序，默认按照升序对记录进行排序。如果需要按照降序对记录进行排序，您可以使用 DESC 关键字。</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table_name</span><br><span class="line">ORDER BY column1, column2, ... ASC|DESC;</span><br><span class="line"></span><br><span class="line">column1, column2, ...：要排序的字段名称，可以为多个字段。</span><br><span class="line">ASC：表示按升序排序。</span><br><span class="line">DESC：表示按降序排序。</span><br></pre></td></tr></table></figure>
+
+<p>选择多列的时候先按前列排序，前列相同的情况下再按后面的列排序。并且desc 或者 asc 只对它紧跟着的第一个列名有效，其他不受影响，仍然是默认的升序，如：order by A desc,B   这个时候 A 降序，B 升序排列。</p>
+<h3 id="LIMIT-和-OFFSET-用法"><a href="#LIMIT-和-OFFSET-用法" class="headerlink" title="LIMIT 和 OFFSET 用法"></a>LIMIT 和 OFFSET 用法</h3><p>MySQL 里<strong>分页</strong>一般用 LIMIT 来实现:</p>
+<p><strong>限制返回的行数</strong>。可以有两个参数，第一个参数为起始行，从 0 开始；第二个参数为返回的总行数。</p>
+<p>当 LIMIT 后面跟两个参数的时候，第一个数表示要跳过的数量，后一位表示要取的数量，例如：<code>select* from article LIMIT 1,3</code> 就是跳过 1 条数据，从第 2 条数据开始取，取 3 条数据，也就是取 2、3、4 三条数据。</p>
+<p>当 LIMIT 后面跟一个参数的时候，该参数表示要取的数据的数量。例如 <code>select* from article LIMIT 3</code> 表示直接取前三条数据，类似 sqlserver 里的 top 语法。</p>
+<p>当 LIMIT 和 OFFSET 组合使用的时候，LIMIT 后面只能有一个参数，表示要取的的数量，OFFSET表示要跳过的数量 。例如<code> select * from article LIMIT 3 OFFSET 1</code> 表示跳过 1 条数据，从第 2 条数据开始取，取3条数据，也就是取 2、3、4 三条数据。</p>
+<h3 id="SQL-INSERT-INTO-语句"><a href="#SQL-INSERT-INTO-语句" class="headerlink" title="SQL INSERT INTO 语句"></a>SQL INSERT INTO 语句</h3><p>INSERT INTO 语句用于向表中插入新记录（行）。</p>
+<p>INSERT INTO 语句可以有<strong>两种</strong>编写形式。</p>
+<ol>
+<li>第一种形式<strong>无需指定要插入数据的列名</strong>，只需提供<strong>被插入的值</strong>即可：<br><code>INSERT INTO table_name  VALUES (value1,value2,value3,...);</code><br>如：<code>insert into test_table values(5,&#39;sxr&#39;,18,80);</code></li>
+<li>第二种形式需要<strong>指定列名及被插入的值</strong>：<br><code>INSERT INTO table_name (column1,column2,column3,...) VALUES (value1,value2,value3,...);</code><br>如<code>insert into test_table (id,name,age,score) values(6,&#39;myz&#39;,45,74);</code></li>
+</ol>
+<p>table_name：需要插入新记录的表名。<br>column1, column2, …：需要插入的<strong>字段名</strong>。<br>value1, value2, …：需要插入的<strong>字段值</strong>。</p>
+<p>也可以<strong>在指定的列插入数据</strong>。<br>下面的 SQL 语句将插入一个新行，但是只在 “name”、”age” 和 “score” 列插入数据（id 字段会自动更新，前提是在 table 属性里设置 id 列<strong>自增</strong>）：<br><code>insert into test_table (name,age,score) values(&#39;yyy&#39;,95,12);</code><br>需要注意的是：<strong>没有列出列名的</strong> insert into 写法得把新插入行的每个数据都列出来。</p>
+<h3 id="SQL-UPDATE-语句"><a href="#SQL-UPDATE-语句" class="headerlink" title="SQL UPDATE 语句"></a>SQL UPDATE 语句</h3><p>UPDATE 语句用于<strong>更新表中已存在的记录</strong>。</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE table_name</span><br><span class="line">SET column1 = value1, column2 = value2, ...</span><br><span class="line">WHERE condition;</span><br></pre></td></tr></table></figure>
+<p>table_name：要修改的表名称。<br>column1, column2, …：要修改的<strong>字段名称</strong>，可以为多个字段。<br>value1, value2, …：要修改的值，可以为多个值。<br>condition：修改条件，用于指定哪些数据要修改。<br><strong>WHERE</strong> 子句规定哪条记录或者哪些记录需要更新。如果您<strong>省略</strong>了 WHERE 子句，<strong>所有的记录都将被更新</strong>！<br>WHERE 应该是需要对 关键列(<strong>主键</strong>) 进行选择(MySQL Workbench)。</p>
+<p>Update 警告！<br>在更新记录时要格外小心！如果我们省略了 WHERE 子句，会更新所有数据。执行没有 WHERE 子句的 UPDATE 要慎重，再慎重。</p>
+<p>在 MySQL 中可以通过设置 sql_safe_updates 这个自带的参数来解决，当该参数开启的情况下，你必须在update 语句后携带 where 条件，否则就会报错。</p>
+<p><code>set sql_safe_updates=1</code>; 表示开启该参数<br><code>set sql_safe_updates=0; </code> 关闭安全模式</p>
+<p>如果设置了 sql_safe_updates&#x3D;1，那么 <strong>update</strong> 语句必须满足如下条件之一才能执行成功：</p>
+<ol>
+<li>使用 where 子句, 并且 where 子句中列必须为 <strong>prefix</strong>(<strong>主键 key column</strong>) 索引列。</li>
+<li>使用 limit。</li>
+<li>同时使用 where 子句和 limit (此时 where 子句中列可以不是索引列)。</li>
+</ol>
+<p><strong>delete</strong> 语句必须满足如下条件之一才能执行成功。</p>
+<ol>
+<li>使用 where 子句, 并且 where 子句中列必须为 <strong>prefix</strong> 索引列。</li>
+<li>同时使用 where 子句和 limit (此时 where 子句中列可以不是索引列)。</li>
+</ol>
+<h3 id="SQL-DELETE-FROM-语句"><a href="#SQL-DELETE-FROM-语句" class="headerlink" title="SQL DELETE FROM 语句"></a>SQL DELETE FROM 语句</h3><p>DELETE 语句用于删除表中的记录（行）。</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM table_name</span><br><span class="line">WHERE condition;</span><br></pre></td></tr></table></figure>
+<p>table_name：要删除的表名称。<br>condition：删除条件，用于<strong>指定哪些数据要删除</strong>。<br><strong>WHERE</strong> 子句规定哪条记录或者哪些记录需要删除。如果您<strong>省略了 WHERE 子句</strong>，<strong>所有的记录都将被删除</strong>！</p>
+<p>可以在不删除表的情况下，删除表中所有的行。这意味着<strong>表结构、属性、索引将保持不变</strong>：<br><code>DELETE FROM table_name;</code></p>
+<p>SQL关于删除的三个语句：<strong>DROP、TRUNCATE、 DELETE</strong> 的区别。</p>
+<p><strong>DROP</strong>:<br>DROP test;<br>删除表test，并释放空间，将test<strong>删除的一干二净</strong>，<strong>没有备份表之前要慎用</strong>。</p>
+<p><strong>TRUNCATE</strong>:<br>TRUNCATE test;<br>删除表test里的内容，<strong>表的结构(定义)还在</strong>，并释放空间，没有备份表之前要慎用。</p>
+<p><strong>DELETE</strong>:<br>1、删除指定数据<br>删除表test中年龄等于30的且国家为US的数据<br><code>DELETE FROM test WHERE age=30 AND country=&#39;US&#39;;</code></p>
+<p>2、删除整个表<br>仅删除表test内的所有内容，保留表的定义，<strong>不释放空间</strong>，<strong>可以回滚恢复</strong>。<br><code>DELETE FROM test</code> 或者 <code>DELETE * FROM test;</code></p>
+<h3 id="SQL-INSERT-INTO-SELECT-语句"><a href="#SQL-INSERT-INTO-SELECT-语句" class="headerlink" title="SQL INSERT INTO SELECT 语句"></a>SQL INSERT INTO SELECT 语句</h3><p>INSERT INTO SELECT 语句<strong>从一个表复制数据</strong>，然后把数据<strong>插入到一个已存在的表中</strong>，目标表中任何已存在的行都不会受影响。</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO new_table</span><br><span class="line">SELECT * FROM origin__table;</span><br></pre></td></tr></table></figure>
+<p>或者我们可以只复制<strong>指定的列</strong>（多列）插入到另一个已存在的表中：</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO new_table</span><br><span class="line">(column_name(s))</span><br><span class="line">SELECT column_name(s)</span><br><span class="line">FROM origin__table;</span><br></pre></td></tr></table></figure>
+
+<p>如：<code>INSERT INTO new_table (id,name) SELECT id,name FROM test_table;</code> <strong>注意格式</strong>，括号也不能多写。<br>可以进一步用 where 选择。</p>
+<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><p>子查询是嵌套在较大查询中的 SQL 查询。子查询也称为<strong>内部查询或内部选择</strong>，而包含子查询的语句也称为外部查询或外部选择。</p>
+<p>子查询可以嵌套在 SELECT，INSERT，UPDATE 或 DELETE 语句内或另一个子查询中。</p>
+<p>子查询<strong>通常</strong>会在另一个 SELECT 语句的 <strong>WHERE</strong> 子句中添加。</p>
+<p>子查询<strong>必须</strong>被圆括号 () 括起来。</p>
+<p><strong>内部查询首先在其父查询之前执行</strong>，以便可以将内部查询的结果传递给外部查询。</p>
+<h3 id="连接-JOIN"><a href="#连接-JOIN" class="headerlink" title="连接 JOIN"></a>连接 JOIN</h3><p>上下分别为 test_table, new_table。</p>
+<img src="/2024/04/01/InternetBasicsNote/12.png" class="">
+<img src="/2024/04/01/InternetBasicsNote/13.png" class="">
+
+<p><strong>连接</strong>（JOIN）</p>
+<p>SQL join 用于把来自<strong>两个或多个表的行</strong>结合起来，基于这些表之间的<strong>共同字段</strong>。</p>
+<p>LEFT JOIN、RIGHT JOIN、INNER JOIN、OUTER JOIN 相关的 7 种用法:</p>
+<img src="/2024/04/01/InternetBasicsNote/9.png" class="">
+
+<p>最常见的 JOIN 类型：SQL INNER JOIN（简单的 JOIN）。 SQL INNER JOIN <strong>从多个表中</strong>返回满足 JOIN 条件的<strong>所有行</strong>。</p>
+<p><strong>INNER JOIN</strong>语法</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table1</span><br><span class="line">JOIN table2 ON condition;</span><br></pre></td></tr></table></figure>
+<p>column1, column2, …：要选择的字段名称，可以为多个字段。如果不指定字段名称，则会选择所有字段。<br>table1：要连接的第一个表（左表）。<br>table2：要连接的第二个表（右表）。<br>condition：<strong>连接条件</strong>，用于指定连接方式。</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select test_table.id,test_table.name,new_table.height,test_table.score </span><br><span class="line">from test_table inner JOIN new_table ON </span><br><span class="line">test_table.id=new_table.id;</span><br></pre></td></tr></table></figure>
+
+<p>请注意，”test_table” 表中的 “id” 列指向 “new_table” 表中的字段 “id”。上面这两个表是通过 “id” 列联系起来的。并且注意，没有要求两个字段要完全一样，比如我可以定义 “new_table” 表中是”new_id”，只要  ON 后面设置连接那就可以。</p>
+<p>效果是将行组合起来了，注意看列的顺序也是我们在上面代码中指定的：</p>
+<img src="/2024/04/01/InternetBasicsNote/11.png" class="">
+
+<p>不同的 SQL JOIN：<br><strong>INNER JOIN</strong>：如果表中<strong>有至少一个匹配</strong>，则返回行<br><strong>LEFT JOIN</strong>：即使右表中没有匹配，也从左表返回所有的行<br><strong>RIGHT JOIN</strong>：即使左表中没有匹配，也从右表返回所有的行<br><strong>FULL JOIN</strong>：只要其中一个表中存在匹配，则返回行（MySQL中不支持）</p>
+<p>首先，连接的结果可以在<strong>逻辑</strong>上看作是由 SELECT 语句<strong>指定的列</strong>组成的新表。</p>
+<p><strong>左连接与右连接</strong>的<strong>左右</strong>指的是<strong>以两张表中的哪一张为基准</strong>，它们都是<strong>外连接</strong>。</p>
+<p><strong>外连接</strong>就好像是<strong>为非基准表</strong>添加了一行全为空值的万能行，用来与基准表中找不到匹配的行进行匹配。假设两个没有空值的表进行<strong>左连接</strong>，左表是基准表，<strong>左表的所有行都出现在结果中</strong>，右表则可能因为无法与基准表匹配而出现是<strong>空值</strong>的字段。</p>
+<p><strong>得到的结果数</strong>：<br>inner join &lt;&#x3D; left join, right join<br>full join &gt;&#x3D; left join, right join<br>当 inner join &lt; left join, right join 时， full join &gt; left join, right join</p>
+<p>SQL LEFT JOIN 关键字从<strong>左表</strong>（table1）返回所有的行，即使右表（table2）中没有匹配。<strong>如果右表中没有匹配，则结果为 NULL</strong>。</p>
+<p><strong>INNER JOIN</strong>语法（只要将上面代码的 INNER 改成 LEFT 就行）</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table1</span><br><span class="line">LEFT JOIN table2</span><br><span class="line">ON table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<img src="/2024/04/01/InternetBasicsNote/15.png" class="">
+
+<p>运行代码</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select test_table.id,test_table.name,new_table.height,test_table.score </span><br><span class="line">from test_table left JOIN new_table ON </span><br><span class="line">test_table.id=new_table.id</span><br><span class="line">ORDER BY new_table.height DESC;</span><br></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<img src="/2024/04/01/InternetBasicsNote/14.png" class="">
+
+<p>可以理解为：返回左边所有的人以及他们的身高(<strong>如果有的话</strong>)。</p>
+<p>注释：LEFT JOIN 关键字从左表（test_table）返回所有的行，即使右表（new_table）中没有匹配。</p>
+<p>SQL RIGHT JOIN 关键字从右表（table2）返回所有的行，即使左表（table1）中没有匹配。如果左表中没有匹配，则结果为 NULL。<br>注意：这里哪些显示为 NULL 是由上面 <strong>SELECT</strong> <strong>如何选择列字段来决定的</strong>！</p>
+<p>SQL RIGHT JOIN 语法</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table1</span><br><span class="line">RIGHT JOIN table2</span><br><span class="line">ON table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<img src="/2024/04/01/InternetBasicsNote/16.png" class="">
+
+<p>运行代码</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select test_table.id,test_table.name,new_table.height,test_table.score </span><br><span class="line">from test_table right JOIN new_table ON </span><br><span class="line">test_table.id=new_table.id</span><br><span class="line">ORDER BY new_table.height DESC;</span><br></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<img src="/2024/04/01/InternetBasicsNote/17.png" class="">
+
+<p>这是因为 new_table 里有 test_table 里没有的 id&#x3D;5，左表没有对应的数据，<strong>加上</strong> SELECT 那里选择的是 test_table.name 等，所以只有 new_table.height 显示了，如果我 SELECT 那里选择的是 new_table.name ，那么便有：</p>
+<img src="/2024/04/01/InternetBasicsNote/18.png" class="">
+
+<p>注释：RIGHT JOIN 关键字从右表（access_log）返回所有的行，即使左表（Websites）中没有匹配。</p>
+<p>SQL FULL OUTER JOIN 关键字只要左表（table1）和右表（table2）其中一个表中存在匹配，则返回行。</p>
+<p>FULL OUTER JOIN 关键字结合了 LEFT JOIN 和 RIGHT JOIN 的结果，即并集。</p>
+<p>MySQL中并没有直接支持FULL JOIN的语法，但可以使用UNION操作符和LEFT JOIN、RIGHT JOIN语法组合实现FULL JOIN的功能。 具体来说，可以将LEFT JOIN和RIGHT JOIN联合起来，使用UNION操作符将它们的结果合并，就可以实现FULL JOIN。</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SELECT test_table.id,test_table.name,new_table.height,test_table.score</span><br><span class="line">FROM test_table</span><br><span class="line">LEFT JOIN new_table ON test_table.id = new_table.id</span><br><span class="line"></span><br><span class="line">UNION</span><br><span class="line"></span><br><span class="line">SELECT test_table.id,test_table.name,new_table.height,test_table.score</span><br><span class="line">FROM test_table</span><br><span class="line">RIGHT JOIN new_table ON test_table.id = new_table.id</span><br></pre></td></tr></table></figure>
+<img src="/2024/04/01/InternetBasicsNote/19.png" class="">
+
+
+<h3 id="组合-UNION"><a href="#组合-UNION" class="headerlink" title="组合 UNION"></a>组合 UNION</h3><p><strong>求并集</strong>。</p>
+<p>SQL UNION 操作符合并两个或多个 SELECT 语句的结果集。</p>
+<p>请注意，UNION 内部的每个 SELECT 语句必须拥有<strong>相同数量的列</strong>。列也必须拥有<strong>相似的数据类型</strong>。同时，每个 SELECT 语句中的<strong>列的顺序必须相同</strong>。</p>
+<p>SQL UNION 语法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT <span class="title function_">column_name</span><span class="params">(s)</span> FROM table1</span><br><span class="line">UNION</span><br><span class="line">SELECT <span class="title function_">column_name</span><span class="params">(s)</span> FROM table2;</span><br></pre></td></tr></table></figure>
+<p>注释：默认地，UNION 操作符选取<strong>不同的值</strong>（DISTINCT）。如果需要<strong>重复</strong>的值，请使用 UNION ALL。</p>
+<p>如：选取所有不同的 name（只有不同的值）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT id,name FROM test_table</span><br><span class="line">UNION</span><br><span class="line">SELECT id,name FROM new_table</span><br><span class="line">order by id;</span><br></pre></td></tr></table></figure>
+<img src="/2024/04/01/InternetBasicsNote/20.png" class="">
+
+
+<h3 id="SQL-别名-AS"><a href="#SQL-别名-AS" class="headerlink" title="SQL 别名  AS"></a>SQL 别名  AS</h3><p>通过使用 SQL，可以为<strong>表</strong>名称或<strong>列</strong>名称指定别名。</p>
+<p>基本上，创建别名是为了让列名称的可读性更强。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 列的 SQL 别名语法</span></span><br><span class="line">SELECT column_name AS alias_name</span><br><span class="line">FROM table_name;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 表的 SQL 别名语法</span></span><br><span class="line">SELECT <span class="title function_">column_name</span><span class="params">(s)</span></span><br><span class="line">FROM table_name AS alias_name;</span><br></pre></td></tr></table></figure>
+<p>如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT id as number, concat(name,<span class="string">&#x27;,&#x27;</span>,age,<span class="string">&#x27;,&#x27;</span>,score) as data</span><br><span class="line">FROM runoob.test_table;</span><br></pre></td></tr></table></figure>
+<p>创建 number 作为 id 的别名，concat 将这三个列的数据结合在一块，并以 data 作为别名，</p>
+<p>通过为表取别名，使用 select 查询时就要可以让 SQL 简短很多（在创建表的别名时就可以使用这个别名来选择这个表的列）</p>
+<p>另外，在下面的情况下，使用别名很有用：<br>在查询中涉及<strong>超过一个表</strong><br>在查询中使用了函数<br>列名称很长或者可读性差<br>需要把两个列或者多个列结合在一起</p>
+<h3 id="创建数据库、表"><a href="#创建数据库、表" class="headerlink" title="创建数据库、表"></a>创建数据库、表</h3><p>SQL CREATE DATABASE 语句用于创建数据库。</p>
+<p><code>CREATE DATABASE dbname;</code> 创建名为 “dbname” 的数据库。</p>
+<p>SQL CREATE TABLE 语句用于创建数据库中的表。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE <span class="title function_">table_name</span></span><br><span class="line"><span class="params">(</span></span><br><span class="line"><span class="params">column_name1 data_type(size)</span>,</span><br><span class="line">column_name2 <span class="title function_">data_type</span><span class="params">(size)</span>,</span><br><span class="line">column_name3 <span class="title function_">data_type</span><span class="params">(size)</span>,</span><br><span class="line">....</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>data_type 参数规定<strong>列的数据类型</strong>（例如 varchar、integer、decimal、date 等等）。</p>
+<p>size 参数规定表中列字段的最大长度。</p>
+<h3 id="SQL-约束（Constraints）"><a href="#SQL-约束（Constraints）" class="headerlink" title="SQL 约束（Constraints）"></a>SQL 约束（Constraints）</h3><p>SQL 约束（Constraints）用于<strong>规定表中的数据规则</strong>。</p>
+<p>如果存在违反约束的数据行为，行为会被约束终止。</p>
+<p>约束可以在创建表时规定（通过 CREATE TABLE 语句），或者在表创建之后规定（通过 ALTER TABLE 语句）。</p>
+<p>SQL CREATE TABLE + <strong>CONSTRAINT</strong> 语法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE <span class="title function_">table_name</span></span><br><span class="line"><span class="params">(</span></span><br><span class="line"><span class="params">column_name1 data_type(size)</span> constraint_name,</span><br><span class="line">column_name2 <span class="title function_">data_type</span><span class="params">(size)</span> constraint_name,</span><br><span class="line">column_name3 <span class="title function_">data_type</span><span class="params">(size)</span> constraint_name,</span><br><span class="line">....</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>在 SQL 中，我们有如下约束：</p>
+<ul>
+<li>NOT NULL - 指示该列不能存储 NULL 值。</li>
+<li>UNIQUE - 保证该列的每行必须有唯一的值（不能有重复值）。</li>
+<li><strong>PRIMARY KEY</strong> - NOT NULL 和 UNIQUE 的结合。确保该列（或两个列多个列的结合）<strong>有唯一标识</strong>，有助于更容易更快速地找到表中的一个特定的记录。</li>
+<li><strong>FOREIGN</strong> KEY - 保证一个表中的数据匹配另一个表中的值的参照完整性。</li>
+<li><strong>CHECK</strong> - 保证列中的值符合指定的条件。</li>
+<li>DEFAULT - 规定没有给列赋值时的默认值。</li>
+</ul>
+<p>在默认的情况下，表的列接受 NULL 值。<br>NOT NULL 约束强制字段始终包含值。这意味着，如果不向字段添加值，就无法插入新记录或者更新记录。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE <span class="title function_">Persons</span> <span class="params">(</span></span><br><span class="line"><span class="params">    ID <span class="type">int</span> NOT NULL,</span></span><br><span class="line"><span class="params">    LastName varchar(<span class="number">255</span>)</span> NOT NULL,</span><br><span class="line">    FirstName <span class="title function_">varchar</span><span class="params">(<span class="number">255</span>)</span> NOT NULL,</span><br><span class="line">    Age <span class="type">int</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>在一个已创建的表添加和删除 NOT NULL 约束，注意，列名后面需要跟数据类型。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE Persons</span><br><span class="line">MODIFY Age <span class="type">int</span> NOT NULL;</span><br><span class="line"></span><br><span class="line">ALTER TABLE Persons</span><br><span class="line">MODIFY Age <span class="type">int</span> NULL;</span><br></pre></td></tr></table></figure>
+
+
+<p>UNIQUE 约束<strong>唯一标识</strong>数据库表中的每条记录。</p>
+<p>UNIQUE 和 PRIMARY KEY 约束均为<strong>列或列集合</strong>提供了唯一性的保证。</p>
+<p><strong>PRIMARY KEY</strong> 约束拥有<strong>自动定义</strong>的 UNIQUE 约束。</p>
+<p>SQL PRIMARY KEY 约束</p>
+<p>每个表<em><strong>都应该有一个主键</strong></em>，并且每个表<strong>只能有一个主键</strong>。注意：只有有一个主键<strong>不是说只有一列是主键</strong>，可以是这个主键设置为包含了很多列（为多个列创建 PRIMARY KEY 约束）。<br>如：<code>CONSTRAINT pk_PersonID PRIMARY KEY (P_Id,LastName)</code><br>注释：在上面的实例中，只有一个主键 PRIMARY KEY（pk_PersonID 主键名）。然而，pk_PersonID 的值是由两个列（P_Id 和 LastName）组成的。</p>
+<p><strong>Auto-increment</strong> 会在新记录插入表中时生成一个唯一的数字。</p>
+<p>我们<strong>通常</strong>希望在每次插入新记录时，<strong>自动地创建主键字段</strong>的值。</p>
+<p>我们可以在表中创建一个 auto-increment 字段。</p>
+<h4 id="SQL-FOREIGN-KEY-约束"><a href="#SQL-FOREIGN-KEY-约束" class="headerlink" title="SQL FOREIGN KEY 约束"></a>SQL FOREIGN KEY 约束</h4><p>一个表中的 FOREIGN KEY 指向另一个表中的 UNIQUE KEY(唯一约束的键)。</p>
+<p>FOREIGN KEY 约束用于<strong>预防破坏表之间连接的行为</strong>。</p>
+<p>FOREIGN KEY 约束也能防止<strong>非法数据插入外键列</strong>，因为它必须是它<strong>指向的那个表中的值之一</strong>。</p>
+<p><strong>略微复杂</strong>，之后再来吧。</p>
+<h3 id="SQL-CREATE-INDEX-语句"><a href="#SQL-CREATE-INDEX-语句" class="headerlink" title="SQL CREATE INDEX 语句"></a>SQL CREATE INDEX 语句</h3><p>CREATE INDEX 语句用于在表中<strong>创建索引</strong>。</p>
+<p>在<strong>不读取整个表</strong>的情况下，索引使数据库应用程序可以更快地查找数据。</p>
+<p>通过在表中创建索引，以便更加快速高效地查询数据。</p>
+<p><strong>用户无法看到索引</strong>，它们只能被用来加速搜索&#x2F;查询。</p>
+<p>注释：更新一个包含索引的表需要比更新一个没有索引的表花费更多的时间，这是由于索引本身也需要更新。因此，理想的做法是<strong>仅仅在常常被搜索的列</strong>（以及表）上面创建索引。</p>
+<p>在表上创建一个简单的索引，允许使用重复的值：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE INDEX index_name</span><br><span class="line">ON <span class="title function_">table_name</span> <span class="params">(column_name)</span></span><br></pre></td></tr></table></figure>
+
+<p>SQL CREATE UNIQUE INDEX 语法<br>在表上创建一个唯一的索引。不允许使用重复的值：<strong>唯一的索引</strong>意味着两个行不能拥有相同的索引值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE UNIQUE INDEX index_name</span><br><span class="line">ON <span class="title function_">table_name</span> <span class="params">(column_name)</span></span><br></pre></td></tr></table></figure>
+<p>注释：用于创建索引的语法在不同的数据库中不一样。因此，检查您的数据库中创建索引的语法。</p>
+<p>CREATE INDEX 实例<br>下面的 SQL 语句在 “Persons” 表的 “LastName” 列上创建一个名为 “PIndex” 的索引：</p>
+<p><code>CREATE INDEX PIndex ON Persons (LastName)</code></p>
+<p>如果您希望索引不止一个列，您可以在括号中列出这些列的名称，用逗号隔开：</p>
+<p><code>CREATE INDEX PIndex ON Persons (LastName, FirstName)</code></p>
+<h3 id="DROP"><a href="#DROP" class="headerlink" title="DROP"></a>DROP</h3><p>DROP INDEX 语句<br>索引是一种优化数据库查询性能的结构，但有时候可能需要删除某个索引，例如当索引不再需要或需要替换为新的索引时。<br>DROP INDEX 语句用于删除表中的索引。<br><code>DROP INDEX [IF EXISTS] index_name ON TABLE_NAME;</code></p>
+<p>DROP TABLE 语句<br>DROP TABLE 语句用于删除表。<br>删除表将同时删除表的结构以及存储在其中的所有数据。因此，在执行DROP TABLE语句之前，请确保您真的希望永久删除表及其所有数据，因为此操作是不可逆的。<br><code>DROP TABLE [IF EXISTS] TABLE_NAME;</code></p>
+<p>DROP DATABASE 语句<br>DROP DATABASE 语句用于删除数据库，包括其中的<strong>所有表、视图、存储过程</strong>等<strong>数据库对象</strong>。<br>DROP DATABASE 是一个非常强大和危险的操作，因为它会永久删除整个数据库及其所有相关数据，因此在执行之前务必要慎重考虑并确保你真的希望执行此操作。<br><code>DROP DATABASE [IF EXISTS] database_name;</code><br>在执行 <code>DROP DATABASE</code> 之前，请确保你已经备份了数据库中的重要数据，并且你确实有权限执行这个操作，因为删除数据库通常需要管理员或超级用户的权限。此外，执行此类操作之前最好先确认没有其他用户正在使用该数据库。</p>
+<p>TRUNCATE TABLE 语句(表示<strong>清空表</strong>的操作)<br>如果我们仅仅需要<strong>删除表内的数据</strong>，但并不删除表本身，那么我们该如何做呢？<br>在 SQL 中，TRUNCATE TABLE 语句用于快速删除表中的所有数据，但保留表的结构（列、约束等），与 DELETE 语句相比，TRUNCATE TABLE <strong>通常更快</strong>，因为它是通过删除表中的所有行而不是逐行删除实现的。</p>
+<p>然而，需要注意的是，<code>TRUNCATE TABLE</code><strong>不会触发触发器</strong>，而且无法在事务中进行回滚。</p>
+<p>请使用 TRUNCATE TABLE 语句：<br><code>TRUNCATE TABLE TABLE_NAME;</code></p>
+<p>当使用 TRUNCATE TABLE 清除数据时，表的<strong>主键自增值</strong>将被重置为默认的起始值，通常是从 1 开始。这意味着下一次插入数据时，主键将从 1 开始递增。与之不同的是，使用 DELETE 语句删除数据并不会重置主键自增值，而是保留当前的自增值。</p>
+<h3 id="SQL-视图（Views）"><a href="#SQL-视图（Views）" class="headerlink" title="SQL 视图（Views）"></a>SQL 视图（Views）</h3><p>视图是<strong>可视化的表</strong>。</p>
+<p>本章讲解如何创建、更新和删除视图。</p>
+<p>SQL CREATE VIEW 语句（<strong>创建</strong>）<br>在 SQL 中，视图是<strong>基于</strong> SQL 语句的<strong>结果集</strong>的可视化的表。<br>视图包含行和列，就像一个真实的表。视图中的字段就是来自一个或多个数据库中的真实的表中的字段。</p>
+<p>您可以<strong>向视图添加</strong> SQL 函数、WHERE 以及 JOIN 语句，也可以呈现数据，<strong>就像这些数据来自于某个单一的表一样</strong>。</p>
+<p>SQL CREATE VIEW 语法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE VIEW view_name AS</span><br><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE condition;</span><br></pre></td></tr></table></figure>
+
+<p>参数说明：<br>CREATE VIEW: 声明你要创建一个视图。<br>view_name: 指定视图的名称。<br>AS: 指定<strong>关键字</strong>，<strong>表示视图的定义开始</strong>。<br>SELECT column1, column2, …: 指定<strong>视图中包含的列</strong>，可以是表中的列或计算列。<br>FROM table_name: 指定视图从哪个表中获取数据。<br>WHERE condition: 可选部分，用于指定筛选条件，限制<strong>视图</strong>中的行。<br>注释：视图<strong>总是显示最新的数据</strong>！每当用户查询视图时，数据库<strong>引擎</strong>通过使用视图的 SQL 语句重建数据。</p>
+<p>比如我通过如下代码创建视图：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create view highScore AS select id,name,age,score </span><br><span class="line">from test_table where score&gt;<span class="number">50</span>;</span><br></pre></td></tr></table></figure>
+<p>现在就可以将视图当作一个普通表一样操作，比如查询：<br><code>SELECT * FROM highScore;</code><br>这将返回所有 score 高于 50 的学生的信息，而不需要每次都编写相同的筛选条件。</p>
+<p>值得注意的是，<strong>视图本质上是一个虚拟的表</strong>，<strong>它并不存储数据</strong>，而是基于基础表的查询结果生成。因此，如果<strong>基础表的数据发生变化</strong>，视图的内容也会相应地<strong>更新</strong>。（正如前文所提到的一样）</p>
+<p>SQL <strong>更新视图</strong><br>在 SQL 中，你不能直接使用 UPDATE 语句来更新视图，因为视图是<strong>基于查询结果生成的虚拟表</strong>，而<strong>不是实际存储数据的表</strong>。</p>
+<p>更新视图的实质是通过<strong>更新视图所基于的表中的数据</strong>（通过讲过的 update 语句），然后视图会反映这些变化，不需要且<strong>不能重新创建视图</strong>。</p>
+<p>SQL <strong>撤销视图</strong></p>
+<p>在 SQL 中，撤销（或删除）视图是通过使用 <code>DROP VIEW</code> 语句来实现的。</p>
+<p>DROP VIEW 语句用于从数据库中删除一个已存在的视图。语法如下：</p>
+<p><code>DROP VIEW [IF EXISTS] view_name;</code></p>
+<p>参数说明：<br>DROP VIEW: 表示你要删除一个视图。<br>IF EXISTS: 可选部分，<strong>用于检查视图是否存在</strong>。如果存在，则执行删除操作；如果不存在，不会发生错误。在某些数据库系统中，这是可选的。<br>view_name: 指定要删除的视图的名称。</p>
+<p>请注意，这<strong>并不影响基础表中的数据</strong>，只是<strong>删除了视图的定义</strong>。</p>
+<p>在使用 DROP VIEW 语句时，请确保你真的想要删除该视图，因为一旦删除，将无法恢复视图的定义。</p>
+<p>视图的<strong>作用</strong>：</p>
+<ol>
+<li>视图<strong>隐藏了底层的表结构</strong>，简化了数据访问操作，客户端不再需要知道底层表的结构及其之间的关系。</li>
+<li>视图提供了一个<strong>统一访问数据的接口</strong>。（即可以允许用户<strong>通过视图访问数据</strong>的安全机制，而不授予用户直接访问底层表的权限）从而加强了安全性，使用户只能看到视图所显示的数据。</li>
+<li>视图还可以被嵌套，一个视图中可以嵌套另一个视图。</li>
+</ol>
+<h2 id="MySQL-数据类型"><a href="#MySQL-数据类型" class="headerlink" title="MySQL 数据类型"></a>MySQL 数据类型</h2><p>SQL 通用数据类型<br>数据库表中的每个列都要求有名称和数据类型。SQL 开发人员<strong>必须</strong>在<strong>创建</strong> SQL 表时<strong>决定表中的每个列将要存储的数据的类型</strong>。数据类型是一个<strong>标签</strong>，是便于 SQL 了解每个列期望存储什么类型的数据的指南，它也标识了 SQL 如何与存储的数据进行交互。</p>
+<p>在 MySQL 中，有三种主要的类型：Text（文本）、Number（数字）和 Date&#x2F;Time（日期&#x2F;时间）类型。</p>
+<img src="/2024/04/01/InternetBasicsNote/21.png" class="">
+
+<img src="/2024/04/01/InternetBasicsNote/22.png" class="">
+<p>注意：以上的 size 代表的并不是存储在数据库中的具体的长度，如 int(4) 并不是只能存储4个长度的数字。实际上int(size)占多少存储空间和 size 大小并无任何关系。int(3)、int(4)、int(8) 在磁盘上都是占用 4 btyes 的存储空间。<br>区别就是在<strong>显示给用户的方式</strong>有点不同。<br>例如：<br>1、int的值为10<br>int（9）显示结果为000000010<br>int（3）显示结果为010<br>就是显示的长度不一样而已 都是占用四个字节的存储空间</p>
+<img src="/2024/04/01/InternetBasicsNote/23.png" class="">
+<p>即便 DATETIME 和 TIMESTAMP 返回相同的格式，它们的工作方式很不同。在 INSERT 或 UPDATE 查询中，TIMESTAMP 自动把自身设置为当前的日期和时间。TIMESTAMP 也接受不同的格式，比如 YYYYMMDDHHMMSS、YYMMDDHHMMSS、YYYYMMDD 或 YYMMDD。</p>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><p>Redis是一个使用ANSI C编写的开源、支持网络、基于内存、可选持久性（英语：Durability_(database_systems)）的键值对存储数据库。</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">redis-server  // 启动 redis 服务器（必须先启动 redis 服务）</span><br><span class="line">redis-cli  // 连接本地的 redis 服务 27.0.0.1:6379</span><br><span class="line">PING // 该命令用于检测 redis 服务是否启动</span><br><span class="line"></span><br><span class="line">如果需要在远程 redis 服务上执行命令，同样使用的也是 redis-cli :</span><br><span class="line">redis-cli -h host -p port -a password</span><br><span class="line">如连接到主机为 127.0.0.1，端口为 6379 ，密码为 mypass 的 redis 服务</span><br><span class="line">redis-cli -h 127.0.0.1 -p 6379 -a &quot;mypass&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>Redis支持五种数据类型：<strong>string</strong>（字符串），<strong>hash</strong>（哈希），<strong>list</strong>（列表），<strong>set</strong>（集合）及<strong>zset</strong>(sorted set：有序集合)。</p>
+<p>基本命令语法都是 <code>COMMAND KEY_NAME</code>，<code>KEY_NAME</code>是键的名字。</p>
+<h3 id="string（字符串）"><a href="#string（字符串）" class="headerlink" title="string（字符串）"></a>string（字符串）</h3><p>和 java 中的字符串一样。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SET key value</span><br><span class="line">设置指定 key 的值。</span><br><span class="line"></span><br><span class="line">GET key</span><br><span class="line">获取指定 key 的值。</span><br></pre></td></tr></table></figure>
+
+<p>String 类型的应用场景：缓存对象、常规计数、分布式锁、共享 session 信息等。</p>
+<h3 id="list（列表）"><a href="#list（列表）" class="headerlink" title="list（列表）"></a>list（列表）</h3><p>Redis列表是简单的<strong>字符串列表</strong>，每个值都是一个字符串，按照<strong>插入顺序排序</strong>。你可以添加一个元素到列表的<strong>头部</strong>（左边）或者<strong>尾部</strong>（右边），两端都可进行 push 和 pop 操作，读取单个或多个元素，根据 值 查找和删除元素。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">LPUSH key value1 [value2]</span><br><span class="line">将一个或多个值插入到列表头部</span><br><span class="line"></span><br><span class="line">LPOP key</span><br><span class="line">移出并获取列表的第一个元素</span><br><span class="line"></span><br><span class="line">RPOP key</span><br><span class="line">移除列表的最后一个元素，返回值为移除的元素。</span><br><span class="line"></span><br><span class="line">RPUSH key value1 [value2]</span><br><span class="line">在列表中添加一个或多个值到列表尾部</span><br><span class="line"></span><br><span class="line">LLEN key</span><br><span class="line">获取列表长度</span><br><span class="line"></span><br><span class="line">LRANGE key start stop</span><br><span class="line">获取列表指定范围内的元素</span><br></pre></td></tr></table></figure>
+
+<p>List 类型的应用场景：消息队列（但是有两个问题：1. 生产者需要自行实现全局唯一 ID；2. 不能以消费组形式消费数据）等。</p>
+<h3 id="set（集合）"><a href="#set（集合）" class="headerlink" title="set（集合）"></a>set（集合）</h3><p><strong>字符串</strong>的无序集合，集合成员是唯一的，这就意味着集合中不能出现重复的数据。包含集合常见的操作方法，计算交并差集。</p>
+<p>Redis 中集合是通过<strong>哈希表</strong>实现的，所以添加，删除，查找的复杂度都是 O(1)。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">SADD key member1 [member2]</span><br><span class="line">向集合添加一个或多个成员</span><br><span class="line"></span><br><span class="line">SCARD key</span><br><span class="line">获取集合的成员数</span><br><span class="line"></span><br><span class="line">SISMEMBER key member</span><br><span class="line">判断 member 元素是否是集合 key 的成员</span><br><span class="line"></span><br><span class="line">SMEMBERS key</span><br><span class="line">返回集合中的所有成员</span><br><span class="line"></span><br><span class="line">SREM key member1 [member2]</span><br><span class="line">移除集合中一个或多个成员</span><br></pre></td></tr></table></figure>
+
+<p>Set 类型：聚合计算（并集、交集、差集）场景，比如点赞、共同关注、抽奖活动等。</p>
+<h3 id="hash（哈希散列表）"><a href="#hash（哈希散列表）" class="headerlink" title="hash（哈希散列表）"></a>hash（哈希散列表）</h3><p>包含键值对的无序散列表。</p>
+<p>Redis hash 是一个 <strong>string</strong> 类型的 <strong>field</strong>（字段） 和 <strong>value</strong>（值） 的映射表，hash 特别适合用于存储对象。一个键 key 可以由很多个字段 field，每个字段都有相对应的 value。对 hash 的操作基本都要带上 键 key，如果操作精细到 field 就加上 field 字段。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">HSET key field value</span><br><span class="line">将哈希表 key 中的字段 field 的值设为 value 。</span><br><span class="line"></span><br><span class="line">HGET key field</span><br><span class="line">获取存储在哈希表中指定字段的值。</span><br><span class="line"></span><br><span class="line">HMSET key field1 value1 [field2 value2 ]</span><br><span class="line">同时将多个 field-value (域-值)对设置到哈希表 key 中。</span><br><span class="line"></span><br><span class="line">HMGET key field1 [field2]</span><br><span class="line">获取所有给定字段的值</span><br><span class="line"></span><br><span class="line">HEXISTS key field</span><br><span class="line">查看哈希表 key 中，指定的字段是否存在。</span><br><span class="line"></span><br><span class="line">HGETALL key</span><br><span class="line">获取在哈希表中指定 key 的所有字段和值</span><br></pre></td></tr></table></figure>
+
+<p>Hash 类型：缓存对象、购物车等。</p>
+<h3 id="zset-sorted-set：有序集合"><a href="#zset-sorted-set：有序集合" class="headerlink" title="zset (sorted set：有序集合)"></a>zset (sorted set：有序集合)</h3><p>Redis 有序集合和集合一样也是 string 类型元素的集合,且<strong>不允许重复的成员</strong>。<br>不同的是每个元素都会关联一个 double 类型的分数。redis 正是通过分数来为集合中的成员进行从小到大的排序。<br>有序集合的成员是唯一的,但<strong>分数</strong>(score)却<strong>可以重复</strong>。</p>
+<p>有序集合是通过<strong>哈希表</strong>实现的，所以添加，删除，查找的复杂度都是 O(1)。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ZADD key score1 member1 [score2 member2]</span><br><span class="line">向有序集合添加一个或多个成员，或者 更新 已存在成员的分数</span><br><span class="line"></span><br><span class="line">ZCARD key</span><br><span class="line">获取有序集合的成员数</span><br><span class="line"></span><br><span class="line">ZRANGE key start stop [WITHSCORES]</span><br><span class="line">通过 索引区间 返回有序集合指定区间内的成员 <span class="comment">// 不是分数区间，有序集合，索引有意义</span></span><br><span class="line"></span><br><span class="line">ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT]</span><br><span class="line">通过分数返回有序集合指定区间内的成员</span><br></pre></td></tr></table></figure>
+
+<p>Zset 类型：排序场景，比如排行榜、电话和姓名排序等。</p>
+<h2 id="Redis-发布订阅"><a href="#Redis-发布订阅" class="headerlink" title="Redis 发布订阅"></a>Redis 发布订阅</h2><p>Redis <strong>发布订阅</strong> (pub&#x2F;sub) 是一种消息通信模式：发送者 (pub) 发送消息，订阅者 (sub) 接收消息。</p>
+<p>Redis 客户端可以订阅任意数量的频道。</p>
+<p>当有新消息通过 PUBLISH 命令发送给频道 channel 时， 这个消息就会被发送给<strong>订阅它</strong>的 所有客户端：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SUBSCRIBE channel [channel ...]</span><br><span class="line">订阅给定的一个或多个频道的信息。</span><br><span class="line"></span><br><span class="line">PUBLISH channel message</span><br><span class="line">将信息发送到指定的频道。</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h2><p>Redis 事务可以一次执行多个命令， 并且带有以下三个重要的保证：</p>
+<p>批量操作在<strong>发送</strong> <strong>EXEC</strong> 命令前被<strong>放入队列缓存</strong>。<br><strong>收到</strong> <strong>EXEC</strong> 命令后进入事务执行，事务中任意命令执行失败，其余的命令<strong>依然被执行</strong>。<br>在事务执行过程，其他客户端提交的命令请求<strong>不会插入到事务执行命令序列</strong>中。</p>
+<p>一个事务从开始到执行会经历以下三个阶段：<br>开始事务。<br>命令入队。<br>执行事务。</p>
+<p>以下是一个事务的例子， 它先以 <strong>MULTI</strong> 开始一个事务， 然后将<strong>多个命令入队到事务中</strong>， 最后由 <strong>EXEC</strong> 命令<strong>触发事务</strong>， <strong>一并执行事务中的所有命令</strong>：事务就像储存命令的容器。</p>
+<p>单个 Redis 命令的执行是原子性的，但 Redis 没有在事务上增加任何维持原子性的机制，所以 Redis 事务的执行并不是原子性的。</p>
+<p>事务可以理解为一个打包的批量执行脚本，但批量指令并非原子化的操作，中间某条指令的失败不会导致前面已做指令的回滚，也不会造成后续的指令不做。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DISCARD</span><br><span class="line">取消事务，放弃执行事务块内的所有命令。</span><br><span class="line"></span><br><span class="line">EXEC</span><br><span class="line">执行事务块内的所有命令。</span><br><span class="line"></span><br><span class="line">MULTI</span><br><span class="line">标记一个事务块的开始。</span><br></pre></td></tr></table></figure>
+
+<h2 id="Redis-脚本"><a href="#Redis-脚本" class="headerlink" title="Redis 脚本"></a>Redis 脚本</h2><p>Redis 脚本使用 Lua 解释器来执行脚本。 Redis 2.6 版本通过内嵌支持 Lua 环境。执行脚本的常用命令为 EVAL。</p>
+<p>Eval 命令的基本语法如下：</p>
+<p><code>redis 127.0.0.1:6379&gt; EVAL script numkeys key [key ...] arg [arg ...]</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">EVAL script numkeys key [key ...] arg [arg ...]</span><br><span class="line">执行 **Lua** 脚本。</span><br><span class="line"></span><br><span class="line">redis <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; EVAL <span class="string">&quot;return &#123;KEYS[1],KEYS[2],ARGV[1],ARGV[2]&#125;&quot;</span> <span class="number">2</span> key1 key2 first second</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>) <span class="string">&quot;key1&quot;</span></span><br><span class="line"><span class="number">2</span>) <span class="string">&quot;key2&quot;</span></span><br><span class="line"><span class="number">3</span>) <span class="string">&quot;first&quot;</span></span><br><span class="line"><span class="number">4</span>) <span class="string">&quot;second&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Redis-GEO"><a href="#Redis-GEO" class="headerlink" title="Redis GEO"></a>Redis GEO</h2><p>Redis GEO 主要用于存储地理位置信息，并对存储的信息进行操作。</p>
+<p>Redis GEO 操作方法有：</p>
+<p>geoadd：添加地理位置的坐标。<br>geopos：获取地理位置的坐标。<br>geodist：计算两个位置之间的距离。<br>georadius：根据用户给定的经纬度坐标来获取指定范围内的地理位置集合。<br>georadiusbymember：根据储存在位置集合里面的某个地点获取指定范围内的地理位置集合。<br>geohash：返回一个或多个位置对象的 geohash 值。</p>
+<p><strong>geoadd</strong><br>geoadd 用于存储指定的<strong>地理空间位置</strong>，可以将一个或多个<strong>经度</strong>(longitude)、<strong>纬度</strong>(latitude)、位置名称(member)添加到指定的 key 中。</p>
+<p>geoadd 语法格式如下：<br><code>GEOADD key longitude latitude member [longitude latitude member ...]</code></p>
+<p><strong>geopos</strong><br>geopos 用于从给定的 key 里返回所有<strong>指定名称</strong>(member)的位置（经度和纬度），不存在的返回 nil。</p>
+<p>geopos 语法格式如下：<br><code>GEOPOS key member [member ...]</code></p>
+<p><strong>geodist</strong><br>geodist 用于返回两个给定位置之间的距离。</p>
+<p>geodist 语法格式如下：<br><code>GEODIST key member1 member2 [m|km|ft|mi]</code></p>
+<p>member1 member2 为两个地理位置。</p>
+<p>最后一个距离单位参数说明：<br>m ：米，默认单位。<br>km ：千米。<br>mi ：英里。<br>ft ：英尺。</p>
+<p><strong>georadius、georadiusbymember</strong><br><strong>georadius</strong> 以给定的经纬度为中心， 返回键包含的位置元素中与中心的距离不超过给定最大距离的所有位置元素。</p>
+<p><strong>georadiusbymember</strong> 和 GEORADIUS 命令一样， 都可以找出位于指定范围内的元素， 但是 georadiusbymember 的<strong>中心点</strong>是由<strong>给定的位置元素决定</strong>的， <strong>而不是使用经度和纬度来决定中心点</strong>。</p>
+<p>georadius 与 georadiusbymember 语法格式如下：</p>
+<p><code>GEORADIUS key longitude latitude radius m|km|ft|mi [WITHCOORD] [WITHDIST] [WITHHASH] [COUNT count] [ASC|DESC] [STORE key] [STOREDIST key]</code></p>
+<p><code>GEORADIUSBYMEMBER key member radius m|km|ft|mi [WITHCOORD] [WITHDIST] [WITHHASH] [COUNT count] [ASC|DESC] [STORE key] [STOREDIST key]</code></p>
+<p>WITHDIST: 在返回位置元素的同时， 将位置元素与中心之间的距离也一并返回。<br>WITHCOORD: 将位置元素的经度和纬度也一并返回。<br>COUNT 限定返回的记录数。<br>ASC: 查找结果根据距离从近到远排序。<br>DESC: 查找结果根据从远到近排序。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">GEOADD Sicily <span class="number">13.361389</span> <span class="number">38.115556</span> <span class="string">&quot;Palermo&quot;</span> <span class="number">15.087269</span> <span class="number">37.502669</span> <span class="string">&quot;Catania&quot;</span> <span class="number">13.583333</span> <span class="number">37.316667</span> <span class="string">&quot;Agrigento&quot;</span></span><br><span class="line"></span><br><span class="line">GEOPOS Sicily Palermo Catania</span><br><span class="line"></span><br><span class="line">GEODIST Sicily Palermo Catania</span><br><span class="line"></span><br><span class="line">GEORADIUS Sicily <span class="number">15</span> <span class="number">37</span> <span class="number">200</span> km WITHDIST WITHCOORD ASC</span><br><span class="line"></span><br><span class="line"> GEORADIUSBYMEMBER Sicily Agrigento <span class="number">200</span> km</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Redis-Stream"><a href="#Redis-Stream" class="headerlink" title="Redis Stream"></a>Redis Stream</h2><p>Redis Stream 是 Redis 5.0 版本新增加的数据结构。</p>
+<p>Redis Stream 主要用于<strong>消息队列</strong>（MQ，Message Queue），Redis 本身是有一个 Redis 发布订阅 (pub&#x2F;sub) 来实现消息队列的功能，但它有个缺点就是消息无法持久化，如果出现网络断开、Redis 宕机等，消息就会被丢弃。</p>
+<p>简单来说发布订阅 (pub&#x2F;sub) <strong>可以分发消息</strong>，但无法记录历史消息。</p>
+<p>而 Redis Stream 提供了消息的持久化和<strong>主备复制</strong>功能，可以让任何客户端访问任何时刻的数据，并且能记住每一个客户端的访问位置，还能保证消息不丢失。</p>
+<p>Redis Stream 的结构如下所示，它有一个<strong>消息链表</strong>，将所有加入的消息都串起来，每个消息都有一个唯一的 ID 和对应的内容：</p>
+<img src="/2024/04/01/InternetBasicsNote/24.png" class="">
+
+<p>每个 Stream 都有唯一的名称，它就是 Redis 的 key，在我们首次使用 xadd 指令追加消息时自动创建。</p>
+<p>Consumer Group ：消费组，使用 XGROUP CREATE 命令创建，一个消费组有多个消费者(Consumer)。</p>
+<p>last_delivered_id ：游标，<strong>每个消费组</strong>会有个游标 last_delivered_id，任意一个消费者读取了消息都会使游标 last_delivered_id 往前（Stream direction）移动。</p>
+<p>pending_ids ：消费者(Consumer)的<strong>状态变量</strong>，作用是维护<strong>消费者的未确认的 id</strong>。 pending_ids 记录了当前已经被客户端<strong>读取</strong>的消息，但是还没有 ack （Acknowledge character：确认字符）。</p>
+<p>消息队列相关命令：<br>XADD - 添加消息到末尾<br>XTRIM - 对流进行修剪，限制长度<br>XDEL - 删除消息<br>XLEN - 获取流包含的元素数量，即消息长度<br>XRANGE - 获取消息列表，会自动过滤已经删除的消息<br>XREVRANGE - 反向获取消息列表，ID 从大到小<br>XREAD - 以阻塞或非阻塞方式获取消息列表</p>
+<p>消费者组相关命令：<br>XGROUP CREATE - 创建消费者组<br>XREADGROUP GROUP - 读取消费者组中的消息<br>XACK - 将消息标记为”已处理”<br>XGROUP SETID - 为消费者组设置新的最后递送消息ID<br>XGROUP DELCONSUMER - 删除消费者<br>XGROUP DESTROY - 删除消费者组<br>XPENDING - 显示待处理消息的相关信息<br>XCLAIM - 转移消息的归属权<br>XINFO - 查看流和消费者组的相关信息；</p>
+<p><strong>XADD</strong><br>使用 XADD 向队列添加消息，如果指定的队列不存在，则创建一个队列（key），XADD 语法格式：<br><code>XADD key ID field value [field value ...]</code><br>key ：队列名称，如果不存在就创建<br>ID ：消息 id，我们使用 * 表示由 redis <strong>帮我们生成合适的ID</strong>，可以自定义，但是要自己保证递增性。使用 * 执行命令之后返回的就是 消息 id，其他命令可能要用的这个 ID。<br>field value ： 记录。<br>每次在消息队列中添加的都是一条消息，一条消息可以包含很多内容。</p>
+<p><strong>XTRIM</strong><br>使用 XTRIM 对流进行修剪，限制长度， 语法格式：<br><code>XTRIM key MAXLEN [~] count</code><br>key ：队列名称<br>MAXLEN ：长度<br>count ：数量</p>
+<p><strong>XDEL</strong><br>使用 XDEL 删除消息，语法格式：<br><code>XDEL key ID [ID ...]</code><br>key：队列名称<br>ID ：消息 ID</p>
+<p><strong>XRANGE</strong><br>使用 XRANGE 获取消息列表，会自动过滤已经删除的消息 ，语法格式：<br><code>XRANGE key start end [COUNT count]</code><br>key ：队列名<br>start ：开始值， <strong>-</strong> 表示<strong>最小值</strong><br>end ：结束值， <strong>+</strong> 表示<strong>最大值</strong><br>count ：数量</p>
+<p><strong>XREVRANGE</strong><br>使用 XREVRANGE 获取<strong>反向</strong>消息列表，会自动过滤已经删除的消息 ，语法格式：<br><code>XREVRANGE key end start [COUNT count]</code><br>key ：队列名<br>end ：结束值， + 表示最大值<br>start ：开始值， - 表示最小值<br>count ：数量</p>
+<p><strong>XREAD</strong><br>使用 XREAD 以<strong>阻塞或非阻塞</strong>方式获取消息列表 ，语法格式：<br><code>XREAD [COUNT count] [BLOCK milliseconds] STREAMS key [key ...] id [id ...]</code><br>count ：数量<br>milliseconds ：可选，阻塞毫秒数，没有设置就是非阻塞模式<br>key ：队列名<br>id ：消息 ID</p>
+<p><strong>XGROUP CREATE</strong><br>使用 XGROUP CREATE 创建消费者组，语法格式：<br><code>XGROUP [CREATE key groupname id-or-$]</code><br>key ：队列名称，如果不存在就创建<br>groupname ：组名。<br><code>$</code>： 表示从 <strong>尾部开始消费</strong> ，只接受新消息，当前 Stream 消息会全部忽略。<br>从头开始消费:<br><code>XGROUP CREATE mystream consumer-group-name 0-0  </code></p>
+<p>从尾部开始消费:<br><code>XGROUP CREATE mystream consumer-group-name $</code></p>
+<p><strong>XREADGROUP GROUP</strong><br>使用 XREADGROUP GROUP <strong>读取消费组中的消息</strong>，语法格式：</p>
+<p><code>XREADGROUP GROUP group consumer [COUNT count] [BLOCK milliseconds] [NOACK] STREAMS key [key ...] ID [ID ...]</code><br>group ：消费组名<br>consumer ：消费者名。<br>count ： 读取数量。<br>milliseconds ： 阻塞毫秒数。<br>key ： 队列名。<br>ID ： 消息 ID。<br><code>XREADGROUP GROUP consumer-group-name consumer-name COUNT 1 STREAMS mystream &gt;</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">XADD mystream * name Sara surname OConnor</span><br><span class="line"></span><br><span class="line">XADD mystream * field1 value1 field2 value2 field3 value3</span><br><span class="line"></span><br><span class="line">XLEN mystream</span><br><span class="line"></span><br><span class="line">XRANGE mystream - +</span><br><span class="line"></span><br><span class="line"> XTRIM mystream MAXLEN <span class="number">2</span></span><br><span class="line"></span><br><span class="line">XGROUP CREATE mystream consumer-group-name <span class="number">0</span>-<span class="number">0</span></span><br><span class="line"></span><br><span class="line">XREADGROUP GROUP consumer-group-name consumer-name COUNT <span class="number">1</span> STREAMS mystream &gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Redis-数据备份与恢复"><a href="#Redis-数据备份与恢复" class="headerlink" title="Redis 数据备份与恢复"></a>Redis 数据备份与恢复</h2><p>Redis SAVE 命令用于创建当前数据库的备份。<br>该命令将在 redis 安装目录中创建dump.rdb文件。</p>
+<p>恢复数据<br>如果需要恢复数据，只需将备份文件 (dump.rdb) 移动到 redis 安装目录并启动服务即可。获取 redis 目录可以使用 <code>CONFIG GET dir</code> 命令。</p>
+<p>以上命令 <code>CONFIG GET dir</code> 输出 redis 安装目录&#x3D;。</p>
+<h2 id="Redis-安全"><a href="#Redis-安全" class="headerlink" title="Redis 安全"></a>Redis 安全</h2><p>我们可以通过 redis 的<strong>配置文件</strong>设置密码参数，这样客户端连接到 redis 服务就需要密码验证，这样可以让你的 redis 服务更安全。</p>
+<p><code>CONFIG get requirepass</code>查看<strong>是否设置了密码验证</strong>：</p>
+<p>默认情况下 requirepass 参数是空的，这就意味着你无需通过密码验证就可以连接到 redis 服务。</p>
+<p>你可以通过以下命令来修改该参数：<br><code>CONFIG set requirepass &quot;password&quot;</code><br>设置密码后，客户端连接 redis 服务就需要<strong>密码验证</strong>，否则无法执行命令。</p>
+<p>使用 <code>AUTH password</code> 命令进行密码验证。</p>
+<h2 id="Redis-客户端连接"><a href="#Redis-客户端连接" class="headerlink" title="Redis 客户端连接"></a>Redis 客户端连接</h2><p>Redis 通过<strong>监听</strong>一个 <strong>TCP</strong> 端口或者 Unix <strong>socket</strong> 的方式来接收来自客户端的连接，当一个连接建立后，Redis 内部会进行以下一些操作：</p>
+<p>首先，客户端 socket 会被设置为<strong>非阻塞模式</strong>，因为 Redis 在网络事件处理上采用的是<strong>非阻塞多路复用</strong>模型。<br>然后为这个 socket 设置 <strong>TCP_NODELAY</strong> 属性，禁用 Nagle 算法<br>然后创建一个<strong>可读的文件事件</strong>用于监听这个客户端 socket 的数据发送</p>
+<p>最大连接数 maxclients 的默认值是 10000，你也可以在 redis.conf 中对这个值进行修改。</p>
+<p><code>config get maxclients</code> 查看最大连接数。</p>
+<p><code>CLIENT LIST</code> 返回连接到 redis 服务的客户端列表。</p>
+<h2 id="Redis-管道技术"><a href="#Redis-管道技术" class="headerlink" title="Redis 管道技术"></a>Redis 管道技术</h2><p>Redis是一种基于 <strong>客户端-服务端</strong> 模型以及 <strong>请求&#x2F;响应</strong> 协议 的<strong>TCP</strong>服务。这意味着通常情况下一个请求会遵循以下步骤：</p>
+<p>客户端向服务端发送一个查询请求，并<strong>监听Socket返回</strong>，通常是以<strong>阻塞模式</strong>，等待服务端响应。<br>服务端处理命令，并将结果返回给客户端。</p>
+<p><strong>阻塞模式</strong><br>阻塞模式（Blocking Mode）是一种在编程中常见的同步模式，它指的是在某些操作无法立即完成时，线程会被阻塞（暂停执行），直到操作完成或者达到一定的条件后再继续执行。阻塞模式通常与同步机制（如锁、信号量）结合使用，用于实现线程间的协调和数据同步。</p>
+<p>在阻塞模式下，线程会在以下情况被阻塞：</p>
+<p>I&#x2F;O 操作：当线程进行 I&#x2F;O 操作时，如果操作无法立即完成（例如读取文件、网络通信等），线程会被阻塞，直到数据就绪或超时。<br>等待条件：当线程需要等待某个条件的满足时，如果条件尚未达到，线程会被阻塞，直到条件满足或超时。<br>获取锁：当线程试图获取某个锁时，如果锁已被其他线程持有，线程会被阻塞，直到锁可用或超时。<br>阻塞模式与非阻塞模式相对应。在非阻塞模式下，线程不会等待操作的完成或条件的满足，而是立即返回，通常会周期性地进行轮询或通过回调函数来检查操作或条件是否已完成。</p>
+<p>在编程中，阻塞模式通常适用于那些需要等待外部事件或资源就绪后才能继续执行的场景，例如<strong>网络编程、多线程同步、事件驱动编程</strong>等。然而，过度使用阻塞模式可能会导致资源浪费和性能下降，因此需要根据具体情况综合考虑选择合适的同步模式。</p>
+<p><strong>回调函数</strong><br>回调函数（Callback Function）是一种常见的编程模式，用于实现异步编程。它是指在某个操作完成后，通过调用预先注册的函数（回调函数），来<strong>通知调用方</strong>或<strong>处理结果</strong>。</p>
+<p>回调函数通常用于以下几种情况：</p>
+<p>事件处理：当某个事件发生时，调用预先注册的回调函数来处理事件，例如点击按钮时触发的点击事件、接收到网络请求时触发的数据到达事件等。<br>异步操作：当进行耗时的异步操作（如文件读取、网络请求）时，通过回调函数来处理操作完成后的结果，以避免阻塞线程。<br>错误处理：当发生错误或异常时，通过回调函数来处理错误信息，例如异步操作失败时的错误处理。<br>回调函数通常作为参数传递给异步操作的函数或方法，当操作完成后，将<strong>回调函数作为参数</strong>调用，<strong>传递操作的结果或错误信息</strong>。在编程中，回调函数可以是函数指针、匿名函数、Lambda 表达式等形式。</p>
+<p>回调函数的优点是它能够实现<strong>非阻塞的异步编程</strong>，提高了程序的响应速度和并发性。然而，回调函数也有一些缺点，例如代码可读性较差、回调地狱（Callback Hell）等问题，因此在使用时需要注意适当的设计和组织。</p>
+<p><strong>Redis 管道技术</strong><br>Redis 管道技术可以在服务端未响应时，客户端可以继续向服务端发送请求，并<strong>最终一次性读取所有服务端的响应</strong>。</p>
+<p>管道技术最显著的优势是提高了 redis 服务的性能。</p>
+<h2 id="Redis-分区"><a href="#Redis-分区" class="headerlink" title="Redis 分区"></a>Redis 分区</h2><p>分区是<strong>分割数据</strong>到多个Redis实例的处理过程，因此每个实例只保存key的一个子集。</p>
+<p>分区的优势<br>通过利用多台计算机内存的和值，允许我们构造更大的数据库。<br>通过多核和多台计算机，允许我们扩展计算能力；通过多台计算机和网络适配器，允许我们扩展网络带宽。</p>
+<p>分区的不足<br>redis的一些特性在分区方面表现的不是很好：</p>
+<ol>
+<li>涉及多个key的操作通常是不被支持的。举例来说，当两个set映射到不同的redis实例上时，你就不能对这两个set执行交集操作。</li>
+<li>涉及多个key的redis事务不能使用。</li>
+<li>当使用分区时，数据处理较为复杂，比如你需要处理多个rdb&#x2F;aof文件，并且从多个实例和主机备份持久化文件。</li>
+<li>增加或删除容量也比较复杂。redis集群大多数支持在运行时增加、删除节点的透明数据平衡的能力，但是类似于客户端分区、代理等其他系统则不支持这项特性。然而，一种叫做presharding的技术对此是有帮助的。</li>
+</ol>
+<p>分区类型<br>Redis 有两种类型分区。 假设有4个Redis实例 R0，R1，R2，R3，和类似user:1，user:2这样的表示用户的多个key，对既定的key有两种不同方式来选择这个key存放在哪个实例中。也就是说，有不同的系统来映射<strong>某个key到某个Redis服务</strong>。</p>
+<ol>
+<li>范围分区</li>
+<li>哈希分区<br>另外一种分区方法是hash分区。这对任何key都适用，也无需是object_name:这种形式，像下面描述的一样简单：<br>用一个hash函数将key转换为一个数字，比如使用crc32 hash函数。对key foobar执行crc32(foobar)会输出类似93024922的整数。<br>对这个整数取模，将其转化为0-3之间的数字，就可以将这个整数映射到4个Redis实例中的一个了。93024922 % 4 &#x3D; 2，就是说key foobar应该被存到R2实例中。</li>
+</ol>
+<h2 id="Java-使用-Redis-Jedis"><a href="#Java-使用-Redis-Jedis" class="headerlink" title="Java 使用 Redis (Jedis)"></a>Java 使用 Redis (Jedis)</h2><p>Jedis是Java最常用的Redis客户端，它的使用方法参数与Redis重合度非常高，这意味着对于Java开发人员来说不会增加新的学习成本，颇有一种开箱即用的味道。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/redis/jedis">jedis</a></p>
+<p>首先在 <a target="_blank" rel="noopener" href="https://mvnrepository.com/artifact/redis.clients/jedis">Maven仓库</a>下载 Jedis.jar 包，在源文件夹 src 下建立 lib 文件夹，项目左边栏右键空白处之后选择： <code>Open Module Settings</code>，点击 + 号选择<code>Jars or Directories</code>选项并导入lib 文件夹导入第三方库文件，再根据 Jedis 给出的 Maven 配置方式修改 Pom，成功导入。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//连接本地的 Redis 服务</span></span><br><span class="line">        <span class="type">Jedis</span> <span class="variable">jedis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Jedis</span>(<span class="string">&quot;localhost&quot;</span>, <span class="number">6379</span>);</span><br><span class="line">        <span class="comment">// 如果 Redis 服务设置了密码，需要下面这行，没有就不需要</span></span><br><span class="line">        <span class="comment">// jedis.auth(&quot;password&quot;);</span></span><br><span class="line">        System.out.println(<span class="string">&quot;连接成功&quot;</span>);</span><br><span class="line">        <span class="comment">//查看服务是否运行</span></span><br><span class="line">        System.out.println(<span class="string">&quot;服务正在运行: &quot;</span>+jedis.ping());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置 redis 字符串数据</span></span><br><span class="line">        jedis.set(<span class="string">&quot;runoobkey&quot;</span>, <span class="string">&quot;www.runoob.com&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取存储的数据并输出</span></span><br><span class="line">        System.out.println(<span class="string">&quot;redis 存储的字符串为: &quot;</span>+ jedis.get(<span class="string">&quot;runoobkey&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//存储数据到列表中</span></span><br><span class="line">        jedis.lpush(<span class="string">&quot;site-list&quot;</span>, <span class="string">&quot;Runoob&quot;</span>);</span><br><span class="line">        jedis.lpush(<span class="string">&quot;site-list&quot;</span>, <span class="string">&quot;Google&quot;</span>);</span><br><span class="line">        jedis.lpush(<span class="string">&quot;site-list&quot;</span>, <span class="string">&quot;Taobao&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取存储的数据并输出</span></span><br><span class="line">        List&lt;String&gt; list = jedis.lrange(<span class="string">&quot;site-list&quot;</span>, <span class="number">0</span> ,<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;list.size(); i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;列表项&quot;</span>+ i + <span class="string">&quot;:&quot;</span> + list.get(i));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取所有的键</span></span><br><span class="line">        Set&lt;String&gt; keys = jedis.keys(<span class="string">&quot;*&quot;</span>);</span><br><span class="line">        Iterator&lt;String&gt; it=keys.iterator() ;</span><br><span class="line">        <span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> it.next();</span><br><span class="line">            System.out.println(key);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/tengdazhang770960436/article/details/18006127">slf4j-api、slf4j-log4j12以及log4j之间什么关系？</a></p>
+<p>在Java世界中，日志记录是一项重要的功能，它帮助我们了解应用程序的运行情况，并在出现问题时提供调试信息。在这个过程中，SLF4J（Simple Logging Facade for Java）、Log4j和SLF4J-Log4j12扮演着关键的角色。</p>
+<p>首先，我们来看看SLF4J。SLF4J，即Simple Logging Facade for Java，是一个用于Java的简单日志记录门面。它本身并不实现日志记录功能，而是提供了一个统一的接口，让开发者能够轻松地更换日志记录框架。这意味着，如果您的项目中使用了SLF4J，您可以随时将Log4j替换为Logback或其他日志记录框架，而无需修改代码中的日志记录部分。</p>
+<p>接下来，我们来看看Log4j。Log4j是一个功能强大的日志记录框架，它实现了SLF4J接口。这意味着，您可以将Log4j作为SLF4J的实现来使用。Log4j提供了丰富的日志记录功能，包括不同级别的日志记录、日志消息格式化、异步日志记录等。此外，Log4j还支持各种日志输出目标，如控制台、文件、数据库等。</p>
+<p>最后，我们来看看SLF4J-Log4j12。这是一个特殊的库，它将SLF4J与Log4j 1.2版本桥接起来。由于Log4j 1.2是最早版本的Log4j，并且仍然在许多项目中广泛使用，因此SLF4J-Log4j12为这些项目提供了一个从SLF4J到Log4j 1.2的桥梁。通过引入SLF4J-Log4j12，您可以在使用Log4j 1.2的项目中享受SLF4J带来的便利，例如轻松地更换日志记录框架等。</p>
+<p>在实际项目中，我们经常会看到SLF4J、Log4j和SLF4J-Log4j12一起使用。通常情况下，项目会首先引入SLF4J和SLF4J-Log4j12，然后通过配置文件将SLF4J的日志记录委托给Log4j 1.2。这样，项目就可以享受到Log4j 1.2的丰富功能，同时还保留了通过SLF4J更换日志记录框架的灵活性。</p>
+<p>总之，SLF4J、Log4j和SLF4J-Log4j12是Java日志记录领域中的关键组件。它们之间的关系可以概括为：SLF4J是一个日志记录门面，Log4j是一个实现了SLF4J接口的日志记录框架，而SLF4J-Log4j12则是将SLF4J与Log4j 1.2桥接起来的特殊库。通过了解这些组件之间的关系和作用，您将能够更好地理解和应用Java日志记录技术。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wang465745776/article/details/80384210">使用SLF4J时的一个错误Failed to load class org.slf4j.impl.StaticLoggerBinder</a><br>也有遇到这个问题，配置依赖时 scope 的影响。</p>
+<p>在实际使用中，为避免<strong>多线程带来的并发</strong>问题，以及<strong>反复创建销毁Redis连接</strong>带来的性能消耗，我们通常会使用<strong>池化</strong>的思想——使用Jedis连接池。（就是一个大池子，随取随用，不用就归还，对并发有好处，和线程池、常量池是一个道理，Jedis连接池应该就属于数据库连接池的一种）</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44614137/article/details/120046675">什么是池，Java中的池有哪些？</a> 这篇不错。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 配置连接池</span></span><br><span class="line"><span class="type">JedisPoolConfig</span> <span class="variable">config</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JedisPoolConfig</span>();</span><br><span class="line">config.setMaxTotal(<span class="number">20</span>);</span><br><span class="line">config.setMaxIdle(<span class="number">10</span>);</span><br><span class="line">config.setMinIdle(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建连接池</span></span><br><span class="line"><span class="type">JedisPool</span> <span class="variable">jedisPool</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JedisPool</span>(config, <span class="string">&quot;localhost&quot;</span>, <span class="number">6379</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">Jedis</span> <span class="variable">jedis</span> <span class="operator">=</span> jedisPool.getResource();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用jedis进行操作</span></span><br><span class="line">jedis.set(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;otherNameVal&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用完之后，一定要手动关闭连接（归还给连接池）</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/260661680">如何在Java中优雅的使用Redis</a><br>提到使用连接池的时候如果连接没有成功关闭，最后就会造成阻塞和死机，所以需要使用 try catch final 来解决，同时使用了更进阶的写法。</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/-beyond/p/10991139.html">使用Jedis操作Redis</a> 有基础用法，也有讲使用Jedis连接Redis集群。<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/-beyond/p/9660582.html">集群搭建</a></p>
+<h1 id="SSM-1"><a href="#SSM-1" class="headerlink" title="SSM"></a>SSM</h1><h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><p>组件（bean）：可以复用的 Java 对象。什么叫复用呢，比如就是赋值为全局变量的对象，比如 BookServlet 多次调用 BookService 服务就不需要多次 new 一个 BookService 对象，直接用 IOC 里面保存的可以复用的对象就好了。</p>
+<img src="/2024/04/01/InternetBasicsNote/31.png" class="">
+
+<img src="/2024/04/01/InternetBasicsNote/32.png" class="">
+
+<p>spring 核心容器的 两大功能<br>IoC 控制反转 ：将对象的控制权交给 spring<br>DI 依赖注入 ：维护容器中对象的引用或依赖关系<br>所以核心容器也常叫 IoC容器</p>
+<img src="/2024/04/01/InternetBasicsNote/33.png" class="">
+
+<p>所以就是用三种配置方式（XML、注解、配置类，现在主流是<strong>配置类</strong>和<strong>注解</strong>配合使用）去实现 IoC、DI（DI有三种实现方式：构造函数注入、setter 方法注入、接口注入）</p>
+<h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1205428">IDEA版SpringBoot全教程 01 快速入门</a></p>
+<p>这篇文章学到了不少，包括 yml 的基础语法和配置，几个注解配置等。</p>
+<h2 id="mybatis"><a href="#mybatis" class="headerlink" title="mybatis"></a>mybatis</h2><h1 id="一些重要知识点"><a href="#一些重要知识点" class="headerlink" title="一些重要知识点"></a>一些重要知识点</h1><h2 id="Nginx-代理和负载均衡"><a href="#Nginx-代理和负载均衡" class="headerlink" title="Nginx 代理和负载均衡"></a>Nginx 代理和负载均衡</h2><p><strong>负载均衡</strong>：负载均衡服务器通过一定的调度算法将客户端的<strong>流量分发</strong>到不同的应用服务器上面，以实现性能的水平扩展及避免单点故障出现。</p>
+<img src="/2024/04/01/InternetBasicsNote/26.png" class="">
+
+<p>正向代理是指通过<strong>代理服务器</strong> 代理 浏览器&#x2F;客户端 去重定向请求访问到目标服务器。</p>
+<img src="/2024/04/01/InternetBasicsNote/27.png" class="">
+
+
+<p>反向代理  – 跨域<br>反向代理，指以<strong>代理服务器</strong>来接受Internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器对外就表现为一个服务器。</p>
+<img src="/2024/04/01/InternetBasicsNote/28.png" class="">
+
+<p>代理的意思可以理解为：为某人出面，成为某人某物的门面，所以代理的意义是<strong>隐藏</strong>。</p>
+<p>感觉就有点像：正向代理是 代理 浏览器&#x2F;客户端，重定向它们的请求去访问目标服务器，在这个过程中，目标服务器是与代理服务器通信，所以目标服务器看不到它真正的访问源，所以正向代理是能保护 浏览器&#x2F;客户端 的网络安全的。<br>而反向代理的 代理服务器是 代理 目标服务器，替目标服务器接收来自互联网的连接请求，然后再把请求转发给内部网络上的服务器，这个过程还能实现负载均衡，之后将得到的结果返回给请求连接的客户端。此时这个代理服务器对 客户端 而言是不是就像一个普通的服务器一样，也就是说：反向代理的话代理服务器是成为了目标服务器的门面。此时目标服务器对客户端而言是透明的，这才是代理的真正意义。</p>
+<p>这应该就是正反代理的区别。注意：它们的共同点是都通过代理服务器来转发请求流量，都通过它来通信。</p>
+<hr>
+<p>反向代理（Reverse Proxy）和负载均衡（Load Balancing）是常见的网络架构模式，用于提高网络服务的可用性、性能和安全性。</p>
+<p>反向代理：<br>反向代理是指代理服务器位于服务端，它接收客户端的请求，然后将请求转发给一个或多个后端服务器，并将后端服务器的响应返回给客户端。客户端并不直接与后端服务器通信，而是通过反向代理与后端服务器交互，因此客户端对于后端服务器是透明的。<br>反向代理常用于隐藏真实的服务器架构、提供负载均衡、缓存静态资源、提供安全防护等。常见的反向代理软件包括 Nginx、Apache HTTP Server、HAProxy 等。<br>负载均衡：<br>负载均衡是指将网络流量分配到多个服务器上，以平衡服务器的负载，提高系统的性能和可用性。负载均衡器位于客户端和服务器之间，根据一定的算法（如轮询、加权轮询、最少连接数等）将请求分发给多个后端服务器，以达到均衡负载的目的。<br>负载均衡器可以是硬件设备，也可以是软件实现。常见的负载均衡软件包括 Nginx、HAProxy、F5 等。<br>反向代理和负载均衡通常结合使用，以提供高可用性和性能的服务架构。反向代理可以作为负载均衡器的一部分，将流量分发到多个后端服务器上，并提供一些额外的功能，如<strong>缓存</strong>（某些情况Nginx缓存访问结果可以直接返回，不需要再次访问服务器）、SSL 终止、Web 应用防火墙等。通过结合使用反向代理和负载均衡，可以构建可靠、高效、安全的网络服务架构。</p>
+<hr>
+<p>nginx 反向代理的好处：</p>
+<p>提高访问速度<br>因为nginx本身可以进行缓存，如果访问的同一接口，并且做了数据缓存，nginx就直接可把数据返回，不需要真正地访问服务端，从而提高访问速度。</p>
+<p>进行负载均衡<br>所谓负载均衡,就是把大量的请求按照我们指定的方式均衡的分配给集群中的每台服务器。</p>
+<p>保证后端服务安全<br>因为一般后台服务地址不会暴露，所以使用浏览器不能直接访问，可以把nginx作为请求访问的入口，请求到达nginx后转发到具体的服务中，从而保证后端服务的安全。</p>
+<p>可以看<a target="_blank" rel="noopener" href="https://www.cnblogs.com/szlsay/p/17737747.html">苍穹外卖第一章项目介绍</a>里面有讲一些Nginx代理。</p>
+<h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><p>Docker 是一种开源的容器化平台，用于将应用程序和其依赖项打包到一个<strong>称为容器</strong>的可移植的、可部署的单元中。Docker 使用<strong>容器</strong>来<strong>封装应用程序和所有运行时环境</strong>，包括代码、运行时、系统工具、系统库等，从而实现了轻量级、快速、一致的应用程序交付和部署。</p>
+<p>Docker 是开源的应用容器引擎，可以让开发者打包应用及其依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 或 Windows 机器上，也可以实现虚拟化。容器完全使用沙箱机制，相互之间不会有任何接口。<br>下面对 Docker 的作用和基本用法做个简单介绍：<br>Docker 的作用：<br>降低系统部署难度和复杂性：Docker 可以将应用和服务包装在”容器”中进行部署，所有的依赖都包含在同一容器内，避免了在部署过程中由于环境问题导致的各种冲突和错误。<br>提高系统扩展性：对于需要频繁扩展和缩小的服务，Docker 可以在几秒钟内启动或关闭容器，非常适合微服务架构。<br>提高开发效率：Docker 可以保证开发、测试、预发布和生产环境的一致性，使开发人员更加专注于功能开发。<br>节省资源：相比虚拟机技术，一个相同应用的 Docker 容器镜像都能够运行在同一个机器上，由于容器直接运行于宿主的内核，不需要模拟整个操作系统，因此可以节省大量的系统资源。</p>
+<p><strong>运维</strong>（Operations，简称Ops）是指<strong>运营和维护系统</strong>的一系列工作，旨在确保系统的稳定性、安全性和高可用性。</p>
+<p>运维工作是保障系统稳定运行的关键，需要具备丰富的系统知识、故障排除能力和快速响应的能力。随着<strong>云计算和 DevOps</strong> 等新技术的发展，运维工作也在不断演变和发展，越来越多地倾向于自动化、自助式和云原生的方向。</p>
+<h2 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h2><p><a target="_blank" rel="noopener" href="https://www.iteye.com/blog/globeeip-1236167">RBAC新解：基于资源的权限管理(Resource-Based Access Control)</a></p>
+<h2 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h2><p>微服务（Microservices）是一种软件架构模式，将一个大型应用程序拆分成一组更小、更灵活的服务，每个服务都围绕着特定的业务功能进行构建和部署。每个服务都是一个独立的应用，可以单独开发、部署和扩展，通过轻量级的通信机制（通常是 HTTP 或消息队列）进行交互。</p>
+<p>微服务架构的主要特点包括：</p>
+<p>服务拆分：将应用程序拆分成多个小服务，每个服务负责一个特定的业务功能。服务之间通过定义良好的接口进行通信。<br>独立部署：每个微服务都可以独立部署，不受其他服务的影响，降低了部署的风险和复杂度。<br>技术多样性：不同的微服务可以使用不同的技术栈和编程语言来实现，选择最适合特定任务的技术。<br>自动化运维：通过自动化工具和容器技术（如 Docker、Kubernetes(K8s) ），可以实现微服务的自动化部署、扩展和管理。<br>弹性和可伸缩性：由于每个微服务都是独立的，可以根据负载情况对特定服务进行扩展，从而提高整个系统的弹性和可伸缩性。<br>分布式数据管理：每个微服务都有自己的数据存储，可能会使用不同的数据库或数据存储技术，需要通过异步通信或分布式事务来实现数据一致性。<br>服务治理：需要实现服务注册与发现、负载均衡、断路器等机制来保证服务的可用性和稳定性。<br>微服务架构适用于复杂的、大型的应用系统，特别是需要频繁迭代和快速发布的场景。它可以带来更灵活的开发和部署、更高的可扩展性和可靠性，但同时也带来了更多的复杂性和管理成本。因此，在采用微服务架构时，需要根据具体情况进行合理的架构设计和管理实践。</p>
+<h2 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h2><p>分布式事务是指<strong>涉及多个参与者的分布式系统中的事务操作</strong>，保证这些事务操作的一致性和可靠性是一个复杂的问题。在传统的单体系统中，事务管理是相对简单的，因为所有的事务操作都在同一个数据库事务中执行。但在分布式系统中，涉及到多个独立的服务或数据库，事务的一致性变得更加复杂。</p>
+<p>分布式事务的一致性保障了事务的原子性、一致性、隔离性和持久性（ACID 属性）。</p>
+<p>以下是实现分布式事务的几种常见方法：</p>
+<p><strong>两阶段提交</strong>（Two-Phase Commit，2PC）：<br><strong>2PC</strong> 是最经典的分布式事务协议之一。它通过两个阶段来确保所有参与者<strong>都同意</strong>提交或回滚事务。<br>第一阶段（准备阶段）：协调者询问所有参与者是否准备好提交事务。如果<strong>所有</strong>参与者都准备好，则协调者发送提交请求；否则，发送回滚请求。<br>第二阶段（提交&#x2F;回滚阶段）：根据第一阶段的结果，协调者发送提交或回滚请求给所有参与者。</p>
+<p><strong>补偿事务</strong>（Compensating Transaction）：<br>补偿事务是一种基于回滚机制的分布式事务处理方法。当发生某个参与者的操作失败时，会执行相应的<strong>补偿</strong>操作来恢复到一致状态。</p>
+<p><strong>本地消息表</strong>（Local Message Table）：<br>使用<strong>消息队列</strong>实现分布式事务，将<strong>事务操作和消息</strong>发送放入同一个事务中，并使用<strong>本地消息表</strong>记录消息的发送状态。如果事务提交成功但消息发送失败，则<strong>重试发送</strong>消息。</p>
+<h2 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h2><p>消息队列（Message Queue）是一种常见的<strong>分布式系统架构模式</strong>，用于在<strong>应用程序之间</strong>传递消息。它允许<strong>不同的应用程序或服务之间进行异步通信</strong>，解耦了系统中不同组件的耦合度，提高了系统的可扩展性、可靠性和灵活性。</p>
+<p>消息队列的主要组成部分包括：</p>
+<p><strong>消息</strong>：消息是在不同应用程序之间传递的<strong>数据单元</strong>，通常包括一些业务数据和元数据。消息队列可以传递各种类型的消息，如文本、JSON、XML 等。<br>消息<strong>生产者</strong>：消息生产者是<strong>产生消息并发送</strong>到消息队列中的应用程序或服务。<br>消息队列：消息队列是一个存<strong>储消息的中间件</strong>，负责接收、存储和分发消息。<br>消息消费者：消息消费者是从消息队列中<strong>接收消息并处理</strong>的应用程序或服务。</p>
+<p>消息队列的特点包括：<br><strong>异步通信</strong>：消息生产者和消息消费者之间的通信是异步的，消息发送后生产者不需要等待消费者处理完毕即可继续执行。<br>解耦：通过消息队列，消息生产者和消费者之间的耦合度降低，它们可以独立进行开发、部署和维护。<br>可靠性：消息队列提供了<strong>消息持久化</strong>、<strong>消息确认</strong>、<strong>重试机制</strong>等功能，确保消息能够安全可靠地传递。<br>削峰填谷：消息队列可以作为<strong>缓冲层</strong>，平滑处理系统的<strong>峰值流量</strong>，防止系统过载。</p>
+<p>常见的消息队列系统包括 <strong>RabbitMQ、Kafka、Redis</strong>、ActiveMQ、Amazon SQS（Simple Queue Service）等。选择合适的消息队列取决于具体的业务需求、系统架构和性能要求。</p>
+<h2 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h2><p>缓存击穿（Cache Miss）是指在使用缓存系统时，某个热点数据缓存失效后，大量请求同时涌入，导致请求直接访问数据库或其他存储系统，使得数据库或存储系统负载剧增，甚至崩溃的情况。</p>
+<p>缓存击穿通常发生在以下情况下：</p>
+<p>热点数据失效：某个频繁访问的热点数据在缓存中过期或被删除，导致缓存失效。<br>高并发请求：大量并发请求同时涌入，请求未命中缓存，直接访问底层数据库或存储系统。<br>缓存击穿可能会导致以下问题：</p>
+<p>数据库负载激增：大量请求直接访问数据库，导致数据库负载剧增，甚至引起数据库宕机。<br>响应时间增加：由于请求直接访问数据库，导致响应时间增加，影响系统性能。<br>为了避免缓存击穿，可以采取以下几种方法：</p>
+<p>加锁或互斥机制：使用分布式锁或互斥机制，确保只有一个线程去加载数据，其他线程等待结果。<br>设置热点数据永不过期：对于热点数据，设置永不过期或者设置一个较长的过期时间，以保证不会因为缓存过期而导致缓存击穿。<br>使用互斥体：使用互斥体的方式来防止数据库穿透。当一个请求发现缓存失效时，首先获得一个互斥锁(Mutex)，然后再去请求数据库，请求返回后再释放锁。<br>预加载：在缓存失效之前，提前预加载热点数据到缓存中，保证缓存不会空出。可以通过定时任务或者异步加载来实现。<br>失败重试：在缓存失效时，通过设置短暂的短期过期时间，再次尝试获取数据。如果再次失败，可以逐渐增加等待时间，直到获取到数据或达到最大等待时间。<br>以上方法可以有效地防止缓存击穿问题的发生，提高系统的稳定性和性能。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><h2 id="Mysql-1"><a href="#Mysql-1" class="headerlink" title="Mysql"></a>Mysql</h2><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2094819">Mysql Workbench使用教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_52050769/article/details/118095034">Java连接mysql数据库方法</a></p>
+<h2 id="SQL-1"><a href="#SQL-1" class="headerlink" title="SQL"></a>SQL</h2><p><a target="_blank" rel="noopener" href="https://www.runoob.com/sql/sql-syntax.html">SQL 菜鸟教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/sql/sql-quickref.html">SQL 快速参考</a></p>
+<h2 id="B-树"><a href="#B-树" class="headerlink" title="B 树"></a>B 树</h2><p><a target="_blank" rel="noopener" href="https://ivanzz1001.github.io/records/post/data-structure/2018/06/16/ds-bplustree#7-mysql%E4%B8%ADb%E6%A0%91%E7%9A%84%E5%BA%94%E7%94%A8">B+树详解</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_14643435/2853946">什么是B-树、B树、B+树、B*树？</a><br>注：B-树是很烂的音译，会让人产生误解，实际上B-树就是B树。</p>
+<p><a target="_blank" rel="noopener" href="https://pdai.tech/md/algorithm/alg-basic-tree-redblack.html">树 - 红黑树(R-B Tree)</a>  这篇还没看</p>
+<h2 id="Redis-1"><a href="#Redis-1" class="headerlink" title="Redis"></a>Redis</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yiwangzhibujian/p/7053840.html">Redis和同类产品的比较</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/redis/redis-intro.html"> Redis 教程 Runoob</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>lichao Zhang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/" title="InternetBasicsNote">https://iridescent-zhang.github.io/2024/04/01/InternetBasicsNote/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/03/05/LeetCodeNote/" rel="prev" title="LeetCodeNote">
+      <i class="fa fa-chevron-left"></i> LeetCodeNote
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/05/02/httpNote/" rel="next" title="httpNote">
+      httpNote <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-%E5%90%8E%E7%AB%AF"><span class="nav-number">1.</span> <span class="nav-text">Java 后端</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E6%A1%86%E6%9E%B6"><span class="nav-number">1.1.</span> <span class="nav-text">知识框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.</span> <span class="nav-text">区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#J2EE-JSP-Java%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.1.</span> <span class="nav-text">J2EE,JSP,Java的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%92%8C%E5%89%8D%E7%AB%AF%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.2.</span> <span class="nav-text">后端和前端有什么区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSM"><span class="nav-number">1.3.</span> <span class="nav-text">SSM</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">数据库基础和原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-DB-%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84"><span class="nav-number">2.1.</span> <span class="nav-text">SQL DB - 关系型数据库是如何工作的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#B-%E6%A0%91%E7%B4%A2%E5%BC%95"><span class="nav-number">2.1.1.</span> <span class="nav-text">B+树索引</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E8%BF%9E%E6%8E%A5-Workbench-%E5%88%9B%E5%BB%BA%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.2.</span> <span class="nav-text">Java 连接 Workbench 创建的数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql"><span class="nav-number">2.3.</span> <span class="nav-text">Mysql</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL"><span class="nav-number">3.</span> <span class="nav-text">SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">3.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-%E5%88%86%E7%B1%BB"><span class="nav-number">3.2.</span> <span class="nav-text">SQL 分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.3.</span> <span class="nav-text">常用语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-SELECT-%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.3.1.</span> <span class="nav-text">SQL SELECT 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-WHERE-%E5%AD%90%E5%8F%A5"><span class="nav-number">3.3.2.</span> <span class="nav-text">SQL WHERE 子句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-ORDER-BY-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">3.3.3.</span> <span class="nav-text">SQL ORDER BY 关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LIMIT-%E5%92%8C-OFFSET-%E7%94%A8%E6%B3%95"><span class="nav-number">3.3.4.</span> <span class="nav-text">LIMIT 和 OFFSET 用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-INSERT-INTO-%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.3.5.</span> <span class="nav-text">SQL INSERT INTO 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-UPDATE-%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.3.6.</span> <span class="nav-text">SQL UPDATE 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-DELETE-FROM-%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.3.7.</span> <span class="nav-text">SQL DELETE FROM 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-INSERT-INTO-SELECT-%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.3.8.</span> <span class="nav-text">SQL INSERT INTO SELECT 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="nav-number">3.3.9.</span> <span class="nav-text">子查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5-JOIN"><span class="nav-number">3.3.10.</span> <span class="nav-text">连接 JOIN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E5%90%88-UNION"><span class="nav-number">3.3.11.</span> <span class="nav-text">组合 UNION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-%E5%88%AB%E5%90%8D-AS"><span class="nav-number">3.3.12.</span> <span class="nav-text">SQL 别名  AS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81%E8%A1%A8"><span class="nav-number">3.3.13.</span> <span class="nav-text">创建数据库、表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-%E7%BA%A6%E6%9D%9F%EF%BC%88Constraints%EF%BC%89"><span class="nav-number">3.3.14.</span> <span class="nav-text">SQL 约束（Constraints）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL-FOREIGN-KEY-%E7%BA%A6%E6%9D%9F"><span class="nav-number">3.3.14.1.</span> <span class="nav-text">SQL FOREIGN KEY 约束</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-CREATE-INDEX-%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.3.15.</span> <span class="nav-text">SQL CREATE INDEX 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DROP"><span class="nav-number">3.3.16.</span> <span class="nav-text">DROP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-%E8%A7%86%E5%9B%BE%EF%BC%88Views%EF%BC%89"><span class="nav-number">3.3.17.</span> <span class="nav-text">SQL 视图（Views）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.4.</span> <span class="nav-text">MySQL 数据类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis"><span class="nav-number">4.</span> <span class="nav-text">Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">4.1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#string%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89"><span class="nav-number">4.1.1.</span> <span class="nav-text">string（字符串）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list%EF%BC%88%E5%88%97%E8%A1%A8%EF%BC%89"><span class="nav-number">4.1.2.</span> <span class="nav-text">list（列表）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set%EF%BC%88%E9%9B%86%E5%90%88%EF%BC%89"><span class="nav-number">4.1.3.</span> <span class="nav-text">set（集合）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hash%EF%BC%88%E5%93%88%E5%B8%8C%E6%95%A3%E5%88%97%E8%A1%A8%EF%BC%89"><span class="nav-number">4.1.4.</span> <span class="nav-text">hash（哈希散列表）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zset-sorted-set%EF%BC%9A%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88"><span class="nav-number">4.1.5.</span> <span class="nav-text">zset (sorted set：有序集合)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85"><span class="nav-number">4.2.</span> <span class="nav-text">Redis 发布订阅</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-%E4%BA%8B%E5%8A%A1"><span class="nav-number">4.3.</span> <span class="nav-text">Redis 事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-%E8%84%9A%E6%9C%AC"><span class="nav-number">4.4.</span> <span class="nav-text">Redis 脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-GEO"><span class="nav-number">4.5.</span> <span class="nav-text">Redis GEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-Stream"><span class="nav-number">4.6.</span> <span class="nav-text">Redis Stream</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D"><span class="nav-number">4.7.</span> <span class="nav-text">Redis 数据备份与恢复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-%E5%AE%89%E5%85%A8"><span class="nav-number">4.8.</span> <span class="nav-text">Redis 安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%9E%E6%8E%A5"><span class="nav-number">4.9.</span> <span class="nav-text">Redis 客户端连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-%E7%AE%A1%E9%81%93%E6%8A%80%E6%9C%AF"><span class="nav-number">4.10.</span> <span class="nav-text">Redis 管道技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-%E5%88%86%E5%8C%BA"><span class="nav-number">4.11.</span> <span class="nav-text">Redis 分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E4%BD%BF%E7%94%A8-Redis-Jedis"><span class="nav-number">4.12.</span> <span class="nav-text">Java 使用 Redis (Jedis)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSM-1"><span class="nav-number">5.</span> <span class="nav-text">SSM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring"><span class="nav-number">5.1.</span> <span class="nav-text">Spring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot"><span class="nav-number">5.2.</span> <span class="nav-text">SpringBoot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mybatis"><span class="nav-number">5.3.</span> <span class="nav-text">mybatis</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E9%87%8D%E8%A6%81%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="nav-number">6.</span> <span class="nav-text">一些重要知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-%E4%BB%A3%E7%90%86%E5%92%8C%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="nav-number">6.1.</span> <span class="nav-text">Nginx 代理和负载均衡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker"><span class="nav-number">6.2.</span> <span class="nav-text">docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="nav-number">6.3.</span> <span class="nav-text">权限管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1"><span class="nav-number">6.4.</span> <span class="nav-text">微服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span class="nav-number">6.5.</span> <span class="nav-text">分布式事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="nav-number">6.6.</span> <span class="nav-text">消息队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF"><span class="nav-number">6.7.</span> <span class="nav-text">缓存击穿</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql-1"><span class="nav-number">7.1.</span> <span class="nav-text">Mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-1"><span class="nav-number">7.2.</span> <span class="nav-text">SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-%E6%A0%91"><span class="nav-number">7.3.</span> <span class="nav-text">B 树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-1"><span class="nav-number">7.4.</span> <span class="nav-text">Redis</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lichao Zhang"
+      src="/images/cloud.jpg">
+  <p class="site-author-name" itemprop="name">lichao Zhang</p>
+  <div class="site-description" itemprop="description">博观而约取，厚积而薄发</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Iridescent-zhang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Iridescent-zhang" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lczhang93@gmail.com" title="E-Mail → mailto:lczhang93@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/18558575/wo-ladki" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;18558575&#x2F;wo-ladki" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCv42aVozJF9n4hK8xCacCmg" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCv42aVozJF9n4hK8xCacCmg" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/watch?v=DGa4Xv_tcjE&list=LL&index=6" title="https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;DGa4Xv_tcjE&amp;list&#x3D;LL&amp;index&#x3D;6" rel="noopener" target="_blank">Eiro Nareth INTERSTELLAR</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+	  
+		<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+		<div class="widget-wrap">
+		<div id="myCanvasContainer" class="widget tagcloud">
+		<canvas width="220" height="250" id="resCanvas" style="width=100%">
+			<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cmd/" rel="tag">Cmd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Guitar/" rel="tag">Guitar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HLS/" rel="tag">HLS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/" rel="tag">LaTeX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAT/" rel="tag">NAT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PYNQ/" rel="tag">PYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Powershell/" rel="tag">Powershell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li></ul>
+		</canvas>
+		</div>
+		</div>
+	  
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lichao Zhang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">425k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">6:26</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'zmRLZ8XmVpWBhK4yl2baQmHm-gzGzoHsz',
+      appKey     : 'c5e4Xhc2Ec8iU5BMArSxhhAu',
+      placeholder: "Say something",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : 'https://zmrlz8xm.lc-cn-n1-shared.com'
+    });
+  }, window.Valine);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class='fa fa-chevron-down'></i>    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class='fa fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button" onclick="moonMenuClick()">
+    <svg class="moon-menu-svg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+      <g class="moon-menu-points">
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle>
+        <circle class="moon-menu-point" r=".2rem"></circle>
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle>
+      </g>
+    </svg>
+    <div class="moon-menu-icon">
+    </div>
+    <div class="moon-menu-text">
+    </div>
+  </div>
+</div>
+<script src="/js/injector.js"></script>
+    </div>
+  <!-- 音乐播放器 -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+ <div id="aplayer" class="aplayer" data-id="3470747396" data-server="tencent" data-type="playlist" data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
+ <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+ <!-- 音乐播放器 end -->
+</body>
+</html>

@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Witcher.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Witcher.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"iridescent-zhang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"valine","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus","order":-1},"valine":{"text":"Valine","order":-2}},"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="论文选题基于改进的YOLOv5小目标故障检测方法研究基于改进YOLOV5的小样本目标检测算法研究基于YOLOv5的建筑工地物体检测研究与实现基于YOLOv5的铁路故障检测研究与实现 弱监督场景下基于视觉注意力机制的细粒度图像故障识别方法基于自注意力的破损类故障目标检测算法研究基于混合注意力与多尺度融合的小目标检测方法基于小样本学习的列车故障检测算法研究基于Soft Teacher的工人半监督目标检">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI">
+<meta property="og:url" content="https://iridescent-zhang.github.io/2025/02/10/AI/index.html">
+<meta property="og:site_name" content="Iridescent-zhang">
+<meta property="og:description" content="论文选题基于改进的YOLOv5小目标故障检测方法研究基于改进YOLOV5的小样本目标检测算法研究基于YOLOv5的建筑工地物体检测研究与实现基于YOLOv5的铁路故障检测研究与实现 弱监督场景下基于视觉注意力机制的细粒度图像故障识别方法基于自注意力的破损类故障目标检测算法研究基于混合注意力与多尺度融合的小目标检测方法基于小样本学习的列车故障检测算法研究基于Soft Teacher的工人半监督目标检">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/1.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/2.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/3.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/4.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/5.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/6.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/7.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/8.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/9.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/10.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/11.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/12.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/13.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/14.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/15.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/16.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/17.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/18.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/19.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/20.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/21.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/22.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/23.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/24.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/25.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/26.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/27.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/28.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/29.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/30.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/31.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/32.png">
+<meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/33.png">
+<meta property="article:published_time" content="2025-02-09T20:36:53.000Z">
+<meta property="article:modified_time" content="2025-08-07T18:04:01.577Z">
+<meta property="article:author" content="lichao Zhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/1.png">
+
+<link rel="canonical" href="https://iridescent-zhang.github.io/2025/02/10/AI/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AI | Iridescent-zhang</title><meta name="robots" content="noindex">
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Iridescent-zhang</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">醉后不知天在水，满船清梦压星河</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2025/02/10/AI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cloud.jpg">
+      <meta itemprop="name" content="lichao Zhang">
+      <meta itemprop="description" content="博观而约取，厚积而薄发">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iridescent-zhang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AI
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2025-02-09 20:36:53" itemprop="dateCreated datePublished" datetime="2025-02-09T20:36:53Z">2025-02-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-08-07 18:04:01" itemprop="dateModified" datetime="2025-08-07T18:04:01Z">2025-08-07</time>
+              </span>
+
+          
+            <span id="/2025/02/10/AI/" class="post-meta-item leancloud_visitors" data-flag-title="AI" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2025/02/10/AI/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2025/02/10/AI/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>6.6k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>6 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="论文选题"><a href="#论文选题" class="headerlink" title="论文选题"></a>论文选题</h1><p>基于改进的YOLOv5小目标故障检测方法研究<br>基于改进YOLOV5的小样本目标检测算法研究<br>基于YOLOv5的建筑工地物体检测研究与实现<br>基于YOLOv5的铁路故障检测研究与实现</p>
+<p>弱监督场景下基于视觉注意力机制的细粒度图像故障识别方法<br>基于自注意力的破损类故障目标检测算法研究<br>基于混合注意力与多尺度融合的小目标检测方法<br>基于小样本学习的列车故障检测算法研究<br>基于Soft Teacher的工人半监督目标检测算法研究</p>
+<p>基于特征对齐和记忆库的无监督图像异常检测<br>基于师生网络的无监督火车零部件异常检测算法</p>
+<p>基于自编码器的通信计算高效联邦学习框架<br>基于时空轨迹向量和注意力机制的单目标跟踪</p>
+<h1 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h1><h1 id="论文-1"><a href="#论文-1" class="headerlink" title="论文"></a>论文</h1><p>SSD（Single Shot MultiBox Detector）通过在不同尺度的特征图上进行预测，有效处理了多尺度目标检测问题。RetinaNet提出了Focal Loss，解决了单阶段检测器中正负样本极度不平衡的问题，在保持速度优势的同时显著提升了检测精度。</p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/tZztakvzU9kl0nPbl8oCww">目标检测究竟发展到了什么程度? </a></p>
+<p>摘要 (200字)<br>引言 (800字) - 铁路安全重要性，现有方法局限性<br>相关工作 (1000字) - YOLO发展历程，铁路检测现状<br>方法 (2500字) - 改进的网络结构，损失函数，训练策略<br>实验 (1200字) - 数据集，实验设置，结果分析<br>结论 (300字)</p>
+<p>方案一（简单有效）：<br>SE注意力 + Focal Loss + 数据增强<br>代码修改量：<del>100行<br>预期提升：mAP +2-3%<br>方案二（中等难度）：<br>CBAM注意力 + CIoU损失 + P2层检测 + 困难样本挖掘<br>代码修改量：</del>200行<br>预期提升：mAP +3-5%</p>
+<p>6.3 实验设计建议<br>数据集：收集铁路故障图像（裂缝、断轨、异物等）<br>评估指标：<a href="mailto:&#109;&#65;&#80;&#64;&#x30;&#x2e;&#53;">&#109;&#65;&#80;&#64;&#x30;&#x2e;&#53;</a>, <a href="mailto:&#109;&#65;&#x50;&#64;&#x30;&#46;&#53;">&#109;&#65;&#x50;&#64;&#x30;&#46;&#53;</a>:0.95, FPS, 模型大小<br>对比实验：原始YOLOv5 vs 各种改进版本<br>消融实验：每个模块的独立贡献</p>
+<p>6.4 创新点总结<br>针对性强：专门针对铁路故障检测场景<br>实用性好：在精度和速度间取得平衡<br>可解释性：注意力机制提供可视化分析<br>工程价值：可实际部署的解决方案</p>
+<h1 id="学习-YOLO"><a href="#学习-YOLO" class="headerlink" title="学习 YOLO"></a>学习 YOLO</h1><p>一个格子两个预测框，每个预测框用5 个参数，四个是 xywh，x 是<strong>预测框 bounding box 的中心点</strong>距离格子 cell 左边的距离，y 是<strong>中心点距离 cell 上边</strong>的距离（注意，一张图片分割出来的 49 个 cell 的格子都是一样大的），w 是预测框的宽度（和 x 同向），h 是高度，所以归一化的时候，是 x&#x3D;x&#x2F;wc，y&#x3D;y&#x2F;hc，wc 和 hc 分别指的是格子的宽度和高度，h 和 w 是整个图像的高度和宽度。<br>然后每个格子还需要一组类别值，注意只有一组，虽然是两个预测框，但他们共享一组类别概率值值，比如 VOC 数据集20 个类别，那就有 20 个类别概率值，分别代表<strong>这个格子</strong>属于这个类别的概率值，进一步说，使用这一组 20 个概率值来形容这个格子属于哪一个类。<br>不管一个单元格预测了多少个 bounding box，一个单元格也只能预测一组类别概率值。<br>对一张图片我们切割成 7<em>7&#x3D;49 个格子，所以一张图片的预测结果一共是 7</em>7*30 个 tensor(张量、或者说参数)。</p>
+<p>每个预测框都有两个参数，第一个是 Pr(Object) 表示这个框中是否有物体，也就是 0 和 1，第二个是这个框的 IOU，即交并比，预测框和 GT 框的交集大小除以并集大小，也就是一个预测准度。<br>测试的时候，我们将这二者还有刚刚那 20 个概率值的任一一个分别相乘来得到 这个预测框是这个类别的概率和框包含物体的准度。即 **特定类出现在 cell 内的概率和位置匹配程度(边框拟合程度)**，感觉不要太区分 cell 和 boundingbox 的区别。</p>
+<p>最终，每个格子只能预测一个类别，所以限制了 yolo 预测重叠或临近物体的数量（比如鸟群中的鸟），yolo 只能预测 49 个对象。</p>
+<p>每个 cell 虽然有两个框，但是是两个中取一个，框的粗细表示了可信度，选择可行度高的那一个。</p>
+<p>表示这个 cell 预测是哪一个类</p>
+<p>一个 cell两个框，框的中心点落在哪一个 cell 就由哪一个 cell 来预测这个框? 那万一有很多个框的中心点都落在一个 cell 里面呢？</p>
+<p>每个框的置信度指的是 iou，暂时和类别概率是无关的。</p>
+<p>1*1 的卷积核的话，是用来对特征进行降维的，比如一个 w<em>h 的图像，他的特征可能有 D 个通道（不知道这样说是否准确），然后这个卷积核应该是 1</em>1<em>D 的，卷积运算就是将卷积核 和 图像的每一个 D列对应相乘并相加，所以卷积结果是 w</em>h的，如果想要结果的通道数不止为1，那就多用几个这样的卷积核，注意，卷积核通道数一定得和原图像一样。（这个通道应该是特征的通道，而不是什么rgb）</p>
+<p>目前里接下来，一个cell值预测一个对象（即便对于重叠或很近的两个物体，也只能预测一个，预测的就是我们标注ground true box的时候标注的那个物体），所以不知道为什么要两个bounding box（打对抗？），然后如果对这个cell来说存在对象，那会由20个类别值来表示这个cell的对象应该是哪个类别，20个值加起来为1。这里说的这个cell的对象应该指的是，如果要预测的对象的中心落在这个cell里面，那就由这个cell负责这个对象的预测。</p>
+<p>fast yolo 就是用到了更少的卷积层和滤波器，更快了。</p>
+<hr>
+<p>训练的时候使用了 卷积层、平均池化层 average-pooling、全连接层 fully connected layer。<br>top 5 正确率，模型在数据集推理（什么是推理，看起来像是 “使用这个模型”，比如我们现在是使用这个模型进行测试）的时候，按照置信度排序生成5个标签，如果前五个标签有一个是正确的，则认为正确预测。</p>
+<img src="/2025/02/10/AI/1.png" class="">
+
+<p>一般 cnn 分成卷积层（用来特征提取）和全连接层（用来分类）。当然卷积层有很多不同的特征提取层，比如有的用来提取点和线，有的提取边和角，有的用来提取语义信息（比如人啊动物啊这样的）。</p>
+<img src="/2025/02/10/AI/2.png" class="">  
+<p>池化分为平均池化和最大值池化。<br>我理解应该就是一个区域里面取平均值或最大值作为池化结果的一个点，从而实现降维。</p>
+<p>卷积</p>
+<img src="/2025/02/10/AI/3.png" class="">  
+<p>卷积就是拿一个卷积核（模板）去找，让他匹配计算，如果匹配到一个和模板很像的区域，就会得到一个大值。<br>卷积结果叫特征图 feature map（或者叫特征图像），是对图像是否包含这个特征的一种表示，包含的话包含在哪，那就是比较大的那个值。特征图像是小于等于原始图像的。所以想要有效果，卷积核一定要好好设置。</p>
+<img src="/2025/02/10/AI/4.png" class="">  
+
+<p>全连接层</p>
+<img src="/2025/02/10/AI/5.png" class="">  
+<p>用来提取特征，举例子这里通过卷积提取了 H、O两个特征，全连接指的就是前面的H、O和和后面的 H2O、O2、H2 是全连接上的（每一个神经元和下边的神经元都是连接上的），并且全连接中还有权重，有时候我们会进行 dropout（随机失活，让一些神经元不可用，来防止过拟合）。</p>
+<img src="/2025/02/10/AI/6.png" class="">  
+
+
+<p>池化<br>池化和卷积实际比较像，本质都是一个模板（比如在卷积里就是卷积核）进行滑动，池化的作用是将相似的特征进行结合，从而达到降维的效果。<br>缩放不变性，这里大的阴影0和小的阴影0得到相同的结果。</p>
+<img src="/2025/02/10/AI/7.png" class="">  
+<img src="/2025/02/10/AI/8.png" class="">  
+<img src="/2025/02/10/AI/9.png" class="">  
+<p>总的特征：</p>
+<img src="/2025/02/10/AI/10.png" class="">   丢弃噪声指的是：比如一个2*2框里面3个9，一个明显的噪音2，通过最大值池化就能得到9，然后再逆回去得到2*2的9，舍掉那个噪声，防止过拟合（我猜指的是关注了太多不应该关注的细节）。
+<img src="/2025/02/10/AI/11.png" class="">
+<img src="/2025/02/10/AI/12.png" class="">
+<p>放大局部信号，指的是通过池化，我们把整个图像变小了（提取特征，减少运算量），但是我们却可以放大局部的特征，参照上上个图。所以这里有缩小、放大两个概念，所以全图，放大细节。</p>
+<hr>
+<p>神经网络的激活函数<br>因为不是对所有的输入我们都会有相应的输出进行反应，此为激活的含义，表示我们要在什么时候做出反应。<br>它是非线性函数，比如阶跃函数，或者这个：</p>
+<img src="/2025/02/10/AI/13.png" class="">  
+<p>因为cnn中我们经常要求导，算损失函数等。<br>但我们用的多的还是的还是 ReLu:</p>
+<img src="/2025/02/10/AI/14.png" class=""> 
+<p>但使用了一个参数化的版本，leaky ReLu：</p>
+<img src="/2025/02/10/AI/15.png" class=""> 
+
+<p>网络三大块：<br>损失函数：告诉我们如何对这个值(哪个值)进行求解。<br>网络构造：<br>图像预处理</p>
+<hr>
+<p>损失函数：量化预测值和真实值之间的差异<br>一般就是相减一下（绝对值差，L1），或者误差平方和（MSE），总体思路是让这个 <strong>交叉熵</strong> 满足 ： 预测值和真实值越接近，值越小<br>yolo使用的就是误差平方和。</p>
+<p>为了平衡性（比如如果大图像预测框、gt框算出的损失函数值和小图像预测框、gt框算出的损失函数值相近，但实际上，考虑到图像大小，大图像中的损失函数值实际上是比较不重要的，所以这里有对损失值开根号的操作；又如图像中包含对象的cell实际上很少，可能所以每个cell一块算损失函数值的时候，可能有对象的损失值会被拉的很小，所以将包含对象的cell的损失函数赋予高权重5 lamda_coord，不包含对象的赋予地权重0.5 lamba_noboj，<strong>虽然我不太理解这个场景</strong>。），yolo总体是对损失函数进行了改造。</p>
+<p>我们只想要一个boundingbox 去为该cell对应的目标做响应，说人话就是每个cell的两个boundingbox只会取一个。 本质上两个bound ingbox是预测同一个对象，不是说多个对象，原来这里一直搞混了。  所以选择哪一个boundingbox就是选iou大的那一个就可以了。<br>每个bbox负责预测特定的大小、尺度、类等。<br><strong>召回率定义提升</strong>，召回率指的是整个图像中一共有几个对象，找到了越多召回率就越高。</p>
+<img src="/2025/02/10/AI/16.png" class=""> 
+
+<p>损失函数的公式：</p>
+<img src="/2025/02/10/AI/17.png" class=""> 
+<p>图片中的 s^2 指的是 格子个数，即7*7&#x3D;49；B为boundingbox（也可以叫  predictor）个数即2.<br><strong>带帽子的值是真实值</strong>。（就是真实值）</p>
+<p><em><strong>noboj 可能理解为不负责检测的 boundingbox 框更合适，即使是有对象的cell，它那个iou较小的边界框应该也是noobj。</strong></em>对的，应该是这样，被抛弃的bbox和其他没对象的cell的两个bbox都是等价的。</p>
+<p>我的问题：对宽和高开根号然后相减再平方我勉强能理解，<br>为什么再算置信度的损失函数贡献时，含目标的不需要乘以系数呢？不含目标的都乘系数了。<br>原因在这：</p>
+<img src="/2025/02/10/AI/18.png" class=""> 
+<p>含对象的只在计算坐标和大小的精确度损失时才使用系数，而不含目标的就是在计算置信度损失时才使用它的系数。<br>不含目标的，它的置信度不都是0吗？有必要算吗？<br>答：有的，就硬算吧。含object的cell的真实置信度就是1，不含的就是0.</p>
+<img src="/2025/02/10/AI/19.png" class=""> 
+<img src="/2025/02/10/AI/20.png" class=""> 
+<p>其实这三个参数值的含义和前面的理解是能对应上的。</p>
+<img src="/2025/02/10/AI/21.png" class="">  
+
+<p><strong>只有cell存在对象时损失函数才会对分类错误进行惩罚。</strong><br><strong>并且只会对那个被选中的boundingbox的坐标误差进行惩罚。（也就是iou高的那个predictor）</strong></p>
+<img src="/2025/02/10/AI/22.png" class="">  
+<img src="/2025/02/10/AI/23.png" class="">   
+
+
+<hr>
+<p>超参数，有如下：</p>
+<p>epoch：把数据集看一遍叫一个 epoch？<br>batch size：每次看一眼多少的数据量，每次训练多少个数据<br>可能看很多眼才把这个数据集看了一遍。</p>
+<p>momentum：0.9   动量<br>decay：0.0005   权重衰减</p>
+<p>learning rate    学习率<br>overfitting    过拟合<br>data augmentation    数据增强</p>
+<p>dropout防止了复杂的共适应co-adaptation，co-adaptation 的意思是每个神经元学到的特征，必须结合其它的特定神经元作为上下文，才能提供对训练的帮助。</p>
+<p>学习率：我们要让损失函数值下降，我们采取先大步后小步的策略，一开始的epoch轮次学习率大，尽快学，然后学习率慢慢下降。<br>而在最开始的几个 epoch 中，学习率也有一个变化趋势是从小升大到既定值，防止一开始就是用大学习率，模型会因为不稳定而发散。</p>
+<img src="/2025/02/10/AI/24.png" class="">  
+<p>这个 n 就是学习率。<br>我们这种随机往下走就是 随机梯度下降（SGD）。所谓的往下走应该就是指让损失函数变小。</p>
+<img src="/2025/02/10/AI/25.png" class="">  
+<p>动量就是防止遇到局部最小值或者鞍点这种梯度为0的地方就停了，应该冲过去尽力找全局最小。</p>
+<p>过拟合就是可能把噪声也还原出来了。过拟合的特点就是权重值特别大，</p>
+<img src="/2025/02/10/AI/26.png" class="">  
+<p>我们最终的目的是让损失值小，那如果损失值想小，这个权重 w 就一定大不了了。<br>decay 权重衰减来防止过拟合。</p>
+<p>还有 dropout，随机失活 来防止过拟合。</p>
+<hr>
+<p>dropout，我们使用 0.5。<br>全连接中，我们有使用权重，一共三列（简化的话）：输入、中间层、输出。</p>
+<img src="/2025/02/10/AI/27.png" class="">  
+<p>为了防止真正使用的时候可能有几个神经元不工作了导致准确性大幅下降，我们在训练的时候就随机让几个神经元不工作（相当于随机屏蔽一些特征），来提升我们的可靠性，</p>
+<p>池化中也有用 dropout</p>
+<img src="/2025/02/10/AI/28.png" class="">  
+
+<p>核心是：<br>引入噪声、打破不显著的偶然模式、防止模型记住偶然的模式（过拟合），提升泛化性能 。</p>
+<p>随机失活：每个<strong>隐藏层（这个是什么）</strong>的神经元都以概率p随机地从网络中被忽略，所以每个训练实例选择的都是不同的神经元组合，泛化性强，鲁棒性高。<br>随机失活率：让多少比例的神经元失效，比如我们这里是 0.5。</p>
+<p>数据增强：</p>
+<p>随机调整对比度、色相（颜色）、饱和度（Saturation）</p>
+<p>HSV 就包括 色相、饱和度、明暗（即对比度）。</p>
+<p>随机扩展：将图像随机放在数倍于自身大小的背景图中</p>
+<p>总共就分为：光度变换和几何变换</p>
+<hr>
+<p>推断 inference</p>
+<p>把训练完的结果拿过来用，就叫推断。</p>
+<p>NMS (Non-Maximum Suppession) 非极大值抑制</p>
+<p>一般是一个 cell 预测一个对象，但可能出现多个 cell 预测同一个对象，可能是对象的中心在多个cell 的边界上。我们使用 NMS 来解决这个问题，提升了 23的精度（mAP）。</p>
+<img src="/2025/02/10/AI/29.png" class="">  
+<p>有三个框，但通过抑制只剩一个，筛选出目标得分最多的框，达到去重。</p>
+<img src="/2025/02/10/AI/30.png" class="">  
+
+
+<img src="/2025/02/10/AI/31.png" class="">  
+<img src="/2025/02/10/AI/32.png" class="">  
+<p><strong>选出分（置信度）最高的框，然后删除它以及和它很相近的框（比如交并比iou很大的，大于某个范围的那些框），依次进行这个步骤。</strong></p>
+<hr>
+<p>缺点：</p>
+<p>对 boundingbox 加了很强的空间约束<br>每个cell只预测两个bbox，且只能有一个类别。<br>空间的约束限制了模型可以预测的邻近物体的数量，对鸟群中的鸟就比较困难。<br>模型从数据中学习，无法泛化到新的没见过的对象。</p>
+<p>由于模型中包含多个下采样层（大图像变成小图像，比如池化），所以模型使用的特征也比较粗糙，丢失了精度。</p>
+<p>训练损失函数时，我们对待小box和大box的处理基本一直（虽然用根号等方式来改善，但还是不够）。<br>大预测框中的小错误通常是良性的，但基本相同的错误对小预测框的iou的影响却要大得多，我们目前没有很好的区分开。见下图：</p>
+<img src="/2025/02/10/AI/33.png" class="">  
+
+
+<p>另外，yolo分类准确（不会将背景识别为前景），但是定位有偏差。</p>
+<p>像 RCNN、DPM 都有只见树木不见森林的问题，但yolo能从全局来看。<br>以及前二者一块饼要两口吃，而yolo一口能吃完。</p>
+<hr>
+<p>　(1)True positives(TP):  被正确地划分为正例的个数，即实际为正例且被分类器划分为正例的实例数（样本数）；</p>
+<p>　　(2)False positives(FP): 被错误地划分为正例的个数，即实际为负例但被分类器划分为正例的实例数；</p>
+<p>　　(3)False negatives(FN):被错误地划分为负例的个数，即实际为正例但被分类器划分为负例的实例数；</p>
+<p>　　(4)True negatives(TN): 被正确地划分为负例的个数，即实际为负例且被分类器划分为负例的实例数。<br>1.精确率（precision）</p>
+<pre><code>precision = TP / ( TP + FP )
+
+精确率是精确性的指标，表示被分类器正确分为正例的个数(TP)占被分类器分为正例的样本(TP+FP)的比重。
+</code></pre>
+<p>2.召回率（recall）</p>
+<pre><code>recall = TP / ( TP + FN ） = TP / P
+
+召回率是覆盖面的度量，也就是被分类器正确分为正例的个数(TP)占原始数据中全部正例(TP+FN)的比重。
+
+只有当P和R都很高的时候，F1(用准确度和召回率算的)才会高，所以称为调和平均数，F1的取值范围是0到1。
+</code></pre>
+<p>5.accuracy</p>
+<pre><code>准确率，这个跟精确率只有一字之差，但实际上有很大的不同，它是指正确分类（不管是正确分为P还是N）的比率
+
+accuray = （TP + TN) / (TP + FP + TN + FN ) = (TP + TN) / (P+N)
+</code></pre>
+<p>Precision衡量你的预测有多准确。也就是说，你的预测正确的百分比。<br>Recall衡量您发现所有正例的能力。 例如，我们可以在前K个预测中找到80％的正例。（TopK）</p>
+<p>AP 平均精度 就是 PR 曲线的面积。mAP 就是 所有类别的 AP 的平均值。<br>为什么要用AP或者mAP<br>我们希望一个模型的Precision和Recall都很高，所以需要综合考虑这两个因素，我们可以联想到用调和平均数F1-beta值来衡量，另一种方法正是PR曲线下的面积AUC，这也就是AP。AUC面积越接近1性能越好。曲线下的面积理解为不同召回值的情况下所有精度的平均值。</p>
+<!-- flag of hidden posts -->
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>lichao Zhang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://iridescent-zhang.github.io/2025/02/10/AI/" title="AI">https://iridescent-zhang.github.io/2025/02/10/AI/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E9%80%89%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">论文选题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BA%E6%96%87"><span class="nav-number">2.</span> <span class="nav-text">论文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BA%E6%96%87-1"><span class="nav-number">3.</span> <span class="nav-text">论文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0-YOLO"><span class="nav-number">4.</span> <span class="nav-text">学习 YOLO</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lichao Zhang"
+      src="/images/cloud.jpg">
+  <p class="site-author-name" itemprop="name">lichao Zhang</p>
+  <div class="site-description" itemprop="description">博观而约取，厚积而薄发</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Iridescent-zhang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Iridescent-zhang" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lczhang93@gmail.com" title="E-Mail → mailto:lczhang93@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/18558575/wo-ladki" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;18558575&#x2F;wo-ladki" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCv42aVozJF9n4hK8xCacCmg" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCv42aVozJF9n4hK8xCacCmg" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/watch?v=DGa4Xv_tcjE&list=LL&index=6" title="https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;DGa4Xv_tcjE&amp;list&#x3D;LL&amp;index&#x3D;6" rel="noopener" target="_blank">Eiro Nareth INTERSTELLAR</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+	  
+		<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+		<div class="widget-wrap">
+		<div id="myCanvasContainer" class="widget tagcloud">
+		<canvas width="220" height="250" id="resCanvas" style="width=100%">
+			<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cmd/" rel="tag">Cmd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Guitar/" rel="tag">Guitar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HLS/" rel="tag">HLS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/" rel="tag">LaTeX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAT/" rel="tag">NAT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PYNQ/" rel="tag">PYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Powershell/" rel="tag">Powershell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li></ul>
+		</canvas>
+		</div>
+		</div>
+	  
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lichao Zhang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">425k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">6:26</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'zmRLZ8XmVpWBhK4yl2baQmHm-gzGzoHsz',
+      appKey     : 'c5e4Xhc2Ec8iU5BMArSxhhAu',
+      placeholder: "Say something",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : 'https://zmrlz8xm.lc-cn-n1-shared.com'
+    });
+  }, window.Valine);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class='fa fa-chevron-down'></i>    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class='fa fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button" onclick="moonMenuClick()">
+    <svg class="moon-menu-svg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+      <g class="moon-menu-points">
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle>
+        <circle class="moon-menu-point" r=".2rem"></circle>
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle>
+      </g>
+    </svg>
+    <div class="moon-menu-icon">
+    </div>
+    <div class="moon-menu-text">
+    </div>
+  </div>
+</div>
+<script src="/js/injector.js"></script>
+    </div>
+  <!-- 音乐播放器 -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+ <div id="aplayer" class="aplayer" data-id="3470747396" data-server="tencent" data-type="playlist" data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
+ <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+ <!-- 音乐播放器 end -->
+</body>
+</html>

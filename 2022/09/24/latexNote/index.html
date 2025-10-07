@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Witcher.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Witcher.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"iridescent-zhang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"valine","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus","order":-1},"valine":{"text":"Valine","order":-2}},"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="LaTeX: 一个让你的文档看起来更专业的排版系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="latexNote">
+<meta property="og:url" content="https://iridescent-zhang.github.io/2022/09/24/latexNote/index.html">
+<meta property="og:site_name" content="Iridescent-zhang">
+<meta property="og:description" content="LaTeX: 一个让你的文档看起来更专业的排版系统">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/rsJSnsPW/1.jpg">
+<meta property="og:image" content="https://i.postimg.cc/q7t747Ny/1.jpg">
+<meta property="og:image" content="https://i.postimg.cc/3NPr9Wm3/QQ-20220930113402.jpg">
+<meta property="og:image" content="https://i.postimg.cc/Y2sq3Dzb/2.jpg">
+<meta property="og:image" content="https://i.postimg.cc/1XDVdMNj/3.jpg">
+<meta property="og:image" content="https://i.postimg.cc/FFxT1x6Z/4.jpg">
+<meta property="og:image" content="https://liam.page/uploads/teaching/LaTeX/figures/818901c1jw1e44jpqbz2aj208k024744.jpg">
+<meta property="og:image" content="https://liam.page/uploads/teaching/LaTeX/figures/818901c1jw1e44jsd9ldbj20680200si.jpg">
+<meta property="og:image" content="https://liam.page/uploads/teaching/LaTeX/figures/818901c1jw1e44k2acde4j205g02ft8h.jpg">
+<meta property="og:image" content="https://i.postimg.cc/nLvHXMfm/1.jpg">
+<meta property="og:image" content="https://liam.page/uploads/teaching/LaTeX/figures/818901c1jw1e44k7zto1wj205o01pt8i.jpg">
+<meta property="og:image" content="https://liam.page/uploads/teaching/LaTeX/figures/818901c1jw1e44ku9n696j20cj05haad.jpg">
+<meta property="og:image" content="https://i.postimg.cc/rm1JhDDM/2.jpg">
+<meta property="article:published_time" content="2022-09-23T18:24:56.000Z">
+<meta property="article:modified_time" content="2023-10-20T15:20:15.619Z">
+<meta property="article:author" content="lichao Zhang">
+<meta property="article:tag" content="LaTeX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/rsJSnsPW/1.jpg">
+
+<link rel="canonical" href="https://iridescent-zhang.github.io/2022/09/24/latexNote/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>latexNote | Iridescent-zhang</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Iridescent-zhang</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">醉后不知天在水，满船清梦压星河</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://iridescent-zhang.github.io/2022/09/24/latexNote/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cloud.jpg">
+      <meta itemprop="name" content="lichao Zhang">
+      <meta itemprop="description" content="博观而约取，厚积而薄发">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iridescent-zhang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          latexNote
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-09-23 18:24:56" itemprop="dateCreated datePublished" datetime="2022-09-23T18:24:56Z">2022-09-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-10-20 15:20:15" itemprop="dateModified" datetime="2023-10-20T15:20:15Z">2023-10-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/09/24/latexNote/" class="post-meta-item leancloud_visitors" data-flag-title="latexNote" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/09/24/latexNote/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/09/24/latexNote/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>15k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>13 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>LaTeX: 一个让你的文档看起来更专业的排版系统</strong></p>
+<span id="more"></span>
+
+<h2 id="配置vscode-texlive-SumatraPDF环境"><a href="#配置vscode-texlive-SumatraPDF环境" class="headerlink" title="配置vscode texlive SumatraPDF环境"></a>配置vscode texlive SumatraPDF环境</h2><h3 id="关于-TeX-Live"><a href="#关于-TeX-Live" class="headerlink" title="关于 TeX Live"></a>关于 TeX Live</h3><p>所谓 TeX 发行，也叫 TeX 发行版、<strong>TeX 系统</strong>或者 TeX 套装，指的是包括 <strong>TeX 系统的各种可执行程序，以及他们执行时需要的一些辅助程序和宏包文档</strong> 的集合。</p>
+<p>TeX Live 是 TUG (TeX User Group) 维护和发布的 TeX 系统，可说是「官方」的 TeX 系统。我们推荐任何阶段的 TeX 用户，都尽可能使用 TeXLive，以保持在跨操作系统平台、跨用户的一致性。<br>Texlive 是 LaTex 的编译环境，提供了大量的脚本和宏包供我们使用，并且有很方便的宏包管理器可以下载更新宏包，十分方便。</p>
+<p>正向同步: 即从代码定位到编译出来的 pdf 文件相应位置<br>反向同步: 即从编译出的 pdf 文件指定位置跳转到 tex 文件中相应代码所在位置</p>
+<blockquote>
+<ul>
+<li>PDFTeX程序：Tex语言的一个实现，也就是把Tex语言转换为排版的一个程序。它会把TeX 语言写的代码直接编译成 PDF文件。</li>
+<li>PDFLaTeX命令：PDFTeX程序中的命令，用来编译用LaTeX格式写的tex文件。</li>
+<li>XeTeX程序：TeX语言的新的实现，即把Tex语言转换为排版的一个新程序。支持Unicode编码和直接访问操作系统字体。</li>
+<li>XeLaTeX命令：XeTeX程序中的命令，用来编译用LaTeX格式写的tex文件。<br>两者最大的区别是：XeLaTeX对应的XeTeX对字体的支持更好，允许用户使用操作系统字体来代替TeX的标准字体，而且对非拉丁字体的支持更好。</li>
+</ul>
+</blockquote>
+<h3 id="vscode-user-setting-json设置latex的代码"><a href="#vscode-user-setting-json设置latex的代码" class="headerlink" title="vscode user setting.json设置latex的代码"></a>vscode user setting.json设置latex的代码</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;latex-workshop.latex.autoBuild.run&quot;</span><span class="punctuation">:</span> <span class="string">&quot;never&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.showContextMenu&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.intellisense.package.enabled&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.message.error.show&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.message.warning.show&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.latex.tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">    </span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">    </span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;pdflatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;pdflatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">    </span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line"><span class="attr">&quot;latex-workshop.latex.recipes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">    </span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">    </span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;pdflatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">    </span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xe-&gt;bib-&gt;xe-&gt;xe&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">    </span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;pdf-&gt;bib-&gt;pdf-&gt;pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.latex.clean.fileTypes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;*.aux&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.bbl&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.blg&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.idx&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.ind&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.lof&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.lot&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.out&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.toc&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.acn&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.acr&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.alg&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.glg&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.glo&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.gls&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.ist&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.fls&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.log&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.fdb_latexmk&quot;</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.latex.autoClean.run&quot;</span><span class="punctuation">:</span> <span class="string">&quot;onFailed&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.latex.recipe.default&quot;</span><span class="punctuation">:</span> <span class="string">&quot;lastUsed&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.view.pdf.internal.synctex.keybinding&quot;</span><span class="punctuation">:</span> <span class="string">&quot;double-click&quot;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用 SumatraPDF 预览编译好的PDF文件</span></span><br><span class="line"><span class="comment">// 设置VScode内部查看生成的pdf文件</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.view.pdf.viewer&quot;</span><span class="punctuation">:</span> <span class="string">&quot;external&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="comment">// PDF查看器用于在\ref上的[View on PDF]链接</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.view.pdf.ref.viewer&quot;</span><span class="punctuation">:</span><span class="string">&quot;auto&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="comment">// 使用外部查看器时要执行的命令。此功能不受官方支持。</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.view.pdf.external.viewer.command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;C:/Users/ASUS/AppData/Local/SumatraPDF/SumatraPDF.exe&quot;</span><span class="punctuation">,</span> <span class="comment">// 注意修改路径</span></span><br><span class="line"><span class="comment">// 使用外部查看器时，latex-workshop.view.pdf.external.view .command的参数。此功能不受官方支持。%PDF%是用于生成PDF文件的绝对路径的占位符。</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.view.pdf.external.viewer.args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;%PDF%&quot;</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="comment">// 将synctex转发到外部查看器时要执行的命令。此功能不受官方支持。</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.view.pdf.external.synctex.command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;C:/Users/ASUS/AppData/Local/SumatraPDF/SumatraPDF.exe&quot;</span><span class="punctuation">,</span> <span class="comment">// 注意修改路径</span></span><br><span class="line"><span class="comment">// latex-workshop.view.pdf.external.synctex的参数。当同步到外部查看器时。%LINE%是行号，%PDF%是生成PDF文件的绝对路径的占位符，%TEX%是触发syncTeX的扩展名为.tex的LaTeX文件路径。</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.view.pdf.external.synctex.args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;-forward-search&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;%TEX%&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;%LINE%&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="comment">//    &quot;-reuse-instance&quot;,</span></span><br><span class="line"><span class="comment">//    &quot;\&quot;H:/Microsoft VS Code/Code.exe\&quot; \&quot;H:/Microsoft VS Code/resources/app/out/cli.js\&quot; -r -g \&quot;%f:%l\&quot;&quot;, // 注意修改路径</span></span><br><span class="line">    <span class="string">&quot;%PDF%&quot;</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/434142338">vscode SumatraPDF 设置反向搜索</a><br>打开SumatraPDF，进入设置-&gt;选项对话框，在“设置反向搜索命令行”处（即双击PDF文件时，应运行的命令）填入如下内容：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;H:\Microsoft VS Code\Code.exe&quot;</span> <span class="string">&quot;H:\Microsoft VS Code\resources\app\out\cli.js&quot;</span>  --ms-enable-electron-run-<span class="keyword">as</span>-node -r -g <span class="string">&quot;%f:%l&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><blockquote>
+<p>Ctrl + Alt + B：编译（编译选项与上一次编译相同）<br>Ctrl + Alt + R：编译（可选编译链）<br>Ctrl + Alt + V：打开 PDF 预览<br>Ctrl + Alt + J：定位跳转到光标所在位置对应的 PDF 文件位置</p>
+</blockquote>
+<p><strong>参考文章</strong><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/166523064">Visual Studio Code (vscode)配置LaTeX</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/38178015">使用VSCode编写LaTeX</a><br><a target="_blank" rel="noopener" href="https://blog.ceba.tech/2018/11/Visual-Studio-Code-LaTeX/index.html">Visual Studio Code 折腾记：LaTeX 集成编辑环境</a></p>
+<h2 id="LaTex教程"><a href="#LaTex教程" class="headerlink" title="LaTex教程"></a>LaTex教程</h2><p><strong>控制序列</strong>是以反斜杠\开头，以第一个空格或非字母 的字符结束的一串字符，他们并不被输出，但是他们会影响输出文档的效果。比如：<br><code>\documentclass&#123;article&#125;</code>中的<code>documentclass</code>就是控制序列，它后面紧跟着的{article}代表这个控制序列的一个必要的参数，这个控制序列的作用，是调用名为 <strong>article</strong> 的<strong>文档类</strong>。</p>
+<blockquote>
+<p>部分控制序列还有被方括号 [ ] 包括的可选参数。<br>所谓文档类，即是 TeX 系统预设的（或是用户自定的）一些格式的集合。不同的文档类在输出效果上会有差别。</p>
+</blockquote>
+<p><code>\begin&#123;document&#125;</code>中的控制序列是begin，<code>\end&#123;document&#125;</code> 中的控制序列是end，二者总是成对出现。这两个控制序列以及他们中间的内容被称为<strong>环境</strong>；他们之后的第一个必要参数总是一致的，被称为环境名，比如这里的<code>document</code>。</p>
+<blockquote>
+<p>只有在 <code>document</code> 环境中的内容，才会被正常输出到文档中去或是作为控制序列对文档产生影响。因此，在<code>\end&#123;document&#125;</code>之后插入任何内容都是无效的。</p>
+</blockquote>
+<p>\begin{document}与\documentclass{article}之间的部分被称为导言区。导言区中的控制序列，通常会影响到整个输出文档。比如<code>usepackage&#123;lipsum&#125;</code>中的控制序列是<code>usepackage</code>。你可以将导言区理解为是对整篇文档进行设置的区域——在导言区出现的控制序列，往往会影响整篇文档的格式。</p>
+<blockquote>
+<p>比如，我们通常在导言区设置页面大小、页眉页脚样式、章节标题样式等等。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">% 这里是导言区</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">Hello, world!</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="中英混排"><a href="#中英混排" class="headerlink" title="中英混排"></a>中英混排</h3><p>在现在，一切教你使用 CJK 宏包的模板、人、网页、书，都是糟糕的、有害的、恼人的、邪恶的和应该摒弃的。</p>
+<p>现在，XeTeX 原生支持 Unicode，并且可以方便地调用系统字体。可以说解决了困扰中国 TeX 使用者多年的大问题，实现了中文支持。<br>此外，除去中文支持，中文的版式处理和标点禁则也是不小的挑战。好在由吴凌云和江疆牵头，现在主要由刘海洋和李清维护的 <strong>ctex宏包 &#x2F; 文档类</strong>一次性解决了这些问题。<strong>ctex宏包和文档类</strong>的优势在于，它适用于多种编译方式；在内部处理好了中文和中文版式的支持，隐藏了这些细节；并且，提供了不少中文用户需要的功能接口。</p>
+<p><em><strong>CTeX 宏集</strong></em><br>虽然它的名字也是「CTeX」，但是 CTeX 宏集和 CTeX 套装是两个不同的东西(CTeX 宏集本质是 LaTeX 宏的集合，包含若干文档类（.cls 文件）和宏包（.sty 文件）。CTeX 套装是一个<strong>过时的 TeX 系统</strong>。不要安装和使用 CTeX 套装！)。CTeX 宏集是集成了中文支持、操作系统判定、字体选择、版式预设为一体的一组 <em><strong>宏包和文档类</strong></em> 的合集。我们推荐在任何情况下，优先使用 CTeX 宏集处理中文。</p>
+<p>所谓宏包，就是一系列控制序列的合集。这些控制序列太常用，以至于人们会觉得每次将他们写在导言区太过繁琐，于是将他们打包放在同一个文件中，成为所谓的宏包（台湾方面称之为「巨集套件」）。<code>\usepackage&#123;&#125;</code> 可以用来调用宏包。</p>
+<p>新版 CTeX 宏集的默认能够自动检测用户的操作系统，并为之配置合适的字库。对于 Windows 用户、Mac OS X 用户和 Linux 用户，都无需做任何配置，就能使用 CTeX 宏集来排版中文。<br><strong>请在任何情况下优先使用 CTeX 宏集在 LaTeX 中处理中文！</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">你好，world!</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>差异：</p>
+<ol>
+<li>文档类从 article 变为 ctexart；</li>
+<li>增加了文档类选项 UTF8， 将文档以 UTF-8 编码保存；</li>
+</ol>
+<p>你也可以直接使用 xeCJK 宏包来支持中英文混排，不过大多数情况是不推荐这样做的。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">\usepackage&#123;xeCJK&#125; %调用 xeCJK 宏包</span><br><span class="line">\setCJKmainfont&#123;SimSun&#125; % 定义在<span class="string">&quot;xeCJK&quot;</span>宏包中的控制序列，设置CJK主字体为 SimSun （宋体）</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">你好，world!</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="组织文章"><a href="#组织文章" class="headerlink" title="组织文章"></a>组织文章</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">% 导言区</span><br><span class="line">\title&#123;你好，world!&#125;</span><br><span class="line">\author&#123;Liam&#125;</span><br><span class="line">\date&#123;\today&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\maketitle</span><br><span class="line">\section&#123;你好中国&#125;</span><br><span class="line">中国在 East Asia.</span><br><span class="line">\subsection&#123;Hello Beijing&#125;</span><br><span class="line">北京是 capital of China.</span><br><span class="line">\subsubsection&#123;Hello Dongcheng District&#125;</span><br><span class="line">\paragraph&#123;Tian<span class="number">&#x27;</span>anmen Square&#125;</span><br><span class="line">is in the center of Beijing</span><br><span class="line">\subparagraph&#123;Chairman Mao&#125;</span><br><span class="line">is in the center of 天安门广场。</span><br><span class="line">\subsection&#123;Hello 北京&#125;</span><br><span class="line">\paragraph&#123;北京&#125; is an international city。</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.postimg.cc/rsJSnsPW/1.jpg" alt="对应的结果"></p>
+<p><strong>出现的控制序列</strong></p>
+<blockquote>
+<ul>
+<li>导言区</li>
+<li>\title{·}   % 定义标题</li>
+<li>\author{·}  % 定义作者</li>
+<li>\date{·}  % 定义日期</li>
+<li></li>
+<li>环境</li>
+<li>\maketitle   % 这个控制序列能将在导言区中定义的标题、作者、日期按照预定的格式展现出来。<br><strong>在文档类 article&#x2F;ctexart 中，定义了五个控制序列来调整行文组织结构。</strong></li>
+<li>\section{·}</li>
+<li>\subsection{·}</li>
+<li>\subsubsection{·}</li>
+<li>\paragraph{·}</li>
+<li>\subparagraph{·}<br><strong>在report&#x2F;ctexrep中，还有\chapter{·}；在文档类book&#x2F;ctexbook中，还定义了\part{·}。</strong><br>LaTeX 使用 <code>\section&#123; &#125;、\subsection&#123; &#125; 和\subsubsection&#123; &#125;</code> 命令来定义文档章节。\section{ }命令和\paragraph{ }命令，两个的功能相似，但是\section{ }命令会自动编号，也会在目录中自动显示，而\paragraph{ }命令则不会自动编号，也不会在目录中显示。并且\paragraph{ }命令相对来说被使用的频率很少。</li>
+</ul>
+</blockquote>
+<h3 id="插入目录"><a href="#插入目录" class="headerlink" title="插入目录"></a>插入目录</h3><p>找到 \maketitle，在它的下面插入控制序列 \tableofcontents，保存并用 XeLaTeX 编译两次，观察效果：<br><img src="https://i.postimg.cc/q7t747Ny/1.jpg" alt="插入目录"><br>请注意，LaTeX 将一个换行当做是一个简单的空格来处理，如果输出文档需要换行另起一段，则需要用两个换行（一个空行）来实现。</p>
+<h3 id="查看当前操作系统的字体"><a href="#查看当前操作系统的字体" class="headerlink" title="查看当前操作系统的字体"></a>查看当前操作系统的字体</h3><p>用notepad++打开 C 盘根目录下的 C:\font_zh-cn.txt（UTF-8编码下看到的才正常）。<br>文件中每行都是一个可用的字体。如：<br><code>C:/WINDOWS/fonts/simsun.ttc: SimSun,宋体:style=Regular,常规</code>，此处表明该字体有两个表示名：宋体和SimSun</p>
+<h2 id="写作技巧"><a href="#写作技巧" class="headerlink" title="写作技巧"></a>写作技巧</h2><h3 id="使用模板写作"><a href="#使用模板写作" class="headerlink" title="使用模板写作"></a>使用模板写作</h3><p><strong>建议在使用中自己整理几个自己常用的模板</strong>，从网上下载的模板只能提供一个大体的方向，有时也存在版本不同造成的兼容性问题，细节需要自己完善。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http://www.latextemplates.com/">LaTeXtemplates.com</a>网站是非常不错的模板分享网站，收集了包括书信，报告，论文，演示文稿，简历等等模板，整体收集模板质量很不错，非常推荐。</li>
+<li>在 <a target="_blank" rel="noopener" href="https://github.com/MartinThoma/LaTeX-examples">LaTeX-examples </a> 有作者收集的非常好的模板收集，也收集了大量的tikz等等例子，可下载，选择自己喜欢的模板使用。</li>
+<li>在 <a target="_blank" rel="noopener" href="http://uk.tug.org/training/thesis/">国外高校论文模板</a> 有不少收集好的国外高校论文模板。</li>
+<li><a target="_blank" rel="noopener" href="https://www.overleaf.com/">overleaf</a>也可以找到很多期刊的模板代码，还支持在线编辑，所见即所得。</li>
+</ul>
+<h3 id="文献引用"><a href="#文献引用" class="headerlink" title="文献引用"></a>文献引用</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexart&#125;</span><br><span class="line"></span><br><span class="line">\bibliographystyle&#123;plain&#125;   %引用的样式%</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">    这是一个参考文献引用：\cite&#123;graves1989practical&#125; %大括号内为相应文献的引用标签</span><br><span class="line">    \bibliography&#123;text&#125;     %导入参考文献库文件%</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>需要创建参考文献文件text.bib，获取参考文件信息可以自己手动整理，也可以在谷歌学术输入文献名，点击引用，并选择以BibTeX格式引用，如果出现 <code>403. That’s an error. Your client does not have permission to get URL /scholar.bib?</code>，可能是由于IP被谷歌拉入了黑名单。可以尝试换ip地址或者使用IPv6地址（一般被拉黑的是IPv4地址），我在代理中使用IPv6地址便可获得引用信息。</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@article&#123;ferrari2006raman,   %此处为引用标签。 这是注释，真正使用时不能写注释</span><br><span class="line">  title=&#123;Raman spectrum of graphene and graphene layers&#125;,</span><br><span class="line">  author=&#123;Ferrari, Andrea C and Meyer, JC and Scardaci, V and Casiraghi, C and Lazzeri, Michele and Mauri, Francesco and Piscanec, S and Jiang, Da and Novoselov, KS and Roth, S and others&#125;,</span><br><span class="line">  journal=&#123;Physical review letters&#125;,</span><br><span class="line">  volume=&#123;<span class="number">97</span>&#125;,</span><br><span class="line">  number=&#123;<span class="number">18</span>&#125;,</span><br><span class="line">  pages=&#123;<span class="number">187401</span>&#125;,</span><br><span class="line">  year=&#123;<span class="number">2006</span>&#125;,</span><br><span class="line">  publisher=&#123;APS&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><p>为了使用 AMS-LaTeX 提供的数学功能，我们需要在导言区加载amsmath宏包：<br><code>\usepackage&#123;amsmath&#125;</code><br>LaTeX 的数学模式有两种：行内模式 (inline) 和行间模式 (display)。前者在正文的行文中，插入数学公式；后者独立排列单独成行并且居中。<br>在行文中，使用$ … $可以插入行内公式，使用\[ … \]可以插入行间公式，如果需要对行间公式进行编号，可以使用equation环境： </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;equation&#125;</span><br><span class="line">...</span><br><span class="line">\end&#123;equation&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>公式规范及上下标</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;$E=mc^<span class="number">2</span>$.</span><br><span class="line">&gt;\[ E=mc^<span class="number">2.</span> \]</span><br><span class="line">&gt;\begin&#123;equation&#125;</span><br><span class="line">&gt;E=mc^<span class="number">2.</span></span><br><span class="line">&gt;\end&#123;equation&#125;</span><br></pre></td></tr></table></figure>
+<p>这里提一下关于公式标点使用的规范。行内公式和行间公式对标点的要求是不同的：行内公式的标点，应该放在数学模式的限定符之外，而行间公式则应该放在数学模式限定符之内。<br>在数学模式中，需要表示上标，可以使用 ^ 来实现（下标则是 _）。它默认只作用于之后的一个字符，如果想对连续的几个字符起作用，请将这些字符用花括号 {} 括起来。</p>
+</blockquote>
+<blockquote>
+<p><strong>根号与分式</strong><br>根式用 \sqrt{·} 来表示，分式用 \frac{·}{·} 来表示（第一个参数为分子，第二个为分母）。<br>可以发现，在行间公式和行内公式中，分式的输出效果是有差异的。如果要强制行内模式的分式显示为行间模式的大小，可以使用 \dfrac, 反之可以使用 \tfrac。<br>在行内写分式，你可能会喜欢 xfrac 宏包提供的 \sfrac 命令的效果。<br>排版繁分式，你应该使用 \cfrac 命令。</p>
+</blockquote>
+<blockquote>
+<p><strong>运算符</strong><br>一些小的运算符，可以在数学模式下直接输入；另一些需要用控制序列生成，如:<br><code>\[ \pm \times \div \cdot \cap \cup \geq \leq \neq \approx \equiv \]</code><br><img src="https://i.postimg.cc/3NPr9Wm3/QQ-20220930113402.jpg" alt="运算符"><br>连加、连乘、极限、积分等大型运算符分别用 \sum, \prod, \lim, \int 生成。他们的上下标在行内公式中被压缩，以适应行高。我们可以用 \limits 和 \nolimits 来强制显式地指定是否压缩这些上下标。<br>多重积分可以使用 \iint, \iiint, \iiiint, \idotsint 等命令输入。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;$ \sum_&#123;i=<span class="number">1</span>&#125;^n i\quad \prod_&#123;i=<span class="number">1</span>&#125;^n $</span><br><span class="line">&gt;$ \sum\limits _&#123;i=<span class="number">1</span>&#125;^n i\quad \prod\limits _&#123;i=<span class="number">1</span>&#125;^n $</span><br><span class="line">&gt;\[ \lim_&#123;x\to0&#125;x^<span class="number">2</span> \quad \int_a^b x^<span class="number">2</span> dx \]</span><br><span class="line">&gt;\[ \lim\nolimits _&#123;x\to0&#125;x^<span class="number">2</span>\quad \<span class="type">int</span>\nolimits_a^b x^<span class="number">2</span> dx \]</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.postimg.cc/Y2sq3Dzb/2.jpg" alt="运算符"></p>
+</blockquote>
+<blockquote>
+<p><strong>定界符（括号等）</strong><br>各种括号用 (), [], {}, \langle\rangle 等命令表示；注意花括号通常用来输入命令和环境的参数，所以在数学公式中它们前面要加 \。因为 LaTeX 中 | 和 | 的应用过于随意，amsmath 宏包推荐用 \lvert\rvert 和 \lVert\rVert 取而代之。<br>为了调整这些定界符的大小，amsmath 宏包推荐使用 \big, \Big, \bigg, \Bigg 等一系列命令放在上述括号前面调整大小。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;\[ () \; [] \; \&#123;\&#125; \; \langle\rangle \; \lvert\rvert \; \lVert\rVert \]</span><br><span class="line">&gt;\[ \Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr) \]</span><br><span class="line">&gt;\[ \Biggl\lVert\biggl\lVert\Bigl\lVert\bigl\lVert\lVert x</span><br><span class="line">&gt;\rVert\bigr\rVert\Bigr\rVert\biggr\rVert\Biggr\rVert \]</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.postimg.cc/1XDVdMNj/3.jpg" alt="定界符"></p>
+</blockquote>
+<blockquote>
+<p><strong>省略号</strong><br>省略号用 \dots, \cdots, \vdots, \ddots 等命令表示。\dots 和 \cdots 的纵向位置不同，前者一般用于有下标的序列。<br><code>\[ x_1,x_2,\dots ,x_n\quad 1,2,\cdots ,n\quad \vdots\quad \ddots \]</code><br><img src="https://i.postimg.cc/FFxT1x6Z/4.jpg" alt="省略号"></p>
+</blockquote>
+<blockquote>
+<p><strong>矩阵</strong><br>amsmath 的 pmatrix, bmatrix, Bmatrix, vmatrix, Vmatrix 等环境可以在矩阵两边加上各种分隔符。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;\[ \begin&#123;pmatrix&#125; a&amp;b\\c&amp;d \end&#123;pmatrix&#125; \quad</span><br><span class="line">&gt;\begin&#123;bmatrix&#125; a&amp;b\\c&amp;d \end&#123;bmatrix&#125; \quad</span><br><span class="line">&gt;\begin&#123;Bmatrix&#125; a&amp;b\\c&amp;d \end&#123;Bmatrix&#125; \quad</span><br><span class="line">&gt;\begin&#123;vmatrix&#125; a&amp;b\\c&amp;d \end&#123;vmatrix&#125; \quad</span><br><span class="line">&gt;\begin&#123;Vmatrix&#125; a&amp;b\\c&amp;d \end&#123;Vmatrix&#125; \]</span><br></pre></td></tr></table></figure>
+<p><img src="https://liam.page/uploads/teaching/LaTeX/figures/818901c1jw1e44jpqbz2aj208k024744.jpg"><br>使用 smallmatrix 环境，可以生成行内公式的小矩阵。<br><code>Marry has a little matrix $ ( \begin&#123;smallmatrix&#125; a&amp;b\\c&amp;d \end&#123;smallmatrix&#125; ) $.</code><br><img src="https://liam.page/uploads/teaching/LaTeX/figures/818901c1jw1e44jsd9ldbj20680200si.jpg"></p>
+</blockquote>
+<blockquote>
+<p><strong>多行公式 公式组 分段函数</strong><br>需要对齐的公式，可以使用 aligned <strong>次环境</strong>来实现，它必须包含在数学环境之内。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;\[ \begin&#123;aligned&#125;</span><br><span class="line">&gt;x =&amp; a+b+c+ \\</span><br><span class="line">&gt;&amp;d+e+f+g</span><br><span class="line">&gt;\end&#123;aligned&#125; \]</span><br></pre></td></tr></table></figure>
+<p><img src="https://liam.page/uploads/teaching/LaTeX/figures/818901c1jw1e44k2acde4j205g02ft8h.jpg"></p>
+<p>需要对齐的公式组可以使用 align 环境，没有包括在[ ]中间的话会带有编号。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;\begin&#123;align&#125;</span><br><span class="line">&gt;a &amp;= b+c+d \\</span><br><span class="line">&gt;x &amp;= y+z</span><br><span class="line">&gt;\end&#123;align&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.postimg.cc/nLvHXMfm/1.jpg"></p>
+<p>分段函数可以用cases次环境来实现，它必须包含在数学环境之内。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;\[ y= \begin&#123;cases&#125;</span><br><span class="line">&gt;-x,\quad x\leq <span class="number">0</span> \\</span><br><span class="line">&gt;x,\quad x&gt;<span class="number">0</span></span><br><span class="line">&gt;\end&#123;cases&#125; \]</span><br></pre></td></tr></table></figure>
+<p><img src="https://liam.page/uploads/teaching/LaTeX/figures/818901c1jw1e44k7zto1wj205o01pt8i.jpg"></p>
+</blockquote>
+<p>建议 LaTeX 用户应当尽可能避免使用辅助工具输入数学公式。但对于急用的初学者而言，适当地使用辅助工具（而不形成依赖）也是有一些收益的。</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://mathpix.com/">https://mathpix.com/</a> 能够通过热键呼出截屏，而后将截屏中的公式转换成 LaTeX 数学公式的代码。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.codecogs.com/latex/eqneditor.php">在线LaTeX公式编辑器</a>，非常方便直观。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://detexify.kirelabs.org/classify.html">http://detexify.kirelabs.org/classify.html</a> 允许用户用鼠标在输入区<strong>绘制单个数学符号的样式</strong>，系统会根据样式返回对应的 LaTeX 代码（和所需的宏包）。这在<strong>查询</strong>不熟悉的数学符号时特别有用。</p>
+</li>
+</ul>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>tabular 环境提供了最简单的表格功能。它用 \hline 命令表示横线，在列格式中用 | 表示竖线；用 &amp; 来分列，用 \ 来换行；每列可以采用居左、居中、居右等横向对齐方式，分别用 l、c、r 来表示。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;tabular&#125;&#123;|l|c|r|&#125;</span><br><span class="line"> \hline</span><br><span class="line">操作系统&amp; 发行版&amp; 编辑器\\</span><br><span class="line"> \hline</span><br><span class="line">Windows &amp; MikTeX &amp; TexMakerX \\</span><br><span class="line"> \hline</span><br><span class="line">Unix/Linux &amp; teTeX &amp; Kile \\</span><br><span class="line"> \hline</span><br><span class="line">Mac OS &amp; MacTeX &amp; TeXShop \\</span><br><span class="line"> \hline</span><br><span class="line">通用&amp; TeX Live &amp; TeXworks \\</span><br><span class="line"> \hline</span><br><span class="line">\end&#123;tabular&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://liam.page/uploads/teaching/LaTeX/figures/818901c1jw1e44ku9n696j20cj05haad.jpg" alt="效果"><br>表格也有类似的工具：<a target="_blank" rel="noopener" href="https://www.tablesgenerator.com/">Creat LaTeX tables online</a></p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>关于 LaTeX 插图，首先要说的是：「LaTeX 只支持 .eps 格式的图档」这个说法是错误的。<br>在 LaTeX 中插入图片，有很多种方式。最好用的应当属利用graphicx宏包提供的\includegraphics命令。比如你在你的 TeX 源文件同目录下，有名为 a.jpg 的图片，你可以用这样的方式将它插入到输出文档中：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">\usepackage&#123;graphicx&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\includegraphics&#123;a.jpg&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>图片可能很大，超过了输出文件的纸张大小，或者干脆就是你自己觉得输出的效果不爽。这时候你可以用<code>\includegraphics</code>控制序列的可选参数来控制。比如<br><code>\includegraphics[width = .8\textwidth]&#123;a.jpg&#125;</code><br>这样图片的宽度会被缩放至页面宽度的百分之八十，图片的总高度会按比例缩放。</p>
+<h3 id="浮动体"><a href="#浮动体" class="headerlink" title="浮动体"></a>浮动体</h3><p>插图和表格通常需要占据大块空间，所以在文字处理软件中我们经常需要调整他们的位置。figure 和 table 环境可以自动完成这样的任务；这种自动调整位置的环境称作浮动体(float)。我们以 figure 为例。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;amsmath&#125;</span><br><span class="line">\usepackage&#123;graphicx&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">    </span><br><span class="line">\begin&#123;figure&#125;[htbp]</span><br><span class="line">    \centering</span><br><span class="line">    \includegraphics[width = <span class="number">.8</span>\textwidth]&#123;a.jpg&#125;</span><br><span class="line">    \caption&#123;有图有真相&#125;</span><br><span class="line">    \label&#123;fig:myphoto&#125;</span><br><span class="line">\end&#123;figure&#125;</span><br><span class="line"></span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.postimg.cc/rm1JhDDM/2.jpg"><br>htbp 选项用来指定插图的理想位置，这几个字母分别代表 here, top, bottom, float page，也就是就这里、页顶、页尾、浮动页（专门放浮动体的单独页面或分栏）。\centering 用来使插图居中；<strong>\caption 命令设置插图标题</strong>，LaTeX 会自动给浮动体的标题加上编号。注意 \label 应该放在标题命令之后。</p>
+<h3 id="幻灯片"><a href="#幻灯片" class="headerlink" title="幻灯片"></a>幻灯片</h3><p>LaTeX的确还可以制作精美的幻灯片pdf，不过具体使用方法与论文写作大同小异，网上也有很多漂亮的模板。</p>
+<h2 id="版面设置"><a href="#版面设置" class="headerlink" title="版面设置"></a>版面设置</h2><h3 id="页边距"><a href="#页边距" class="headerlink" title="页边距"></a>页边距</h3><p>设置页边距，推荐使用 <code>geometry</code> 宏包。<br>比如我希望，将纸张的长度设置为 20cm、宽度设置为 15cm、左边距 1cm、右边距 2cm、上边距 3cm、下边距 4cm，可以在<strong>导言区</strong>加上这样几行：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;geometry&#125;</span><br><span class="line">\geometry&#123;papersize=&#123;<span class="number">20</span>cm,<span class="number">15</span>cm&#125;&#125;</span><br><span class="line">\geometry&#123;left=<span class="number">1</span>cm,right=<span class="number">2</span>cm,top=<span class="number">3</span>cm,bottom=<span class="number">4</span>cm&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="页眉页脚"><a href="#页眉页脚" class="headerlink" title="页眉页脚"></a>页眉页脚</h3><p>设置页眉页脚，推荐使用 fancyhdr 宏包。<br>比如我希望，在页眉左边写上我的名字，中间写上今天的日期，右边写上我的电话；页脚的正中写上页码；页眉和正文之间有一道宽为 0.4pt 的横线分割，可以在<strong>导言区</strong>加上如下几行：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;fancyhdr&#125;</span><br><span class="line">\pagestyle&#123;fancy&#125;</span><br><span class="line">\lhead&#123;lichao zhang&#125;</span><br><span class="line">\chead&#123;\today&#125;</span><br><span class="line">\rhead&#123;lczhang93@gmail.com&#125;</span><br><span class="line">\lfoot&#123;&#125;</span><br><span class="line">\cfoot&#123;\thepage&#125;</span><br><span class="line">\rfoot&#123;&#125;</span><br><span class="line">\renewcommand&#123;\headrulewidth&#125;&#123;<span class="number">0.4</span>pt&#125;</span><br><span class="line">\renewcommand&#123;\headwidth&#125;&#123;\textwidth&#125;</span><br><span class="line">\renewcommand&#123;\footrulewidth&#125;&#123;<span class="number">0</span>pt&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="首行缩进"><a href="#首行缩进" class="headerlink" title="首行缩进"></a>首行缩进</h3><p>CTeX 宏集已经处理好了首行缩进的问题（自然段前<strong>空两格汉字宽度</strong>）。<br>因此，使用 CTeX 宏集进行中西文混合排版时，我们不需要关注首行缩进的问题。</p>
+<h3 id="行间距"><a href="#行间距" class="headerlink" title="行间距"></a>行间距</h3><p>我们可以通过 setspace 宏包提供的命令来调整行间距。比如在<strong>导言区</strong>添加如下内容，可以将行距设置为字号的 1.5 倍(这不是设置 1.5 倍行距)：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;setspace&#125;</span><br><span class="line">\onehalfspacing</span><br></pre></td></tr></table></figure>
+
+<h3 id="段间距"><a href="#段间距" class="headerlink" title="段间距"></a>段间距</h3><p>我们可以通过修改长度 \parskip 的值来调整段间距。例如在<strong>导言区</strong>添加以下内容<br><code>\addtolength&#123;\parskip&#125;&#123;.4em&#125;</code><br>则可以在原有的基础上，增加段间距 0.4em。如果需要减小段间距，只需将该数值改为负值即可。</p>
+<p><em><strong>日常写作可以用轻量级的Markdown，想要获得更为复杂和严谨的论文排版作品，上LaTeX，这样基本就能涵盖所有的写作场景，告别臃肿难用的word软件，让我们更专注于内容，享受其中。</strong></em></p>
+<p><strong>参考文章</strong><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3e842d67ada2">LaTeX零基础入门教程</a><br><a target="_blank" rel="noopener" href="https://liam.page/2014/09/08/latex-introduction/">一份其实很短的 LaTeX 入门文档</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>lichao Zhang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://iridescent-zhang.github.io/2022/09/24/latexNote/" title="latexNote">https://iridescent-zhang.github.io/2022/09/24/latexNote/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/LaTeX/" rel="tag"><i class="fa fa-tag"></i> LaTeX</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/20/cmdNote/" rel="prev" title="cmd">
+      <i class="fa fa-chevron-left"></i> cmd
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/10/09/Windows-Terminal%E7%BE%8E%E5%8C%96/" rel="next" title="Windows-Terminal美化">
+      Windows-Terminal美化 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEvscode-texlive-SumatraPDF%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">配置vscode texlive SumatraPDF环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E-TeX-Live"><span class="nav-number">1.1.</span> <span class="nav-text">关于 TeX Live</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-user-setting-json%E8%AE%BE%E7%BD%AElatex%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">1.2.</span> <span class="nav-text">vscode user setting.json设置latex的代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">1.3.</span> <span class="nav-text">快捷键</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LaTex%E6%95%99%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">LaTex教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E8%8B%B1%E6%B7%B7%E6%8E%92"><span class="nav-number">2.1.</span> <span class="nav-text">中英混排</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E7%BB%87%E6%96%87%E7%AB%A0"><span class="nav-number">2.2.</span> <span class="nav-text">组织文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E7%9B%AE%E5%BD%95"><span class="nav-number">2.3.</span> <span class="nav-text">插入目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AD%97%E4%BD%93"><span class="nav-number">2.4.</span> <span class="nav-text">查看当前操作系统的字体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E4%BD%9C%E6%8A%80%E5%B7%A7"><span class="nav-number">3.</span> <span class="nav-text">写作技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%86%99%E4%BD%9C"><span class="nav-number">3.1.</span> <span class="nav-text">使用模板写作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%8C%AE%E5%BC%95%E7%94%A8"><span class="nav-number">3.2.</span> <span class="nav-text">文献引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="nav-number">3.3.</span> <span class="nav-text">数学公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">3.4.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87"><span class="nav-number">3.5.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E5%8A%A8%E4%BD%93"><span class="nav-number">3.6.</span> <span class="nav-text">浮动体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%BB%E7%81%AF%E7%89%87"><span class="nav-number">3.7.</span> <span class="nav-text">幻灯片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E9%9D%A2%E8%AE%BE%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">版面设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B5%E8%BE%B9%E8%B7%9D"><span class="nav-number">4.1.</span> <span class="nav-text">页边距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B5%E7%9C%89%E9%A1%B5%E8%84%9A"><span class="nav-number">4.2.</span> <span class="nav-text">页眉页脚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E8%A1%8C%E7%BC%A9%E8%BF%9B"><span class="nav-number">4.3.</span> <span class="nav-text">首行缩进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E9%97%B4%E8%B7%9D"><span class="nav-number">4.4.</span> <span class="nav-text">行间距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E9%97%B4%E8%B7%9D"><span class="nav-number">4.5.</span> <span class="nav-text">段间距</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lichao Zhang"
+      src="/images/cloud.jpg">
+  <p class="site-author-name" itemprop="name">lichao Zhang</p>
+  <div class="site-description" itemprop="description">博观而约取，厚积而薄发</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Iridescent-zhang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Iridescent-zhang" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lczhang93@gmail.com" title="E-Mail → mailto:lczhang93@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/18558575/wo-ladki" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;18558575&#x2F;wo-ladki" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCv42aVozJF9n4hK8xCacCmg" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCv42aVozJF9n4hK8xCacCmg" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/watch?v=DGa4Xv_tcjE&list=LL&index=6" title="https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;DGa4Xv_tcjE&amp;list&#x3D;LL&amp;index&#x3D;6" rel="noopener" target="_blank">Eiro Nareth INTERSTELLAR</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+	  
+		<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+		<div class="widget-wrap">
+		<div id="myCanvasContainer" class="widget tagcloud">
+		<canvas width="220" height="250" id="resCanvas" style="width=100%">
+			<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cmd/" rel="tag">Cmd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Guitar/" rel="tag">Guitar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HLS/" rel="tag">HLS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/" rel="tag">LaTeX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAT/" rel="tag">NAT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PYNQ/" rel="tag">PYNQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Powershell/" rel="tag">Powershell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP&#x2F;IP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li></ul>
+		</canvas>
+		</div>
+		</div>
+	  
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lichao Zhang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">425k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">6:26</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'zmRLZ8XmVpWBhK4yl2baQmHm-gzGzoHsz',
+      appKey     : 'c5e4Xhc2Ec8iU5BMArSxhhAu',
+      placeholder: "Say something",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : 'https://zmrlz8xm.lc-cn-n1-shared.com'
+    });
+  }, window.Valine);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class='fa fa-chevron-down'></i>    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class='fa fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button" onclick="moonMenuClick()">
+    <svg class="moon-menu-svg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+      <g class="moon-menu-points">
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle>
+        <circle class="moon-menu-point" r=".2rem"></circle>
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle>
+      </g>
+    </svg>
+    <div class="moon-menu-icon">
+    </div>
+    <div class="moon-menu-text">
+    </div>
+  </div>
+</div>
+<script src="/js/injector.js"></script>
+    </div>
+  <!-- 音乐播放器 -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+ <div id="aplayer" class="aplayer" data-id="3470747396" data-server="tencent" data-type="playlist" data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
+ <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+ <!-- 音乐播放器 end -->
+</body>
+</html>
