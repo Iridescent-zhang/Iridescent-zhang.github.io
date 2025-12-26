@@ -61,7 +61,7 @@
 <meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/32.png">
 <meta property="og:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/33.png">
 <meta property="article:published_time" content="2025-02-09T20:36:53.000Z">
-<meta property="article:modified_time" content="2025-08-07T18:04:01.577Z">
+<meta property="article:modified_time" content="2025-12-26T14:59:56.659Z">
 <meta property="article:author" content="lichao Zhang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://iridescent-zhang.github.io/2025/02/10/AI/1.png">
@@ -250,7 +250,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-08-07 18:04:01" itemprop="dateModified" datetime="2025-08-07T18:04:01Z">2025-08-07</time>
+                <time title="Modified: 2025-12-26 14:59:56" itemprop="dateModified" datetime="2025-12-26T14:59:56Z">2025-12-26</time>
               </span>
 
           
@@ -280,14 +280,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>6.6k</span>
+              <span>8.6k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>6 mins.</span>
+              <span>8 mins.</span>
             </span>
 
         </div>
@@ -307,7 +307,7 @@
 <p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/tZztakvzU9kl0nPbl8oCww">目标检测究竟发展到了什么程度? </a></p>
 <p>摘要 (200字)<br>引言 (800字) - 铁路安全重要性，现有方法局限性<br>相关工作 (1000字) - YOLO发展历程，铁路检测现状<br>方法 (2500字) - 改进的网络结构，损失函数，训练策略<br>实验 (1200字) - 数据集，实验设置，结果分析<br>结论 (300字)</p>
 <p>方案一（简单有效）：<br>SE注意力 + Focal Loss + 数据增强<br>代码修改量：<del>100行<br>预期提升：mAP +2-3%<br>方案二（中等难度）：<br>CBAM注意力 + CIoU损失 + P2层检测 + 困难样本挖掘<br>代码修改量：</del>200行<br>预期提升：mAP +3-5%</p>
-<p>6.3 实验设计建议<br>数据集：收集铁路故障图像（裂缝、断轨、异物等）<br>评估指标：<a href="mailto:&#109;&#65;&#80;&#64;&#x30;&#x2e;&#53;">&#109;&#65;&#80;&#64;&#x30;&#x2e;&#53;</a>, <a href="mailto:&#109;&#65;&#x50;&#64;&#x30;&#46;&#53;">&#109;&#65;&#x50;&#64;&#x30;&#46;&#53;</a>:0.95, FPS, 模型大小<br>对比实验：原始YOLOv5 vs 各种改进版本<br>消融实验：每个模块的独立贡献</p>
+<p>6.3 实验设计建议<br>数据集：收集铁路故障图像（裂缝、断轨、异物等）<br>评估指标：<a href="mailto:&#109;&#65;&#x50;&#64;&#48;&#x2e;&#53;">&#109;&#65;&#x50;&#64;&#48;&#x2e;&#53;</a>, <a href="mailto:&#109;&#x41;&#x50;&#64;&#48;&#x2e;&#53;">&#109;&#x41;&#x50;&#64;&#48;&#x2e;&#53;</a>:0.95, FPS, 模型大小<br>对比实验：原始YOLOv5 vs 各种改进版本<br>消融实验：每个模块的独立贡献</p>
 <p>6.4 创新点总结<br>针对性强：专门针对铁路故障检测场景<br>实用性好：在精度和速度间取得平衡<br>可解释性：注意力机制提供可视化分析<br>工程价值：可实际部署的解决方案</p>
 <h1 id="学习-YOLO"><a href="#学习-YOLO" class="headerlink" title="学习 YOLO"></a>学习 YOLO</h1><p>一个格子两个预测框，每个预测框用5 个参数，四个是 xywh，x 是<strong>预测框 bounding box 的中心点</strong>距离格子 cell 左边的距离，y 是<strong>中心点距离 cell 上边</strong>的距离（注意，一张图片分割出来的 49 个 cell 的格子都是一样大的），w 是预测框的宽度（和 x 同向），h 是高度，所以归一化的时候，是 x&#x3D;x&#x2F;wc，y&#x3D;y&#x2F;hc，wc 和 hc 分别指的是格子的宽度和高度，h 和 w 是整个图像的高度和宽度。<br>然后每个格子还需要一组类别值，注意只有一组，虽然是两个预测框，但他们共享一组类别概率值值，比如 VOC 数据集20 个类别，那就有 20 个类别概率值，分别代表<strong>这个格子</strong>属于这个类别的概率值，进一步说，使用这一组 20 个概率值来形容这个格子属于哪一个类。<br>不管一个单元格预测了多少个 bounding box，一个单元格也只能预测一组类别概率值。<br>对一张图片我们切割成 7<em>7&#x3D;49 个格子，所以一张图片的预测结果一共是 7</em>7*30 个 tensor(张量、或者说参数)。</p>
 <p>每个预测框都有两个参数，第一个是 Pr(Object) 表示这个框中是否有物体，也就是 0 和 1，第二个是这个框的 IOU，即交并比，预测框和 GT 框的交集大小除以并集大小，也就是一个预测准度。<br>测试的时候，我们将这二者还有刚刚那 20 个概率值的任一一个分别相乘来得到 这个预测框是这个类别的概率和框包含物体的准度。即 **特定类出现在 cell 内的概率和位置匹配程度(边框拟合程度)**，感觉不要太区分 cell 和 boundingbox 的区别。</p>
@@ -453,6 +453,15 @@ accuray = （TP + TN) / (TP + FP + TN + FN ) = (TP + TN) / (P+N)
 </code></pre>
 <p>Precision衡量你的预测有多准确。也就是说，你的预测正确的百分比。<br>Recall衡量您发现所有正例的能力。 例如，我们可以在前K个预测中找到80％的正例。（TopK）</p>
 <p>AP 平均精度 就是 PR 曲线的面积。mAP 就是 所有类别的 AP 的平均值。<br>为什么要用AP或者mAP<br>我们希望一个模型的Precision和Recall都很高，所以需要综合考虑这两个因素，我们可以联想到用调和平均数F1-beta值来衡量，另一种方法正是PR曲线下的面积AUC，这也就是AP。AUC面积越接近1性能越好。曲线下的面积理解为不同召回值的情况下所有精度的平均值。</p>
+<h1 id="写论文"><a href="#写论文" class="headerlink" title="写论文"></a>写论文</h1><p>自注意力机制<br>ViT不直接看像素，而是对图像进行切分，比如224*224的切成14*14个方块，每个方块叫token，每一层中，每个方块会向所有方块询问，比如最左边一个快是垫片，他询问谁和我有逻辑关系。，此时图像最右边的token回答我是螺栓和你是一套的，因此即便距离很远，模型给他们之间连上高权重的线，从而信息交换。而CNN要实现这个最左最有的通信可能需要几十层的卷积，中间信息模糊了。<br>在铁路场景，可以借助长距离依赖来实现对称性检查，比如左右各一个弹簧，左边坏了，CNN很难通过对比来发现异常，而ViT 同时看两个，发现二者不一样。 此外如果我们要求物件在某个背景下才算是正常，自注意力也可以把背景信息编码进零件的特征。<br>ViT具有全局视角</p>
+<p>卷积核通常很小，感受野很小，不下采样的话，卷积后的模型始终只能看到局部，下采样相当于退后一步看全身，减少图像尺寸，同样的卷积核能覆盖到原图更大比例的面积。同时也能减少计算压力，去除冗余信息。<br><strong>下采样</strong>通常通过池化或者步长卷积来实现，池化比如最大池化，步长卷积指的是卷积核跳着走，比如步长2，扫完一个区域之后跳过一个像素再扫，这样特征图长宽就减半了。</p>
+<p>我们使用跳跃连接把分辨率救回来，它相当于从前端（浅层特征，知道位置，但不明白语义）即哪些还没模糊的高清特征图直接投送到后端（深层特征，具备语义，你知道这个点有螺栓那里有裂纹但你不知道具体位置）。<br>具体是，将深层7*7的特征图上采样（反卷积或者插值）便会224*224特征图，虽然够大但是模糊，然后这张图和那张浅层图叠在一起，浅层图告诉模型这里有个东西（位置信息），深层图告诉模型这个是什么（语义信息）。</p>
+<p>反卷积：指的是有参数的填充放大，将小尺寸特征图填充0放大，然后学习一个卷积核去扫这张撑开的图，学习去用合理的数值填充这些0，使得结果清晰又合理，由于卷积核带参数，效果比简单的插值放大更合理。</p>
+<p>FPN 特征金字塔就是跳跃连接的升级版，能同时检测巨大的形变和微小的划痕，是目标检测和异常检测的关键。<br>区别在哪，跳跃连接 U-Net 通常只在最后的一层高分辨率特征上进行预测，应该是说 低分辨率 特征上采样之后和高分辨率特征融合，只用这一层进行预测。而FPN 是多层预测，在金字塔的每一个层级都分别进行检测，比如 p2 层专门检测10像素的小裂纹，而p5层专门检测半张图的大型变形。还提到“<strong>似乎每一层的信息是实时共享的</strong>”？如何理解</p>
+<p>FPN 的特点应该是，它在每一层特征都做了跳跃连接。<br>FPN 的构造分成三个路径，第一个 自下而上，是特征提取过程，就是之前说的下采样，特征图分辨率越来越低，语义越来越强，能认得出东西。 第二个是 自上而下，把深层特征进行上采样放大，试图让他回到高分辨率的状态。 第三个是 横向连接，他将第一步路径中 每个尺寸的特征图通过 1*1 卷积处理后 直接加到 第二步路径中的特征图，从而在每一个尺度上，都生成了一个 具有高清分辨率和深度语义的特征图。<br>那么 FPN 它的特点就是，它的顶层特征（感受野大）能去识别大物体，底层特征（分辨率高）能去识别小的痕迹。<br>通过<strong>多层特征融合</strong>，增强了模型对噪声的鲁棒性，即使某一层特征不明显，其他层的融合信息也能一定程度上起到补位的作用。<br>还提到一个 语义对齐，比如我们要判断某个小物体 螺栓 不仅正常，也处于某个正确的位置，没有松动，我们需要模型唔够获取周围的结构信息，这就属于 深层语义，FPN 的横向连接就是让每一个小尺度特征都带上 全局的“脑子”，让它能获取不仅限于这个小尺度的语义信息？</p>
+<p>上面提到的  1*1 卷积核，他又很大的作用，第一个 对齐通道数，降为或升维，自下而上，浅层（分辨率高）通道数小，深层的通道数可能到了512，如果希望将两张特征图叠加，那要求通道数必须一致，1*1 卷积核就能将512的深层特征压缩为64通道，将同一个位置不同通道的信息进行组合。</p>
+<p>再讲一遍：<br>第一阶段 自下而上提炼特征：p2浅层<strong>尺寸大</strong>（注意理解这个尺寸），分辨率高，语义差，升级到p5深层，尺寸小（下采样很多次），能看到整体布局，认出这个螺栓应该在的位置（在转向架的左边），也就是语义强，但是它看不清楚螺栓，只是知道它在那里。<br>第二阶段 自上而下<strong>传递智慧</strong>，将p5深层特征反卷积放大到和p4一样大，此时，这张大图仍然具有较为强大的语义信息，具备“全局意识”。<br>第三阶段：一对一融合，将放大后的p5（和4一样大，但具有5的大局观）和原来的p4（有原来的细节）进行像素级相加，融合得到的特征图，每一个像素点既包含原来p4的高分辨率位置细节也包含了p5传下来的语义信息。</p>
+<p>举个例子：假如我在p2（分辨率很高的一层），我现在看到一个黑点，我认不出是裂纹还是油渍，但是有了FPN，深层（p5、p4、p3）的语义信息一层一层向下传给了p2，现在p2的哪个点，他携带的信息就成了“我是位于 5：转向架、4：左侧第三个 3：螺栓上的裂纹”，从而获取到不属于自己尺度的语义信息，它们从金字塔顶端顺着 自上而下 的路径留下来，和每一层的局部细节汇和。</p>
 <!-- flag of hidden posts -->
     </div>
 
@@ -541,7 +550,7 @@ accuray = （TP + TN) / (TP + FP + TN + FN ) = (TP + TN) / (P+N)
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E9%80%89%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">论文选题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BA%E6%96%87"><span class="nav-number">2.</span> <span class="nav-text">论文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BA%E6%96%87-1"><span class="nav-number">3.</span> <span class="nav-text">论文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0-YOLO"><span class="nav-number">4.</span> <span class="nav-text">学习 YOLO</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E9%80%89%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">论文选题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BA%E6%96%87"><span class="nav-number">2.</span> <span class="nav-text">论文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BA%E6%96%87-1"><span class="nav-number">3.</span> <span class="nav-text">论文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0-YOLO"><span class="nav-number">4.</span> <span class="nav-text">学习 YOLO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%99%E8%AE%BA%E6%96%87"><span class="nav-number">5.</span> <span class="nav-text">写论文</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -557,7 +566,7 @@ accuray = （TP + TN) / (TP + FP + TN + FN ) = (TP + TN) / (P+N)
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -643,13 +652,13 @@ accuray = （TP + TN) / (TP + FP + TN + FN ) = (TP + TN) / (P+N)
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">425k</span>
+    <span title="Symbols count total">523k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">6:26</span>
+    <span title="Reading time total">7:55</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
